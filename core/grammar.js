@@ -105,8 +105,7 @@ module.exports = grammar(objectscript_expr, {
   inline: ($, previous) => [$.set_target, ...previous],
 
   rules: {
-    source_file: ($) => $.statements,
-    statements: ($) => repeat1($.statement),
+    source_file: ($) => repeat($.statement),
     // Note: Line comments must be handled separately due to tree-sitter limitations.
     // Using choice() for line_comment as an extra causes parsing issues.
     line_comment_1: ($) => seq('//', $._line_comment_inner),
@@ -279,7 +278,7 @@ module.exports = grammar(objectscript_expr, {
     keyword_pound_elseif: (_) => /\#elseif/i,
 
     pound_else: ($) =>
-      seq(field('preproc_keyword', $.keyword_pound_else), $.statements),
+      seq(field('preproc_keyword', $.keyword_pound_else), repeat($.statement)),
     keyword_pound_else: (_) => /#else/i,
 
     pound_import: ($) =>
@@ -847,7 +846,7 @@ module.exports = grammar(objectscript_expr, {
         field('command_name', $.keyword_elseif),
         repeat_with_commas($.expression),
         '{',
-        $.statements,
+          repeat($.statement),
         '}',
       ),
 
@@ -855,7 +854,7 @@ module.exports = grammar(objectscript_expr, {
       seq(
         field('command_name', $.keyword_else),
         '{',
-        $.statements,
+          repeat($.statement),
         '}',
       ),
 

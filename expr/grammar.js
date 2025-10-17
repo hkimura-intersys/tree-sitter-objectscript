@@ -862,17 +862,19 @@ module.exports = grammar({
     ),
     numeric_literal: ($) => choice($.integer_literal, $.decimal_literal),
     integer_literal: (_) => /[\d]+/,
-decimal_literal: (_) =>
-      // NOTE: Using optional exponent directly in regex to avoid zero-length tokens
-      choice(
-        // digit+ . digit+ [exponent] - exponent optional in regex
-        seq(/[\d]+\.[\d]+/, token.immediate(/([eE][+-]?[\d]+)?/)),
-        // digit+ exponent   NOTE without exponent this is integer
-        /[\d]+[eE][+-]?[\d]+/,
-        // . digit+ [exponent] - exponent optional in regex
-        seq(/\.[\d]+/, token.immediate(/([eE][+-]?[\d]+)?/)),
-      ),
-    // decimal_literal: (_) =>
+// decimal_literal: (_) =>
+//       // NOTE: Using optional exponent directly in regex to avoid zero-length tokens
+//       choice(
+//         // digit+ . digit+ [exponent] - exponent optional in regex
+//         seq(/[\d]+\.[\d]+/, token.immediate(/([eE][+-]?[\d]+)?/)),
+//         // digit+ exponent   NOTE without exponent this is integer
+//         /[\d]+[eE][+-]?[\d]+/,
+//         // . digit+ [exponent] - exponent optional in regex
+//         seq(/\.[\d]+/, token.immediate(/([eE][+-]?[\d]+)?/)),
+//       ),
+      decimal_literal: _ => token(/(?:(?:\d+\.\d+|\.\d+)(?:[eE][+-]?\d+)?|\d+[eE][+-]?\d+)/),
+
+      // decimal_literal: (_) =>
     //   // NOTE: This possibly causes an infinite loop in `tree-sitter test`,
     //   //       although I don't see that in normal usage or the playground.
     //   //       However "fixing"" it seems to cause catastropic DFA explosion!
