@@ -1,0 +1,270 @@
+==================================
+$SYSTEM as system variable
+==================================
+ $SYSTEM
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)))))
+
+==================================
+$SY shorthand as system variable
+==================================
+ $SY
+---
+
+(source_file
+  (expression
+    (built_in_function_name)))
+
+==================================
+$SYSTEM.Status.OK method call
+==================================
+ $SYSTEM.Status.OK()
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args)))))
+
+==================================
+$SYSTEM.Status.Error with arguments
+==================================
+ $SYSTEM.Status.Error(5001,"Custom error")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (numeric_literal)))
+          (method_arg
+            (expression
+              (string_literal))))))))
+
+==================================
+$SYSTEM.SQL.Execute method call
+==================================
+ $SYSTEM.SQL.Execute("SELECT * FROM Sample.Person")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (string_literal))))))))
+
+==================================
+$SYSTEM.OBJ.Load with multiple arguments
+==================================
+ $SYSTEM.OBJ.Load("/path/to/file.xml","ck")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (string_literal)))
+          (method_arg
+            (expression
+              (string_literal))))))))
+
+==================================
+$SYSTEM.Process.UserName
+==================================
+ $SYSTEM.Process.UserName()
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args)))))
+
+==================================
+$SYSTEM case insensitive
+==================================
+ $system.Status.OK()
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args)))))
+
+==================================
+$SYSTEM with variable reference in class position
+==================================
+ $SYSTEM.Status.GetErrorText(sc)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (glvn
+                (lvn
+                  (objectscript_identifier))))))))))
+
+==================================
+$SYSTEM.Version.GetNumber
+==================================
+ $SYSTEM.Version.GetNumber()
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args)))))
+
+==================================
+$SYSTEM with percent class name
+==================================
+ $SYSTEM.%SYSTEM.Version()
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args)))))
+
+==================================
+$SYSTEM in expression context
+==================================
+ $SYSTEM.Status.IsOK(sc)=1
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (glvn
+                (lvn
+                  (objectscript_identifier))))))))
+    (binary_operator)
+    (numeric_literal)))
+
+==================================
+$SYSTEM with optional arguments (byref)
+==================================
+ $SYSTEM.OBJ.Compile("MyClass",.errors)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (string_literal)))
+          (method_arg
+            (byref_arg
+              (lvn
+                (objectscript_identifier)))))))))
+
+==================================
+$SYSTEM with empty argument slots
+==================================
+ $SYSTEM.SQL.SetSelectMode(,1)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)
+        (function_argument)
+        (function_argument)
+        (method_args
+          (method_arg
+            (expression
+              (numeric_literal))))))))
+
+==================================
+$SYSTEM variable in comparison
+==================================
+ $SYSTEM="IRIS"
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_system
+        (built_in_function_name)))
+    (binary_operator)
+    (string_literal)))
+
+==================================
+$SYSTEM with glvn in class position
+:error
+==================================
+ $SYSTEM.(className).Method()
+---
+
+
+
+==================================
+$SYSTEM with glvn in method position
+:error
+==================================
+ $SYSTEM.Status.(methodName)()
+---
+
+

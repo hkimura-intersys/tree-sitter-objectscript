@@ -1,0 +1,29 @@
+==================================
+$SEQUENCE with global
+==================================
+ $SEQUENCE(^bignum)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn)))))))
+
+==================================
+$SEQ with global
+==================================
+ $SEQ(^bignum)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn)))))))

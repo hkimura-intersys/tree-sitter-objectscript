@@ -1,0 +1,300 @@
+==================================
+$GET with local variable
+==================================
+ $GET(x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+==================================
+$GET shorthand with local variable
+==================================
+ $G(x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+==================================
+$GET with default value
+==================================
+ $GET(x,"default")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$GET with numeric default
+==================================
+ $GET(count,0)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (numeric_literal))))))
+
+==================================
+$GET with global variable
+==================================
+ $GET(^data)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn)))))))
+
+==================================
+$GET with subscripted local variable
+==================================
+ $GET(arr(1,2))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)
+              (subscripts
+                (expression
+                  (numeric_literal))
+                (expression
+                  (numeric_literal))))))))))
+
+==================================
+$GET with subscripted global variable
+==================================
+ $GET(^client(id,"name"))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn
+              (subscripts
+                (expression
+                  (glvn
+                    (lvn
+                      (objectscript_identifier))))
+                (expression
+                  (string_literal))))))))))
+
+==================================
+$GET with subscripted variable and default
+==================================
+ $GET(arr(key),"not found")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)
+              (subscripts
+                (expression
+                  (glvn
+                    (lvn
+                      (objectscript_identifier))))))))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$GET case insensitive
+==================================
+ $get(x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+==================================
+$GET with object property
+==================================
+ $GET(obj.Property)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (oref_chain_expr
+            (lvn
+              (objectscript_identifier))
+            (property_name)))))))
+
+==================================
+$GET with object property chain
+==================================
+ $GET(obj.Prop1.Prop2)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (oref_chain_expr
+            (lvn
+              (objectscript_identifier))
+            (property_name)
+            (property_name)))))))
+
+==================================
+$GET with object property and default
+==================================
+ $GET(obj.Name,"Unknown")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (oref_chain_expr
+            (lvn
+              (objectscript_identifier))
+            (property_name)))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$GET in expression
+==================================
+ $GET(x,0)+1
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (numeric_literal))))
+    (binary_operator)
+    (numeric_literal)))
+
+==================================
+$GET with structured system variable
+==================================
+ $GET(^$LOCK(name))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (ssvn
+              (subscripts
+                (expression
+                  (glvn
+                    (lvn
+                      (objectscript_identifier))))))))))))
+
+==================================
+$GET with empty string default
+==================================
+ $GET(x,"")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$G with global and variable default
+==================================
+ $G(^data(key),defaultVal)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (dollar_function
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn
+              (subscripts
+                (expression
+                  (glvn
+                    (lvn
+                      (objectscript_identifier))))))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))

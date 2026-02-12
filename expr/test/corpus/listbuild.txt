@@ -1,0 +1,620 @@
+==================================
+$LISTBUILD with single string element
+==================================
+$LISTBUILD("Red")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD shorthand with single element
+==================================
+$LB("Red")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with multiple string elements
+==================================
+$LISTBUILD("Red","Blue","Green")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LB with multiple elements
+==================================
+$LB("Red","Blue","Green")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with numeric elements
+==================================
+$LISTBUILD(1,2,3)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (numeric_literal))
+        (function_argument
+          (numeric_literal))
+        (function_argument
+          (numeric_literal))))))
+
+==================================
+$LISTBUILD with mixed types
+==================================
+$LISTBUILD("Name",42,3.14)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (numeric_literal))
+        (function_argument
+          (numeric_literal))))))
+
+==================================
+$LISTBUILD with empty list
+==================================
+$LISTBUILD()
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)))))
+
+==================================
+$LB with empty list
+==================================
+$LB()
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)))))
+
+==================================
+$LISTBUILD with undefined first element
+==================================
+$LISTBUILD(,"second","third")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with undefined middle element
+==================================
+$LISTBUILD("first",,"third")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with undefined last element
+==================================
+$LISTBUILD("first","second",)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with multiple undefined elements
+==================================
+$LISTBUILD(,,"third",,)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with all undefined elements
+==================================
+$LISTBUILD(,,,)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)))))
+
+==================================
+$LISTBUILD with variable elements
+==================================
+$LISTBUILD(name,age,city)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+==================================
+$LISTBUILD with expressions
+==================================
+$LISTBUILD(x+1,y*2,z-3)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)))
+          (binary_operator)
+          (numeric_literal))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)))
+          (binary_operator)
+          (numeric_literal))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)))
+          (binary_operator)
+          (numeric_literal))))))
+
+==================================
+$LISTBUILD case insensitive lowercase
+==================================
+$listbuild("a","b","c")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LB case insensitive lowercase
+==================================
+$lb("a","b","c")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD case insensitive mixed
+==================================
+$ListBuild("a","b","c")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with nested list
+==================================
+$LISTBUILD($LB("inner1","inner2"),"outer")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (system_defined_function
+            (built_in_functions_with_optional_args
+              (built_in_function_name)
+              (function_argument
+                (string_literal))
+              (function_argument
+                (string_literal)))))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with function call
+==================================
+$LISTBUILD($PIECE(str,",",1),$LENGTH(str))
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (system_defined_function
+            (built_in_functions_piece_or_principal
+              (function_argument
+                (glvn
+                  (lvn
+                    (objectscript_identifier))))
+              (function_argument
+                (expression
+                  (string_literal)))
+              (function_argument
+                (expression
+                  (numeric_literal))))))
+        (function_argument
+          (system_defined_function
+            (dollar_function
+              (built_in_function_name)
+              (function_argument
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))))))))))
+
+==================================
+$LISTBUILD with concatenated string
+==================================
+$LISTBUILD(firstName_" "_lastName,age)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)))
+          (binary_operator)
+          (string_literal)
+          (binary_operator)
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+==================================
+$LISTBUILD with subscripted variable
+==================================
+$LISTBUILD(arr(1),arr(2),arr(3))
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)
+              (subscripts
+                (expression
+                  (numeric_literal))))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)
+              (subscripts
+                (expression
+                  (numeric_literal))))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier)
+              (subscripts
+                (expression
+                  (numeric_literal))))))))))
+
+==================================
+$LISTBUILD with global variable
+==================================
+$LISTBUILD(^data(1),^data(2))
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn
+              (subscripts
+                (expression
+                  (numeric_literal))))))
+        (function_argument
+          (glvn
+            (gvn
+              (subscripts
+                (expression
+                  (numeric_literal))))))))))
+
+==================================
+$LISTBUILD with empty string element
+==================================
+$LISTBUILD("","value","")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD in expression
+==================================
+$LISTBUILD("a","b")_$LISTBUILD("c","d")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))
+    (binary_operator)
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD with special characters in strings
+==================================
+$LISTBUILD("Hello, World!","Line1""Line2","Tab	here")
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))
+        (function_argument
+          (string_literal))))))
+
+==================================
+$LISTBUILD single undefined element
+==================================
+$LISTBUILD(,)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)))))
+
+==================================
+$LISTBUILD with object property
+==================================
+$LISTBUILD(obj.Name,obj.Age)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (oref_chain_expr
+            (lvn
+              (objectscript_identifier))
+            (property_name)))
+        (function_argument
+          (oref_chain_expr
+            (lvn
+              (objectscript_identifier))
+            (property_name)))))))
+
+==================================
+$LISTBUILD with class method call
+==================================
+$LISTBUILD(##class(Sample.Person).GetName(),##class(Sample.Person).GetAge())
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (class_method_call
+            (class_ref
+              (keyword_pound_pound_class)
+              (class_name))
+            (method_name)
+            (method_args)))
+        (function_argument
+          (class_method_call
+            (class_ref
+              (keyword_pound_pound_class)
+              (class_name))
+            (method_name)
+            (method_args)))))))
+
+==================================
+$LISTBUILD with macro
+==================================
+$LISTBUILD($$MAXLEN,$$DEFAULT)
+
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_with_optional_args
+        (built_in_function_name)
+        (function_argument
+          (extrinsic_function
+            (objectscript_identifier)))
+        (function_argument
+          (extrinsic_function
+            (objectscript_identifier)))))))
+
+====
+$LB argumentless
+:error
+====
+ $LB
+---
+
+

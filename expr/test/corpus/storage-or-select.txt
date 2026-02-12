@@ -1,0 +1,292 @@
+==================================
+$SELECT with single condition
+==================================
+ $SELECT(x=1:"one")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))
+            (binary_operator)
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))))))
+
+==================================
+$SELECT with multiple conditions
+==================================
+ $SELECT(x=1:"one",x=2:"two",1:"default")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))
+            (binary_operator)
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))
+            (binary_operator)
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))))))
+
+==================================
+$SELECT with variable values
+==================================
+ $SELECT(cond:val1,1:val2)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier))))
+          (rhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))))
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))))))))
+
+==================================
+$SELECT shorthand with conditions
+==================================
+ $S(a:1,b:2)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier))))
+          (rhs_pair
+            (numeric_literal)))
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier))))
+          (rhs_pair
+            (numeric_literal)))))))
+
+==================================
+$SELECT case insensitive
+==================================
+ $select(1:"yes")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))))))
+
+==================================
+$SELECT with nested functions
+==================================
+ $SELECT($DATA(x):$GET(x),1:"none")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (system_defined_function
+              (built_in_function_device_or_data
+                (built_in_function_name)
+                (function_argument
+                  (lvn
+                    (objectscript_identifier))))))
+          (rhs_pair
+            (system_defined_function
+              (dollar_function
+                (built_in_function_name)
+                (function_argument
+                  (glvn
+                    (lvn
+                      (objectscript_identifier))))))))
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))))))
+
+==================================
+$SELECT with complex conditions
+==================================
+ $SELECT(x>0&(y>0):"positive",1:"other")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))
+            (binary_operator)
+            (numeric_literal)
+            (binary_operator)
+            (parenthetical_expression
+              (expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))
+                (binary_operator)
+                (numeric_literal))))
+          (rhs_pair
+            (string_literal)))
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))))))
+
+==================================
+$STORAGE as system variable
+==================================
+ $STORAGE
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)))))
+
+==================================
+$S without parentheses is $STORAGE
+==================================
+ $S
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)))))
+
+==================================
+$S with parentheses is $SELECT
+==================================
+ $S(1:x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))))))))
+
+==================================
+$STORAGE case insensitive
+==================================
+ $storage
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)))))
+
+==================================
+$STORAGE in expression
+==================================
+ $STORAGE>1000
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)))
+    (binary_operator)
+    (numeric_literal)))
+
+==================================
+$SELECT with string concatenation result
+==================================
+ $SELECT(type="A":"Type "_type,1:"Unknown")
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_storage_or_select
+        (built_in_function_name)
+        (function_argument
+          (lhs_pair
+            (glvn
+              (lvn
+                (objectscript_identifier)))
+            (binary_operator)
+            (string_literal))
+          (rhs_pair
+            (string_literal)
+            (binary_operator)
+            (glvn
+              (lvn
+                (objectscript_identifier)))))
+        (function_argument
+          (lhs_pair
+            (numeric_literal))
+          (rhs_pair
+            (string_literal)))))))

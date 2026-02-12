@@ -1,0 +1,151 @@
+=======================
+$QUERY with indirection
+=======================
+  $QUERY(@ary@(""))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)
+        (function_argument
+          (indirection
+            (expression
+              (glvn
+                (lvn
+                  (objectscript_identifier))))
+            (subscripts
+              (expression
+                (string_literal)))))))))
+
+=======================
+$QUERY with direction and target
+=======================
+  $QUERY(@ary@(""), 1, x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)
+        (function_argument
+          (indirection
+            (expression
+              (glvn
+                (lvn
+                  (objectscript_identifier))))
+            (subscripts
+              (expression
+                (string_literal)))))
+        (function_argument)
+        (function_argument)))))
+
+===================================
+$QUERY with target and no direction
+:error
+===================================
+  $QUERY(@ary@(""), x)
+---
+
+
+
+===================================
+$QUERY shorthand with target and no direction
+===================================
+  $Q(@ary@(""), 1, x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)
+        (function_argument
+          (indirection
+            (expression
+              (glvn
+                (lvn
+                  (objectscript_identifier))))
+            (subscripts
+              (expression
+                (string_literal)))))
+        (function_argument)
+        (function_argument)))))
+
+================
+$QUERY shorthand
+================
+  $Q(@ary@(""))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)
+        (function_argument
+          (indirection
+            (expression
+              (glvn
+                (lvn
+                  (objectscript_identifier))))
+            (subscripts
+              (expression
+                (string_literal)))))))))
+
+===================================
+$Q with target and no direction
+:error
+===================================
+  $(@ary@(""), x)
+---
+
+
+
+===================================
+$Q for quit
+===================================
+  $Q
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)))))
+
+=================
+QUERY with global
+=================
+ $QUERY(^client(4,1,2))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (gvn
+              (subscripts
+                (expression
+                  (numeric_literal))
+                (expression
+                  (numeric_literal))
+                (expression
+                  (numeric_literal))))))))))
+
+=================
+QUIT
+=================
+ $QUIT
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_functions_quit_or_query
+        (built_in_function_name)))))

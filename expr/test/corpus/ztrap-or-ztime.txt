@@ -1,0 +1,208 @@
+====
+$ZT Argumentless is $ZTRAP
+====
+ $ZT
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)))))
+
+====
+$ZTRAP
+====
+ $ZTRAP
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)))))
+
+===
+$ZTRAP with arguments
+:error
+===
+ $ZTRAP(x)
+---
+
+
+
+===
+$ZT with arguments is $ZTIME
+===
+ $ZT(x)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+===
+$ZT with tformat
+===
+ $ZT(x,y)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+===
+$ZT with tformat and trailing ,
+===
+ $ZT(x,y,,,)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+===
+$ZT with precision and trailing ,
+===
+ $ZT(x,,d,,)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+===
+$ZT with erropt and trailing ,
+===
+ $ZT(x,,,e,)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))))
+
+===
+$ZT with localeopt and trailing ,
+===
+ $ZT(x,,,,f) + $ZT(x,y,z,a,f) + $ZTIME($PIECE($HOROLOG,",",2),1) + $ZTIME($PIECE($ZTIMESTAMP,",",2),1,3)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))
+    (binary_operator)
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))
+        (function_argument
+          (glvn
+            (lvn
+              (objectscript_identifier))))))
+    (binary_operator)
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (system_defined_function
+            (built_in_functions_piece_or_principal
+              (function_argument
+                (built_in_function_name))
+              (function_argument
+                (expression
+                  (string_literal)))
+              (function_argument
+                (expression
+                  (numeric_literal))))))
+        (function_argument
+          (numeric_literal))))
+    (binary_operator)
+    (system_defined_function
+      (built_in_function_ztime_or_ztrap
+        (built_in_function_name)
+        (function_argument
+          (system_defined_function
+            (built_in_functions_piece_or_principal
+              (function_argument
+                (built_in_function_name))
+              (function_argument
+                (expression
+                  (string_literal)))
+              (function_argument
+                (expression
+                  (numeric_literal))))))
+        (function_argument
+          (numeric_literal))
+        (function_argument
+          (numeric_literal))))))

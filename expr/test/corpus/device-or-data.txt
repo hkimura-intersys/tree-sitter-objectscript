@@ -1,0 +1,158 @@
+==================================
+$DEVICE
+==================================
+ $DEVICE
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)))))
+
+==================================
+$DEVICE shorthand
+==================================
+ $D
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)))))
+
+====
+$DEVICE with arguments
+:error
+====
+ $DEVICE(x.columnIndex)
+---
+
+
+
+===
+$DATA no arguments
+:error
+===
+ $DATA
+---
+
+
+
+===
+$DATA empty arguments
+:error
+===
+ $DATA()
+---
+
+
+
+===
+$DATA lock
+===
+ $DATA(^$LOCK(lockname))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)
+        (function_argument
+          (ssvn
+            (subscripts
+              (expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))))))))))
+
+===
+$DATA routine
+===
+ $DATA(^$ROUTINE(routinename)) 
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)
+        (function_argument
+          (ssvn
+            (subscripts
+              (expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))))))))))
+
+===
+$DATA job
+===
+ $DATA(^$JOB(jobnum))
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)
+        (function_argument
+          (ssvn
+            (subscripts
+              (expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))))))))))
+
+===
+$DATA global
+===
+ $DATA(^$GLOBAL(globalname)) 
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)
+        (function_argument
+          (ssvn
+            (subscripts
+              (expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))))))))))
+
+===
+ $DATA shorthand
+===
+ $D(x.columnIndex)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)
+        (function_argument
+          (lvn
+            (objectscript_identifier))
+          (property_name))))))
+
+===
+ $DATA multi dim var
+===
+ $DATA(x.columnIndex)
+---
+
+(source_file
+  (expression
+    (system_defined_function
+      (built_in_function_device_or_data
+        (built_in_function_name)
+        (function_argument
+          (lvn
+            (objectscript_identifier))
+          (property_name))))))
