@@ -51,26 +51,27 @@ ClassMethod adta01()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          case: (dollar_arg_pair
-                            (expression
-                              (expr_atom
-                                (lvn
-                                  (objectscript_identifier)))
-                              (expr_tail
-                                operator: (binary_operator)
-                                (expression
-                                  (expr_atom
-                                    (string_literal)))))
-                            (expression
-                              (expr_atom
-                                (string_literal))))
-                          case: (dollar_arg_pair
-                            (expression
-                              (expr_atom
-                                (numeric_literal)))
-                            (expression
-                              (expr_atom
-                                (string_literal))))))))))
+                          (dollar_select
+                            case: (dollar_arg_pair
+                              (expression
+                                (expr_atom
+                                  (lvn
+                                    (objectscript_identifier)))
+                                (expr_tail
+                                  operator: (binary_operator)
+                                  (expression
+                                    (expr_atom
+                                      (string_literal)))))
+                              (expression
+                                (expr_atom
+                                  (string_literal))))
+                            case: (dollar_arg_pair
+                              (expression
+                                (expr_atom
+                                  (numeric_literal)))
+                              (expression
+                                (expr_atom
+                                  (string_literal)))))))))))
               (statement
                 (command_do
                   command_name: (keyword_do)
@@ -97,7 +98,7 @@ ClassMethod adta01()
                           (method_args)))))))
               (statement
                 (command_while
-                  command_name: (keyword_while)
+                  builtin_keyword: (keyword_while)
                   (expression
                     (expr_atom
                       (macro
@@ -147,7 +148,7 @@ ClassMethod adta01()
                                   (string_literal)))))))))))
               (statement
                 (command_while
-                  command_name: (keyword_while)
+                  builtin_keyword: (keyword_while)
                   (expression
                     (expr_atom
                       (macro
@@ -183,7 +184,7 @@ ClassMethod adta01()
                                   (string_literal)))))))))))
               (statement
                 (command_if
-                  command_name: (keyword_if)
+                  builtin_keyword: (keyword_if)
                   (expression
                     (expr_atom
                       (expression
@@ -225,7 +226,7 @@ ClassMethod adta01()
                               (method_args)))))))
                   (statement
                     (command_while
-                      command_name: (keyword_while)
+                      builtin_keyword: (keyword_while)
                       (expression
                         (expr_atom
                           (macro
@@ -261,7 +262,7 @@ ClassMethod adta01()
                                       (string_literal)))))))))))
                   (statement
                     (command_while
-                      command_name: (keyword_while)
+                      builtin_keyword: (keyword_while)
                       (expression
                         (expr_atom
                           (macro
@@ -297,7 +298,7 @@ ClassMethod adta01()
                                       (string_literal)))))))))))
                   (statement
                     (command_if
-                      command_name: (keyword_if)
+                      builtin_keyword: (keyword_if)
                       (expression
                         (expr_atom
                           (expression
@@ -341,7 +342,7 @@ ClassMethod adta01()
                           (method_args)))))))
               (statement
                 (command_while
-                  command_name: (keyword_while)
+                  builtin_keyword: (keyword_while)
                   (expression
                     (expr_atom
                       (macro
@@ -377,7 +378,7 @@ ClassMethod adta01()
                                   (string_literal)))))))))))
               (statement
                 (command_while
-                  command_name: (keyword_while)
+                  builtin_keyword: (keyword_while)
                   (expression
                     (expr_atom
                       (macro
@@ -413,7 +414,7 @@ ClassMethod adta01()
                                   (string_literal)))))))))))
               (statement
                 (command_while
-                  command_name: (keyword_while)
+                  builtin_keyword: (keyword_while)
                   (expression
                     (expr_atom
                       (macro
@@ -592,26 +593,46 @@ ClassMethod GetData()
               (statement
                 (command_new
                   command_name: (keyword_new)
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))
-                  (lvn
-                    (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))
+                  (command_new_argument
+                    (command_new_item
+                      (lvn
+                        (objectscript_identifier))))))
               (statement
                 (command_set
                   command_name: (keyword_set)
@@ -637,13 +658,15 @@ ClassMethod GetData()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))))))
+                          (dollar_extract
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier))))
+                            (dollar_func_pos
+                              (expression
+                                (expr_atom
+                                  (numeric_literal)))))))))
                   (set_argument
                     lhs: (glvn
                       (lvn
@@ -651,13 +674,15 @@ ClassMethod GetData()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))))))
+                          (dollar_extract
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier))))
+                            (dollar_func_pos
+                              (expression
+                                (expr_atom
+                                  (numeric_literal)))))))))
                   (set_argument
                     lhs: (glvn
                       (lvn
@@ -665,13 +690,15 @@ ClassMethod GetData()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))))))
+                          (dollar_extract
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier))))
+                            (dollar_func_pos
+                              (expression
+                                (expr_atom
+                                  (numeric_literal)))))))))
                   (set_argument
                     lhs: (glvn
                       (lvn
@@ -679,13 +706,15 @@ ClassMethod GetData()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))))))
+                          (dollar_extract
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier))))
+                            (dollar_func_pos
+                              (expression
+                                (expr_atom
+                                  (numeric_literal)))))))))
                   (set_argument
                     lhs: (glvn
                       (lvn
@@ -693,13 +722,15 @@ ClassMethod GetData()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))))))))
+                          (dollar_extract
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier))))
+                            (dollar_func_pos
+                              (expression
+                                (expr_atom
+                                  (numeric_literal)))))))))))
               (line_comment_1)
               (line_comment_1)
               (statement
@@ -913,12 +944,13 @@ ClassMethod GetData()
                     rhs: (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))
-                          (expression
-                            (expr_atom
-                              (numeric_literal)))))))))
+                          (dollar_function
+                            (expression
+                              (expr_atom
+                                (numeric_literal)))
+                            (expression
+                              (expr_atom
+                                (numeric_literal))))))))))
               (line_comment_2)
               (line_comment_2)
               (line_comment_2)
@@ -939,7 +971,7 @@ ClassMethod GetData()
               (line_comment_2)
               (statement
                 (command_for
-                  command_name: (keyword_for)
+                  builtin_keyword: (keyword_for)
                   (for_parameter
                     (glvn
                       (lvn
@@ -1014,7 +1046,7 @@ ClassMethod GetData()
                                         (objectscript_identifier))))))))))))
                   (statement
                     (command_quit
-                      command_name: (keyword_quit)
+                      builtin_keyword: (keyword_quit)
                       (post_conditional
                         (expression
                           (expr_atom
@@ -1036,14 +1068,15 @@ ClassMethod GetData()
                         rhs: (expression
                           (expr_atom
                             (system_defined_function
-                              (expression
-                                (expr_atom
-                                  (lvn
-                                    (objectscript_identifier))))
-                              (expression
-                                (expr_atom
-                                  (lvn
-                                    (objectscript_identifier))))))))
+                              (dollar_piece
+                                (expression
+                                  (expr_atom
+                                    (lvn
+                                      (objectscript_identifier))))
+                                (expression
+                                  (expr_atom
+                                    (lvn
+                                      (objectscript_identifier)))))))))
                       (set_argument
                         lhs: (glvn
                           (gvn
@@ -1085,7 +1118,7 @@ ClassMethod GetData()
                             (string_literal))))))
                   (statement
                     (command_for
-                      command_name: (keyword_for)
+                      builtin_keyword: (keyword_for)
                       (for_parameter
                         (glvn
                           (lvn
@@ -1100,14 +1133,15 @@ ClassMethod GetData()
                           limit: (expression
                             (expr_atom
                               (system_defined_function
-                                (expression
-                                  (expr_atom
-                                    (lvn
-                                      (objectscript_identifier))))
-                                (expression
-                                  (expr_atom
-                                    (lvn
-                                      (objectscript_identifier)))))))))
+                                (dollar_function
+                                  (expression
+                                    (expr_atom
+                                      (lvn
+                                        (objectscript_identifier))))
+                                  (expression
+                                    (expr_atom
+                                      (lvn
+                                        (objectscript_identifier))))))))))
                       (statement
                         (command_set
                           command_name: (keyword_set)
@@ -1118,21 +1152,23 @@ ClassMethod GetData()
                             rhs: (expression
                               (expr_atom
                                 (system_defined_function
-                                  (expression
-                                    (expr_atom
-                                      (lvn
-                                        (objectscript_identifier))))
-                                  (expression
-                                    (expr_atom
-                                      (lvn
-                                        (objectscript_identifier))))
-                                  (expression
-                                    (expr_atom
-                                      (lvn
-                                        (objectscript_identifier))))))))))
+                                  (dollar_piece
+                                    (expression
+                                      (expr_atom
+                                        (lvn
+                                          (objectscript_identifier))))
+                                    (expression
+                                      (expr_atom
+                                        (lvn
+                                          (objectscript_identifier))))
+                                    (dollar_func_pos
+                                      (expression
+                                        (expr_atom
+                                          (lvn
+                                            (objectscript_identifier))))))))))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (lvn
@@ -1144,7 +1180,7 @@ ClassMethod GetData()
                                   (string_literal)))))
                           (statement
                             (command_continue
-                              command_name: (keyword_continue)))))
+                              builtin_keyword: (keyword_continue)))))
                       (statement
                         (command_set
                           command_name: (keyword_set)
@@ -1171,7 +1207,7 @@ ClassMethod GetData()
                                             (string_literal))))))))))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (lvn
@@ -1245,10 +1281,10 @@ ClassMethod GetData()
                                       (objectscript_identifier)))))))
                           (statement
                             (command_continue
-                              command_name: (keyword_continue)))))
+                              builtin_keyword: (keyword_continue)))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (lvn
@@ -1281,7 +1317,7 @@ ClassMethod GetData()
                                       (objectscript_identifier)))))))
                           (statement
                             (command_for
-                              command_name: (keyword_for)
+                              builtin_keyword: (keyword_for)
                               (for_parameter
                                 (glvn
                                   (lvn
@@ -1296,14 +1332,15 @@ ClassMethod GetData()
                                   limit: (expression
                                     (expr_atom
                                       (system_defined_function
-                                        (expression
-                                          (expr_atom
-                                            (lvn
-                                              (objectscript_identifier))))
-                                        (expression
-                                          (expr_atom
-                                            (lvn
-                                              (objectscript_identifier)))))))))
+                                        (dollar_function
+                                          (expression
+                                            (expr_atom
+                                              (lvn
+                                                (objectscript_identifier))))
+                                          (expression
+                                            (expr_atom
+                                              (lvn
+                                                (objectscript_identifier))))))))))
                               (statement
                                 (command_set
                                   command_name: (keyword_set)
@@ -1314,21 +1351,23 @@ ClassMethod GetData()
                                     rhs: (expression
                                       (expr_atom
                                         (system_defined_function
-                                          (expression
-                                            (expr_atom
-                                              (lvn
-                                                (objectscript_identifier))))
-                                          (expression
-                                            (expr_atom
-                                              (lvn
-                                                (objectscript_identifier))))
-                                          (expression
-                                            (expr_atom
-                                              (lvn
-                                                (objectscript_identifier))))))))))
+                                          (dollar_piece
+                                            (expression
+                                              (expr_atom
+                                                (lvn
+                                                  (objectscript_identifier))))
+                                            (expression
+                                              (expr_atom
+                                                (lvn
+                                                  (objectscript_identifier))))
+                                            (dollar_func_pos
+                                              (expression
+                                                (expr_atom
+                                                  (lvn
+                                                    (objectscript_identifier))))))))))))
                               (statement
                                 (command_if
-                                  command_name: (keyword_if)
+                                  builtin_keyword: (keyword_if)
                                   (expression
                                     (expr_atom
                                       (lvn
@@ -1340,10 +1379,10 @@ ClassMethod GetData()
                                           (string_literal)))))
                                   (statement
                                     (command_continue
-                                      command_name: (keyword_continue)))))
+                                      builtin_keyword: (keyword_continue)))))
                               (statement
                                 (command_for
-                                  command_name: (keyword_for)
+                                  builtin_keyword: (keyword_for)
                                   (for_parameter
                                     (glvn
                                       (lvn
@@ -1358,14 +1397,15 @@ ClassMethod GetData()
                                       limit: (expression
                                         (expr_atom
                                           (system_defined_function
-                                            (expression
-                                              (expr_atom
-                                                (lvn
-                                                  (objectscript_identifier))))
-                                            (expression
-                                              (expr_atom
-                                                (lvn
-                                                  (objectscript_identifier)))))))))
+                                            (dollar_function
+                                              (expression
+                                                (expr_atom
+                                                  (lvn
+                                                    (objectscript_identifier))))
+                                              (expression
+                                                (expr_atom
+                                                  (lvn
+                                                    (objectscript_identifier))))))))))
                                   (statement
                                     (command_set
                                       command_name: (keyword_set)
@@ -1376,21 +1416,23 @@ ClassMethod GetData()
                                         rhs: (expression
                                           (expr_atom
                                             (system_defined_function
-                                              (expression
-                                                (expr_atom
-                                                  (lvn
-                                                    (objectscript_identifier))))
-                                              (expression
-                                                (expr_atom
-                                                  (lvn
-                                                    (objectscript_identifier))))
-                                              (expression
-                                                (expr_atom
-                                                  (lvn
-                                                    (objectscript_identifier))))))))))
+                                              (dollar_piece
+                                                (expression
+                                                  (expr_atom
+                                                    (lvn
+                                                      (objectscript_identifier))))
+                                                (expression
+                                                  (expr_atom
+                                                    (lvn
+                                                      (objectscript_identifier))))
+                                                (dollar_func_pos
+                                                  (expression
+                                                    (expr_atom
+                                                      (lvn
+                                                        (objectscript_identifier))))))))))))
                                   (statement
                                     (command_if
-                                      command_name: (keyword_if)
+                                      builtin_keyword: (keyword_if)
                                       (expression
                                         (expr_atom
                                           (lvn
@@ -1402,7 +1444,7 @@ ClassMethod GetData()
                                               (string_literal)))))
                                       (statement
                                         (command_continue
-                                          command_name: (keyword_continue)))))
+                                          builtin_keyword: (keyword_continue)))))
                                   (statement
                                     (command_set
                                       command_name: (keyword_set)
@@ -1432,7 +1474,7 @@ ClassMethod GetData()
                                               (objectscript_identifier)))))))
                                   (statement
                                     (command_if
-                                      command_name: (keyword_if)
+                                      builtin_keyword: (keyword_if)
                                       (expression
                                         (expr_atom
                                           (lvn
@@ -1466,7 +1508,7 @@ ClassMethod GetData()
                                                 (lvn
                                                   (objectscript_identifier)))))))))))))
                           else_block: (else_block
-                            command_name: (keyword_else)
+                            builtin_keyword: (keyword_else)
                             (line_comment_1)
                             (statement
                               (command_set
@@ -1489,7 +1531,7 @@ ClassMethod GetData()
                                         (objectscript_identifier)))))))
                             (statement
                               (command_if
-                                command_name: (keyword_if)
+                                builtin_keyword: (keyword_if)
                                 (expression
                                   (expr_atom
                                     (lvn
@@ -1502,7 +1544,7 @@ ClassMethod GetData()
                                           (objectscript_identifier))))))
                                 (statement
                                   (command_for
-                                    command_name: (keyword_for)
+                                    builtin_keyword: (keyword_for)
                                     (for_parameter
                                       (glvn
                                         (lvn
@@ -1517,14 +1559,15 @@ ClassMethod GetData()
                                         limit: (expression
                                           (expr_atom
                                             (system_defined_function
-                                              (expression
-                                                (expr_atom
-                                                  (lvn
-                                                    (objectscript_identifier))))
-                                              (expression
-                                                (expr_atom
-                                                  (lvn
-                                                    (objectscript_identifier)))))))))
+                                              (dollar_function
+                                                (expression
+                                                  (expr_atom
+                                                    (lvn
+                                                      (objectscript_identifier))))
+                                                (expression
+                                                  (expr_atom
+                                                    (lvn
+                                                      (objectscript_identifier))))))))))
                                     (statement
                                       (command_set
                                         command_name: (keyword_set)
@@ -1535,21 +1578,23 @@ ClassMethod GetData()
                                           rhs: (expression
                                             (expr_atom
                                               (system_defined_function
-                                                (expression
-                                                  (expr_atom
-                                                    (lvn
-                                                      (objectscript_identifier))))
-                                                (expression
-                                                  (expr_atom
-                                                    (lvn
-                                                      (objectscript_identifier))))
-                                                (expression
-                                                  (expr_atom
-                                                    (lvn
-                                                      (objectscript_identifier))))))))))
+                                                (dollar_piece
+                                                  (expression
+                                                    (expr_atom
+                                                      (lvn
+                                                        (objectscript_identifier))))
+                                                  (expression
+                                                    (expr_atom
+                                                      (lvn
+                                                        (objectscript_identifier))))
+                                                  (dollar_func_pos
+                                                    (expression
+                                                      (expr_atom
+                                                        (lvn
+                                                          (objectscript_identifier))))))))))))
                                     (statement
                                       (command_if
-                                        command_name: (keyword_if)
+                                        builtin_keyword: (keyword_if)
                                         (expression
                                           (expr_atom
                                             (lvn
@@ -1561,7 +1606,7 @@ ClassMethod GetData()
                                                 (string_literal)))))
                                         (statement
                                           (command_continue
-                                            command_name: (keyword_continue)))))
+                                            builtin_keyword: (keyword_continue)))))
                                     (statement
                                       (command_set
                                         command_name: (keyword_set)
@@ -1624,7 +1669,7 @@ ClassMethod GetData()
                   (line_comment_2)
                   (statement
                     (command_if
-                      command_name: (keyword_if)
+                      builtin_keyword: (keyword_if)
                       (expression
                         (expr_atom
                           (lvn
@@ -1644,16 +1689,17 @@ ClassMethod GetData()
                             rhs: (expression
                               (expr_atom
                                 (system_defined_function
-                                  (expression
-                                    (expr_atom
-                                      (macro
-                                        (macro_constant))))
-                                  (expression
-                                    (expr_atom
-                                      (string_literal)))))))))
+                                  (dollar_function
+                                    (expression
+                                      (expr_atom
+                                        (macro
+                                          (macro_constant))))
+                                    (expression
+                                      (expr_atom
+                                        (string_literal))))))))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (lvn
@@ -1666,7 +1712,7 @@ ClassMethod GetData()
                           (line_comment_1)
                           (statement
                             (command_if
-                              command_name: (keyword_if)
+                              builtin_keyword: (keyword_if)
                               (expression
                                 (expr_atom
                                   (lvn
@@ -1705,7 +1751,7 @@ ClassMethod GetData()
                                       (expr_atom
                                         (string_literal))))))
                               else_block: (else_block
-                                command_name: (keyword_else)
+                                builtin_keyword: (keyword_else)
                                 (statement
                                   (command_set
                                     command_name: (keyword_set)
@@ -1735,7 +1781,7 @@ ClassMethod GetData()
                                         (expr_atom
                                           (string_literal)))))))))
                           elseif_block: (elseif_block
-                            command_name: (keyword_elseif)
+                            builtin_keyword: (keyword_elseif)
                             (expression
                               (expr_atom
                                 (lvn
@@ -1775,7 +1821,7 @@ ClassMethod GetData()
                                     (expr_atom
                                       (string_literal)))))))
                           elseif_block: (elseif_block
-                            command_name: (keyword_elseif)
+                            builtin_keyword: (keyword_elseif)
                             (expression
                               (expr_atom
                                 (lvn
@@ -1788,7 +1834,7 @@ ClassMethod GetData()
                             (line_comment_1)
                             (statement
                               (command_if
-                                command_name: (keyword_if)
+                                builtin_keyword: (keyword_if)
                                 (expression
                                   (expr_atom
                                     (lvn
@@ -1827,7 +1873,7 @@ ClassMethod GetData()
                                         (expr_atom
                                           (string_literal))))))
                                 else_block: (else_block
-                                  command_name: (keyword_else)
+                                  builtin_keyword: (keyword_else)
                                   (statement
                                     (command_set
                                       command_name: (keyword_set)
@@ -1857,7 +1903,7 @@ ClassMethod GetData()
                                           (expr_atom
                                             (string_literal))))))))))
                           elseif_block: (elseif_block
-                            command_name: (keyword_elseif)
+                            builtin_keyword: (keyword_elseif)
                             (expression
                               (expr_atom
                                 (lvn
@@ -1896,7 +1942,7 @@ ClassMethod GetData()
                                     (expr_atom
                                       (string_literal)))))))
                           elseif_block: (elseif_block
-                            command_name: (keyword_elseif)
+                            builtin_keyword: (keyword_elseif)
                             (expression
                               (expr_atom
                                 (lvn
@@ -1908,7 +1954,7 @@ ClassMethod GetData()
                                     (string_literal)))))
                             (statement
                               (command_if
-                                command_name: (keyword_if)
+                                builtin_keyword: (keyword_if)
                                 (expression
                                   (expr_atom
                                     (expression
@@ -1962,7 +2008,7 @@ ClassMethod GetData()
                                         (expr_atom
                                           (string_literal))))))
                                 elseif_block: (elseif_block
-                                  command_name: (keyword_elseif)
+                                  builtin_keyword: (keyword_elseif)
                                   (expression
                                     (expr_atom
                                       (lvn
@@ -2001,7 +2047,7 @@ ClassMethod GetData()
                                           (expr_atom
                                             (string_literal)))))))
                                 else_block: (else_block
-                                  command_name: (keyword_else)
+                                  builtin_keyword: (keyword_else)
                                   (statement
                                     (command_set
                                       command_name: (keyword_set)
@@ -2058,7 +2104,7 @@ ClassMethod GetData()
                         (string_literal))))))
               (statement
                 (command_for
-                  command_name: (keyword_for)
+                  builtin_keyword: (keyword_for)
                   (statement
                     (command_set
                       command_name: (keyword_set)
@@ -2069,20 +2115,21 @@ ClassMethod GetData()
                         rhs: (expression
                           (expr_atom
                             (system_defined_function
-                              (expression
-                                (expr_atom
-                                  (gvn
-                                    (subscripts
-                                      (expression
-                                        (expr_atom
-                                          (string_literal)))
-                                      (expression
-                                        (expr_atom
-                                          (lvn
-                                            (objectscript_identifier))))))))))))))
+                              (dollar_function
+                                (expression
+                                  (expr_atom
+                                    (gvn
+                                      (subscripts
+                                        (expression
+                                          (expr_atom
+                                            (string_literal)))
+                                        (expression
+                                          (expr_atom
+                                            (lvn
+                                              (objectscript_identifier)))))))))))))))
                   (statement
                     (command_quit
-                      command_name: (keyword_quit)
+                      builtin_keyword: (keyword_quit)
                       (post_conditional
                         (expression
                           (expr_atom
@@ -2116,7 +2163,7 @@ ClassMethod GetData()
                             (string_literal))))))
                   (statement
                     (command_for
-                      command_name: (keyword_for)
+                      builtin_keyword: (keyword_for)
                       (for_parameter
                         (glvn
                           (lvn
@@ -2136,27 +2183,28 @@ ClassMethod GetData()
                               (numeric_literal)))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (unary_expression
                                 (expression
                                   (expr_atom
                                     (system_defined_function
-                                      (expression
-                                        (expr_atom
-                                          (gvn
-                                            (subscripts
-                                              (expression
-                                                (expr_atom
-                                                  (lvn
-                                                    (objectscript_identifier))))))))))))))
+                                      (dollar_function
+                                        (expression
+                                          (expr_atom
+                                            (gvn
+                                              (subscripts
+                                                (expression
+                                                  (expr_atom
+                                                    (lvn
+                                                      (objectscript_identifier)))))))))))))))
                           (statement
                             (command_quit
-                              command_name: (keyword_quit)))))
+                              builtin_keyword: (keyword_quit)))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (expression
@@ -2208,10 +2256,10 @@ ClassMethod GetData()
                                           (string_literal)))))))))
                           (statement
                             (command_continue
-                              command_name: (keyword_continue)))))
+                              builtin_keyword: (keyword_continue)))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (gvn
@@ -2227,11 +2275,11 @@ ClassMethod GetData()
                                   (string_literal)))))
                           (statement
                             (command_quit
-                              command_name: (keyword_quit)))))
+                              builtin_keyword: (keyword_quit)))))
                       (line_comment_2)
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (lvn
@@ -2253,7 +2301,7 @@ ClassMethod GetData()
                                     (numeric_literal))))))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (lvn
@@ -2282,7 +2330,7 @@ ClassMethod GetData()
                                                   (objectscript_identifier)))))))))))))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (expression
@@ -2326,10 +2374,10 @@ ClassMethod GetData()
                                     (numeric_literal))))))
                           (statement
                             (command_quit
-                              command_name: (keyword_quit)))))
+                              builtin_keyword: (keyword_quit)))))
                       (statement
                         (command_if
-                          command_name: (keyword_if)
+                          builtin_keyword: (keyword_if)
                           (expression
                             (expr_atom
                               (string_literal))
@@ -2345,13 +2393,14 @@ ClassMethod GetData()
                                       (expression
                                         (expr_atom
                                           (system_defined_function
-                                            (expression
-                                              (expr_atom
-                                                (macro
-                                                  (macro_constant))))
-                                            (expression
-                                              (expr_atom
-                                                (string_literal)))))))
+                                            (dollar_function
+                                              (expression
+                                                (expr_atom
+                                                  (macro
+                                                    (macro_constant))))
+                                              (expression
+                                                (expr_atom
+                                                  (string_literal))))))))
                                     (expr_tail
                                       operator: (binary_operator)
                                       (expression
@@ -2369,7 +2418,7 @@ ClassMethod GetData()
                                     (numeric_literal))))))
                           (statement
                             (command_quit
-                              command_name: (keyword_quit)))))))
+                              builtin_keyword: (keyword_quit)))))))
                   (statement
                     (command_set
                       command_name: (keyword_set)

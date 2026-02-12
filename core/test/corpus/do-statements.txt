@@ -50,13 +50,15 @@ Do Statement No Param Passing
     (statement
       (command_new
         command_name: (keyword_new)
-        (namespace_token)))
+        (command_new_argument
+          (command_new_item
+            (namespace_token)))))
     (statement
       (command_set
         command_name: (keyword_set)
         (set_argument
           lhs: (system_defined_variable
-            (namespace_token))
+            builtin_function: (namespace_token))
           rhs: (expression
             (expr_atom
               (string_literal))))))
@@ -121,7 +123,7 @@ Do Statement With Param Passing
               (numeric_literal))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -169,7 +171,7 @@ Do Statement With Param Passing
                       (objectscript_identifier))))))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -194,7 +196,7 @@ Do Statement With Param Passing
                 (objectscript_identifier)))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)))
+        builtin_keyword: (keyword_quit)))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -221,7 +223,7 @@ Do Statement With Param Passing
               (numeric_literal))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -264,7 +266,7 @@ Do Statement With Param Passing
                       (objectscript_identifier))))))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -289,7 +291,7 @@ Do Statement With Param Passing
                 (objectscript_identifier)))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)))
+        builtin_keyword: (keyword_quit)))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -347,7 +349,7 @@ Do Statement With Param Passing
                     (objectscript_identifier)))))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)))
+        builtin_keyword: (keyword_quit)))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -374,7 +376,7 @@ Do Statement With Param Passing
               (numeric_literal))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -504,7 +506,7 @@ Do Statement with Indirection
               (objectscript_identifier))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)
+        builtin_keyword: (keyword_quit)
         (post_conditional
           (expression
             (expr_atom
@@ -788,10 +790,11 @@ Do Statement with Argument Postconditionals
                     (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))))))))))
+                          (dollar_function
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier)))))))))))))
           (post_conditional
             (expression
               (expr_atom
@@ -814,10 +817,11 @@ Do Statement with Argument Postconditionals
                     (expression
                       (expr_atom
                         (system_defined_function
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier))))))))))))
+                          (dollar_function
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier)))))))))))))
           (post_conditional
             (expression
               (expr_atom
@@ -853,7 +857,7 @@ Do While Statement and Continue
                       (numeric_literal))))))))
         (statement
           (command_if
-            command_name: (keyword_if)
+            builtin_keyword: (keyword_if)
             (expression
               (expr_atom
                 (lvn
@@ -870,10 +874,10 @@ Do While Statement and Continue
                     (numeric_literal)))))
             (statement
               (command_continue
-                command_name: (keyword_continue)))))
+                builtin_keyword: (keyword_continue)))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (write_device_control
                 (write_device_fflf)))
@@ -939,7 +943,7 @@ Do While Statement and Quit
         command_name: (keyword_do)
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -952,14 +956,14 @@ Do While Statement and Quit
             command_name: (keyword_do)
             (statement
               (command_write
-                (keyword_write)
+                command_name: (keyword_write)
                 (write_argument
                   (expression
                     (expr_atom
                       (string_literal))))))
             (statement
               (command_write
-                (keyword_write)
+                command_name: (keyword_write)
                 (write_argument
                   (expression
                     (expr_atom
@@ -974,7 +978,7 @@ Do While Statement and Quit
                     (write_device_fflf)))))
             (statement
               (command_quit
-                command_name: (keyword_quit)
+                builtin_keyword: (keyword_quit)
                 (post_conditional
                   (expression
                     (expr_atom
@@ -1013,7 +1017,7 @@ Do While Statement and Quit
                     (numeric_literal)))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -1054,7 +1058,7 @@ Do While Statement and Quit
                 (numeric_literal)))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (expression
             (expr_atom
@@ -1078,7 +1082,7 @@ Do While Statement and Goto
         command_name: (keyword_do)
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (write_device_control
                 (write_device_fflf)))
@@ -1094,7 +1098,7 @@ Do While Statement and Goto
                 label: (label_ref)))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (write_device_control
                 (write_device_fflf)))
@@ -1113,7 +1117,7 @@ Do While Statement and Goto
                 (numeric_literal)))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -1174,11 +1178,11 @@ Do Statement Dot Syntax
   (statements
     (statement
       (command_do
-        (keyword_do)
+        command_name: (keyword_do)
         (dotted_statement
           (statement
             (command_write
-              (keyword_write)
+              command_name: (keyword_write)
               (write_argument
                 (expression
                   (expr_atom
@@ -1189,11 +1193,11 @@ Do Statement Dot Syntax
         (dotted_statement
           (statement
             (command_do
-              (keyword_do)
+              command_name: (keyword_do)
               (dotted_statement
                 (statement
                   (command_write
-                    (keyword_write)
+                    command_name: (keyword_write)
                     (write_argument
                       (expression
                         (expr_atom
@@ -1204,11 +1208,11 @@ Do Statement Dot Syntax
               (dotted_statement
                 (statement
                   (command_quit
-                    command_name: (keyword_quit))))
+                    builtin_keyword: (keyword_quit))))
               (dotted_statement
                 (statement
                   (command_write
-                    (keyword_write)
+                    command_name: (keyword_write)
                     (write_argument
                       (expression
                         (expr_atom
@@ -1219,7 +1223,7 @@ Do Statement Dot Syntax
               (dotted_statement
                 (statement
                   (command_write
-                    (keyword_write)
+                    command_name: (keyword_write)
                     (write_argument
                       (expression
                         (expr_atom
@@ -1230,11 +1234,11 @@ Do Statement Dot Syntax
               (dotted_statement
                 (statement
                   (command_quit
-                    command_name: (keyword_quit))))
+                    builtin_keyword: (keyword_quit))))
               (dotted_statement
                 (statement
                   (command_write
-                    (keyword_write)
+                    command_name: (keyword_write)
                     (write_argument
                       (expression
                         (expr_atom
@@ -1244,7 +1248,7 @@ Do Statement Dot Syntax
                         (write_device_fflf)))))))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (expression
             (expr_atom
@@ -1261,7 +1265,7 @@ Do Statement Dot Syntax
               (objectscript_identifier))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)
+        builtin_keyword: (keyword_quit)
         (post_conditional
           (expression
             (expr_atom
@@ -1284,7 +1288,7 @@ Do Statement Dot Syntax
               (objectscript_identifier))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)
+        builtin_keyword: (keyword_quit)
         (post_conditional
           (expression
             (expr_atom
@@ -1297,7 +1301,7 @@ Do Statement Dot Syntax
                   (string_literal))))))))
     (statement
       (command_if
-        command_name: (keyword_if)
+        builtin_keyword: (keyword_if)
         (expression
           (expr_atom
             (expression
@@ -1324,7 +1328,7 @@ Do Statement Dot Syntax
                         (string_literal)))))))))
         (statement
           (command_do
-            (keyword_do)
+            command_name: (keyword_do)
             (dotted_statement
               (statement
                 (command_set
@@ -1346,7 +1350,7 @@ Do Statement Dot Syntax
     (line_comment_3)
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -1361,10 +1365,10 @@ Do Statement Dot Syntax
                 (objectscript_identifier)))))))
     (statement
       (command_else
-        command_name: (keyword_oldelse)
+        builtin_keyword: (keyword_oldelse)
         (statement
           (command_do
-            (keyword_do)
+            command_name: (keyword_do)
             (dotted_statement
               (statement
                 (command_set
@@ -1392,7 +1396,7 @@ Do Statement Dot Syntax
     (line_comment_3)
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -1407,7 +1411,7 @@ Do Statement Dot Syntax
                 (objectscript_identifier)))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)))
+        builtin_keyword: (keyword_quit)))
     (statement
       (command_goto
         command_name: (keyword_goto)
@@ -1416,7 +1420,7 @@ Do Statement Dot Syntax
             label: (label_ref)))))
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -1434,7 +1438,7 @@ Do Statement Dot Syntax
                   (objectscript_identifier))))))
         (statement
           (command_do
-            (keyword_do)
+            command_name: (keyword_do)
             (dotted_statement
               (statement
                 (command_set
@@ -1455,7 +1459,7 @@ Do Statement Dot Syntax
                               (objectscript_identifier))))))))))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -1466,10 +1470,10 @@ Do Statement Dot Syntax
                 (objectscript_identifier)))))))
     (statement
       (command_quit
-        command_name: (keyword_quit)))
+        builtin_keyword: (keyword_quit)))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -1480,28 +1484,28 @@ Do Statement Dot Syntax
     (line_comment_3)
     (statement
       (command_do
-        (keyword_do)
+        command_name: (keyword_do)
         (dotted_statement
           (line_comment_3)
           (statement
             (command_do
-              (keyword_do)
+              command_name: (keyword_do)
               (dotted_statement
                 (line_comment_3)
                 (statement
                   (command_do
-                    (keyword_do)
+                    command_name: (keyword_do)
                     (dotted_statement
                       (line_comment_3)
                       (line_comment_3)
                       (line_comment_3)
                       (statement
                         (command_quit
-                          command_name: (keyword_quit))))))))))))
+                          builtin_keyword: (keyword_quit))))))))))))
     (line_comment_3)
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -1524,7 +1528,7 @@ do while block no whitespace in between do and block
         command_name: (keyword_do)
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom

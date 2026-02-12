@@ -43,15 +43,10 @@ module.exports = define_grammar(objectscript_core, {
       [
         $.trigger_keywords,
         $.external_trigger_keywords,
-      ], // This is intended. When the parser sees kw_Abstract ',' for example,
+      ],
     ]),
 
-  // Extras needs to be defined after rules
-  // so that we can use rules given by the objectscript
-  // module in common/grammar.js
-  // Note: /\s/ in extras prevents infinite loops during error recovery on state 0.
-  // This rule increases the state machine size (~0.3MB impact).
-  // Consider removing if we can improve error recovery without it.
+  // Keep /\s/ in extras to avoid state-0 error-recovery loops.
   extras: ($, previous) =>
     previous.concat([
       /\s/,
@@ -62,7 +57,7 @@ module.exports = define_grammar(objectscript_core, {
     source_file: ($) =>
       seq(
         optional(
-          // any order is possible so we have to incldue that
+          // Include/import declarations can appear in any order.
           choice(
             seq($.include_code,$.include_generator,$.import_code),
             seq($.include_code,$.import_code,$.include_generator),
@@ -512,6 +507,7 @@ module.exports = define_grammar(objectscript_core, {
         '=',
         choice(
           $.string_literal,
+          $.keyword_pound_pound_super,
           seq(optional(field('operator', '-')), $.numeric_literal),
         ),
       ),

@@ -39,7 +39,7 @@ While Statements
   (statements
     (statement
       (command_while
-        command_name: (keyword_while)
+        builtin_keyword: (keyword_while)
         (expression
           (expr_atom
             (lvn
@@ -51,7 +51,7 @@ While Statements
                 (numeric_literal)))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (write_device_control
                 (write_device_fflf)))
@@ -90,21 +90,22 @@ While Statements
           rhs: (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (string_literal)))
-                (expression
-                  (expr_atom
-                    (string_literal)))
-                (expression
-                  (expr_atom
-                    (string_literal)))
-                (expression
-                  (expr_atom
-                    (string_literal)))
-                (expression
-                  (expr_atom
-                    (string_literal)))))))))
+                (built_in_functions_with_optional_args
+                  (function_argument
+                    (expr_atom
+                      (string_literal)))
+                  (function_argument
+                    (expr_atom
+                      (string_literal)))
+                  (function_argument
+                    (expr_atom
+                      (string_literal)))
+                  (function_argument
+                    (expr_atom
+                      (string_literal)))
+                  (function_argument
+                    (expr_atom
+                      (string_literal))))))))))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -131,7 +132,7 @@ While Statements
               (numeric_literal))))))
     (statement
       (command_while
-        command_name: (keyword_while)
+        builtin_keyword: (keyword_while)
         (expression
           (expr_atom
             (numeric_literal))
@@ -140,18 +141,19 @@ While Statements
             (expression
               (expr_atom
                 (system_defined_function
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier))))
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier))))
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))))))
+                  (dollar_function
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier))))
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier))))
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier))))))))))
         (expression
           (expr_atom
             (lvn
@@ -164,7 +166,7 @@ While Statements
                   (objectscript_identifier))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -200,7 +202,7 @@ While Statements
                       (numeric_literal))))))))))
     (statement
       (command_while
-        command_name: (keyword_while)
+        builtin_keyword: (keyword_while)
         (expression
           (expr_atom
             (lvn
@@ -212,7 +214,7 @@ While Statements
                 (numeric_literal)))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (write_device_control
                 (write_device_fflf)))
@@ -227,7 +229,7 @@ While Statements
                     (objectscript_identifier)))))))
         (statement
           (command_quit
-            command_name: (keyword_quit)
+            builtin_keyword: (keyword_quit)
             (post_conditional
               (expression
                 (expr_atom
@@ -273,7 +275,7 @@ While Statements
               (numeric_literal))))))
     (statement
       (command_while
-        command_name: (keyword_while)
+        builtin_keyword: (keyword_while)
         (expression
           (expr_atom
             (lvn
@@ -285,7 +287,7 @@ While Statements
                 (numeric_literal)))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -295,7 +297,7 @@ While Statements
                 (write_device_fflf)))))
         (statement
           (command_while
-            command_name: (keyword_while)
+            builtin_keyword: (keyword_while)
             (expression
               (expr_atom
                 (lvn
@@ -307,14 +309,14 @@ While Statements
                     (numeric_literal)))))
             (statement
               (command_write
-                (keyword_write)
+                command_name: (keyword_write)
                 (write_argument
                   (expression
                     (expr_atom
                       (string_literal))))))
             (statement
               (command_write
-                (keyword_write)
+                command_name: (keyword_write)
                 (write_argument
                   (expression
                     (expr_atom
@@ -329,7 +331,7 @@ While Statements
                     (write_device_fflf)))))
             (statement
               (command_quit
-                command_name: (keyword_quit)
+                builtin_keyword: (keyword_quit)
                 (post_conditional
                   (expression
                     (expr_atom
@@ -358,7 +360,7 @@ While Statements
                           (numeric_literal))))))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -389,7 +391,7 @@ While Statements
                       (numeric_literal))))))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (expression
             (expr_atom

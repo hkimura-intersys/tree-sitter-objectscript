@@ -139,12 +139,13 @@ JOB statements
       (command_job
         command_name: (keyword_job)
         (job_argument
-          (expression
-            (expr_atom
-              (string_literal)))
-          (expression
-            (expr_atom
-              (string_literal)))
+          (dollar_classmethod
+            (expression
+              (expr_atom
+                (string_literal)))
+            (expression
+              (expr_atom
+                (string_literal))))
           (expression
             (expr_atom
               (numeric_literal)))
@@ -241,7 +242,7 @@ JOB statements
               (system_defined_variable))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -249,15 +250,16 @@ JOB statements
           (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (ssvn
-                      (identifier_segment_immediate)
-                      (subscripts
-                        (expression
-                          (expr_atom
-                            (lvn
-                              (objectscript_identifier))))))))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (ssvn
+                        (identifier_segment_immediate)
+                        (subscripts
+                          (expression
+                            (expr_atom
+                              (lvn
+                                (objectscript_identifier)))))))))))))))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -268,15 +270,16 @@ JOB statements
           rhs: (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (ssvn
-                      (identifier_segment_immediate)
-                      (subscripts
-                        (expression
-                          (expr_atom
-                            (lvn
-                              (objectscript_identifier))))))))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (ssvn
+                        (identifier_segment_immediate)
+                        (subscripts
+                          (expression
+                            (expr_atom
+                              (lvn
+                                (objectscript_identifier)))))))))))))))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -287,17 +290,18 @@ JOB statements
           rhs: (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (ssvn
-                      (identifier_segment_immediate)
-                      (subscripts
-                        (expression
-                          (expr_atom
-                            (string_literal)))))))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (ssvn
+                        (identifier_segment_immediate)
+                        (subscripts
+                          (expression
+                            (expr_atom
+                              (string_literal))))))))))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -308,7 +312,7 @@ JOB statements
                 (objectscript_identifier)))))))
     (statement
       (command_write
-        (keyword_write)
+        command_name: (keyword_write)
         (write_argument
           (write_device_control
             (write_device_fflf)))
@@ -316,12 +320,13 @@ JOB statements
           (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (unary_expression
-                      (glvn
-                        (lvn
-                          (objectscript_identifier))))))))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (unary_expression
+                        (glvn
+                          (lvn
+                            (objectscript_identifier)))))))))))))))
 
 =========================
 JOB With Postconditionals

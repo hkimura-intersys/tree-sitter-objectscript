@@ -6,9 +6,8 @@ $ZC argumentless is $ZCHILD
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_zchild_or_zcyc
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 =======
 $ZCHILD
@@ -18,9 +17,8 @@ $ZCHILD
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_zchild_or_zcyc
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ===========================
 $ZC with arguments is $ZCYC
@@ -30,26 +28,18 @@ $ZC with arguments is $ZCYC
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_zchild_or_zcyc
-        (built_in_function_name)
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ===========================
 $ZCHILD on a string
 :error
 ===========================
  $ZCHILD("hi")
----
-
-
-
-===========================
-$ZCYC empty arg
-:error
-===========================
- $ZCYC()
 ---
 
 

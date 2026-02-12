@@ -6,18 +6,19 @@ $QUERY with indirection
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)
-        (function_argument
-          (indirection
-            (expression
-              (glvn
-                (lvn
-                  (objectscript_identifier))))
-            (subscripts
-              (expression
-                (string_literal)))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (unary_expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (string_literal))))))))))))
 
 =======================
 $QUERY with direction and target
@@ -27,29 +28,26 @@ $QUERY with direction and target
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)
-        (function_argument
-          (indirection
-            (expression
-              (glvn
-                (lvn
-                  (objectscript_identifier))))
-            (subscripts
-              (expression
-                (string_literal)))))
-        (function_argument)
-        (function_argument)))))
-
-===================================
-$QUERY with target and no direction
-:error
-===================================
-  $QUERY(@ary@(""), x)
----
-
-
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (unary_expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (string_literal)))))))
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ===================================
 $QUERY shorthand with target and no direction
@@ -59,20 +57,26 @@ $QUERY shorthand with target and no direction
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)
-        (function_argument
-          (indirection
-            (expression
-              (glvn
-                (lvn
-                  (objectscript_identifier))))
-            (subscripts
-              (expression
-                (string_literal)))))
-        (function_argument)
-        (function_argument)))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (unary_expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (string_literal)))))))
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ================
 $QUERY shorthand
@@ -82,18 +86,19 @@ $QUERY shorthand
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)
-        (function_argument
-          (indirection
-            (expression
-              (glvn
-                (lvn
-                  (objectscript_identifier))))
-            (subscripts
-              (expression
-                (string_literal)))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (unary_expression
+                (glvn
+                  (lvn
+                    (objectscript_identifier)))
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (string_literal))))))))))))
 
 ===================================
 $Q with target and no direction
@@ -112,9 +117,8 @@ $Q for quit
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 =================
 QUERY with global
@@ -124,19 +128,22 @@ QUERY with global
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (gvn
-              (subscripts
-                (expression
-                  (numeric_literal))
-                (expression
-                  (numeric_literal))
-                (expression
-                  (numeric_literal))))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (gvn
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (numeric_literal)))
+                  (expression
+                    (expr_atom
+                      (numeric_literal)))
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))))))))
 
 =================
 QUIT
@@ -146,6 +153,5 @@ QUIT
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_quit_or_query
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))

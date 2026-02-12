@@ -6,18 +6,22 @@ $SELECT with single condition
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))
-            (binary_operator)
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))
+              (expr_tail
+                (binary_operator)
+                (expression
+                  (expr_atom
+                    (numeric_literal)))))
+            (expression
+              (expr_atom
+                (string_literal)))))))))
 
 ==================================
 $SELECT with multiple conditions
@@ -27,32 +31,42 @@ $SELECT with multiple conditions
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))
-            (binary_operator)
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))
-            (binary_operator)
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))
+              (expr_tail
+                (binary_operator)
+                (expression
+                  (expr_atom
+                    (numeric_literal)))))
+            (expression
+              (expr_atom
+                (string_literal))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))
+              (expr_tail
+                (binary_operator)
+                (expression
+                  (expr_atom
+                    (numeric_literal)))))
+            (expression
+              (expr_atom
+                (string_literal))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (string_literal)))))))))
 
 ==================================
 $SELECT with variable values
@@ -62,25 +76,26 @@ $SELECT with variable values
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier))))
-          (rhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))))
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))))))))
 
 ==================================
 $SELECT shorthand with conditions
@@ -90,23 +105,25 @@ $SELECT shorthand with conditions
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier))))
-          (rhs_pair
-            (numeric_literal)))
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier))))
-          (rhs_pair
-            (numeric_literal)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))
+            (expression
+              (expr_atom
+                (numeric_literal))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))
+            (expression
+              (expr_atom
+                (numeric_literal)))))))))
 
 ==================================
 $SELECT case insensitive
@@ -116,14 +133,16 @@ $SELECT case insensitive
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (string_literal)))))))))
 
 ==================================
 $SELECT with nested functions
@@ -133,30 +152,33 @@ $SELECT with nested functions
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (system_defined_function
-              (built_in_function_device_or_data
-                (built_in_function_name)
-                (function_argument
-                  (lvn
-                    (objectscript_identifier))))))
-          (rhs_pair
-            (system_defined_function
-              (dollar_function
-                (built_in_function_name)
-                (function_argument
-                  (glvn
-                    (lvn
-                      (objectscript_identifier))))))))
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (system_defined_function
+                  (dollar_function
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier))))))))
+            (expression
+              (expr_atom
+                (system_defined_function
+                  (dollar_function
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier)))))))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (string_literal)))))))))
 
 ==================================
 $SELECT with complex conditions
@@ -166,31 +188,42 @@ $SELECT with complex conditions
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))
-            (binary_operator)
-            (numeric_literal)
-            (binary_operator)
-            (parenthetical_expression
-              (expression
-                (glvn
-                  (lvn
-                    (objectscript_identifier)))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))
+              (expr_tail
                 (binary_operator)
-                (numeric_literal))))
-          (rhs_pair
-            (string_literal)))
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))))))
+                (expression
+                  (expr_atom
+                    (numeric_literal))))
+              (expr_tail
+                (binary_operator)
+                (expression
+                  (expr_atom
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier)))
+                      (expr_tail
+                        (binary_operator)
+                        (expression
+                          (expr_atom
+                            (numeric_literal)))))))))
+            (expression
+              (expr_atom
+                (string_literal))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (string_literal)))))))))
 
 ==================================
 $STORAGE as system variable
@@ -200,9 +233,8 @@ $STORAGE as system variable
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $S without parentheses is $STORAGE
@@ -212,9 +244,8 @@ $S without parentheses is $STORAGE
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $S with parentheses is $SELECT
@@ -224,16 +255,17 @@ $S with parentheses is $SELECT
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))))))))
 
 ==================================
 $STORAGE case insensitive
@@ -243,9 +275,8 @@ $STORAGE case insensitive
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $STORAGE in expression
@@ -255,11 +286,13 @@ $STORAGE in expression
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)))
-    (binary_operator)
-    (numeric_literal)))
+    (expr_atom
+      (system_defined_variable))
+    (expr_tail
+      (binary_operator)
+      (expression
+        (expr_atom
+          (numeric_literal))))))
 
 ==================================
 $SELECT with string concatenation result
@@ -269,24 +302,32 @@ $SELECT with string concatenation result
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_storage_or_select
-        (built_in_function_name)
-        (function_argument
-          (lhs_pair
-            (glvn
-              (lvn
-                (objectscript_identifier)))
-            (binary_operator)
-            (string_literal))
-          (rhs_pair
-            (string_literal)
-            (binary_operator)
-            (glvn
-              (lvn
-                (objectscript_identifier)))))
-        (function_argument
-          (lhs_pair
-            (numeric_literal))
-          (rhs_pair
-            (string_literal)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_select
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))
+              (expr_tail
+                (binary_operator)
+                (expression
+                  (expr_atom
+                    (string_literal)))))
+            (expression
+              (expr_atom
+                (string_literal))
+              (expr_tail
+                (binary_operator)
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier)))))))
+          (dollar_arg_pair
+            (expression
+              (expr_atom
+                (numeric_literal)))
+            (expression
+              (expr_atom
+                (string_literal)))))))))

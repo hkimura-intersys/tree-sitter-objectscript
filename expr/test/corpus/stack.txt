@@ -6,9 +6,8 @@ $STACK without arguments (returns current level)
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $ST shorthand without arguments
@@ -18,9 +17,8 @@ $ST shorthand without arguments
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $STACK with level 0
@@ -30,11 +28,12 @@ $STACK with level 0
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal))))))))
 
 ==================================
 $STACK with level -1 (error level)
@@ -44,11 +43,12 @@ $STACK with level -1 (error level)
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal))))))))
 
 ==================================
 $STACK with positive level
@@ -58,11 +58,12 @@ $STACK with positive level
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal))))))))
 
 ==================================
 $STACK with larger level number
@@ -72,11 +73,12 @@ $STACK with larger level number
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal))))))))
 
 ==================================
 $STACK with PLACE keyword
@@ -86,13 +88,15 @@ $STACK with PLACE keyword
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $STACK with MCODE keyword
@@ -102,13 +106,15 @@ $STACK with MCODE keyword
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $STACK with ECODE keyword
@@ -118,13 +124,15 @@ $STACK with ECODE keyword
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $STACK with lowercase keyword
@@ -134,13 +142,15 @@ $STACK with lowercase keyword
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $STACK with glvn as second argument
@@ -150,15 +160,16 @@ $STACK with glvn as second argument
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ==================================
 $STACK with global variable as second argument
@@ -168,14 +179,15 @@ $STACK with global variable as second argument
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (glvn
-            (gvn)))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (gvn))))))))
 
 ==================================
 $ST shorthand with arguments
@@ -185,13 +197,15 @@ $ST shorthand with arguments
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $STACK case insensitive
@@ -201,11 +215,12 @@ $STACK case insensitive
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal))))))))
 
 ==================================
 $STACK in expression
@@ -215,11 +230,13 @@ $STACK in expression
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)))
-    (binary_operator)
-    (numeric_literal)))
+    (expr_atom
+      (system_defined_variable))
+    (expr_tail
+      (binary_operator)
+      (expression
+        (expr_atom
+          (numeric_literal))))))
 
 ==================================
 $STACK with subscripted glvn
@@ -229,18 +246,20 @@ $STACK with subscripted glvn
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier)
-              (subscripts
-                (expression
-                  (numeric_literal))))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (numeric_literal)))
+          (expression
+            (expr_atom
+              (lvn
+                (objectscript_identifier)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))))))))
 
 ==================================
 Nested $STACK calls
@@ -250,14 +269,17 @@ Nested $STACK calls
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_stack
-        (built_in_function_name)
-        (function_argument
-          (system_defined_function
-            (built_in_function_stack
-              (built_in_function_name)))
-          (binary_operator)
-          (numeric_literal))
-        (function_argument
-          (string_literal))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (system_defined_variable))
+            (expr_tail
+              (binary_operator)
+              (expression
+                (expr_atom
+                  (numeric_literal)))))
+          (expression
+            (expr_atom
+              (string_literal))))))))

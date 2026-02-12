@@ -21,6 +21,7 @@ Valid Ifndef Statements
           (macro_value_line))))
     (statement
       (pound_ifndef
+        (kw_pound_ifndef)
         (expression
           (expr_atom
             (lvn
@@ -69,4 +70,3 @@ Valid Ifndef Statements
         (write_argument
           (write_device_control
             (write_device_fflf)))))))
-

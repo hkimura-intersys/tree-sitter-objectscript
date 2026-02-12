@@ -6,9 +6,8 @@ $ZT Argumentless is $ZTRAP
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ====
 $ZTRAP
@@ -18,9 +17,8 @@ $ZTRAP
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ===
 $ZTRAP with arguments
@@ -39,13 +37,13 @@ $ZT with arguments is $ZTIME
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))))
+    (expr_atom
+      (system_defined_function
+        (built_in_functions_with_optional_args
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ===
 $ZT with tformat
@@ -55,17 +53,17 @@ $ZT with tformat
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))))
+    (expr_atom
+      (system_defined_function
+        (built_in_functions_with_optional_args
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ===
 $ZT with tformat and trailing ,
@@ -75,17 +73,17 @@ $ZT with tformat and trailing ,
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))))
+    (expr_atom
+      (system_defined_function
+        (built_in_functions_with_optional_args
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ===
 $ZT with precision and trailing ,
@@ -95,17 +93,17 @@ $ZT with precision and trailing ,
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))))
+    (expr_atom
+      (system_defined_function
+        (built_in_functions_with_optional_args
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ===
 $ZT with erropt and trailing ,
@@ -115,17 +113,17 @@ $ZT with erropt and trailing ,
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))))
+    (expr_atom
+      (system_defined_function
+        (built_in_functions_with_optional_args
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))))
 
 ===
 $ZT with localeopt and trailing ,
@@ -135,74 +133,89 @@ $ZT with localeopt and trailing ,
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))
-    (binary_operator)
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))))
-    (binary_operator)
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (built_in_functions_with_optional_args
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier)))))))
+    (expr_tail
+      (binary_operator)
+      (expression
+        (expr_atom
           (system_defined_function
-            (built_in_functions_piece_or_principal
+            (built_in_functions_with_optional_args
               (function_argument
-                (built_in_function_name))
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))
               (function_argument
-                (expression
-                  (string_literal)))
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))
               (function_argument
-                (expression
-                  (numeric_literal))))))
-        (function_argument
-          (numeric_literal))))
-    (binary_operator)
-    (system_defined_function
-      (built_in_function_ztime_or_ztrap
-        (built_in_function_name)
-        (function_argument
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))
+              (function_argument
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))
+              (function_argument
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier)))))))))
+    (expr_tail
+      (binary_operator)
+      (expression
+        (expr_atom
           (system_defined_function
-            (built_in_functions_piece_or_principal
+            (built_in_functions_with_optional_args
               (function_argument
-                (built_in_function_name))
+                (expr_atom
+                  (system_defined_function
+                    (dollar_piece
+                      (expression
+                        (expr_atom
+                          (system_defined_variable)))
+                      (expression
+                        (expr_atom
+                          (string_literal)))
+                      (dollar_func_pos
+                        (expression
+                          (expr_atom
+                            (numeric_literal))))))))
               (function_argument
-                (expression
-                  (string_literal)))
+                (expr_atom
+                  (numeric_literal))))))))
+    (expr_tail
+      (binary_operator)
+      (expression
+        (expr_atom
+          (system_defined_function
+            (built_in_functions_with_optional_args
               (function_argument
-                (expression
-                  (numeric_literal))))))
-        (function_argument
-          (numeric_literal))
-        (function_argument
-          (numeric_literal))))))
+                (expr_atom
+                  (system_defined_function
+                    (dollar_piece
+                      (expression
+                        (expr_atom
+                          (system_defined_variable)))
+                      (expression
+                        (expr_atom
+                          (string_literal)))
+                      (dollar_func_pos
+                        (expression
+                          (expr_atom
+                            (numeric_literal))))))))
+              (function_argument
+                (expr_atom
+                  (numeric_literal)))
+              (function_argument
+                (expr_atom
+                  (numeric_literal))))))))))

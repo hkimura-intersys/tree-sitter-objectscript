@@ -40,12 +40,13 @@ Class barricade {
                 (rhs
                   (expr_atom
                     (system_defined_function
-                      (expression
-                        (expr_atom
-                          (string_literal)))
-                      (expression
-                        (expr_atom
-                          (numeric_literal)))))))))))
+                      (built_in_functions_with_optional_args
+                        (function_argument
+                          (expr_atom
+                            (string_literal)))
+                        (function_argument
+                          (expr_atom
+                            (numeric_literal))))))))))))
       (class_statement
         (property
           (keyword_property)
@@ -62,9 +63,10 @@ Class barricade {
                 (rhs
                   (expr_atom
                     (system_defined_function
-                      (expression
-                        (expr_atom
-                          (numeric_literal)))))))))))
+                      (dollar_function
+                        (expression
+                          (expr_atom
+                            (numeric_literal))))))))))))
       (documatic_line)
       (class_statement
         (property
@@ -193,12 +195,13 @@ Class barricade {
                   (expression
                     (expr_atom
                       (system_defined_function
-                        (expression
-                          (expr_atom
-                            (system_defined_variable)))
-                        (expression
-                          (expr_atom
-                            (numeric_literal)))))))))
+                        (built_in_functions_with_optional_args
+                          (function_argument
+                            (expr_atom
+                              (system_defined_variable)))
+                          (function_argument
+                            (expr_atom
+                              (numeric_literal))))))))))
             (property_keyword
               (property_keyword_sql_computed
                 (identifier)))
@@ -749,8 +752,7 @@ Class Test {
               (property_keyword_aliases
                 (identifier)
                 (rhs)
-                (rhs
-                  (objectscript_identifier))))
+                (rhs)))
             (property_keyword
               (property_keyword_calculated
                 (identifier)))
@@ -859,12 +861,13 @@ Class Test {
                   (expression
                     (expr_atom
                       (system_defined_function
-                        (expression
-                          (expr_atom
-                            (system_defined_variable)))
-                        (expression
-                          (expr_atom
-                            (numeric_literal)))))))))
+                        (built_in_functions_with_optional_args
+                          (function_argument
+                            (expr_atom
+                              (system_defined_variable)))
+                          (function_argument
+                            (expr_atom
+                              (numeric_literal))))))))))
             (property_keyword
               (property_keyword_sql_computed
                 (identifier)))))))))

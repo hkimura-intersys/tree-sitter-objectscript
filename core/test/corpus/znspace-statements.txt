@@ -54,9 +54,10 @@ Valid Znspace commands
               (expression
                 (expr_atom
                   (system_defined_function
-                    (expression
-                      (expr_atom
-                        (gvn)))))))))
+                    (dollar_function
+                      (expression
+                        (expr_atom
+                          (gvn))))))))))
         (expression
           (expr_atom
             (string_literal)))))
@@ -99,11 +100,15 @@ Valid $ZNSPACE
         (write_argument
           (expression
             (expr_atom
-              (dollarsf
-                (dollar_system_keyword)
-                (identifier_segment_immediate)
-                (identifier_segment_immediate)
-                (method_args)))))))
+              (oref_chain_expr
+                (dollarsf)
+                (oref_property
+                  (property_name
+                    (identifier_segment_immediate)))
+                (oref_method
+                  (method_name
+                    (identifier_segment_immediate))
+                  (method_args))))))))
     (statement
       (command_set
         (keyword_set)

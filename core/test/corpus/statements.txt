@@ -30,26 +30,27 @@ TAG
           rhs: (expression
             (expr_atom
               (system_defined_function
-                case: (dollar_arg_pair
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))
-                    (expr_tail
-                      operator: (binary_operator)
-                      (expression
-                        (expr_atom
-                          (string_literal)))))
-                  (expression
-                    (expr_atom
-                      (string_literal))))
-                case: (dollar_arg_pair
-                  (expression
-                    (expr_atom
-                      (numeric_literal)))
-                  (expression
-                    (expr_atom
-                      (string_literal))))))))))
+                (dollar_select
+                  case: (dollar_arg_pair
+                    (expression
+                      (expr_atom
+                        (lvn
+                          (objectscript_identifier)))
+                      (expr_tail
+                        operator: (binary_operator)
+                        (expression
+                          (expr_atom
+                            (string_literal)))))
+                    (expression
+                      (expr_atom
+                        (string_literal))))
+                  case: (dollar_arg_pair
+                    (expression
+                      (expr_atom
+                        (numeric_literal)))
+                    (expression
+                      (expr_atom
+                        (string_literal)))))))))))
     (statement
       (tag))))
 
@@ -177,17 +178,18 @@ Trap
               (string_literal))))))
     (statement
       (command_if
-        command_name: (keyword_if)
+        builtin_keyword: (keyword_if)
         (expression
           (expr_atom
             (unary_expression
               (expression
                 (expr_atom
                   (system_defined_function
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier))))))))))
+                    (dollar_function
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier)))))))))))
         (statement
           (command_set
             command_name: (keyword_set)
@@ -243,7 +245,7 @@ Trap
                     (expr_atom
                       (string_literal))))))))
         elseif_block: (elseif_block
-          command_name: (keyword_elseif)
+          builtin_keyword: (keyword_elseif)
           (expression
             (expr_atom
               (oref_chain_expr
@@ -275,7 +277,7 @@ Trap
                         (string_literal))))))))
           (statement
             (command_for
-              command_name: (keyword_for)
+              builtin_keyword: (keyword_for)
               (for_parameter
                 (glvn
                   (lvn
@@ -406,7 +408,7 @@ Trap
                       (expr_atom
                         (string_literal)))))))))
         else_block: (else_block
-          command_name: (keyword_else)
+          builtin_keyword: (keyword_else)
           (statement
             (command_set
               command_name: (keyword_set)
@@ -423,7 +425,7 @@ Trap
                   label: (label_ref))))))))
     (statement
       (command_if
-        command_name: (keyword_if)
+        builtin_keyword: (keyword_if)
         (expression
           (expr_atom
             (lvn
@@ -456,7 +458,7 @@ Trap
                       (lvn
                         (objectscript_identifier)))))))))
         else_block: (else_block
-          command_name: (keyword_else)
+          builtin_keyword: (keyword_else)
           (statement
             (command_set
               command_name: (keyword_set)
@@ -481,28 +483,37 @@ Trap
         (expression
           (expr_atom
             (system_defined_function
-              case: (dollar_arg_pair
-                (expression
-                  (expr_atom
-                    (system_defined_variable)))
-                (expression
-                  (expr_atom
-                    (dollarsf
-                      function_name: (dollar_system_keyword)
-                      classname_piece: (identifier_segment_immediate)
-                      classname_piece: (identifier_segment_immediate)
-                      (method_args)))))
-              case: (dollar_arg_pair
-                (expression
-                  (expr_atom
-                    (numeric_literal)))
-                (expression
-                  (expr_atom
-                    (dollarsf
-                      function_name: (dollar_system_keyword)
-                      classname_piece: (identifier_segment_immediate)
-                      classname_piece: (identifier_segment_immediate)
-                      (method_args))))))))))
+              (dollar_select
+                case: (dollar_arg_pair
+                  (expression
+                    (expr_atom
+                      (system_defined_variable)))
+                  (expression
+                    (expr_atom
+                      (oref_chain_expr
+                        (dollarsf)
+                        (oref_property
+                          (property_name
+                            (identifier_segment_immediate)))
+                        (oref_method
+                          (method_name
+                            (identifier_segment_immediate))
+                          (method_args))))))
+                case: (dollar_arg_pair
+                  (expression
+                    (expr_atom
+                      (numeric_literal)))
+                  (expression
+                    (expr_atom
+                      (oref_chain_expr
+                        (dollarsf)
+                        (oref_property
+                          (property_name
+                            (identifier_segment_immediate)))
+                        (oref_method
+                          (method_name
+                            (identifier_segment_immediate))
+                          (method_args))))))))))))
     (statement
       (tag))
     (statement
@@ -524,40 +535,43 @@ Trap
           rhs: (expression
             (expr_atom
               (system_defined_function
-                target: (expression
-                  (expr_atom
-                    (system_defined_function
+                (dollar_case
+                  target: (expression
+                    (expr_atom
+                      (system_defined_function
+                        (dollar_piece
+                          (expression
+                            (expr_atom
+                              (system_defined_variable)))
+                          (expression
+                            (expr_atom
+                              (string_literal)))
+                          (dollar_func_pos
+                            (expression
+                              (expr_atom
+                                (numeric_literal)))))))
+                    (expr_tail
+                      operator: (binary_operator)
                       (expression
                         (expr_atom
-                          (system_defined_variable)))
-                      (expression
-                        (expr_atom
-                          (string_literal)))
-                      (expression
-                        (expr_atom
-                          (numeric_literal)))))
-                  (expr_tail
-                    operator: (binary_operator)
+                          (string_literal)))))
+                  case: (dollar_arg_pair
                     (expression
                       (expr_atom
-                        (string_literal)))))
-                case: (dollar_arg_pair
-                  (expression
+                        (string_literal)))
+                    (expression
+                      (expr_atom
+                        (string_literal))))
+                  case: (dollar_arg_pair
+                    (expression
+                      (expr_atom
+                        (string_literal)))
+                    (expression
+                      (expr_atom
+                        (string_literal))))
+                  default: (expression
                     (expr_atom
-                      (string_literal)))
-                  (expression
-                    (expr_atom
-                      (string_literal))))
-                case: (dollar_arg_pair
-                  (expression
-                    (expr_atom
-                      (string_literal)))
-                  (expression
-                    (expr_atom
-                      (string_literal))))
-                default: (expression
-                  (expr_atom
-                    (string_literal)))))))))
+                      (string_literal))))))))))
     (statement
       (command_set
         command_name: (keyword_set)
@@ -568,23 +582,24 @@ Trap
           rhs: (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (class_method_call
-                      (class_ref
-                        preproc_keyword: (keyword_pound_pound_class)
-                        (class_name
-                          (dotted_identifier_strict_token_immediate)))
-                      (method_name
-                        (identifier_segment_immediate))
-                      (method_args))))
-                (expression
-                  (expr_atom
-                    (lvn
-                      (objectscript_identifier))))
-                (expression
-                  (expr_atom
-                    (system_defined_variable)))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (class_method_call
+                        (class_ref
+                          preproc_keyword: (keyword_pound_pound_class)
+                          (class_name
+                            (dotted_identifier_strict_token_immediate)))
+                        (method_name
+                          (identifier_segment_immediate))
+                        (method_args))))
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier))))
+                  (expression
+                    (expr_atom
+                      (system_defined_variable))))))))))
     (statement
       (command_throw
         command_name: (keyword_throw)

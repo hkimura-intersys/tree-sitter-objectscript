@@ -31,7 +31,7 @@ ZWRITE
         command_name: (keyword_zwrite)))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (lvn
@@ -46,7 +46,7 @@ ZWRITE
               (objectscript_identifier))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (lvn
@@ -73,20 +73,20 @@ ZWRITE
               (objectscript_identifier))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (gvn)))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (lvn
               (objectscript_identifier))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (oref_chain_expr
@@ -98,46 +98,47 @@ ZWRITE
                 (method_args)))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (system_defined_function
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal))))))))
+              (dollar_function
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))
+                (expression
+                  (expr_atom
+                    (numeric_literal)))))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (gvn)))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (gvn
@@ -147,7 +148,7 @@ ZWRITE
                     (numeric_literal)))))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (gvn
@@ -157,16 +158,14 @@ ZWRITE
                     (string_literal)))))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (gvn
-              (expression
-                (expr_atom
-                  (string_literal))))))))
+              (string_literal))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (class_method_call
@@ -179,7 +178,7 @@ ZWRITE
               (method_args))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (oref_chain_expr
@@ -191,7 +190,7 @@ ZWRITE
                 (method_args)))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (lvn
@@ -208,44 +207,49 @@ ZWRITE
               (objectscript_identifier))))))
     (statement
       (command_zwrite
-        (keyword_zwrite)
+        command_name: (keyword_zwrite)
         (expression
           (expr_atom
             (system_defined_function
-              (expression
-                (expr_atom
-                  (string_literal)))
-              (expression
-                (expr_atom
-                  (string_literal)))
-              (expression
-                (expr_atom
-                  (string_literal)))
-              (expression
-                (expr_atom
-                  (string_literal))))))
+              (built_in_functions_with_optional_args
+                (function_argument
+                  (expr_atom
+                    (string_literal)))
+                (function_argument
+                  (expr_atom
+                    (string_literal)))
+                (function_argument
+                  (expr_atom
+                    (string_literal)))
+                (function_argument
+                  (expr_atom
+                    (string_literal)))))))
         (expression
           (expr_atom
             (system_defined_function
-              (expression
-                (expr_atom
-                  (lvn
-                    (objectscript_identifier))))
-              (expression
-                (expr_atom
-                  (numeric_literal)))
-              (expression
-                (expr_atom
-                  (numeric_literal))))))
+              (dollar_list
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
+                (dollar_func_pos
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))
+                (dollar_func_pos
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))))
         (expression
           (expr_atom
             (system_defined_function
-              (expression
-                (expr_atom
-                  (string_literal)))
-              (expression
-                (expr_atom
-                  (string_literal))))))))))
+              (built_in_functions_with_optional_args
+                (function_argument
+                  (expr_atom
+                    (string_literal)))
+                (function_argument
+                  (expr_atom
+                    (string_literal)))))))))))
 
 ===
 ZWrite JSON objects
@@ -290,9 +294,10 @@ ZWrite JSON objects
                 (expression
                   (expr_atom
                     (system_defined_function
-                      (expression
-                        (expr_atom
-                          (numeric_literal))))))))))))))
+                      (dollar_function
+                        (expression
+                          (expr_atom
+                            (numeric_literal)))))))))))))))
 
 ========================================
 Zwrite invalid space between expressions

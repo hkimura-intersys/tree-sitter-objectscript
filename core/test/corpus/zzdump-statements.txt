@@ -282,9 +282,7 @@ zzdump_extended_ref_global
         (expression
           (expr_atom
             (gvn
-              (expression
-                (expr_atom
-                  (string_literal)))
+              (string_literal)
               (subscripts
                 (expression
                   (expr_atom
@@ -528,6 +526,7 @@ ZZDUMP objects
                 (expression
                   (expr_atom
                     (system_defined_function
-                      (expression
-                        (expr_atom
-                          (numeric_literal))))))))))))))
+                      (dollar_function
+                        (expression
+                          (expr_atom
+                            (numeric_literal)))))))))))))))

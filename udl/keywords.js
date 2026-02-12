@@ -933,8 +933,6 @@ module.exports = {
         ),
     
     // COMMON KEYWORDS 
-    keyword_as: (_) => /As/i,
-    keyword_of: (_) => /Of/i,
     keyword_include: (_) => /Include/i,
     keyword_not: (_) => /Not /i,
     keyword_includegenerator: (_) => /IncludeGenerator/i,

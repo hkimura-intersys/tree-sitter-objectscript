@@ -25,7 +25,7 @@ try catch tests
   (statements
     (statement
       (pound_include
-        preproc_keyword: (kw_pound_include)))
+        builtin_keyword: (kw_pound_include)))
     (statement
       (command_trycatch
         command_name: (keyword_try)
@@ -79,24 +79,28 @@ try catch tests
                                 (objectscript_identifier)))))))))))))
         try_block: (statement
           (command_if
-            command_name: (keyword_if)
+            builtin_keyword: (keyword_if)
             (expression
               (expr_atom
                 (expression
                   (expr_atom
-                    (dollarsf
-                      function_name: (dollar_system_keyword)
-                      classname_piece: (identifier_segment_immediate)
-                      classname_piece: (identifier_segment_immediate)
-                      (method_args
-                        (method_arg
-                          (expression
-                            (expr_atom
-                              (lvn
-                                (objectscript_identifier)))))))))))
+                    (oref_chain_expr
+                      (dollarsf)
+                      (oref_property
+                        (property_name
+                          (identifier_segment_immediate)))
+                      (oref_method
+                        (method_name
+                          (identifier_segment_immediate))
+                        (method_args
+                          (method_arg
+                            (expression
+                              (expr_atom
+                                (lvn
+                                  (objectscript_identifier))))))))))))
             (statement
               (command_write
-                (keyword_write)
+                command_name: (keyword_write)
                 (write_argument
                   (expression
                     (expr_atom
@@ -114,10 +118,10 @@ try catch tests
                           (lvn
                             (objectscript_identifier)))))))))
             else_block: (else_block
-              command_name: (keyword_else)
+              builtin_keyword: (keyword_else)
               (statement
                 (command_write
-                  (keyword_write)
+                  command_name: (keyword_write)
                   (write_argument
                     (expression
                       (expr_atom
@@ -127,7 +131,7 @@ try catch tests
                       (write_device_fflf)))))
               (statement
                 (command_return
-                  command_name: (keyword_return))))))
+                  builtin_keyword: (keyword_return))))))
         catch_block: (catch_block
           command_name: (keyword_catch)
           (glvn
@@ -135,7 +139,7 @@ try catch tests
               (objectscript_identifier)))
           (statement
             (command_write
-              (keyword_write)
+              command_name: (keyword_write)
               (write_argument
                 (expression
                   (expr_atom
@@ -145,26 +149,7 @@ try catch tests
                   (write_device_fflf)))))
           (statement
             (command_write
-              (keyword_write)
-              (write_argument
-                (expression
-                  (expr_atom
-                    (string_literal))))
-              (write_argument
-                (expression
-                  (expr_atom
-                    (oref_chain_expr
-                      (lvn
-                        (objectscript_identifier))
-                      (oref_property
-                        (property_name
-                          (identifier_segment_immediate)))))))
-              (write_argument
-                (write_device_control
-                  (write_device_fflf)))))
-          (statement
-            (command_write
-              (keyword_write)
+              command_name: (keyword_write)
               (write_argument
                 (expression
                   (expr_atom
@@ -183,7 +168,26 @@ try catch tests
                   (write_device_fflf)))))
           (statement
             (command_write
-              (keyword_write)
+              command_name: (keyword_write)
+              (write_argument
+                (expression
+                  (expr_atom
+                    (string_literal))))
+              (write_argument
+                (expression
+                  (expr_atom
+                    (oref_chain_expr
+                      (lvn
+                        (objectscript_identifier))
+                      (oref_property
+                        (property_name
+                          (identifier_segment_immediate)))))))
+              (write_argument
+                (write_device_control
+                  (write_device_fflf)))))
+          (statement
+            (command_write
+              command_name: (keyword_write)
               (write_argument
                 (expression
                   (expr_atom
@@ -192,20 +196,22 @@ try catch tests
                 (expression
                   (expr_atom
                     (system_defined_function
-                      (expression
-                        (expr_atom
-                          (oref_chain_expr
-                            (lvn
-                              (objectscript_identifier))
-                            (oref_property
-                              (property_name
-                                (identifier_segment_immediate))))))
-                      (expression
-                        (expr_atom
-                          (numeric_literal)))))))
+                      (dollar_listget
+                        (expression
+                          (expr_atom
+                            (oref_chain_expr
+                              (lvn
+                                (objectscript_identifier))
+                              (oref_property
+                                (property_name
+                                  (identifier_segment_immediate))))))
+                        (dollar_func_pos
+                          (expression
+                            (expr_atom
+                              (numeric_literal)))))))))
               (write_argument
                 (write_device_control
                   (write_device_fflf)))))
           (statement
             (command_return
-              command_name: (keyword_return))))))))
+              builtin_keyword: (keyword_return))))))))

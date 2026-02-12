@@ -32,7 +32,8 @@
 
 (dollarsf
   ; $SYSTEM.Foo.Bar()
-  (dollar_system_keyword) @function.builtin
+  .
+  _ @function.builtin
 )
 
 (property_name) @property

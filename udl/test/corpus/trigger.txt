@@ -40,8 +40,10 @@ Trigger LogEvent [ Event = INSERT, Time = AFTER ]
             (statement
               (command_new
                 (keyword_new)
-                (lvn
-                  (objectscript_identifier))))
+                (command_new_argument
+                  (command_new_item
+                    (lvn
+                      (objectscript_identifier))))))
             (statement
               (command_set
                 (keyword_set)

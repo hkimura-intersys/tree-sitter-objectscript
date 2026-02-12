@@ -6,13 +6,15 @@ $PIECE with string and delimiter
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (string_literal))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $PIECE with from position
@@ -22,16 +24,19 @@ $PIECE with from position
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (string_literal))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))
-        (function_argument
+            (expr_atom
+              (string_literal)))
           (expression
-            (numeric_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal)))))))))
 
 ==================================
 $PIECE with from and to positions
@@ -41,19 +46,23 @@ $PIECE with from and to positions
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (string_literal))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))
-        (function_argument
+            (expr_atom
+              (string_literal)))
           (expression
-            (numeric_literal)))
-        (function_argument
-          (expression
-            (numeric_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal))))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal)))))))))
 
 ==================================
 $PIECE with variable references
@@ -63,27 +72,27 @@ $PIECE with variable references
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (glvn
+            (expr_atom
               (lvn
-                (objectscript_identifier)))))
-        (function_argument
+                (objectscript_identifier))))
           (expression
-            (glvn
+            (expr_atom
               (lvn
-                (objectscript_identifier)))))
-        (function_argument
-          (expression
-            (glvn
-              (lvn
-                (objectscript_identifier)))))))))
+                (objectscript_identifier))))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier)))))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))))))))
 
 ==================================
 $PIECE with star position (all from position)
@@ -93,18 +102,20 @@ $PIECE with star position (all from position)
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))
-        (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
           (expression
-            (numeric_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal)))))))))
 
 ==================================
 $PIECE with star in from and to
@@ -114,19 +125,21 @@ $PIECE with star in from and to
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))
-        (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
           (expression
-            (numeric_literal)))
-        (function_argument)))))
+            (expr_atom
+              (string_literal)))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal))))
+          (dollar_func_pos))))))
 
 ==================================
 $PIECE shorthand with delimiter
@@ -136,13 +149,15 @@ $PIECE shorthand with delimiter
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (string_literal))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (expression
+            (expr_atom
+              (string_literal))))))))
 
 ==================================
 $PIECE shorthand with all args
@@ -152,21 +167,24 @@ $PIECE shorthand with all args
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))
-        (function_argument
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
           (expression
-            (numeric_literal)))
-        (function_argument
-          (expression
-            (numeric_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal))))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal)))))))))
 
 ==================================
 $PRINCIPAL as system variable
@@ -176,8 +194,8 @@ $PRINCIPAL as system variable
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $P without parentheses is $PRINCIPAL
@@ -187,8 +205,8 @@ $P without parentheses is $PRINCIPAL
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $P with parentheses is $PIECE
@@ -198,15 +216,15 @@ $P with parentheses is $PIECE
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (glvn
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (expression
+            (expr_atom
               (lvn
                 (objectscript_identifier)))))))))
 
@@ -218,15 +236,15 @@ $PIECE case insensitive
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (lvn
-              (objectscript_identifier))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (glvn
+            (expr_atom
+              (lvn
+                (objectscript_identifier))))
+          (expression
+            (expr_atom
               (lvn
                 (objectscript_identifier)))))))))
 
@@ -238,22 +256,24 @@ $PIECE with nested function
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (system_defined_function
-            (dollar_function
-              (built_in_function_name)
-              (function_argument
-                (glvn
-                  (lvn
-                    (objectscript_identifier)))))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))
-        (function_argument
+            (expr_atom
+              (system_defined_function
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier))))))))
           (expression
-            (numeric_literal)))))))
+            (expr_atom
+              (string_literal)))
+          (dollar_func_pos
+            (expression
+              (expr_atom
+                (numeric_literal)))))))))
 
 ==================================
 $PIECE with global variable
@@ -263,14 +283,16 @@ $PIECE with global variable
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_functions_piece_or_principal
-        (function_argument
-          (glvn
-            (gvn
-              (subscripts
-                (expression
-                  (numeric_literal))))))
-        (function_argument
+    (expr_atom
+      (system_defined_function
+        (dollar_piece
           (expression
-            (string_literal)))))))
+            (expr_atom
+              (gvn
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (numeric_literal)))))))
+          (expression
+            (expr_atom
+              (string_literal))))))))

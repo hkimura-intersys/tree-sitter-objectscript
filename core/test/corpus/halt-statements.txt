@@ -12,7 +12,8 @@ Valid Halt Statements
       (command_halt_or_hang
         (keyword_halt)))
     (statement
-      (command_halt_or_hang))
+      (command_halt_or_hang
+        (keyword_halt_or_hang)))
     (statement
       (command_halt_or_hang
         (keyword_halt)
@@ -49,9 +50,13 @@ Invalid Halt (has arguments)
  halt 2
 ---
 
+
+
 ================================================
 Invalid Halt With PostConditional (has arguments)
 :error
 ================================================
  halt:x>2 2
 ---
+
+

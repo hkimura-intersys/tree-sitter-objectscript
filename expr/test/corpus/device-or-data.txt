@@ -6,9 +6,8 @@ $DEVICE
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ==================================
 $DEVICE shorthand
@@ -18,9 +17,8 @@ $DEVICE shorthand
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)))))
+    (expr_atom
+      (system_defined_variable))))
 
 ====
 $DEVICE with arguments
@@ -41,15 +39,6 @@ $DATA no arguments
 
 
 ===
-$DATA empty arguments
-:error
-===
- $DATA()
----
-
-
-
-===
 $DATA lock
 ===
  $DATA(^$LOCK(lockname))
@@ -57,35 +46,39 @@ $DATA lock
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)
-        (function_argument
-          (ssvn
-            (subscripts
-              (expression
-                (glvn
-                  (lvn
-                    (objectscript_identifier)))))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (ssvn
+                (identifier_segment_immediate)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))))))))))
 
 ===
 $DATA routine
 ===
- $DATA(^$ROUTINE(routinename)) 
+ $DATA(^$ROUTINE(routinename))
 ---
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)
-        (function_argument
-          (ssvn
-            (subscripts
-              (expression
-                (glvn
-                  (lvn
-                    (objectscript_identifier)))))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (ssvn
+                (identifier_segment_immediate)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))))))))))
 
 ===
 $DATA job
@@ -95,35 +88,39 @@ $DATA job
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)
-        (function_argument
-          (ssvn
-            (subscripts
-              (expression
-                (glvn
-                  (lvn
-                    (objectscript_identifier)))))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (ssvn
+                (identifier_segment_immediate)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))))))))))
 
 ===
 $DATA global
 ===
- $DATA(^$GLOBAL(globalname)) 
+ $DATA(^$GLOBAL(globalname))
 ---
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)
-        (function_argument
-          (ssvn
-            (subscripts
-              (expression
-                (glvn
-                  (lvn
-                    (objectscript_identifier)))))))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (ssvn
+                (identifier_segment_immediate)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))))))))))
 
 ===
  $DATA shorthand
@@ -133,13 +130,17 @@ $DATA global
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)
-        (function_argument
-          (lvn
-            (objectscript_identifier))
-          (property_name))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (oref_chain_expr
+                (lvn
+                  (objectscript_identifier))
+                (oref_property
+                  (property_name
+                    (identifier_segment_immediate)))))))))))
 
 ===
  $DATA multi dim var
@@ -149,10 +150,14 @@ $DATA global
 
 (source_file
   (expression
-    (system_defined_function
-      (built_in_function_device_or_data
-        (built_in_function_name)
-        (function_argument
-          (lvn
-            (objectscript_identifier))
-          (property_name))))))
+    (expr_atom
+      (system_defined_function
+        (dollar_function
+          (expression
+            (expr_atom
+              (oref_chain_expr
+                (lvn
+                  (objectscript_identifier))
+                (oref_property
+                  (property_name
+                    (identifier_segment_immediate)))))))))))

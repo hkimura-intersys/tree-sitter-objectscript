@@ -10,7 +10,7 @@ For Loop var = expr
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -31,7 +31,7 @@ For Loop var = expr
                     (string_literal)))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -77,13 +77,14 @@ For Loop var=start:increment:end
           rhs: (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (lvn
-                      (objectscript_identifier))))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))))))))
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -106,19 +107,21 @@ For Loop var=start:increment:end
                     (numeric_literal)))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
                   (system_defined_function
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier))))
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier))))))))))))))
+                    (dollar_extract
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier))))
+                      (dollar_func_pos
+                        (expression
+                          (expr_atom
+                            (lvn
+                              (objectscript_identifier))))))))))))))))
 
 ============================
 For Loop var=start:increment
@@ -132,7 +135,7 @@ For Loop var=start:increment
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -150,19 +153,20 @@ For Loop var=start:increment
                 (numeric_literal)))))
         (statement
           (command_quit
-            command_name: (keyword_quit)
+            builtin_keyword: (keyword_quit)
             (post_conditional
               (expression
                 (expr_atom
                   (system_defined_function
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier)
-                          (subscripts
-                            (expression
-                              (expr_atom
-                                (numeric_literal)))))))))
+                    (dollar_function
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier)
+                            (subscripts
+                              (expression
+                                (expr_atom
+                                  (numeric_literal))))))))))
                 (expr_tail
                   operator: (binary_operator)
                   (expression
@@ -170,7 +174,7 @@ For Loop var=start:increment
                       (numeric_literal))))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -198,7 +202,7 @@ For Loop with Multiple forparameters
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -237,7 +241,7 @@ For Loop with Multiple forparameters
                 (numeric_literal)))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -288,7 +292,7 @@ For Loop with New
               (numeric_literal))))))
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -308,7 +312,7 @@ For Loop with New
                   (objectscript_identifier))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (write_device_control
                 (write_device_fflf)))
@@ -324,13 +328,17 @@ For Loop with New
         (statement
           (command_new
             command_name: (keyword_new)
-            (lvn
-              (objectscript_identifier))
-            (lvn
-              (objectscript_identifier))))
+            (command_new_argument
+              (command_new_item
+                (lvn
+                  (objectscript_identifier))))
+            (command_new_argument
+              (command_new_item
+                (lvn
+                  (objectscript_identifier))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -338,11 +346,13 @@ For Loop with New
         (statement
           (command_new
             command_name: (keyword_new)
-            (lvn
-              (objectscript_identifier))))
+            (command_new_argument
+              (command_new_item
+                (lvn
+                  (objectscript_identifier))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -362,7 +372,7 @@ For Loop Argumentless
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (statement
           (command_read
             command_name: (keyword_read)
@@ -375,7 +385,7 @@ For Loop Argumentless
                   (objectscript_identifier))))))
         (statement
           (command_quit
-            command_name: (keyword_quit)
+            builtin_keyword: (keyword_quit)
             (post_conditional
               (expression
                 (expr_atom
@@ -410,7 +420,7 @@ Old Style For Loop Argumentless
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (statement
           (command_read
             command_name: (keyword_read)
@@ -423,7 +433,7 @@ Old Style For Loop Argumentless
                   (objectscript_identifier))))))
         (statement
           (command_quit
-            command_name: (keyword_quit)
+            builtin_keyword: (keyword_quit)
             (post_conditional
               (expression
                 (expr_atom
@@ -467,13 +477,14 @@ Old Style For Loop var=start:increment:end
           rhs: (expression
             (expr_atom
               (system_defined_function
-                (expression
-                  (expr_atom
-                    (lvn
-                      (objectscript_identifier))))))))))
+                (dollar_function
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))))))))
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -496,19 +507,21 @@ Old Style For Loop var=start:increment:end
                     (numeric_literal)))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
                   (system_defined_function
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier))))
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier))))))))))))))
+                    (dollar_extract
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier))))
+                      (dollar_func_pos
+                        (expression
+                          (expr_atom
+                            (lvn
+                              (objectscript_identifier))))))))))))))))
 
 ======================================
 Old Style For Loop var=start:increment
@@ -532,7 +545,7 @@ Old Style For Loop var=start:increment
               (numeric_literal))))))
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -591,7 +604,7 @@ Old Style For Loop var=expr
               (numeric_literal))))))
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
@@ -603,7 +616,7 @@ Old Style For Loop var=expr
                   (objectscript_identifier))))))
         (statement
           (command_write
-            (keyword_write)
+            command_name: (keyword_write)
             (write_argument
               (expression
                 (expr_atom
@@ -616,7 +629,7 @@ Old Style For Loop var=expr
                       (numeric_literal))))))))
         (statement
           (command_quit
-            command_name: (keyword_quit)))))))
+            builtin_keyword: (keyword_quit)))))))
 
 =========
 For Alone
@@ -628,7 +641,7 @@ For Alone
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)))))
+        builtin_keyword: (keyword_for)))))
 
 =========================================
 For Block Alone, Block Starts on new line
@@ -641,7 +654,7 @@ For Block Alone, Block Starts on new line
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)))))
+        builtin_keyword: (keyword_for)))))
 
 =================================================
 For Block Alone, 1 space and newline before block
@@ -654,7 +667,7 @@ For Block Alone, 1 space and newline before block
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)))))
+        builtin_keyword: (keyword_for)))))
 
 ======================================
 For Block Alone, no space before block
@@ -666,7 +679,7 @@ For Block Alone, no space before block
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)))))
+        builtin_keyword: (keyword_for)))))
 
 ====================================
 For with parameter, block on newline
@@ -680,7 +693,7 @@ For with parameter, block on newline
   (statements
     (statement
       (command_for
-        command_name: (keyword_for)
+        builtin_keyword: (keyword_for)
         (for_parameter
           (glvn
             (lvn
