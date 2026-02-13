@@ -20,8 +20,8 @@ module.exports = {
     /*
       METHOD KEYWORDS
     */
-    keyword_classmethod: (_) => /ClassMethod/i,
-    keyword_method: (_) => /Method/i,
+    keyword_classmethod: (_) => field('keyword',/ClassMethod/i),
+    keyword_method: (_) =>  field('keyword',/Method/i),
     expression_method_keywords: ($) =>
     seq(
       '[',
@@ -158,8 +158,8 @@ module.exports = {
       CLASS KEYWORDS
     */
 
-    keyword_class: (_) => /Class/i,
-    keyword_extends: (_) => /Extends/i,
+    keyword_class: (_) => field('keyword',/Class/i),
+    keyword_extends: (_) => field('keyword',/Extends/i),
     class_keyword_sql_row_id_name: ($) => seq(alias(/SqlRowIdName/i,$.identifier),'=',alias($.sql_id,$.rhs)),
     class_keyword_sql_table_name: ($) => seq(alias(/SqlTableName/i,$.identifier),'=',alias($.sql_id,$.rhs)),
     class_keyword_ddl_allowed: ($) => seq(optional($.keyword_not),alias(/DdlAllowed/i, $.identifier)),
@@ -446,7 +446,7 @@ module.exports = {
       $.class_keyword_view_query,
     ),
     // QUERY KEYWORDS 
-    keyword_query: (_) => /Query/i,
+    keyword_query: (_) => field('keyword',/Query/i),
     query_keyword_sql_view:($) => seq(optional($.keyword_not),alias(/SqlView/i, $.identifier)),
     query_keyword_sql_view_name: ($) => seq(alias(/SqlViewName/i,$.identifier),'=',alias($.sql_id,$.rhs)),
     query_keyword: ($) =>
@@ -547,7 +547,7 @@ module.exports = {
     keyword_list:(_)=> field('keyword', /list/i),
     keyword_array:(_)=> field('keyword', /array/i),
     // TRIGGER KEYWORDS 
-    keyword_trigger: (_) => /Trigger/i,
+    keyword_trigger: (_) => field('keyword', /Trigger/i),
     trigger_keyword: ($) =>
     choice(
       $.method_keyword_codemode,
@@ -585,7 +585,7 @@ module.exports = {
     /*
     PROPERTY KEYWORDS
     */
-       keyword_property: (_) => field('name',/Property/i),
+       keyword_property: (_) => field('keyword',/Property/i),
     property_keyword_aliases: ($) => seq(alias(/Aliases/i,$.identifier), '=', '{', repeat_with_commas(alias($.objectscript_identifier, $.rhs)), '}'),
     property_keyword_calculated: ($) => seq(optional($.keyword_not),alias(/Calculated/i,$.identifier)),
     property_keyword_client_name: ($) => seq(alias(/ClientName/i,$.identifier),'=', alias(/[^\s'`,\[\]\(\)\{\}]+/,$.rhs)),
@@ -740,13 +740,13 @@ module.exports = {
         '=', 
         alias(choice(/cascade/i,/noaction/i,/setdefault/i,/setnull/i), $.rhs)
       ),
-    keyword_foreignkey: (_) => /ForeignKey/i,
-    keyword_references: (_) => /References/i,
+    keyword_foreignkey: (_) => field('keyword',/ForeignKey/i),
+    keyword_references: (_) => field('keyword',/References/i),
 
     /*
     PARAMETER KEYWORDS
     */
-    keyword_parameter: (_) => /Parameter/i,
+    keyword_parameter: (_) => field('keyword',/Parameter/i),
     parameter_keyword_final: ($) => seq(optional($.keyword_not), alias(/Final/i, $.identifier)),
     parameter_keyword_abstract: ($) => seq(optional($.keyword_not),alias(/Abstract/i,$.identifier)),
     parameter_keyword_deprecated: ($) => seq(optional($.keyword_not),alias(/Deprecated/i,$.identifier)),
@@ -774,7 +774,7 @@ module.exports = {
     /*
     PROJECTION KEYWORDS
     */
-    keyword_projection: (_) => /Projection/i,
+    keyword_projection: (_) => field('keyword',/Projection/i),
     projection_keyword: ($) =>
     choice($.parameter_keyword_deprecated, $.parameter_keyword_internal, $.method_keyword_not_inheritable),
     projection_keywords: ($) => 
@@ -869,12 +869,12 @@ module.exports = {
         repeat(seq(',', $.index_keyword)),
         ']',
       ),
-    keyword_index: (_) => /Index/i,
+    keyword_index: (_) => field('keyword',/Index/i),
 
     /*
     XDATA KEYWORDS
     */
-    keyword_xdata: (_) => /XData/i,
+    keyword_xdata: (_) => field('keyword',/XData/i),
     xdata_keyword_schemaspec: ($) => 
       seq(
         alias(/SchemaSpec/i,$.identifier),
@@ -926,7 +926,7 @@ module.exports = {
     /*
       STORAGE KEYWORDS
     */
-    keyword_storage: (_) => /Storage/i,
+    keyword_storage: (_) => field('keyword',/Storage/i),
     storage_keywords: (_) => 
       seq(
           '[',
@@ -934,11 +934,11 @@ module.exports = {
         ),
     
     // COMMON KEYWORDS 
-    keyword_include: (_) => /Include/i,
-    keyword_not: (_) => /Not /i,
-    keyword_includegenerator: (_) => /IncludeGenerator/i,
-    keyword_byref: (_) => token(prec(1, /ByRef/i)),
-    keyword_output: (_) => token(prec(1, /Output/i)),
+    keyword_include: (_) => field('keyword',/Include/i),
+    keyword_not: (_) => field('keyword',/Not /i),
+    keyword_includegenerator: (_) => field('keyword',/IncludeGenerator/i),
+    keyword_byref: (_) => token(prec(1, field('keyword',/ByRef/i))),
+    keyword_output: (_) => token(prec(1, field('keyword',/Output/i))),
 
 
 };
