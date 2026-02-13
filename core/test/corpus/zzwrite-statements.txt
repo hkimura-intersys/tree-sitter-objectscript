@@ -222,12 +222,14 @@ zzwrite_global_variable_with_subscripts
           (expr_atom
             (gvn
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
                     (numeric_literal)))
                 (expression
                   (expr_atom
-                    (numeric_literal)))))))))))
+                    (numeric_literal)))
+                (bracket)))))))))
 
 ===
 zzwrite_global_variable_no_subscripts
@@ -260,9 +262,11 @@ zzwrite_extended_global_reference_pipe_syntax
             (gvn
               (string_literal)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal)))))))))))
+                    (numeric_literal)))
+                (bracket)))))))))
 
 ===
 zzwrite_extended_global_reference_bracket_syntax
@@ -280,9 +284,11 @@ zzwrite_extended_global_reference_bracket_syntax
             (gvn
               (string_literal)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal)))))))))))
+                    (numeric_literal)))
+                (bracket)))))))))
 
 ===
 zzwrite_process_private_global
@@ -299,12 +305,14 @@ zzwrite_process_private_global
           (expr_atom
             (gvn
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
                     (string_literal)))
                 (expression
                   (expr_atom
-                    (string_literal)))))))))))
+                    (string_literal)))
+                (bracket)))))))))
 
 ===
 zzwrite_special_variable

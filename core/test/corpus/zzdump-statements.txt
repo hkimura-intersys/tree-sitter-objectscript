@@ -174,6 +174,7 @@ zzdump_with_postconditional_simple
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (numeric_literal))
@@ -181,7 +182,8 @@ zzdump_with_postconditional_simple
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))
+                        (numeric_literal)))))
+                (rhs_paren)))))
         (expression
           (expr_atom
             (lvn
@@ -202,6 +204,7 @@ zzdump_with_postconditional_complex
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (lvn
@@ -216,6 +219,7 @@ zzdump_with_postconditional_complex
                     (expression
                       (expr_atom
                         (parenthetical_expression
+                          (lhs_paren)
                           (expression
                             (expr_atom
                               (lvn
@@ -224,7 +228,9 @@ zzdump_with_postconditional_complex
                               (binary_operator)
                               (expression
                                 (expr_atom
-                                  (numeric_literal))))))))))))))
+                                  (numeric_literal)))))
+                          (rhs_paren))))))
+                (rhs_paren)))))
         (expression
           (expr_atom
             (lvn
@@ -249,12 +255,14 @@ zzdump_global_variable
           (expr_atom
             (gvn
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
                     (numeric_literal)))
                 (expression
                   (expr_atom
-                    (numeric_literal)))))))))))
+                    (numeric_literal)))
+                (bracket)))))))))
 
 ===
 zzdump_global_variable_no_subscripts
@@ -287,9 +295,11 @@ zzdump_extended_ref_global
             (gvn
               (string_literal)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal)))))))))))
+                    (numeric_literal)))
+                (bracket)))))))))
 
 ===
 zzdump_special_variable
@@ -321,12 +331,14 @@ zzdump_process_private_global
           (expr_atom
             (gvn
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
                     (string_literal)))
                 (expression
                   (expr_atom
-                    (string_literal)))))))))))
+                    (string_literal)))
+                (bracket)))))))))
 
 ===
 zzdump_multiple_lines_in_routine
@@ -438,6 +450,7 @@ zzdump_postconditional_without_space
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (lvn
@@ -446,7 +459,8 @@ zzdump_postconditional_without_space
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))
+                        (numeric_literal)))))
+                (rhs_paren)))))
         (expression
           (expr_atom
             (string_literal)))))))
@@ -466,6 +480,7 @@ zzdump_postconditional_with_commas
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (lvn
@@ -474,7 +489,8 @@ zzdump_postconditional_with_commas
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))
+                        (numeric_literal)))))
+                (rhs_paren)))))
         (expression
           (expr_atom
             (lvn

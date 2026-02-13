@@ -3,9 +3,8 @@
 (string_literal) @string
 (json_literal) @string
 
-keyword: (_) @keyword
-bracket: (_) @punctuation.bracket
-
+(keyword_pound_pound_class) @keyword
+(keyword_pound_pound_super) @keyword
 (system_defined_variable) @variable.special
 (system_defined_function) @variable.special
 (sql_field_modifier) @variable.special
@@ -58,6 +57,8 @@ bracket: (_) @punctuation.bracket
   "#;"
   "##;"
   "$"
+  "$$"
+  "$$$"
 ] @punctuation
 
 [
@@ -86,3 +87,4 @@ bracket: (_) @punctuation.bracket
 ] @operator
 
 (json_boolean_literal) @boolean
+(bracket) @punctuation.bracket

@@ -17,7 +17,9 @@ proc1() [a, b]
       (procedure
         (tag_with_params
           (tag)
-          (parameter_list))
+          (parameter_list
+            (lhs_paren)
+            (rhs_paren)))
         (procedure_pub_vars
           (objectscript_identifier)
           (objectscript_identifier))
@@ -133,10 +135,12 @@ MyProc(x,y) PUBLIC { }
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))
+              (objectscript_identifier))
+            (rhs_paren)))
         (keyword_public)))))
 
 ========================
@@ -154,20 +158,24 @@ MyProc2(x,y) { }
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))
+              (objectscript_identifier))
+            (rhs_paren)))
         (keyword_private)))
     (statement
       (procedure
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))))))
+              (objectscript_identifier))
+            (rhs_paren)))))))
 
 ================
 Valid Procedures
@@ -184,10 +192,12 @@ MyProc(x,y)[x] {
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))
+              (objectscript_identifier))
+            (rhs_paren)))
         (procedure_pub_vars
           (objectscript_identifier))
         (statement
@@ -225,10 +235,12 @@ Label1 // Label1 that is part of Rou1 and neither procedure
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))
+              (objectscript_identifier))
+            (rhs_paren)))
         (statement
           (tag))
         (line_comment_1)))
@@ -237,12 +249,14 @@ Label1 // Label1 that is part of Rou1 and neither procedure
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))
+              (objectscript_identifier))
+            (rhs_paren)))
         (statement
           (tag))
         (line_comment_1)))
@@ -271,10 +285,12 @@ Label1 ; The DO calls this label
         (tag_with_params
           (tag)
           (parameter_list
+            (lhs_paren)
             (tag_parameter
               (objectscript_identifier))
             (tag_parameter
-              (objectscript_identifier))))
+              (objectscript_identifier))
+            (rhs_paren)))
         (statement
           (command_do
             (keyword_do)

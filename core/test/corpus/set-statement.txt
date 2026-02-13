@@ -24,12 +24,14 @@ Set Statement
         (keyword_set)
         (set_argument
           (set_target_list
+            (lhs_paren)
             (glvn
               (lvn
                 (objectscript_identifier)))
             (glvn
               (lvn
-                (objectscript_identifier))))
+                (objectscript_identifier)))
+            (rhs_paren))
           (expression
             (expr_atom
               (system_defined_function
@@ -75,21 +77,25 @@ Set Statement Oref MultiDimensional Property
                 (method_name
                   (identifier_segment_immediate))
                 (method_args
+                  (bracket)
                   (method_arg
                     (expression
                       (expr_atom
                         (lvn
-                          (objectscript_identifier))))))))
+                          (objectscript_identifier)))))
+                  (bracket))))
             (oref_chain_segment
               (oref_method
                 (method_name
                   (identifier_segment_immediate))
                 (method_args
+                  (bracket)
                   (method_arg
                     (expression
                       (expr_atom
                         (lvn
-                          (objectscript_identifier)))))))))
+                          (objectscript_identifier)))))
+                  (bracket)))))
           (expression
             (expr_atom
               (numeric_literal))))))))
@@ -157,6 +163,7 @@ Set with Indirection
                     (member_name
                       (identifier_segment_immediate)))))
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
                     (lvn
@@ -164,7 +171,8 @@ Set with Indirection
                 (expression
                   (expr_atom
                     (lvn
-                      (objectscript_identifier)))))))
+                      (objectscript_identifier))))
+                (bracket))))
           (expression
             (expr_atom
               (string_literal))))))
@@ -185,14 +193,14 @@ Set with Indirection
                         (expr_atom
                           (system_defined_function
                             (dollar_piece
-                              parameter: (expression
+                              (expression
                                 (expr_atom
                                   (lvn
                                     (objectscript_identifier))))
-                              parameter: (expression
+                              (expression
                                 (expr_atom
                                   (string_literal)))
-                              parameter: (dollar_func_pos
+                              (dollar_func_pos
                                 (expression
                                   (expr_atom
                                     (numeric_literal)))))))))
@@ -201,14 +209,14 @@ Set with Indirection
                         (expr_atom
                           (system_defined_function
                             (dollar_piece
-                              parameter: (expression
+                              (expression
                                 (expr_atom
                                   (lvn
                                     (objectscript_identifier))))
-                              parameter: (expression
+                              (expression
                                 (expr_atom
                                   (string_literal)))
-                              parameter: (dollar_func_pos
+                              (dollar_func_pos
                                 (expression
                                   (expr_atom
                                     (numeric_literal)))))))))))))))))))
@@ -230,9 +238,11 @@ Set With Indexing
             (lvn
               (objectscript_identifier)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal))))))
+                    (numeric_literal)))
+                (bracket))))
           (expression
             (expr_atom
               (string_literal))))))
@@ -244,9 +254,11 @@ Set With Indexing
             (lvn
               (objectscript_identifier)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal))))))
+                    (numeric_literal)))
+                (bracket))))
           (expression
             (expr_atom
               (string_literal))))))))
@@ -300,17 +312,19 @@ Set With Indirection2
                 (expr_atom
                   (system_defined_function
                     (dollar_function
-                      parameter: (expression
+                      (expression
                         (expr_atom
                           (unary_expression
                             (glvn
                               (lvn
                                 (objectscript_identifier)))
                             (subscripts
+                              (bracket)
                               (expression
                                 (expr_atom
                                   (lvn
-                                    (objectscript_identifier)))))))))))))))
+                                    (objectscript_identifier))))
+                              (bracket))))))))))))
         (statement
           (command_quit
             (keyword_quit)
@@ -344,10 +358,12 @@ Set With Indirection2
                           (lvn
                             (objectscript_identifier)))
                         (subscripts
+                          (bracket)
                           (expression
                             (expr_atom
                               (lvn
-                                (objectscript_identifier)))))))))))))))
+                                (objectscript_identifier))))
+                          (bracket))))))))))))
     (statement
       (command_zwrite
         (keyword_zwrite)

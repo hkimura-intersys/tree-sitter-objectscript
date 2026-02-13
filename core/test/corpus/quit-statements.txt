@@ -83,7 +83,9 @@ Valid Quit Statements
                 (oref_method
                   (method_name
                     (identifier_segment_immediate))
-                  (method_args))))))))
+                  (method_args
+                    (bracket)
+                    (bracket)))))))))
     (statement
       (command_quit
         (keyword_quit)
@@ -119,7 +121,9 @@ Valid Quit Statements
                 (oref_method
                   (method_name
                     (identifier_segment_immediate))
-                  (method_args))))))))))
+                  (method_args
+                    (bracket)
+                    (bracket)))))))))))
 
 ===
 Special Var $QUIT

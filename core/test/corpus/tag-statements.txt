@@ -22,17 +22,21 @@ label(name1,name2,name3)
     (statement
       (tag_with_params
         (tag)
-        (parameter_list)))
+        (parameter_list
+          (lhs_paren)
+          (rhs_paren))))
     (statement
       (tag_with_params
         (tag)
         (parameter_list
+          (lhs_paren)
           (tag_parameter
             (objectscript_identifier))
           (tag_parameter
             (objectscript_identifier))
           (tag_parameter
-            (objectscript_identifier)))))))
+            (objectscript_identifier))
+          (rhs_paren))))))
 
 ===
 Invalid tag (invalid start char)

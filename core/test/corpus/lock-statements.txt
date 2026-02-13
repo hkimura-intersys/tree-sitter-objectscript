@@ -20,9 +20,11 @@ LOCK STATEMENTS
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))
+                  (bracket))))))))
     (statement
       (command_lock
         (keyword_lock)
@@ -31,9 +33,11 @@ LOCK STATEMENTS
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)))))
     (statement
       (command_lock
@@ -44,13 +48,15 @@ LOCK STATEMENTS
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
                       (lvn
-                        (objectscript_identifier)))))))))))
+                        (objectscript_identifier))))
+                  (bracket))))))))
     (statement
       (command_lock
         (keyword_lock)
@@ -59,9 +65,11 @@ LOCK STATEMENTS
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)))))
     (statement
       (command_lock
@@ -71,9 +79,11 @@ LOCK STATEMENTS
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))
+                  (bracket))))))))
     (statement
       (command_lock
         (keyword_lock)
@@ -82,9 +92,11 @@ LOCK STATEMENTS
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)))))
     (statement
       (command_lock
@@ -94,12 +106,14 @@ LOCK STATEMENTS
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))))
+                      (numeric_literal)))
+                  (bracket))))))))))
 
 =======================
 LOCK STATEMENTS Timeout
@@ -123,9 +137,11 @@ LOCK STATEMENTS Timeout
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -136,9 +152,11 @@ LOCK STATEMENTS Timeout
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -148,20 +166,26 @@ LOCK STATEMENTS Timeout
         (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
+            (lhs_paren)
             (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
+            (rhs_paren)
             (timeout
               (expression
                 (expr_atom
@@ -174,12 +198,14 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -192,9 +218,11 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -204,9 +232,11 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -216,9 +246,11 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -231,9 +263,11 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -243,9 +277,11 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (timeout
               (expression
                 (expr_atom
@@ -255,32 +291,42 @@ LOCK STATEMENTS Timeout
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))
+                  (bracket))))))))
     (statement
       (command_lock
         (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
+            (lhs_paren)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
+            (rhs_paren)
             (timeout
               (expression
                 (expr_atom
@@ -310,36 +356,42 @@ LOCK STATEMENTS 3
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)))
         (command_lock_argument
           (command_lock_arguments_variant_1
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)))
         (command_lock_argument
           (command_lock_arguments_variant_1
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)))))
     (statement
       (command_lock
@@ -350,142 +402,184 @@ LOCK STATEMENTS 3
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (numeric_literal)))
                   (expression
                     (expr_atom
                       (lvn
-                        (objectscript_identifier)))))))
+                        (objectscript_identifier))))
+                  (bracket))))
             (locktype)))))
     (statement
       (command_lock
         (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
+            (lhs_paren)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
-            (locktype)))))
+                      (numeric_literal)))
+                  (bracket))))
+            (locktype)
+            (rhs_paren)))))
     (statement
       (command_lock
         (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
+            (lhs_paren)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
-            (locktype)))))
+                      (numeric_literal)))
+                  (bracket))))
+            (locktype)
+            (rhs_paren)))))
     (statement
       (command_lock
         (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
+            (lhs_paren)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
-            (locktype)))))
+                      (numeric_literal)))
+                  (bracket))))
+            (locktype)
+            (rhs_paren)))))
     (statement
       (command_lock
         (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
+            (lhs_paren)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
+                      (numeric_literal)))
+                  (bracket))))
             (locktype)
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))
-            (locktype)))))
+                      (numeric_literal)))
+                  (bracket))))
+            (locktype)
+            (rhs_paren)))))
     (statement
       (command_lock
         (keyword_lock)))
@@ -497,9 +591,11 @@ LOCK STATEMENTS 3
             (glvn
               (gvn
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
-                      (gvn))))))))))
+                      (gvn)))
+                  (bracket))))))))
     (statement
       (command_lock
         (keyword_lock)))))

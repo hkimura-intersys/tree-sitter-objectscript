@@ -22,12 +22,14 @@ NEW with arguments
       (command_new
         (keyword_new)
         (command_new_argument
+          (lhs_paren)
           (command_new_item
             (lvn
               (objectscript_identifier)))
           (command_new_item
             (lvn
-              (objectscript_identifier))))))))
+              (objectscript_identifier)))
+          (rhs_paren))))))
 
 ==========================
 NEW with special variables
@@ -85,6 +87,8 @@ New with Postconditional
               (pattern_operator
                 (pattern_expression)))))
         (command_new_argument
+          (lhs_paren)
           (command_new_item
             (lvn
-              (objectscript_identifier))))))))
+              (objectscript_identifier)))
+          (rhs_paren))))))

@@ -37,72 +37,100 @@ Valid Embedded SQL
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))))
 
 ===
 SQL Cursor
@@ -133,12 +161,16 @@ SQL Cursor
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (command_quit
         (keyword_quit)
@@ -146,6 +178,7 @@ SQL Cursor
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (lvn
@@ -154,18 +187,22 @@ SQL Cursor
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))))
+                        (numeric_literal)))))
+                (rhs_paren)))))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (command_while
         (keyword_while)
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (lvn
@@ -174,7 +211,8 @@ SQL Cursor
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))
+                      (numeric_literal)))))
+              (rhs_paren))))
         (statement
           (command_write
             (keyword_write)
@@ -199,12 +237,16 @@ SQL Cursor
           (embedded_sql
             (embedded_sql_amp
               (keyword_embedded_sql_amp)
-              (paren_fenced_text))))))
+              (lhs_paren)
+              (paren_fenced_text)
+              (rhs_paren))))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))))
 
 ===
 Declare Cursor
@@ -223,7 +265,9 @@ Declare Cursor
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
-          (paren_fenced_text))))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))))
 
 ===================
 Valid Marker SYNTAX
@@ -241,28 +285,36 @@ Valid Marker SYNTAX
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
           (embedded_sql_marker)
+          (lhs_paren)
           (paren_fenced_text)
+          (rhs_paren)
           (embedded_sql_reverse_marker))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
           (embedded_sql_marker)
+          (lhs_paren)
           (paren_fenced_text)
+          (rhs_paren)
           (embedded_sql_reverse_marker))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
           (embedded_sql_marker)
+          (lhs_paren)
           (paren_fenced_text)
+          (rhs_paren)
           (embedded_sql_reverse_marker))))
     (statement
       (embedded_sql
         (embedded_sql_amp
           (keyword_embedded_sql_amp)
           (embedded_sql_marker)
+          (lhs_paren)
           (paren_fenced_text)
+          (rhs_paren)
           (embedded_sql_reverse_marker))))))
 
 ===
@@ -300,17 +352,23 @@ Valid ## syntax
       (embedded_sql
         (embedded_sql_hash
           (keyword_embedded_sql_hash)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_hash
           (keyword_embedded_sql_hash)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (embedded_sql
         (embedded_sql_hash
           (keyword_embedded_sql_hash)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (command_quit
         (keyword_quit)
@@ -318,6 +376,7 @@ Valid ## syntax
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (lvn
@@ -326,18 +385,22 @@ Valid ## syntax
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))))
+                        (numeric_literal)))))
+                (rhs_paren)))))))
     (statement
       (embedded_sql
         (embedded_sql_hash
           (keyword_embedded_sql_hash)
-          (paren_fenced_text))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))
     (statement
       (command_while
         (keyword_while)
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (lvn
@@ -346,7 +409,8 @@ Valid ## syntax
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))
+                      (numeric_literal)))))
+              (rhs_paren))))
         (statement
           (command_write
             (keyword_write)
@@ -371,9 +435,13 @@ Valid ## syntax
           (embedded_sql
             (embedded_sql_hash
               (keyword_embedded_sql_hash)
-              (paren_fenced_text))))))
+              (lhs_paren)
+              (paren_fenced_text)
+              (rhs_paren))))))
     (statement
       (embedded_sql
         (embedded_sql_hash
           (keyword_embedded_sql_hash)
-          (paren_fenced_text))))))
+          (lhs_paren)
+          (paren_fenced_text)
+          (rhs_paren))))))

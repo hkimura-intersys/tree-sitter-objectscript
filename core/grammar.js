@@ -114,7 +114,6 @@ module.exports = grammar(objectscript_expr, {
     previous.concat([
       [$.use_parameters, $.parenthetical_expression],
       [$.open_parameters, $.parenthetical_expression],
-      [ $.label_ref, $.objectscript_identifier ],
       [$.xecute_argument, $.parenthetical_expression],
     ]),
 
@@ -369,14 +368,16 @@ module.exports = grammar(objectscript_expr, {
       /[A-Za-z0-9]+/,
     pound_define_variable_args: ($) =>
       prec(15, seq(
-        token.immediate('('),
+        alias(token.immediate('('), $.bracket),
+
         optional(
           seq(
             $.macro_arg,
             repeat(seq(',', $.macro_arg)),
           ),
         ),
-        token.immediate(')'),
+        alias(token.immediate(')'), $.bracket),
+
       )),
     pound_def1arg: ($) =>
       seq(
@@ -389,9 +390,11 @@ module.exports = grammar(objectscript_expr, {
       ),
     pound_def1arg_variable_arg: ($) =>
       prec(15, seq(
-        token.immediate('('),
+        alias(token.immediate('('), $.bracket),
+
         optional($.macro_arg),
-        token.immediate(')'),
+        alias(token.immediate(')'), $.bracket),
+
       )),
     pound_execute: ($) => $.keyword_pound_execute,
     pound_if: ($) =>
@@ -430,16 +433,17 @@ module.exports = grammar(objectscript_expr, {
       ),
     pound_else: ($) =>
       seq($.keyword_pound_else, $.statements),
+    class_name: (_) => /[%A-Za-z0-9][A-Za-z0-9]*(\.[A-Za-z0-9]+)*/,
     pound_import: ($) =>
       seq(
           $.keyword_pound_import,
-        repeat_with_commas(alias(/[%A-Za-z0-9][A-Za-z0-9]*(\.[A-Za-z0-9]+)*/, $.class_name)),
+        repeat_with_commas($.class_name),
       ),
 
     pound_include: ($) =>
       seq(
           $.keyword_pound_include,
-        alias(/[%A-Za-z0-9][A-Za-z0-9]*(\.[A-Za-z0-9]+)*/,$.objectscript_identifier)
+        $.class_name
       ),
 
     // TODO: Unimplemented preprocessor directives (lower priority):
@@ -480,7 +484,7 @@ module.exports = grammar(objectscript_expr, {
             $.indirection,
         ),
 
-    set_target_list: ($) => seq('(', repeat_with_commas($.set_target), ')'),
+    set_target_list: ($) => seq(alias('(', $.bracket), repeat_with_commas($.set_target), alias(')', $.bracket)),
     set_target: ($) =>
         seq(
             optional($._xecute_arg_invalid),
@@ -595,11 +599,9 @@ module.exports = grammar(objectscript_expr, {
 
     doable_dollar_functions: ($) =>
       choice(
-        // These are more specialized
         $.dollar_classmethod,
         $.dollar_method,
         $.dollarsf,
-        // Generic $ functions
         alias(
           seq(
           choice(
@@ -607,9 +609,9 @@ module.exports = grammar(objectscript_expr, {
             /\$ZF/i,
             /\$ZU(TIL)?/i
           ),
-          token.immediate('('),
+          alias(token.immediate('('), $.bracket),
           repeat_with_commas($.expression),
-          ')',
+          alias(')', $.bracket),
         ),
         $.system_defined_function
         )
@@ -713,7 +715,8 @@ module.exports = grammar(objectscript_expr, {
     kill_argument: ($) =>
         choice(
             $.kill_target,
-            seq('(', repeat_with_commas($.kill_target), ')'),
+            seq( alias('(', $.bracket), repeat_with_commas($.kill_target), alias(')', $.bracket)
+),
         ),
 
     kill_target: ($) =>
@@ -760,7 +763,7 @@ module.exports = grammar(objectscript_expr, {
     command_lock_arguments_variant_2: ($) =>
       seq(
         optional(/[\+\-]/),
-        '(',
+         alias('(', $.bracket),
         repeat_with_commas(
       
             seq(
@@ -771,7 +774,7 @@ module.exports = grammar(objectscript_expr, {
               optional($.locktype),
             ),
         ),
-        ')',
+         alias(')', $.bracket),
         optional($.timeout),
       ),
     // Available values are “S” (shared lock), ”E” (escalating lock), “I” (immediate unlock), and “D” (deferred unlock
@@ -879,7 +882,7 @@ module.exports = grammar(objectscript_expr, {
     close_parameters: ($) =>
       choice(
         seq(
-        '(',
+         alias('(', $.bracket),
         optional(
           seq(
             optional($.close_parameter_option_value),
@@ -891,7 +894,7 @@ module.exports = grammar(objectscript_expr, {
             )
           )
         ),
-        ')'
+         alias(')', $.bracket)
         ),
         $.close_parameter_option_value
       ),
@@ -995,7 +998,7 @@ module.exports = grammar(objectscript_expr, {
     use_parameters: ($) =>
       choice(
         seq(
-        '(',
+         alias('(', $.bracket),
         optional(
           seq(
             optional(choice($.open_keywords,$.expression,$.use_keywords)),
@@ -1007,7 +1010,7 @@ module.exports = grammar(objectscript_expr, {
             )
           )
         ),
-        ')'
+         alias(')', $.bracket)
         ),
         choice($.open_keywords,$.expression,$.use_keywords),
       ),
@@ -1017,7 +1020,7 @@ module.exports = grammar(objectscript_expr, {
     open_parameters: ($) =>
       choice(
         seq(
-        '(',
+         alias('(', $.bracket),
         optional(
           seq(
             optional(choice($.open_keywords,$.expression)),
@@ -1029,7 +1032,7 @@ module.exports = grammar(objectscript_expr, {
             )
           )
         ),
-        ')'
+         alias(')', $.bracket),
         ),
         choice($.open_keywords,$.expression),
       ),
@@ -1061,14 +1064,14 @@ module.exports = grammar(objectscript_expr, {
         ),
       ),
     command_new_argument: ($) =>
-      choice($.command_new_item, seq('(', repeat_with_commas($.command_new_item), ')')),
+      choice($.command_new_item, seq( alias('(', $.bracket), repeat_with_commas($.command_new_item),  alias(')', $.bracket))),
     command_new_item: ($) =>
       choice(
         $.lvn,
-        $.estack_token,
-        $.etrap_token,
-        $.namespace_token,
-        $.roles_token,
+        alias($.estack_token, $.system_defined_variable),
+        alias($.etrap_token, $.system_defined_variable),
+        alias($.namespace_token, $.system_defined_variable),
+       alias($.roles_token,  $.system_defined_variable),
       ),
 
     command_if: ($) =>
@@ -1172,7 +1175,7 @@ module.exports = grammar(objectscript_expr, {
     catch_block: ($) =>
       seq(
         $.keyword_catch,
-        optional(choice(seq('(', optional($._xecute_arg_invalid), $.glvn, ')'), seq(optional($._xecute_arg_invalid), $.glvn))),
+        optional(choice(seq( alias('(', $.bracket), optional($._xecute_arg_invalid), $.glvn,  alias(')', $.bracket)), seq(optional($._xecute_arg_invalid), $.glvn))),
         '{',
         repeat($.statement),
         '}',
@@ -1207,7 +1210,7 @@ module.exports = grammar(objectscript_expr, {
             optional(
               // process-params
               seq(
-                token.immediate('('),
+                 alias('(', $.bracket),
                 optional($.expression),
                 repeat(
                   seq(
@@ -1215,7 +1218,7 @@ module.exports = grammar(objectscript_expr, {
                     optional($.expression),
                   ),
                 ),
-                token.immediate(')'),
+                 alias(')', $.bracket),
               ),
             ),
             optional($.timeout),
@@ -1242,7 +1245,7 @@ module.exports = grammar(objectscript_expr, {
           ),
       ),
     break_argument: ($) =>
-      choice( $.string_literal, /[0145]/),
+      choice( $.string_literal, alias(/[0145]/, $.numeric_literal),),
     command_merge: ($) =>
       build_command_rule_argumentful(
         $,
@@ -1359,7 +1362,7 @@ module.exports = grammar(objectscript_expr, {
 
         // Parameter-passing form: XECUTE ("cmdline", params... )[:pc]
         seq(
-          '(',
+           alias('(', $.bracket),
           $.expression,
           repeat(
             seq(
@@ -1367,7 +1370,7 @@ module.exports = grammar(objectscript_expr, {
               choice($.byref_arg,$.expression),
             ),
           ),
-          ')',
+           alias(')', $.bracket),
           optional($.post_conditional),
         ),
       ),
@@ -1407,7 +1410,6 @@ module.exports = grammar(objectscript_expr, {
           $.zbreak_arguments,
         )
       ),
-    zbreak_execute_command: ($) => $.string_literal,
     zbreak_arg: ($) =>
       seq(
         $.zbreak_location,
@@ -1419,13 +1421,13 @@ module.exports = grammar(objectscript_expr, {
             token.immediate(':'),
             $.zbreak_condition,
             token.immediate(':'),
-            $.zbreak_execute_command,
+            $.string_literal,
             ),
             seq(
               token.immediate(':'),token.immediate(':'),
               $.zbreak_condition,
               token.immediate(':'),
-              $.zbreak_execute_command,
+              $.string_literal,
             ),
             seq(
               token.immediate(':'),token.immediate(':'),
@@ -1433,13 +1435,13 @@ module.exports = grammar(objectscript_expr, {
             ),
             seq(
               token.immediate(':'),token.immediate(':'), token.immediate(':'),
-              $.zbreak_execute_command,
+              $.string_literal,
             ),
             seq(
               token.immediate(':'),
               $.string_literal,
               token.immediate(':'),token.immediate(':'),
-              $.zbreak_execute_command,
+              $.string_literal,
             ),
             seq(
               token.immediate(':'),
@@ -1466,7 +1468,7 @@ module.exports = grammar(objectscript_expr, {
           // single step breakpoint
           '$'
         ),
-        optional('#delay'),
+        optional(field('keyword','#delay')),
       ),
 
 
@@ -1646,16 +1648,19 @@ module.exports = grammar(objectscript_expr, {
         seq(
             $.keyword_embedded_sql_amp,
         $.embedded_sql_marker,
-        token.immediate('('),
+        alias(token.immediate('('), $.bracket),
+
         $.paren_fenced_text,
-        token.immediate(')'),
+        alias(token.immediate(')'), $.bracket),
+
         $.embedded_sql_reverse_marker,
       ),
       seq(
           $.keyword_embedded_sql_amp,
-        token.immediate('('),
+        alias(token.immediate('('), $.bracket),
         $.paren_fenced_text,
-        token.immediate(')'),
+        alias(token.immediate(')'), $.bracket),
+
       ),
       ),
 
@@ -1663,9 +1668,10 @@ module.exports = grammar(objectscript_expr, {
     embedded_sql_hash: ($) =>
       seq(
           $.keyword_embedded_sql_hash,
-        token.immediate('('),
+          alias(token.immediate('('), $.bracket),
+
         $.paren_fenced_text,
-        ')',
+        alias(')', $.bracket),
       ),
     embedded_js: ($) =>
       choice(
@@ -1698,7 +1704,7 @@ module.exports = grammar(objectscript_expr, {
       seq(
         '[',
         optional(
-          repeat_with_commas($.objectscript_identifier),
+          repeat_with_commas(alias($.objectscript_identifier, $.attribute)),
         ),
         ']',
       ),
@@ -1724,14 +1730,15 @@ module.exports = grammar(objectscript_expr, {
 
     parameter_list: ($) =>
       seq(
-        token.immediate('('),
+        alias(token.immediate('('), $.bracket),
         optional(
           seq(
             $.tag_parameter,
             repeat(seq(',', $.tag_parameter)),
           ),
         ),
-        token.immediate(')'),
+        alias(token.immediate(')'), $.bracket),
+
       ),
 
     // A tag parameter can be just a name or a name with a default value

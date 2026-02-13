@@ -96,7 +96,9 @@ ZWRITE
                 (oref_method
                   (method_name
                     (identifier_segment_immediate))
-                  (method_args))))))))
+                  (method_args
+                    (bracket)
+                    (bracket)))))))))
     (statement
       (command_zwrite
         (keyword_zwrite)
@@ -104,31 +106,31 @@ ZWRITE
           (expr_atom
             (system_defined_function
               (dollar_function
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))
-                parameter: (expression
+                (expression
                   (expr_atom
                     (numeric_literal)))))))))
     (statement
@@ -144,9 +146,11 @@ ZWRITE
           (expr_atom
             (gvn
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal)))))))))
+                    (numeric_literal)))
+                (bracket)))))))
     (statement
       (command_zwrite
         (keyword_zwrite)
@@ -154,9 +158,11 @@ ZWRITE
           (expr_atom
             (gvn
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (string_literal)))))))))
+                    (string_literal)))
+                (bracket)))))))
     (statement
       (command_zwrite
         (keyword_zwrite)
@@ -172,11 +178,12 @@ ZWRITE
             (class_method_call
               (class_ref
                 (keyword_pound_pound_class)
-                (class_name
-                  (dotted_identifier_strict_token_immediate)))
+                (class_name))
               (method_name
                 (identifier_segment_immediate))
-              (method_args))))))
+              (method_args
+                (bracket)
+                (bracket)))))))
     (statement
       (command_zwrite
         (keyword_zwrite)
@@ -189,7 +196,9 @@ ZWRITE
                 (oref_method
                   (method_name
                     (identifier_segment_immediate))
-                  (method_args))))))))
+                  (method_args
+                    (bracket)
+                    (bracket)))))))))
     (statement
       (command_zwrite
         (keyword_zwrite)
@@ -214,16 +223,16 @@ ZWRITE
           (expr_atom
             (system_defined_function
               (built_in_functions_with_optional_args
-                parameter: (function_argument
+                (function_argument
                   (expr_atom
                     (string_literal)))
-                parameter: (function_argument
+                (function_argument
                   (expr_atom
                     (string_literal)))
-                parameter: (function_argument
+                (function_argument
                   (expr_atom
                     (string_literal)))
-                parameter: (function_argument
+                (function_argument
                   (expr_atom
                     (string_literal)))))))
         (expression
@@ -246,10 +255,10 @@ ZWRITE
           (expr_atom
             (system_defined_function
               (built_in_functions_with_optional_args
-                parameter: (function_argument
+                (function_argument
                   (expr_atom
                     (string_literal)))
-                parameter: (function_argument
+                (function_argument
                   (expr_atom
                     (string_literal)))))))))))
 

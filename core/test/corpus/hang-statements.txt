@@ -62,6 +62,7 @@ Valid hang statements
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (numeric_literal))
@@ -69,7 +70,8 @@ Valid hang statements
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))))
+              (rhs_paren))))))
     (statement
       (command_halt_or_hang
         (keyword_hang)
@@ -100,6 +102,7 @@ Valid hang statements
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (system_defined_function
@@ -134,7 +137,8 @@ Valid hang statements
                           (dollar_func_pos
                             (expression
                               (expr_atom
-                                (numeric_literal)))))))))))))))
+                                (numeric_literal))))))))))
+              (rhs_paren))))))
     (statement
       (command_halt_or_hang
         (keyword_hang)
@@ -183,6 +187,7 @@ Valid hang statements
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (numeric_literal))
@@ -190,7 +195,8 @@ Valid hang statements
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))))
+              (rhs_paren))))))
     (statement
       (command_halt_or_hang
         (keyword_hang)
@@ -278,6 +284,7 @@ Valid hang statements (h)
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (numeric_literal))
@@ -285,7 +292,8 @@ Valid hang statements (h)
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))))
+              (rhs_paren))))))
     (statement
       (command_halt_or_hang
         (keyword_halt_or_hang)
@@ -316,6 +324,7 @@ Valid hang statements (h)
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (system_defined_function
@@ -350,7 +359,8 @@ Valid hang statements (h)
                           (dollar_func_pos
                             (expression
                               (expr_atom
-                                (numeric_literal)))))))))))))))
+                                (numeric_literal))))))))))
+              (rhs_paren))))))
     (statement
       (command_halt_or_hang
         (keyword_halt_or_hang)
@@ -399,6 +409,7 @@ Valid hang statements (h)
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (numeric_literal))
@@ -406,7 +417,8 @@ Valid hang statements (h)
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (numeric_literal))))))))))
+                      (numeric_literal)))))
+              (rhs_paren))))))
     (statement
       (command_halt_or_hang
         (keyword_halt_or_hang)

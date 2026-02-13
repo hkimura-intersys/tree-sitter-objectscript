@@ -115,7 +115,7 @@ Break With PostConditionals
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (lvn
                         (objectscript_identifier)))))))))))
@@ -127,7 +127,7 @@ Break With PostConditionals
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (lvn
                         (objectscript_identifier)))))))))))))

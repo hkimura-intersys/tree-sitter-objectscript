@@ -1,5 +1,10 @@
 [
   {
+    "type": "attribute",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "binary_operator",
     "named": true,
     "fields": {}
@@ -16,8 +21,12 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "numeric_literal",
+          "named": true
+        },
         {
           "type": "string_literal",
           "named": true
@@ -63,6 +72,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "glvn",
           "named": true
@@ -152,6 +165,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "class_name",
           "named": true
         },
@@ -222,8 +239,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "close_parameter_option_value",
           "named": true
@@ -606,6 +627,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "glvn",
           "named": true
         },
@@ -675,6 +700,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "command_new_item",
           "named": true
         }
@@ -690,23 +719,11 @@
       "required": true,
       "types": [
         {
-          "type": "estack_token",
-          "named": true
-        },
-        {
-          "type": "etrap_token",
-          "named": true
-        },
-        {
           "type": "lvn",
           "named": true
         },
         {
-          "type": "namespace_token",
-          "named": true
-        },
-        {
-          "type": "roles_token",
+          "type": "system_defined_variable",
           "named": true
         }
       ]
@@ -1269,6 +1286,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "dollar_classmethod",
           "named": true
         },
@@ -1523,11 +1544,6 @@
     }
   },
   {
-    "type": "dotted_identifier_strict_token_immediate",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "dotted_statement",
     "named": true,
     "fields": {},
@@ -1670,6 +1686,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "embedded_sql_marker",
           "named": true
         },
@@ -1696,6 +1716,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "keyword_embedded_sql_hash",
           "named": true
@@ -1884,11 +1908,11 @@
           "named": true
         },
         {
-          "type": "label_ref",
+          "type": "method_args",
           "named": true
         },
         {
-          "type": "method_args",
+          "type": "objectscript_identifier",
           "named": true
         },
         {
@@ -2153,6 +2177,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "class_method_call",
           "named": true
@@ -2696,6 +2724,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "kill_target",
           "named": true
         }
@@ -2741,11 +2773,6 @@
     }
   },
   {
-    "type": "label_ref",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "line_comment_1",
     "named": true,
     "extra": true,
@@ -2786,7 +2813,7 @@
           "named": true
         },
         {
-          "type": "label_ref",
+          "type": "objectscript_identifier",
           "named": true
         },
         {
@@ -2937,8 +2964,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "method_arg",
           "named": true
@@ -3083,8 +3114,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "expression",
           "named": true
@@ -3264,8 +3299,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "tag_parameter",
           "named": true
@@ -3293,9 +3332,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "expression",
           "named": true
@@ -3374,9 +3417,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "macro_arg",
           "named": true
@@ -3417,8 +3464,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "macro_arg",
           "named": true
@@ -3640,11 +3691,11 @@
       "required": true,
       "types": [
         {
-          "type": "keyword_pound_include",
+          "type": "class_name",
           "named": true
         },
         {
-          "type": "objectscript_identifier",
+          "type": "keyword_pound_include",
           "named": true
         }
       ]
@@ -3694,7 +3745,7 @@
       "required": false,
       "types": [
         {
-          "type": "objectscript_identifier",
+          "type": "attribute",
           "named": true
         }
       ]
@@ -3904,6 +3955,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "glvn",
           "named": true
@@ -4246,6 +4301,10 @@
       "required": true,
       "types": [
         {
+          "type": "bracket",
+          "named": true
+        },
+        {
           "type": "expression",
           "named": true
         }
@@ -4506,8 +4565,12 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "expression",
           "named": true
@@ -4661,6 +4724,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "bracket",
+          "named": true
+        },
         {
           "type": "byref_arg",
           "named": true
@@ -4819,7 +4886,18 @@
   {
     "type": "zbreak_location",
     "named": true,
-    "fields": {},
+    "fields": {
+      "keyword": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "#delay",
+            "named": false
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": false,
       "required": false,
@@ -5144,7 +5222,15 @@
     "named": true
   },
   {
+    "type": "bracket",
+    "named": true
+  },
+  {
     "type": "dotted_identifier_relaxed_token",
+    "named": true
+  },
+  {
+    "type": "dotted_identifier_strict_token_immediate",
     "named": true
   },
   {

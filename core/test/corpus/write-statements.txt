@@ -28,7 +28,7 @@ WRITE WITH INPUTS
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (numeric_literal))))))))))
     (statement
@@ -188,11 +188,12 @@ WRITE OBJECT PROPERTIES
               (class_method_call
                 (class_ref
                   (keyword_pound_pound_class)
-                  (class_name
-                    (dotted_identifier_strict_token_immediate)))
+                  (class_name))
                 (method_name
                   (identifier_segment_immediate))
-                (method_args)))))))
+                (method_args
+                  (bracket)
+                  (bracket))))))))
     (statement
       (command_write
         (keyword_write)
@@ -218,11 +219,12 @@ WRITE OBJECT PROPERTIES
               (class_method_call
                 (class_ref
                   (keyword_pound_pound_class)
-                  (class_name
-                    (dotted_identifier_strict_token_immediate)))
+                  (class_name))
                 (method_name
                   (identifier_segment_immediate))
-                (method_args)))))))
+                (method_args
+                  (bracket)
+                  (bracket))))))))
     (statement
       (command_write
         (keyword_write)
@@ -237,10 +239,12 @@ WRITE OBJECT PROPERTIES
                     (method_name
                       (identifier_segment_immediate))
                     (method_args
+                      (bracket)
                       (method_arg
                         (expression
                           (expr_atom
-                            (string_literal)))))))))))))))
+                            (string_literal))))
+                      (bracket))))))))))))
 
 ===========================
 WRITE: CASCADING DOT SYNTAX
@@ -260,8 +264,7 @@ WRITE: CASCADING DOT SYNTAX
               (oref_chain_expr
                 (class_ref
                   (keyword_pound_pound_class)
-                  (class_name
-                    (dotted_identifier_strict_token_immediate))
+                  (class_name)
                   (lvn
                     (objectscript_identifier)))
                 (oref_chain_segment
@@ -285,18 +288,19 @@ WRITE: CASCADING DOT SYNTAX
               (class_method_call
                 (class_ref
                   (keyword_pound_pound_class)
-                  (class_name
-                    (dotted_identifier_strict_token_immediate))
+                  (class_name)
                   (lvn
                     (objectscript_identifier)))
                 (method_name
                   (identifier_segment_immediate))
                 (method_args
+                  (bracket)
                   (method_arg
                     (expression
                       (expr_atom
                         (lvn
-                          (objectscript_identifier))))))))))))))
+                          (objectscript_identifier)))))
+                  (bracket))))))))))
 
 ====================
 WRITE WITH $X AND $Y
@@ -505,10 +509,12 @@ Write with Indirections
                   (lvn
                     (objectscript_identifier)))
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (lvn
-                        (objectscript_identifier)))))))))))
+                        (objectscript_identifier))))
+                  (bracket))))))))
     (statement
       (command_write
         (keyword_write)
@@ -523,6 +529,7 @@ Write with Indirections
                   (lvn
                     (objectscript_identifier)))
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (lvn
@@ -530,7 +537,8 @@ Write with Indirections
                   (expression
                     (expr_atom
                       (lvn
-                        (objectscript_identifier)))))))))))
+                        (objectscript_identifier))))
+                  (bracket))))))))
     (statement
       (command_write
         (keyword_write)
@@ -545,6 +553,7 @@ Write with Indirections
                   (lvn
                     (objectscript_identifier)))
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (lvn
@@ -556,7 +565,8 @@ Write with Indirections
                   (expression
                     (expr_atom
                       (lvn
-                        (objectscript_identifier)))))))))))))
+                        (objectscript_identifier))))
+                  (bracket))))))))))
 
 ===========================
 ZWRITE WITH INDIRECTION

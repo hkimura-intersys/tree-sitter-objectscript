@@ -16,6 +16,7 @@ Throw Statements
           (expression
             (expr_atom
               (parenthetical_expression
+                (lhs_paren)
                 (expression
                   (expr_atom
                     (lvn
@@ -24,7 +25,8 @@ Throw Statements
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))
+                        (numeric_literal)))))
+                (rhs_paren)))))
         (expression
           (expr_atom
             (lvn

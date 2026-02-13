@@ -46,6 +46,7 @@ Goto Valid Statements
             (expression
               (expr_atom
                 (parenthetical_expression
+                  (lhs_paren)
                   (expression
                     (expr_atom
                       (lvn
@@ -54,12 +55,14 @@ Goto Valid Statements
                       (binary_operator)
                       (expression
                         (expr_atom
-                          (numeric_literal)))))))
+                          (numeric_literal)))))
+                  (rhs_paren)))
               (expr_tail
                 (binary_operator)
                 (expression
                   (expr_atom
                     (parenthetical_expression
+                      (lhs_paren)
                       (expression
                         (expr_atom
                           (lvn
@@ -68,7 +71,8 @@ Goto Valid Statements
                           (binary_operator)
                           (expression
                             (expr_atom
-                              (numeric_literal))))))))))))
+                              (numeric_literal)))))
+                      (rhs_paren))))))))
         (goto_argument
           (line_ref
             (label_ref))

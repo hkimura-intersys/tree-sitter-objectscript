@@ -47,6 +47,7 @@ JOB statements
               (routine_ref
                 (dotted_identifier_relaxed_token)))
             (method_args
+              (bracket)
               (method_arg
                 (expression
                   (expr_atom
@@ -65,7 +66,8 @@ JOB statements
                     (binary_operator)
                     (expression
                       (expr_atom
-                        (numeric_literal)))))))))))
+                        (numeric_literal))))))
+              (bracket))))))
     (statement
       (command_job
         (keyword_job)
@@ -74,7 +76,9 @@ JOB statements
             (line_ref
               (routine_ref
                 (dotted_identifier_relaxed_token)))
-            (method_args)))))
+            (method_args
+              (bracket)
+              (bracket))))))
     (statement
       (command_job
         (keyword_job)
@@ -82,12 +86,14 @@ JOB statements
           (routine_tag_call
             (line_ref
               (label_ref)))
+          (lhs_paren)
           (expression
             (expr_atom
               (string_literal)))
           (expression
             (expr_atom
-              (numeric_literal))))))
+              (numeric_literal)))
+          (rhs_paren))))
     (statement
       (command_job
         (keyword_job)
@@ -98,6 +104,7 @@ JOB statements
               (routine_ref
                 (dotted_identifier_relaxed_token)))
             (method_args
+              (bracket)
               (method_arg
                 (expression
                   (expr_atom
@@ -106,13 +113,16 @@ JOB statements
               (method_arg
                 (expression
                   (expr_atom
-                    (string_literal))))))
+                    (string_literal))))
+              (bracket)))
+          (lhs_paren)
           (expression
             (expr_atom
               (numeric_literal)))
           (expression
             (expr_atom
-              (string_literal))))))
+              (string_literal)))
+          (rhs_paren))))
     (statement
       (command_job
         (keyword_job)
@@ -120,17 +130,20 @@ JOB statements
           (class_method_call
             (class_ref
               (keyword_pound_pound_class)
-              (class_name
-                (dotted_identifier_strict_token_immediate)))
+              (class_name))
             (method_name
               (identifier_segment_immediate))
-            (method_args))
+            (method_args
+              (bracket)
+              (bracket)))
+          (lhs_paren)
           (expression
             (expr_atom
               (numeric_literal)))
           (expression
             (expr_atom
               (string_literal)))
+          (rhs_paren)
           (timeout
             (expression
               (expr_atom
@@ -140,18 +153,20 @@ JOB statements
         (keyword_job)
         (job_argument
           (dollar_classmethod
-            parameter: (expression
+            (class_name
               (expr_atom
                 (string_literal)))
-            parameter: (expression
+            (method_name
               (expr_atom
                 (string_literal))))
+          (lhs_paren)
           (expression
             (expr_atom
               (numeric_literal)))
           (expression
             (expr_atom
               (string_literal)))
+          (rhs_paren)
           (timeout
             (expression
               (expr_atom
@@ -164,13 +179,17 @@ JOB statements
             (oref_method
               (method_name
                 (identifier_segment_immediate))
-              (method_args)))
+              (method_args
+                (bracket)
+                (bracket))))
+          (lhs_paren)
           (expression
             (expr_atom
               (numeric_literal)))
           (expression
             (expr_atom
               (string_literal)))
+          (rhs_paren)
           (timeout
             (expression
               (expr_atom
@@ -183,7 +202,9 @@ JOB statements
             (oref_method
               (method_name
                 (identifier_segment_immediate))
-              (method_args)))
+              (method_args
+                (bracket)
+                (bracket))))
           (timeout
             (expression
               (expr_atom
@@ -195,6 +216,7 @@ JOB statements
           (routine_tag_call
             (line_ref
               (label_ref)))
+          (lhs_paren)
           (expression
             (expr_atom
               (numeric_literal)))
@@ -205,7 +227,8 @@ JOB statements
           (expression
             (expr_atom
               (lvn
-                (objectscript_identifier)))))))
+                (objectscript_identifier))))
+          (rhs_paren))))
     (statement
       (command_job
         (keyword_job)
@@ -213,9 +236,11 @@ JOB statements
           (routine_tag_call
             (line_ref
               (label_ref)))
+          (lhs_paren)
           (expression
             (expr_atom
-              (numeric_literal))))))))
+              (numeric_literal)))
+          (rhs_paren))))))
 
 =============
 ^JOB Commands
@@ -251,15 +276,17 @@ JOB statements
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (ssvn
                         (identifier_segment_immediate)
                         (subscripts
+                          (bracket)
                           (expression
                             (expr_atom
                               (lvn
-                                (objectscript_identifier)))))))))))))))
+                                (objectscript_identifier))))
+                          (bracket))))))))))))
     (statement
       (command_set
         (keyword_set)
@@ -271,15 +298,17 @@ JOB statements
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (ssvn
                         (identifier_segment_immediate)
                         (subscripts
+                          (bracket)
                           (expression
                             (expr_atom
                               (lvn
-                                (objectscript_identifier)))))))))))))))
+                                (objectscript_identifier))))
+                          (bracket))))))))))))
     (statement
       (command_set
         (keyword_set)
@@ -291,14 +320,16 @@ JOB statements
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (ssvn
                         (identifier_segment_immediate)
                         (subscripts
+                          (bracket)
                           (expression
                             (expr_atom
-                              (string_literal))))))))))))))
+                              (string_literal)))
+                          (bracket))))))))))))
     (statement
       (command_write
         (keyword_write)
@@ -321,7 +352,7 @@ JOB statements
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (unary_expression
                         (glvn

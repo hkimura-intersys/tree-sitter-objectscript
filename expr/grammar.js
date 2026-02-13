@@ -25,11 +25,11 @@ module.exports = grammar({
         [$.oref_method, $.oref_property],
         [$.method_arg, $.subscripts],
         [$.oref_chain_expr, $.expr_atom],
-        [$.label_ref, $.lvn],
         [$.class_method_call, $.oref_method],
 
     ],
-    conflicts: (_) => [
+    conflicts: ($) => [
+        [$.line_ref, $.lvn]
     ],
     inline: (_) => [
 
@@ -94,7 +94,7 @@ module.exports = grammar({
                 ),
             ),
 
-        parenthetical_expression: ($) => seq('(', $.expression, ')'),
+        parenthetical_expression: ($) => seq( alias('(', $.bracket), $.expression,  alias(')', $.bracket)),
         unary_expression: ($) =>
             choice(
                 seq($.unary_operator, $.expression),
@@ -192,9 +192,9 @@ module.exports = grammar({
         class_ref: ($) =>
             seq(
                 $.keyword_pound_pound_class,
-                token.immediate('('),
+                alias(token.immediate('('), $.bracket),
                 $.class_name,
-                token.immediate(')'),
+                alias(token.immediate(')'), $.bracket),
                 optional(
                     // Class cast syntax
                     choice(
@@ -232,7 +232,7 @@ module.exports = grammar({
                     choice(
                         // label+offset+routine or label+routine or label only
                         seq(
-                            $.label_ref,
+                            $.objectscript_identifier,
                             optional($.label_offset),
                             optional($.routine_ref),
                         ),
@@ -253,7 +253,7 @@ module.exports = grammar({
         line_ref: ($) => choice(
             // label+offset+routine or label+routine or label only
             seq(
-                $.label_ref,
+                $.objectscript_identifier,
                 optional($.label_offset),
                 optional($.routine_ref),
             ),
@@ -272,8 +272,6 @@ module.exports = grammar({
                 $.indirection,
             ),
         ),
-        label_ref: (_) =>
-            token(/[%A-Za-z][A-Za-z0-9]*/),
         label_offset: ($) =>
             seq(
                 token.immediate('+'),
@@ -308,7 +306,7 @@ module.exports = grammar({
 
         method_args: ($) =>
             seq(
-                token.immediate('('),
+                alias(token.immediate('('), $.bracket),
                 optional(
                     seq(
                         optional($.method_arg,),
@@ -320,7 +318,7 @@ module.exports = grammar({
                         ),
                     ),
                 ),
-                ')',
+                alias(')', $.bracket)
             ),
         method_arg: ($) =>
             choice(
@@ -502,10 +500,10 @@ module.exports = grammar({
             ),
         subscripts: ($) =>
             seq(
-                token.immediate('('),
+                alias(token.immediate('('), $.bracket),
                 $.expression,
                 repeat(seq(',', $.expression)),
-                ')',
+                alias(')', $.bracket),
             ),
 
         relative_dot_method: ($) =>

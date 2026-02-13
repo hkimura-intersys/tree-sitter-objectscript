@@ -141,7 +141,9 @@ Trap
                         (dotted_identifier_strict_token_immediate)))
                     (method_name
                       (identifier_segment_immediate))
-                    (method_args)))))))
+                    (method_args
+                      (bracket)
+                      (bracket))))))))
         (set_argument
           (glvn
             (lvn
@@ -168,7 +170,9 @@ Trap
                         (dotted_identifier_strict_token_immediate)))
                     (method_name
                       (identifier_segment_immediate))
-                    (method_args)))))))
+                    (method_args
+                      (bracket)
+                      (bracket))))))))
         (set_argument
           (glvn
             (lvn
@@ -187,7 +191,7 @@ Trap
                 (expr_atom
                   (system_defined_function
                     (dollar_function
-                      parameter: (expression
+                      (expression
                         (expr_atom
                           (lvn
                             (objectscript_identifier)))))))))))
@@ -257,10 +261,12 @@ Trap
                     (method_name
                       (identifier_segment_immediate))
                     (method_args
+                      (bracket)
                       (method_arg
                         (expression
                           (expr_atom
-                            (string_literal))))))))))
+                            (string_literal))))
+                      (bracket)))))))
           (statement
             (command_set
               (keyword_set)
@@ -299,7 +305,9 @@ Trap
                         (oref_chain_segment
                           (oref_method
                             (method_name)
-                            (method_args))))))))
+                            (method_args
+                              (bracket)
+                              (bracket)))))))))
               (statement
                 (command_set
                   (keyword_set)
@@ -348,6 +356,7 @@ Trap
                                 (oref_method
                                   (method_name)
                                   (method_args
+                                    (bracket)
                                     (method_arg
                                       (expression
                                         (expr_atom
@@ -357,7 +366,8 @@ Trap
                                           (binary_operator)
                                           (expression
                                             (expr_atom
-                                              (numeric_literal)))))))))))))))))
+                                              (numeric_literal))))))
+                                    (bracket))))))))))))
               (statement
                 (command_set
                   (keyword_set)
@@ -498,7 +508,9 @@ Trap
                         (dollarsf
                           (function_argument)
                           (function_argument)
-                          (method_args))))))
+                          (method_args
+                            (bracket)
+                            (bracket)))))))
                 (dollar_arg_pair
                   (expression
                     (expr_atom
@@ -509,7 +521,9 @@ Trap
                         (dollarsf
                           (function_argument)
                           (function_argument)
-                          (method_args))))))))))))
+                          (method_args
+                            (bracket)
+                            (bracket)))))))))))))
     (statement
       (tag))
     (statement
@@ -536,13 +550,13 @@ Trap
                     (expr_atom
                       (system_defined_function
                         (dollar_piece
-                          parameter: (expression
+                          (expression
                             (expr_atom
                               (system_defined_variable)))
-                          parameter: (expression
+                          (expression
                             (expr_atom
                               (string_literal)))
-                          parameter: (dollar_func_pos
+                          (dollar_func_pos
                             (expression
                               (expr_atom
                                 (numeric_literal)))))))
@@ -551,21 +565,21 @@ Trap
                       (expression
                         (expr_atom
                           (string_literal)))))
-                  parameter: (dollar_arg_pair
+                  (dollar_arg_pair
                     (expression
                       (expr_atom
                         (string_literal)))
                     (expression
                       (expr_atom
                         (string_literal))))
-                  parameter: (dollar_arg_pair
+                  (dollar_arg_pair
                     (expression
                       (expr_atom
                         (string_literal)))
                     (expression
                       (expr_atom
                         (string_literal))))
-                  parameter: (expression
+                  (expression
                     (expr_atom
                       (string_literal))))))))))
     (statement
@@ -579,17 +593,18 @@ Trap
             (expr_atom
               (system_defined_function
                 (dollar_method
-                  parameter: (expression
+                  (class_name
                     (expr_atom
                       (class_method_call
                         (class_ref
                           (keyword_pound_pound_class)
-                          (class_name
-                            (dotted_identifier_strict_token_immediate)))
+                          (class_name))
                         (method_name
                           (identifier_segment_immediate))
-                        (method_args))))
-                  parameter: (expression
+                        (method_args
+                          (bracket)
+                          (bracket)))))
+                  (class_name
                     (expr_atom
                       (lvn
                         (objectscript_identifier))))

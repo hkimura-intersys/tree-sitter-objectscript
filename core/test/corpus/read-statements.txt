@@ -152,17 +152,21 @@ READ STATEMENT WITH INDIRECTION
                 (lvn
                   (objectscript_identifier)
                   (subscripts
+                    (bracket)
                     (expression
                       (expr_atom
                         (lvn
-                          (objectscript_identifier))))))))))
+                          (objectscript_identifier))))
+                    (bracket)))))))
         (read_argument
           (read_variable
             (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
+                  (bracket)
                   (expression
                     (expr_atom
                       (lvn
-                        (objectscript_identifier)))))))))))))
+                        (objectscript_identifier))))
+                  (bracket))))))))))

@@ -91,19 +91,19 @@ While Statements
             (expr_atom
               (system_defined_function
                 (built_in_functions_with_optional_args
-                  parameter: (function_argument
+                  (function_argument
                     (expr_atom
                       (string_literal)))
-                  parameter: (function_argument
+                  (function_argument
                     (expr_atom
                       (string_literal)))
-                  parameter: (function_argument
+                  (function_argument
                     (expr_atom
                       (string_literal)))
-                  parameter: (function_argument
+                  (function_argument
                     (expr_atom
                       (string_literal)))
-                  parameter: (function_argument
+                  (function_argument
                     (expr_atom
                       (string_literal))))))))))
     (statement
@@ -142,15 +142,15 @@ While Statements
               (expr_atom
                 (system_defined_function
                   (dollar_function
-                    parameter: (expression
+                    (expression
                       (expr_atom
                         (lvn
                           (objectscript_identifier))))
-                    parameter: (expression
+                    (expression
                       (expr_atom
                         (lvn
                           (objectscript_identifier))))
-                    parameter: (expression
+                    (expression
                       (expr_atom
                         (lvn
                           (objectscript_identifier))))))))))

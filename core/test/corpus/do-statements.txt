@@ -21,7 +21,9 @@ Do Statement No Param Passing
             (oref_method
               (method_name
                 (identifier_segment_immediate))
-              (method_args))))))
+              (method_args
+                (bracket)
+                (bracket)))))))
     (statement
       (command_do
         (keyword_do)
@@ -29,7 +31,9 @@ Do Statement No Param Passing
           (routine_tag_call
             (line_ref
               (label_ref))
-            (method_args)))))
+            (method_args
+              (bracket)
+              (bracket))))))
     (statement
       (command_do
         (keyword_do)
@@ -154,6 +158,7 @@ Do Statement With Param Passing
             (line_ref
               (label_ref))
             (method_args
+              (bracket)
               (method_arg
                 (expression
                   (expr_atom
@@ -168,7 +173,8 @@ Do Statement With Param Passing
                 (expression
                   (expr_atom
                     (lvn
-                      (objectscript_identifier))))))))))
+                      (objectscript_identifier)))))
+              (bracket))))))
     (statement
       (command_write
         (keyword_write)
@@ -254,6 +260,7 @@ Do Statement With Param Passing
             (line_ref
               (label_ref))
             (method_args
+              (bracket)
               (method_arg
                 (expression
                   (expr_atom
@@ -263,7 +270,8 @@ Do Statement With Param Passing
                 (expression
                   (expr_atom
                     (lvn
-                      (objectscript_identifier))))))))))
+                      (objectscript_identifier)))))
+              (bracket))))))
     (statement
       (command_write
         (keyword_write)
@@ -307,9 +315,11 @@ Do Statement With Param Passing
             (lvn
               (objectscript_identifier)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal))))))
+                    (numeric_literal)))
+                (bracket))))
           (expression
             (expr_atom
               (numeric_literal))))
@@ -318,9 +328,11 @@ Do Statement With Param Passing
             (lvn
               (objectscript_identifier)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal))))))
+                    (numeric_literal)))
+                (bracket))))
           (expression
             (expr_atom
               (numeric_literal))))
@@ -329,9 +341,11 @@ Do Statement With Param Passing
             (lvn
               (objectscript_identifier)
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
-                    (numeric_literal))))))
+                    (numeric_literal)))
+                (bracket))))
           (expression
             (expr_atom
               (numeric_literal))))))
@@ -343,10 +357,12 @@ Do Statement With Param Passing
             (line_ref
               (label_ref))
             (method_args
+              (bracket)
               (method_arg
                 (variadic_arg
                   (lvn
-                    (objectscript_identifier)))))))))
+                    (objectscript_identifier))))
+              (bracket))))))
     (statement
       (command_quit
         (keyword_quit)))
@@ -407,6 +423,7 @@ Do Statement With Param Passing
             (line_ref
               (label_ref))
             (method_args
+              (bracket)
               (method_arg
                 (byref_arg
                   (lvn
@@ -418,7 +435,8 @@ Do Statement With Param Passing
               (method_arg
                 (byref_arg
                   (lvn
-                    (objectscript_identifier)))))))))))
+                    (objectscript_identifier))))
+              (bracket))))))))
 
 ==========================
 Do Statement Object Method
@@ -441,7 +459,9 @@ Do Statement Object Method
             (oref_method
               (method_name
                 (identifier_segment_immediate))
-              (method_args))))))
+              (method_args
+                (bracket)
+                (bracket)))))))
     (statement
       (command_do
         (keyword_do)
@@ -451,7 +471,9 @@ Do Statement Object Method
               (oref_method
                 (method_name
                   (identifier_segment_immediate))
-                (method_args)))))))
+                (method_args
+                  (bracket)
+                  (bracket))))))))
     (statement
       (command_do
         (keyword_do)
@@ -461,14 +483,18 @@ Do Statement Object Method
               (property_name
                 (identifier_segment_immediate))
               (subscripts
+                (bracket)
                 (expression
                   (expr_atom
                     (lvn
-                      (objectscript_identifier))))))
+                      (objectscript_identifier))))
+                (bracket)))
             (oref_method
               (method_name
                 (identifier_segment_immediate))
-              (method_args))))))
+              (method_args
+                (bracket)
+                (bracket)))))))
     (statement
       (command_do
         (keyword_do)
@@ -476,11 +502,12 @@ Do Statement Object Method
           (class_method_call
             (class_ref
               (keyword_pound_pound_class)
-              (class_name
-                (dotted_identifier_strict_token_immediate)))
+              (class_name))
             (method_name
               (identifier_segment_immediate))
-            (method_args)))))))
+            (method_args
+              (bracket)
+              (bracket))))))))
 
 =============================
 Do Statement with Indirection
@@ -529,6 +556,7 @@ Do Statement with Indirection
                 (expression
                   (expr_atom
                     (parenthetical_expression
+                      (lhs_paren)
                       (expression
                         (expr_atom
                           (string_literal))
@@ -537,7 +565,8 @@ Do Statement with Indirection
                           (expression
                             (expr_atom
                               (lvn
-                                (objectscript_identifier))))))))))
+                                (objectscript_identifier))))))
+                      (rhs_paren)))))
               (routine_ref
                 (dotted_identifier_relaxed_token)))))))
     (statement
@@ -550,6 +579,7 @@ Do Statement with Indirection
                 (expression
                   (expr_atom
                     (parenthetical_expression
+                      (lhs_paren)
                       (expression
                         (expr_atom
                           (lvn
@@ -558,7 +588,8 @@ Do Statement with Indirection
                           (binary_operator)
                           (expression
                             (expr_atom
-                              (string_literal))))))))))))))
+                              (string_literal)))))
+                      (rhs_paren))))))))))
     (statement
       (command_set
         (keyword_set)
@@ -699,9 +730,11 @@ Do Statement with Argument Postconditionals
             (expression
               (expr_atom
                 (parenthetical_expression
+                  (lhs_paren)
                   (expression
                     (expr_atom
                       (parenthetical_expression
+                        (lhs_paren)
                         (expression
                           (expr_atom
                             (lvn
@@ -710,12 +743,14 @@ Do Statement with Argument Postconditionals
                             (binary_operator)
                             (expression
                               (expr_atom
-                                (numeric_literal)))))))
+                                (numeric_literal)))))
+                        (rhs_paren)))
                     (expr_tail
                       (binary_operator)
                       (expression
                         (expr_atom
                           (parenthetical_expression
+                            (lhs_paren)
                             (expression
                               (expr_atom
                                 (lvn
@@ -724,7 +759,9 @@ Do Statement with Argument Postconditionals
                                 (binary_operator)
                                 (expression
                                   (expr_atom
-                                    (numeric_literal)))))))))))))))))
+                                    (numeric_literal)))))
+                            (rhs_paren))))))
+                  (rhs_paren))))))))
     (statement
       (command_do
         (keyword_do)
@@ -737,6 +774,7 @@ Do Statement with Argument Postconditionals
             (line_ref
               (label_ref))
             (method_args
+              (bracket)
               (method_arg
                 (expression
                   (expr_atom
@@ -751,7 +789,8 @@ Do Statement with Argument Postconditionals
                 (expression
                   (expr_atom
                     (lvn
-                      (objectscript_identifier)))))))
+                      (objectscript_identifier)))))
+              (bracket)))
           (post_conditional
             (expression
               (expr_atom
@@ -761,6 +800,7 @@ Do Statement with Argument Postconditionals
             (line_ref
               (label_ref))
             (method_args
+              (bracket)
               (method_arg
                 (expression
                   (expr_atom
@@ -775,7 +815,8 @@ Do Statement with Argument Postconditionals
                 (expression
                   (expr_atom
                     (lvn
-                      (objectscript_identifier)))))))
+                      (objectscript_identifier)))))
+              (bracket)))
           (post_conditional
             (expression
               (expr_atom
@@ -790,21 +831,23 @@ Do Statement with Argument Postconditionals
         (do_parameter
           (doable_dollar_functions
             (system_defined_function)
-            (system_defined_function)
+            (lhs_paren)
             (system_defined_function
               (expr_atom
                 (lvn
                   (objectscript_identifier)
                   (subscripts
+                    (bracket)
                     (expression
                       (expr_atom
                         (system_defined_function
                           (dollar_function
-                            parameter: (expression
+                            (expression
                               (expr_atom
                                 (lvn
-                                  (objectscript_identifier))))))))))))
-            (system_defined_function))
+                                  (objectscript_identifier))))))))
+                    (bracket)))))
+            (rhs_paren))
           (post_conditional
             (expression
               (expr_atom
@@ -820,21 +863,23 @@ Do Statement with Argument Postconditionals
         (do_parameter
           (doable_dollar_functions
             (system_defined_function)
-            (system_defined_function)
+            (lhs_paren)
             (system_defined_function
               (expr_atom
                 (lvn
                   (objectscript_identifier)
                   (subscripts
+                    (bracket)
                     (expression
                       (expr_atom
                         (system_defined_function
                           (dollar_function
-                            parameter: (expression
+                            (expression
                               (expr_atom
                                 (lvn
-                                  (objectscript_identifier))))))))))))
-            (system_defined_function))
+                                  (objectscript_identifier))))))))
+                    (bracket)))))
+            (rhs_paren))
           (post_conditional
             (expression
               (expr_atom
@@ -1322,6 +1367,7 @@ Do Statement Dot Syntax
         (expression
           (expr_atom
             (parenthetical_expression
+              (lhs_paren)
               (expression
                 (expr_atom
                   (lvn
@@ -1330,12 +1376,14 @@ Do Statement Dot Syntax
                   (binary_operator)
                   (expression
                     (expr_atom
-                      (string_literal)))))))
+                      (string_literal)))))
+              (rhs_paren)))
           (expr_tail
             (binary_operator)
             (expression
               (expr_atom
                 (parenthetical_expression
+                  (lhs_paren)
                   (expression
                     (expr_atom
                       (lvn
@@ -1344,7 +1392,8 @@ Do Statement Dot Syntax
                       (binary_operator)
                       (expression
                         (expr_atom
-                          (string_literal))))))))))
+                          (string_literal)))))
+                  (rhs_paren))))))
         (statement
           (command_do
             (keyword_do)
@@ -1578,4 +1627,6 @@ do ##super()
         (do_parameter
           (superclass_method_call
             (keyword_pound_pound_super)
-            (method_args)))))))
+            (method_args
+              (bracket)
+              (bracket))))))))
