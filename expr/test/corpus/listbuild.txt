@@ -624,17 +624,19 @@ $LISTBUILD(obj.Name,obj.Age)
               (oref_chain_expr
                 (lvn
                   (objectscript_identifier))
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate))))))
+                (oref_chain_segment
+                  (oref_property
+                    (property_name
+                      (identifier_segment_immediate)))))))
           (function_argument
             (expr_atom
               (oref_chain_expr
                 (lvn
                   (objectscript_identifier))
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate)))))))))))
+                (oref_chain_segment
+                  (oref_property
+                    (property_name
+                      (identifier_segment_immediate))))))))))))
 
 ==================================
 $LISTBUILD with class method call

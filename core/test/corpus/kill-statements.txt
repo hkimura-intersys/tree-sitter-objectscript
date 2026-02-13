@@ -11,7 +11,7 @@ Kill Statements
   (statements
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (glvn
@@ -33,7 +33,7 @@ Kill Statements
               (gvn))))))
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (glvn
@@ -45,7 +45,7 @@ Kill Statements
                       (numeric_literal))))))))))
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (glvn
@@ -57,7 +57,7 @@ Kill Statements
                 (objectscript_identifier)))))))
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (glvn
@@ -87,7 +87,7 @@ Kill Statements Array Node
   (statements
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (glvn
@@ -99,7 +99,7 @@ Kill Statements Array Node
                 (objectscript_identifier)))))))
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (glvn
@@ -147,30 +147,32 @@ Kill Using an Object Method
   (statements
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (kill_argument
           (kill_target
             (oref_set_target
               (lvn
                 (objectscript_identifier))
-              (oref_method
-                (method_name
-                  (identifier_segment_immediate))
-                (method_args
-                  (method_arg
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier)))))))
-              (oref_method
-                (method_name
-                  (identifier_segment_immediate))
-                (method_args
-                  (method_arg
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier))))))))))))))
+              (oref_chain_segment
+                (oref_method
+                  (method_name
+                    (identifier_segment_immediate))
+                  (method_args
+                    (method_arg
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier))))))))
+              (oref_chain_segment
+                (oref_method
+                  (method_name
+                    (identifier_segment_immediate))
+                  (method_args
+                    (method_arg
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier)))))))))))))))
 
 ==========================
 Kill With PostConditionals
@@ -182,15 +184,15 @@ Kill With PostConditionals
   (statements
     (statement
       (command_kill
-        command_name: (keyword_kill)
+        (keyword_kill)
         (post_conditional
           (expression
             (expr_atom
               (lvn
                 (objectscript_identifier)))
             (expr_tail
-              (_pattern_operator
-                right: (pattern_expression)))))
+              (pattern_operator
+                (pattern_expression)))))
         (kill_argument
           (kill_target
             (glvn
@@ -207,7 +209,7 @@ Zkill
   (statements
     (statement
       (command_zkill
-        command_name: (keyword_zkill)
+        (keyword_zkill)
         (glvn
           (lvn
             (objectscript_identifier)
@@ -217,15 +219,15 @@ Zkill
                   (numeric_literal))))))))
     (statement
       (command_zkill
-        command_name: (keyword_zkill)
+        (keyword_zkill)
         (post_conditional
           (expression
             (expr_atom
               (lvn
                 (objectscript_identifier)))
             (expr_tail
-              (_pattern_operator
-                right: (pattern_expression)))))
+              (pattern_operator
+                (pattern_expression)))))
         (glvn
           (lvn
             (objectscript_identifier)

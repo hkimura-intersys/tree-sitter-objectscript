@@ -51,13 +51,14 @@ Valid Znspace commands
         (post_conditional
           (expression
             (expr_atom
-              (expression
-                (expr_atom
-                  (system_defined_function
-                    (dollar_function
-                      (expression
-                        (expr_atom
-                          (gvn))))))))))
+              (parenthetical_expression
+                (expression
+                  (expr_atom
+                    (system_defined_function
+                      (dollar_function
+                        (expression
+                          (expr_atom
+                            (gvn)))))))))))
         (expression
           (expr_atom
             (string_literal)))))
@@ -100,14 +101,10 @@ Valid $ZNSPACE
         (write_argument
           (expression
             (expr_atom
-              (oref_chain_expr
-                (dollarsf)
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate)))
-                (oref_method
-                  (method_name
-                    (identifier_segment_immediate))
+              (system_defined_function
+                (dollarsf
+                  (function_argument)
+                  (function_argument)
                   (method_args))))))))
     (statement
       (command_set

@@ -145,15 +145,16 @@ SQL Cursor
         (post_conditional
           (expression
             (expr_atom
-              (expression
-                (expr_atom
-                  (lvn
-                    (objectscript_identifier)))
-                (expr_tail
-                  (binary_operator)
-                  (expression
-                    (expr_atom
-                      (numeric_literal))))))))))
+              (parenthetical_expression
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier)))
+                  (expr_tail
+                    (binary_operator)
+                    (expression
+                      (expr_atom
+                        (numeric_literal)))))))))))
     (statement
       (embedded_sql
         (embedded_sql_amp
@@ -164,15 +165,16 @@ SQL Cursor
         (keyword_while)
         (expression
           (expr_atom
-            (expression
-              (expr_atom
-                (lvn
-                  (objectscript_identifier)))
-              (expr_tail
-                (binary_operator)
-                (expression
-                  (expr_atom
-                    (numeric_literal)))))))
+            (parenthetical_expression
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier)))
+                (expr_tail
+                  (binary_operator)
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))))
         (statement
           (command_write
             (keyword_write)
@@ -315,15 +317,16 @@ Valid ## syntax
         (post_conditional
           (expression
             (expr_atom
-              (expression
-                (expr_atom
-                  (lvn
-                    (objectscript_identifier)))
-                (expr_tail
-                  (binary_operator)
-                  (expression
-                    (expr_atom
-                      (numeric_literal))))))))))
+              (parenthetical_expression
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier)))
+                  (expr_tail
+                    (binary_operator)
+                    (expression
+                      (expr_atom
+                        (numeric_literal)))))))))))
     (statement
       (embedded_sql
         (embedded_sql_hash
@@ -334,15 +337,16 @@ Valid ## syntax
         (keyword_while)
         (expression
           (expr_atom
-            (expression
-              (expr_atom
-                (lvn
-                  (objectscript_identifier)))
-              (expr_tail
-                (binary_operator)
-                (expression
-                  (expr_atom
-                    (numeric_literal)))))))
+            (parenthetical_expression
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier)))
+                (expr_tail
+                  (binary_operator)
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))))
         (statement
           (command_write
             (keyword_write)

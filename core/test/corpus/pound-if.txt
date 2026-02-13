@@ -231,8 +231,10 @@ Valid #if Statements
 ====
 Invalid If (no #endif, #else, or #elseif)
 :error
-===
+====
 #if $$$ColorDay="Monday"
  SET ^MyColor = "Red"
  SET ^MyNumber = 1
 ---
+
+

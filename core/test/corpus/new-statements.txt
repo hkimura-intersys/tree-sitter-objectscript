@@ -9,7 +9,7 @@ NEW with arguments
   (statements
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (command_new_argument
           (command_new_item
             (lvn
@@ -20,7 +20,7 @@ NEW with arguments
               (objectscript_identifier))))))
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (command_new_argument
           (command_new_item
             (lvn
@@ -42,25 +42,25 @@ NEW with special variables
   (statements
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (command_new_argument
           (command_new_item
             (etrap_token)))))
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (command_new_argument
           (command_new_item
             (namespace_token)))))
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (command_new_argument
           (command_new_item
             (estack_token)))))
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (command_new_argument
           (command_new_item
             (roles_token)))))))
@@ -75,15 +75,15 @@ New with Postconditional
   (statements
     (statement
       (command_new
-        command_name: (keyword_new)
+        (keyword_new)
         (post_conditional
           (expression
             (expr_atom
               (lvn
                 (objectscript_identifier)))
             (expr_tail
-              (_pattern_operator
-                right: (pattern_expression)))))
+              (pattern_operator
+                (pattern_expression)))))
         (command_new_argument
           (command_new_item
             (lvn

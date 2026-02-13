@@ -439,6 +439,7 @@ Valid $View Statements
                   (function_argument
                     (expr_atom
                       (unary_expression
+                        (unary_operator)
                         (expression
                           (expr_atom
                             (lvn
@@ -602,6 +603,7 @@ Invalid $View (No parens)
 ---
 
 
+
 ==============================
 Invalid $View (postconditional)
 :error
@@ -680,14 +682,15 @@ Valid View Statements
         (view_parameters
           (expression
             (expr_atom
-              (expression
-                (expr_atom
-                  (numeric_literal))
-                (expr_tail
-                  (binary_operator)
-                  (expression
-                    (expr_atom
-                      (numeric_literal))))))))))
+              (parenthetical_expression
+                (expression
+                  (expr_atom
+                    (numeric_literal))
+                  (expr_tail
+                    (binary_operator)
+                    (expression
+                      (expr_atom
+                        (numeric_literal)))))))))))
     (statement
       (command_view
         (keyword_view)

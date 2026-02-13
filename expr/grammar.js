@@ -736,7 +736,7 @@ module.exports = grammar({
                         token.immediate('('),
                     ),
                 ),
-                optional(field('parameter',repeat_with_commas($.expression))),
+                optional(repeat_with_commas($.expression)),
                 ')',
             ),
         dollar_select: ($) =>
@@ -768,11 +768,11 @@ module.exports = grammar({
                 ),
                 optional(
                     seq(
-                        optional(field('parameter', alias($.expression, $.function_argument))),
+                        optional(alias($.expression, $.function_argument)),
                         repeat(
                             seq(
                                 ',',
-                                optional(field('parameter',alias($.expression, $.function_argument))),
+                                optional(alias($.expression, $.function_argument)),
                             ),
                         ),
                     ),
@@ -788,21 +788,21 @@ module.exports = grammar({
                         repeat1(
                             seq(
                                 ',',
-                                field('parameter', $.dollar_arg_pair)
+                                $.dollar_arg_pair
                             ),
                         ),
                         optional(
                             seq(
                                 ',',
                                 ':',
-                                field('parameter', $.expression),
+                                $.expression,
                             ),
                         ),
                     ),
                     seq(
                         ',',
                         ':',
-                        field('parameter', $.expression),
+                        $.expression,
                     ),
                 ),
                 ')',
@@ -812,16 +812,16 @@ module.exports = grammar({
             seq(
                 // NOTE: `$P(` must be one token to avoid ambiguity with $P[RINCIPAL]
                 token(seq(/\$P(IECE)?/i, token.immediate('('))),
-                field('parameter', $.expression),
+                $.expression,
                 ',',
-                field('parameter', $.expression),
+                $.expression,
                 optional(
                     seq(',',
-                        field('parameter', $.dollar_func_pos),
+                        $.dollar_func_pos,
                         optional(
                             seq(
                                 ',',
-                                field('parameter', $.dollar_func_pos)
+                                $.dollar_func_pos
                             ),
                         ),
                     ),
@@ -831,9 +831,9 @@ module.exports = grammar({
         dollar_extract: ($) =>
             seq(
                 token(seq(choice(/\$E(XTRACT)?/i, /\$WE(XTRACT)?/i), token.immediate('('))),
-                field('parameter', $.expression),
+                $.expression,
                 optional(
-                    seq(',', field('parameter', $.dollar_func_pos), optional(seq(',', field('parameter', $.dollar_func_pos)))),
+                    seq(',', $.dollar_func_pos, optional(seq(',', $.dollar_func_pos))),
                 ),
                 ')',
             ),
@@ -857,12 +857,12 @@ module.exports = grammar({
                         token.immediate('('),
                     ),
                 ),
-                field('parameter',$.expression),
+                $.expression,
                 optional(
                     seq(
                         ',',
-                        optional(field('parameter',$.dollar_func_pos)),
-                        optional(seq(',', field('parameter',$.expression))),
+                        optional($.dollar_func_pos),
+                        optional(seq(',', $.expression)),
                     ),
                 ),
                 ')',
@@ -872,9 +872,9 @@ module.exports = grammar({
                 token(
                     seq(/\$(ZOBJ)?CLASSMETHOD/i, token.immediate('(')),
                 ),
-                optional(field('parameter', $.expression)),
+                optional(alias($.expression, $.class_name)),
                 ',',
-                field('parameter',$.expression),
+                alias($.expression, $.method_name),
                 repeat(seq(',', $.method_arg)),
                 ')',
             ),
@@ -883,9 +883,9 @@ module.exports = grammar({
                 token(
                     seq(/\$(ZOBJ)?METHOD/i, token.immediate('(')),
                 ),
-                optional(field('parameter',$.expression)),
+                optional(alias($.expression, $.class_name)),
                 ',',
-                field('parameter',$.expression),
+                alias($.expression, $.class_name),
                 repeat(seq(',', $.method_arg)),
                 ')',
             ),

@@ -826,23 +826,31 @@ ZBREAK Invalid condition
   ZBREAK *x::x=2
 ---
 
+
+
 ========================
-ZBREAK Invalid 
+ZBREAK Invalid
 :error
 ========================
   ZBREAK *x:
 ---
 
+
+
 ========================
-ZBREAK Invalid 
+ZBREAK Invalid
 :error
 ========================
   ZBREAK *x::
 ---
 
+
+
 ========================
-ZBREAK Invalid 
+ZBREAK Invalid
 :error
 ========================
   ZBREAK *x:::
 ---
+
+

@@ -26,47 +26,47 @@ Break Statements Extend Arguments
   (statements
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument
           (string_literal))))))
 
@@ -83,19 +83,19 @@ Break Flags
   (statements
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument)))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument)))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument)))
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (break_argument)))))
 
 ===========================
@@ -109,25 +109,25 @@ Break With PostConditionals
   (statements
     (statement
       (command_break
-        builtin_keyword: (keyword_break)
+        (keyword_break)
         (post_conditional
           (expression
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  (expression
+                  parameter: (expression
                     (expr_atom
                       (lvn
                         (objectscript_identifier)))))))))))
     (statement
       (command_zbreak
-        command_name: (keyword_zbreak)
+        (keyword_zbreak)
         (post_conditional
           (expression
             (expr_atom
               (system_defined_function
                 (dollar_function
-                  (expression
+                  parameter: (expression
                     (expr_atom
                       (lvn
                         (objectscript_identifier)))))))))))))

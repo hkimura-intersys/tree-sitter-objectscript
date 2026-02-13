@@ -185,9 +185,10 @@ $GET with object property
               (oref_chain_expr
                 (lvn
                   (objectscript_identifier))
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate)))))))))))
+                (oref_chain_segment
+                  (oref_property
+                    (property_name
+                      (identifier_segment_immediate))))))))))))
 
 ==================================
 $GET with object property chain
@@ -205,12 +206,14 @@ $GET with object property chain
               (oref_chain_expr
                 (lvn
                   (objectscript_identifier))
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate)))
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate)))))))))))
+                (oref_chain_segment
+                  (oref_property
+                    (property_name
+                      (identifier_segment_immediate))))
+                (oref_chain_segment
+                  (oref_property
+                    (property_name
+                      (identifier_segment_immediate))))))))))))
 
 ==================================
 $GET with object property and default
@@ -228,9 +231,10 @@ $GET with object property and default
               (oref_chain_expr
                 (lvn
                   (objectscript_identifier))
-                (oref_property
-                  (property_name
-                    (identifier_segment_immediate))))))
+                (oref_chain_segment
+                  (oref_property
+                    (property_name
+                      (identifier_segment_immediate)))))))
           (expression
             (expr_atom
               (string_literal))))))))

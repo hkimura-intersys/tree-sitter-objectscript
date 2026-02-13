@@ -1,5 +1,4 @@
-command_name: (_) @keyword
-special_keyword: (_) @attribute
-builtin_keyword: (_) @keyword
+(locktype) @variable
 
-
+(macro_arg) @variable
+(macro_value) @constant.builtin

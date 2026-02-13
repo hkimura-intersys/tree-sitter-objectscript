@@ -205,15 +205,16 @@ $SELECT with complex conditions
                 (binary_operator)
                 (expression
                   (expr_atom
-                    (expression
-                      (expr_atom
-                        (lvn
-                          (objectscript_identifier)))
-                      (expr_tail
-                        (binary_operator)
-                        (expression
-                          (expr_atom
-                            (numeric_literal)))))))))
+                    (parenthetical_expression
+                      (expression
+                        (expr_atom
+                          (lvn
+                            (objectscript_identifier)))
+                        (expr_tail
+                          (binary_operator)
+                          (expression
+                            (expr_atom
+                              (numeric_literal))))))))))
             (expression
               (expr_atom
                 (string_literal))))

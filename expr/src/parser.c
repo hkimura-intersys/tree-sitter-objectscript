@@ -21,10 +21,10 @@
 #define ALIAS_COUNT 3
 #define TOKEN_COUNT 143
 #define EXTERNAL_TOKEN_COUNT 0
-#define FIELD_COUNT 1
+#define FIELD_COUNT 0
 #define MAX_ALIAS_SEQUENCE_LENGTH 9
 #define MAX_RESERVED_WORD_SET_SIZE 0
-#define PRODUCTION_ID_COUNT 10
+#define PRODUCTION_ID_COUNT 8
 #define SUPERTYPE_COUNT 0
 
 enum ts_symbol_identifiers {
@@ -174,7 +174,7 @@ enum ts_symbol_identifiers {
   sym_expression = 144,
   sym_expr_atom = 145,
   sym_expr_tail = 146,
-  sym__parenthetical_expression = 147,
+  sym_parenthetical_expression = 147,
   sym_unary_expression = 148,
   sym_unary_operator = 149,
   sym_binary_operator = 150,
@@ -203,12 +203,12 @@ enum ts_symbol_identifiers {
   sym_sql_field_reference = 173,
   sym_sql_field_identifier = 174,
   sym_oref_chain_expr = 175,
-  sym__oref_chain_segment = 176,
+  sym_oref_chain_segment = 176,
   sym_oref_method = 177,
   sym_oref_property = 178,
   sym_oref_parameter = 179,
   sym_instance_variable = 180,
-  sym__member_name = 181,
+  sym_member_name = 181,
   sym_parameter_name = 182,
   sym_subscripts = 183,
   sym_relative_dot_method = 184,
@@ -235,7 +235,7 @@ enum ts_symbol_identifiers {
   sym_macro_constant = 205,
   sym_macro_function = 206,
   sym_json_object_literal = 207,
-  sym__json_object_literal_pair = 208,
+  sym_json_object_literal_pair = 208,
   sym_json_objectscript_expr = 209,
   sym_json_literal = 210,
   sym_json_array_literal = 211,
@@ -407,7 +407,7 @@ static const char * const ts_symbol_names[] = {
   [sym_expression] = "expression",
   [sym_expr_atom] = "expr_atom",
   [sym_expr_tail] = "expr_tail",
-  [sym__parenthetical_expression] = "_parenthetical_expression",
+  [sym_parenthetical_expression] = "parenthetical_expression",
   [sym_unary_expression] = "unary_expression",
   [sym_unary_operator] = "unary_operator",
   [sym_binary_operator] = "binary_operator",
@@ -436,12 +436,12 @@ static const char * const ts_symbol_names[] = {
   [sym_sql_field_reference] = "sql_field_reference",
   [sym_sql_field_identifier] = "sql_field_identifier",
   [sym_oref_chain_expr] = "oref_chain_expr",
-  [sym__oref_chain_segment] = "_oref_chain_segment",
+  [sym_oref_chain_segment] = "oref_chain_segment",
   [sym_oref_method] = "oref_method",
   [sym_oref_property] = "oref_property",
   [sym_oref_parameter] = "oref_parameter",
   [sym_instance_variable] = "instance_variable",
-  [sym__member_name] = "_member_name",
+  [sym_member_name] = "member_name",
   [sym_parameter_name] = "parameter_name",
   [sym_subscripts] = "subscripts",
   [sym_relative_dot_method] = "relative_dot_method",
@@ -468,7 +468,7 @@ static const char * const ts_symbol_names[] = {
   [sym_macro_constant] = "macro_constant",
   [sym_macro_function] = "macro_function",
   [sym_json_object_literal] = "json_object_literal",
-  [sym__json_object_literal_pair] = "_json_object_literal_pair",
+  [sym_json_object_literal_pair] = "json_object_literal_pair",
   [sym_json_objectscript_expr] = "json_objectscript_expr",
   [sym_json_literal] = "json_literal",
   [sym_json_array_literal] = "json_array_literal",
@@ -640,7 +640,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_expression] = sym_expression,
   [sym_expr_atom] = sym_expr_atom,
   [sym_expr_tail] = sym_expr_tail,
-  [sym__parenthetical_expression] = sym__parenthetical_expression,
+  [sym_parenthetical_expression] = sym_parenthetical_expression,
   [sym_unary_expression] = sym_unary_expression,
   [sym_unary_operator] = sym_unary_operator,
   [sym_binary_operator] = sym_binary_operator,
@@ -669,12 +669,12 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_sql_field_reference] = sym_sql_field_reference,
   [sym_sql_field_identifier] = sym_sql_field_identifier,
   [sym_oref_chain_expr] = sym_oref_chain_expr,
-  [sym__oref_chain_segment] = sym__oref_chain_segment,
+  [sym_oref_chain_segment] = sym_oref_chain_segment,
   [sym_oref_method] = sym_oref_method,
   [sym_oref_property] = sym_oref_property,
   [sym_oref_parameter] = sym_oref_parameter,
   [sym_instance_variable] = sym_instance_variable,
-  [sym__member_name] = sym__member_name,
+  [sym_member_name] = sym_member_name,
   [sym_parameter_name] = sym_parameter_name,
   [sym_subscripts] = sym_subscripts,
   [sym_relative_dot_method] = sym_relative_dot_method,
@@ -701,7 +701,7 @@ static const TSSymbol ts_symbol_map[] = {
   [sym_macro_constant] = sym_macro_constant,
   [sym_macro_function] = sym_macro_function,
   [sym_json_object_literal] = sym_json_object_literal,
-  [sym__json_object_literal_pair] = sym__json_object_literal_pair,
+  [sym_json_object_literal_pair] = sym_json_object_literal_pair,
   [sym_json_objectscript_expr] = sym_json_objectscript_expr,
   [sym_json_literal] = sym_json_literal,
   [sym_json_array_literal] = sym_json_array_literal,
@@ -1314,8 +1314,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__parenthetical_expression] = {
-    .visible = false,
+  [sym_parenthetical_expression] = {
+    .visible = true,
     .named = true,
   },
   [sym_unary_expression] = {
@@ -1430,8 +1430,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__oref_chain_segment] = {
-    .visible = false,
+  [sym_oref_chain_segment] = {
+    .visible = true,
     .named = true,
   },
   [sym_oref_method] = {
@@ -1450,8 +1450,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__member_name] = {
-    .visible = false,
+  [sym_member_name] = {
+    .visible = true,
     .named = true,
   },
   [sym_parameter_name] = {
@@ -1558,8 +1558,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .visible = true,
     .named = true,
   },
-  [sym__json_object_literal_pair] = {
-    .visible = false,
+  [sym_json_object_literal_pair] = {
+    .visible = true,
     .named = true,
   },
   [sym_json_objectscript_expr] = {
@@ -1648,28 +1648,6 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
   },
 };
 
-enum ts_field_identifiers {
-  field_parameter = 1,
-};
-
-static const char * const ts_field_names[] = {
-  [0] = NULL,
-  [field_parameter] = "parameter",
-};
-
-static const TSMapSlice ts_field_map_slices[PRODUCTION_ID_COUNT] = {
-  [4] = {.index = 0, .length = 1},
-  [7] = {.index = 1, .length = 2},
-};
-
-static const TSFieldMapEntry ts_field_map_entries[] = {
-  [0] =
-    {field_parameter, 1},
-  [1] =
-    {field_parameter, 1},
-    {field_parameter, 2},
-};
-
 static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE_LENGTH] = {
   [0] = {0},
   [1] = {
@@ -1681,16 +1659,16 @@ static const TSSymbol ts_alias_sequences[PRODUCTION_ID_COUNT][MAX_ALIAS_SEQUENCE
   [3] = {
     [0] = alias_sym_method_name,
   },
-  [5] = {
+  [4] = {
     [1] = alias_sym_function_argument,
   },
-  [6] = {
+  [5] = {
     [1] = sym_unary_expression,
   },
-  [8] = {
+  [6] = {
     [2] = alias_sym_method_name,
   },
-  [9] = {
+  [7] = {
     [1] = alias_sym_function_argument,
     [3] = alias_sym_function_argument,
   },
@@ -1703,8 +1681,8 @@ static const uint16_t ts_non_terminal_alias_map[] = {
   sym_indirection, 2,
     sym_indirection,
     sym_unary_expression,
-  sym__member_name, 3,
-    sym__member_name,
+  sym_member_name, 3,
+    sym_member_name,
     alias_sym_method_name,
     alias_sym_property_name,
   0,
@@ -6727,7 +6705,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [sym_source_file] = STATE(389),
     [sym_expression] = STATE(424),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -6845,7 +6823,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(2)] = {
     [sym_expression] = STATE(341),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -6970,7 +6948,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(3)] = {
     [sym_expression] = STATE(315),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7095,7 +7073,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(4)] = {
     [sym_expression] = STATE(341),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7219,7 +7197,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(5)] = {
     [sym_expression] = STATE(339),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7341,7 +7319,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(6)] = {
     [sym_expression] = STATE(341),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7463,7 +7441,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(7)] = {
     [sym_expression] = STATE(323),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7584,7 +7562,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(8)] = {
     [sym_expression] = STATE(337),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7705,7 +7683,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(9)] = {
     [sym_expression] = STATE(337),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7826,7 +7804,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(10)] = {
     [sym_expression] = STATE(379),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -7946,7 +7924,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(11)] = {
     [sym_expression] = STATE(402),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8066,7 +8044,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(12)] = {
     [sym_expression] = STATE(339),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8186,7 +8164,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(13)] = {
     [sym_expression] = STATE(402),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8306,7 +8284,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(14)] = {
     [sym_expression] = STATE(339),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8426,7 +8404,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(15)] = {
     [sym_expression] = STATE(339),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8546,7 +8524,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(16)] = {
     [sym_expression] = STATE(339),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8666,7 +8644,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(17)] = {
     [sym_expression] = STATE(402),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8785,7 +8763,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(18)] = {
     [sym_expression] = STATE(420),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -8904,7 +8882,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(19)] = {
     [sym_expression] = STATE(318),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9023,7 +9001,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(20)] = {
     [sym_expression] = STATE(414),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9142,7 +9120,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(21)] = {
     [sym_expression] = STATE(402),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9261,7 +9239,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(22)] = {
     [sym_expression] = STATE(402),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9380,7 +9358,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(23)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(211),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(57),
     [sym_class_method_call] = STATE(89),
@@ -9498,7 +9476,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(24)] = {
     [sym_expression] = STATE(422),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9616,7 +9594,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(25)] = {
     [sym_expression] = STATE(201),
     [sym_expr_atom] = STATE(71),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(54),
     [sym_class_method_call] = STATE(89),
@@ -9734,7 +9712,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(26)] = {
     [sym_expression] = STATE(369),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9852,7 +9830,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(27)] = {
     [sym_expression] = STATE(355),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -9970,7 +9948,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(28)] = {
     [sym_expression] = STATE(381),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10088,7 +10066,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(29)] = {
     [sym_expression] = STATE(373),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10206,7 +10184,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(30)] = {
     [sym_expression] = STATE(342),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10324,7 +10302,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(31)] = {
     [sym_expression] = STATE(376),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10442,7 +10420,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(32)] = {
     [sym_expression] = STATE(190),
     [sym_expr_atom] = STATE(168),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10560,7 +10538,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(33)] = {
     [sym_expression] = STATE(265),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10678,7 +10656,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(34)] = {
     [sym_expression] = STATE(267),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10796,7 +10774,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(35)] = {
     [sym_expression] = STATE(386),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -10914,7 +10892,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(36)] = {
     [sym_expression] = STATE(395),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11032,7 +11010,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(37)] = {
     [sym_expression] = STATE(391),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11150,7 +11128,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(38)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(94),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(47),
     [sym_class_method_call] = STATE(89),
@@ -11268,7 +11246,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(39)] = {
     [sym_expression] = STATE(387),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11386,7 +11364,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(40)] = {
     [sym_expression] = STATE(399),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11504,7 +11482,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(41)] = {
     [sym_expression] = STATE(363),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11622,7 +11600,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(42)] = {
     [sym_expression] = STATE(371),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11740,7 +11718,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(43)] = {
     [sym_expression] = STATE(268),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11858,7 +11836,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(44)] = {
     [sym_expression] = STATE(269),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -11976,7 +11954,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(45)] = {
     [sym_expression] = STATE(405),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -12094,7 +12072,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(46)] = {
     [sym_expression] = STATE(193),
     [sym_expr_atom] = STATE(168),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -12212,7 +12190,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(47)] = {
     [sym_expression] = STATE(190),
     [sym_expr_atom] = STATE(94),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(47),
     [sym_class_method_call] = STATE(89),
@@ -12330,7 +12308,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(48)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(220),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(51),
     [sym_class_method_call] = STATE(116),
@@ -12448,7 +12426,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(49)] = {
     [sym_expression] = STATE(193),
     [sym_expr_atom] = STATE(94),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(47),
     [sym_class_method_call] = STATE(89),
@@ -12566,7 +12544,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(50)] = {
     [sym_expression] = STATE(201),
     [sym_expr_atom] = STATE(220),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(51),
     [sym_class_method_call] = STATE(116),
@@ -12684,7 +12662,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(51)] = {
     [sym_expression] = STATE(190),
     [sym_expr_atom] = STATE(215),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(51),
     [sym_class_method_call] = STATE(116),
@@ -12802,7 +12780,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(52)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(168),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -12920,7 +12898,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(53)] = {
     [sym_expression] = STATE(193),
     [sym_expr_atom] = STATE(215),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(51),
     [sym_class_method_call] = STATE(116),
@@ -13038,7 +13016,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(54)] = {
     [sym_expression] = STATE(190),
     [sym_expr_atom] = STATE(71),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(54),
     [sym_class_method_call] = STATE(89),
@@ -13156,7 +13134,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(55)] = {
     [sym_expression] = STATE(418),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -13274,7 +13252,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(56)] = {
     [sym_expression] = STATE(193),
     [sym_expr_atom] = STATE(71),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(54),
     [sym_class_method_call] = STATE(89),
@@ -13392,7 +13370,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(57)] = {
     [sym_expression] = STATE(190),
     [sym_expr_atom] = STATE(211),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(57),
     [sym_class_method_call] = STATE(89),
@@ -13510,7 +13488,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(58)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -13628,7 +13606,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(59)] = {
     [sym_expression] = STATE(193),
     [sym_expr_atom] = STATE(211),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(57),
     [sym_class_method_call] = STATE(89),
@@ -13746,7 +13724,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(60)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(71),
-    [sym__parenthetical_expression] = STATE(89),
+    [sym_parenthetical_expression] = STATE(89),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(54),
     [sym_class_method_call] = STATE(89),
@@ -13864,7 +13842,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(61)] = {
     [sym_expression] = STATE(184),
     [sym_expr_atom] = STATE(215),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(51),
     [sym_class_method_call] = STATE(116),
@@ -13982,7 +13960,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(62)] = {
     [sym_expression] = STATE(316),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -14100,7 +14078,7 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
   [STATE(63)] = {
     [sym_expression] = STATE(321),
     [sym_expr_atom] = STATE(115),
-    [sym__parenthetical_expression] = STATE(116),
+    [sym_parenthetical_expression] = STATE(116),
     [sym_unary_expression] = STATE(210),
     [sym_unary_operator] = STATE(32),
     [sym_class_method_call] = STATE(116),
@@ -15240,7 +15218,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(206), 1,
       anon_sym_DOT,
     STATE(83), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
     ACTIONS(204), 8,
       anon_sym_SQUOTE,
@@ -15513,7 +15491,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(229), 1,
       anon_sym_DOT,
     STATE(92), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
     ACTIONS(227), 8,
       anon_sym_SQUOTE,
@@ -15650,7 +15628,7 @@ static const uint16_t ts_small_parse_table[] = {
       anon_sym_COLON,
   [1299] = 3,
     STATE(83), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
     ACTIONS(233), 8,
       anon_sym_SQUOTE,
@@ -16021,7 +15999,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(256), 1,
       anon_sym_DOT,
     STATE(83), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
     ACTIONS(233), 8,
       anon_sym_SQUOTE,
@@ -16721,7 +16699,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(229), 1,
       anon_sym_DOT,
     STATE(100), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
     ACTIONS(227), 8,
       anon_sym_SQUOTE,
@@ -21157,7 +21135,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(617), 1,
       anon_sym_DOT_DOT_DOT,
     STATE(100), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
     ACTIONS(227), 7,
       anon_sym_SQUOTE,
@@ -21347,7 +21325,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(647), 1,
       anon_sym_POUND2,
     STATE(77), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
     STATE(130), 1,
@@ -21366,7 +21344,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(647), 1,
       anon_sym_POUND2,
     STATE(77), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
     STATE(145), 1,
@@ -21384,7 +21362,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(647), 1,
       anon_sym_POUND2,
     STATE(84), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
     STATE(125), 1,
@@ -21421,7 +21399,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(245), 1,
       sym_sql_field_identifier,
     STATE(292), 1,
-      sym__json_object_literal_pair,
+      sym_json_object_literal_pair,
   [7501] = 7,
     ACTIONS(152), 1,
       anon_sym_CARET,
@@ -21443,7 +21421,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(645), 1,
       aux_sym_dollarsf_token2,
     STATE(77), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
     STATE(196), 2,
@@ -21485,7 +21463,7 @@ static const uint16_t ts_small_parse_table[] = {
     STATE(74), 1,
       sym_objectscript_identifier,
     STATE(433), 2,
-      sym__parenthetical_expression,
+      sym_parenthetical_expression,
       sym_lvn,
   [7595] = 6,
     ACTIONS(152), 1,
@@ -21607,7 +21585,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(645), 1,
       aux_sym_dollarsf_token2,
     STATE(108), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
   [7768] = 3,
@@ -21641,7 +21619,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(645), 1,
       aux_sym_dollarsf_token2,
     STATE(111), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
   [7816] = 4,
@@ -21667,7 +21645,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(750), 1,
       aux_sym_dollarsf_token2,
     STATE(108), 1,
-      sym__member_name,
+      sym_member_name,
     STATE(122), 1,
       sym_identifier_segment_immediate,
   [7853] = 3,
@@ -21711,7 +21689,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(767), 1,
       anon_sym_DOT,
     STATE(100), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
   [7913] = 1,
     ACTIONS(769), 3,
@@ -21806,7 +21784,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(793), 1,
       anon_sym_RBRACE2,
     STATE(311), 1,
-      sym__json_object_literal_pair,
+      sym_json_object_literal_pair,
   [8045] = 1,
     ACTIONS(795), 3,
       anon_sym_RBRACK,
@@ -22020,7 +21998,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(767), 1,
       anon_sym_DOT,
     STATE(92), 2,
-      sym__oref_chain_segment,
+      sym_oref_chain_segment,
       aux_sym_oref_chain_expr_repeat1,
   [8347] = 3,
     ACTIONS(665), 1,
@@ -22028,7 +22006,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(667), 1,
       sym_json_string_literal,
     STATE(292), 1,
-      sym__json_object_literal_pair,
+      sym_json_object_literal_pair,
   [8357] = 3,
     ACTIONS(801), 1,
       anon_sym_COMMA,
@@ -22307,7 +22285,7 @@ static const uint16_t ts_small_parse_table[] = {
     ACTIONS(667), 1,
       sym_json_string_literal,
     STATE(378), 1,
-      sym__json_object_literal_pair,
+      sym_json_object_literal_pair,
   [8748] = 1,
     ACTIONS(886), 2,
       anon_sym_RPAREN,
@@ -23094,20 +23072,20 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [268] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_ssvn, 3, 0, 0),
   [270] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_json_object_literal, 3, 0, 0),
   [272] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_json_object_literal, 3, 0, 0),
-  [274] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__member_name, 2, 0, 0),
-  [276] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__member_name, 2, 0, 0),
+  [274] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_member_name, 2, 0, 0),
+  [276] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_member_name, 2, 0, 0),
   [278] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_parameter_name, 2, 0, 0),
   [280] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_parameter_name, 2, 0, 0),
   [282] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_text, 3, 0, 0),
   [284] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_text, 3, 0, 0),
-  [286] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_function, 3, 0, 4),
-  [288] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_function, 3, 0, 4),
+  [286] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_function, 3, 0, 0),
+  [288] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_function, 3, 0, 0),
   [290] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_instance_variable, 2, 0, 1),
   [292] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_instance_variable, 2, 0, 1),
   [294] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_select, 3, 0, 0),
   [296] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_select, 3, 0, 0),
-  [298] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_built_in_functions_with_optional_args, 3, 0, 5),
-  [300] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_built_in_functions_with_optional_args, 3, 0, 5),
+  [298] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_built_in_functions_with_optional_args, 3, 0, 4),
+  [300] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_built_in_functions_with_optional_args, 3, 0, 4),
   [302] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_built_in_functions_with_optional_args, 3, 0, 0),
   [304] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_built_in_functions_with_optional_args, 3, 0, 0),
   [306] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_extract, 3, 0, 0),
@@ -23120,8 +23098,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [320] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_listget, 3, 0, 0),
   [322] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_system_defined_function, 1, 0, 0),
   [324] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_system_defined_function, 1, 0, 0),
-  [326] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__member_name, 1, 0, 0),
-  [328] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__member_name, 1, 0, 0),
+  [326] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_member_name, 1, 0, 0),
+  [328] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_member_name, 1, 0, 0),
   [330] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_macro, 1, 0, 0),
   [332] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_macro, 1, 0, 0),
   [334] = {.entry = {.count = 2, .reusable = true}}, REDUCE(aux_sym_expression_repeat1, 2, 0, 0), SHIFT_REPEAT(271),
@@ -23137,14 +23115,14 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [355] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_relative_dot_parameter, 2, 0, 0),
   [357] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_json_object_literal, 4, 0, 0),
   [359] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_json_object_literal, 4, 0, 0),
-  [361] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__member_name, 3, 0, 0),
-  [363] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__member_name, 3, 0, 0),
-  [365] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_function, 4, 0, 7),
-  [367] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_function, 4, 0, 7),
+  [361] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_member_name, 3, 0, 0),
+  [363] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_member_name, 3, 0, 0),
+  [365] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_function, 4, 0, 0),
+  [367] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_function, 4, 0, 0),
   [369] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_select, 4, 0, 0),
   [371] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_select, 4, 0, 0),
-  [373] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_built_in_functions_with_optional_args, 4, 0, 5),
-  [375] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_built_in_functions_with_optional_args, 4, 0, 5),
+  [373] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_built_in_functions_with_optional_args, 4, 0, 4),
+  [375] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_built_in_functions_with_optional_args, 4, 0, 4),
   [377] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_case, 4, 0, 0),
   [379] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollar_case, 4, 0, 0),
   [381] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_glvn, 1, 0, 0),
@@ -23158,8 +23136,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [397] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_indirected_glvn, 4, 0, 0),
   [399] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_method_args, 4, 0, 0),
   [401] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_method_args, 4, 0, 0),
-  [403] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollarsf, 5, 0, 9),
-  [405] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollarsf, 5, 0, 9),
+  [403] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollarsf, 5, 0, 7),
+  [405] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_dollarsf, 5, 0, 7),
   [407] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_json_object_literal, 2, 0, 0),
   [409] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_json_object_literal, 2, 0, 0),
   [411] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_oref_parameter, 1, 0, 0),
@@ -23216,8 +23194,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [513] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_oref_property, 2, 0, 2),
   [515] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_oref_chain_expr, 4, 0, 0),
   [517] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_oref_chain_expr, 4, 0, 0),
-  [519] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_class_method_call, 4, 0, 8),
-  [521] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_class_method_call, 4, 0, 8),
+  [519] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_class_method_call, 4, 0, 6),
+  [521] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_class_method_call, 4, 0, 6),
   [523] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_indirection, 2, 0, 0),
   [525] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_indirection, 2, 0, 0),
   [527] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_extrinsic_function, 5, 0, 0),
@@ -23230,16 +23208,16 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [541] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_sql_field_reference, 5, 0, 0),
   [543] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pattern_operator, 2, 0, 0),
   [545] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pattern_operator, 2, 0, 0),
-  [547] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pattern_operator, 2, 0, 6),
-  [549] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pattern_operator, 2, 0, 6),
+  [547] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_pattern_operator, 2, 0, 5),
+  [549] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_pattern_operator, 2, 0, 5),
   [551] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_expr_tail, 2, 0, 0),
   [553] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_expr_tail, 2, 0, 0),
   [555] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_sql_field_reference, 3, 0, 0),
   [557] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_sql_field_reference, 3, 0, 0),
   [559] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_routine_ref, 5, 0, 0),
   [561] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_routine_ref, 5, 0, 0),
-  [563] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__oref_chain_segment, 2, 0, 0),
-  [565] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__oref_chain_segment, 2, 0, 0),
+  [563] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_oref_chain_segment, 2, 0, 0),
+  [565] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_oref_chain_segment, 2, 0, 0),
   [567] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_sql_field_reference, 6, 0, 0),
   [569] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_sql_field_reference, 6, 0, 0),
   [571] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_relative_dot_method, 2, 0, 0),
@@ -23250,8 +23228,8 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [581] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_routine_ref, 3, 0, 0),
   [583] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_label_offset, 2, 0, 0),
   [585] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_label_offset, 2, 0, 0),
-  [587] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__parenthetical_expression, 3, 0, 0),
-  [589] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym__parenthetical_expression, 3, 0, 0),
+  [587] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_parenthetical_expression, 3, 0, 0),
+  [589] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_parenthetical_expression, 3, 0, 0),
   [591] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_relative_dot_property, 2, 0, 0),
   [593] = {.entry = {.count = 1, .reusable = false}}, REDUCE(sym_relative_dot_property, 2, 0, 0),
   [595] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_instance_variable, 3, 0, 1),
@@ -23429,7 +23407,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [954] = {.entry = {.count = 1, .reusable = true}}, SHIFT(297),
   [956] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_byref_arg, 2, 0, 0),
   [958] = {.entry = {.count = 1, .reusable = true}}, SHIFT(11),
-  [960] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym__json_object_literal_pair, 3, 0, 0),
+  [960] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_json_object_literal_pair, 3, 0, 0),
   [962] = {.entry = {.count = 1, .reusable = true}}, SHIFT(163),
   [964] = {.entry = {.count = 1, .reusable = true}}, SHIFT(16),
   [966] = {.entry = {.count = 1, .reusable = true}}, SHIFT(117),
@@ -23440,7 +23418,7 @@ static const TSParseActionEntry ts_parse_actions[] = {
   [976] = {.entry = {.count = 1, .reusable = true}}, SHIFT(149),
   [978] = {.entry = {.count = 1, .reusable = true}}, SHIFT(15),
   [980] = {.entry = {.count = 1, .reusable = true}}, SHIFT(296),
-  [982] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_built_in_functions_with_optional_args_repeat1, 2, 0, 5),
+  [982] = {.entry = {.count = 1, .reusable = true}}, REDUCE(aux_sym_built_in_functions_with_optional_args_repeat1, 2, 0, 4),
   [984] = {.entry = {.count = 1, .reusable = true}}, REDUCE(sym_dollar_arg_pair, 3, 0, 0),
   [986] = {.entry = {.count = 1, .reusable = true}}, SHIFT(281),
   [988] = {.entry = {.count = 1, .reusable = true}}, SHIFT(76),
@@ -23509,9 +23487,6 @@ TS_PUBLIC const TSLanguage *tree_sitter_objectscript_expr(void) {
     .small_parse_table_map = ts_small_parse_table_map,
     .parse_actions = ts_parse_actions,
     .symbol_names = ts_symbol_names,
-    .field_names = ts_field_names,
-    .field_map_slices = ts_field_map_slices,
-    .field_map_entries = ts_field_map_entries,
     .symbol_metadata = ts_symbol_metadata,
     .public_symbol_map = ts_symbol_map,
     .alias_map = ts_non_terminal_alias_map,

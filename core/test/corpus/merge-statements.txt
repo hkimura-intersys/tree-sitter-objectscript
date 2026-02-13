@@ -75,4 +75,3 @@ Valid Merge Statements
                 (expression
                   (expr_atom
                     (numeric_literal)))))))))))
-

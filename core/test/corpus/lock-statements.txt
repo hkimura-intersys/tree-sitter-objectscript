@@ -14,10 +14,10 @@ LOCK STATEMENTS
   (statements
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -25,22 +25,22 @@ LOCK STATEMENTS
                       (numeric_literal))))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
@@ -53,22 +53,22 @@ LOCK STATEMENTS
                         (objectscript_identifier)))))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -76,22 +76,22 @@ LOCK STATEMENTS
                       (numeric_literal))))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -111,50 +111,28 @@ LOCK STATEMENTS Timeout
  LOCK +^x(1):0,+^a(1):0,+^z(1)
  LOCK +(^x(1),^a(1),^z(1)):0
 ---
+
 (source_file
   (statements
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
-              (lvn
-                (objectscript_identifier)
-                (subscripts
-                  (expression
-                    (expr_atom
-                      (numeric_literal))))))
-            argument: (timeout
-              (expression
-                (expr_atom
-                  (numeric_literal))))))))
-    (statement
-      (command_lock
-        command_name: (keyword_lock)
-        (command_lock_argument
-          (command_lock_arguments_variant_2
-            argument: (glvn
-              (lvn
-                (objectscript_identifier)
-                (subscripts
-                  (expression
-                    (expr_atom
-                      (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
@@ -167,10 +145,33 @@ LOCK STATEMENTS Timeout
                   (numeric_literal))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
+        (command_lock_argument
+          (command_lock_arguments_variant_2
+            (glvn
+              (lvn
+                (objectscript_identifier)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))
+            (glvn
+              (lvn
+                (objectscript_identifier)
+                (subscripts
+                  (expression
+                    (expr_atom
+                      (numeric_literal))))))
+            (timeout
+              (expression
+                (expr_atom
+                  (numeric_literal))))))))
+    (statement
+      (command_lock
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -179,79 +180,79 @@ LOCK STATEMENTS Timeout
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (timeout
+            (timeout
               (expression
                 (expr_atom
                   (numeric_literal))))))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -259,22 +260,22 @@ LOCK STATEMENTS Timeout
                       (numeric_literal))))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -298,14 +299,15 @@ LOCK STATEMENTS 3
  LOCK ^student(^index)
  LOCK  /* release all locks */
 ---
+
 (source_file
   (statements
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -314,10 +316,10 @@ LOCK STATEMENTS 3
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))
+            (locktype)))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -326,10 +328,10 @@ LOCK STATEMENTS 3
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))
+            (locktype)))
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -338,13 +340,13 @@ LOCK STATEMENTS 3
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (lvn
                 (objectscript_identifier)
                 (subscripts
@@ -355,144 +357,144 @@ LOCK STATEMENTS 3
                     (expr_atom
                       (lvn
                         (objectscript_identifier)))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_2
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)
-            argument: (glvn
+            (locktype)
+            (glvn
               (gvn
                 (subscripts
                   (expression
                     (expr_atom
                       (numeric_literal))))))
-            argument: (locktype)))))
+            (locktype)))))
     (statement
       (command_lock
-        command_name: (keyword_lock)))
+        (keyword_lock)))
     (statement
       (command_lock
-        command_name: (keyword_lock)
+        (keyword_lock)
         (command_lock_argument
           (command_lock_arguments_variant_1
-            argument: (glvn
+            (glvn
               (gvn
                 (subscripts
                   (expression
@@ -500,4 +502,4 @@ LOCK STATEMENTS 3
                       (gvn))))))))))
     (statement
       (command_lock
-        command_name: (keyword_lock)))))
+        (keyword_lock)))))

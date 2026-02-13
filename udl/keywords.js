@@ -544,7 +544,8 @@ module.exports = {
           )
         )
       ),
-    
+    keyword_list:(_)=> field('keyword', /list/i),
+    keyword_array:(_)=> field('keyword', /array/i),
     // TRIGGER KEYWORDS 
     keyword_trigger: (_) => /Trigger/i,
     trigger_keyword: ($) =>

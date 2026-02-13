@@ -449,8 +449,8 @@ module.exports = define_grammar(objectscript_core, {
       optional(
         seq(
           choice(
-            field('keyword', $.keyword_list),
-            field('keyword', $.keyword_array),
+            $.keyword_list,
+            $.keyword_array,
           ),
           field('keyword', $.keyword_of),
         ),
