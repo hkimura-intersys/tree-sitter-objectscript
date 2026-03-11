@@ -25,6 +25,7 @@ on:
       - .tsqueryrc.json
       - .github/workflows/ci.yml
       - "common/*"
+      - udl/package.json
   pull_request:
     paths:
       - udl/grammar.js
