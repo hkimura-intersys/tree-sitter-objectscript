@@ -1,5 +1,5 @@
 {
-  "main": "../bindings/node/objectscript",
+  "main": "../bindings/node/objectscript_udl",
   "private": true,
   "scripts": {
     "build": "tree-sitter generate",

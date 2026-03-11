@@ -2,8 +2,9 @@ TS ?= tree-sitter
 
 all install uninstall clean:
 	$(MAKE) -C objectscript $@
-	$(MAKE) -C objectscript_core $@
-	$(MAKE) -C objectscript_expr $@
+	$(MAKE) -C udl $@
+	$(MAKE) -C core $@
+	$(MAKE) -C expr $@
 
 test:
 	$(TS) test

@@ -148,6 +148,7 @@ module.exports = grammar(objectscript_expr, {
     block_comment: ($) => seq('/*', $._block_comment_inner, '*/'),
     statement: ($) =>
       choice(
+        $.print_statement,
         $.command_set,
         $.command_write,
         $.command_do,
@@ -234,6 +235,8 @@ module.exports = grammar(objectscript_expr, {
     keyword_else: (_) => /Else/i,     // NOTE: New style Else must be spelled out
     keyword_oldelse: (_) => /E(lse)?/i,
     keyword_throw: (_) => /Throw/i,
+    keyword_print: (_) => /p(rint)?/i,
+    keyword_zprint: (_) => /zp(rint)?/i,
     keyword_try: (_) => /[tT][rR][yY]/,
     keyword_catch: (_) => /[cC][aA][tT][cC][hH]/,
     // JOB command syntax examples:
@@ -566,6 +569,35 @@ module.exports = grammar(objectscript_expr, {
       seq(
         $.line_ref,
         optional($.method_args),
+      ),
+    
+    
+    print_statement: ($) =>
+      choice(
+        build_command_rule_argumentless(
+          $,
+          choice(
+            field('keyword', $.keyword_print),
+            field('keyword', $.keyword_zprint),
+          ),
+        ),
+        build_command_rule_argumentful(
+          $,
+          choice(
+            field('keyword', $.keyword_print),
+            field('keyword', $.keyword_zprint),
+          ),
+          $._print_argument,
+        ),
+      ),
+    _print_argument: ($) =>
+      choice(
+        $.line_ref,
+        seq(
+          $.line_ref,
+          token.immediate(':'),
+          $.line_ref,
+        ),
       ),
 
     doable_dollar_functions: ($) =>

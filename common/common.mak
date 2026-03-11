@@ -57,7 +57,7 @@ ifneq ($(STRIP),)
 	$(STRIP) $@
 endif
 
-$(LANGUAGE_NAME).pc: bindings/c/$(LANGUAGE_NAME).pc.in
+$(LANGUAGE_NAME).pc: ../bindings/c/$(LANGUAGE_NAME).pc.in
 	sed -e 's|@CMAKE_PROJECT_VERSION@|$(VERSION)|' \
 		-e 's|@CMAKE_INSTALL_LIBDIR@|$(LIBDIR:$(PREFIX)/%=%)|' \
 		-e 's|@CMAKE_INSTALL_INCLUDEDIR@|$(INCLUDEDIR:$(PREFIX)/%=%)|' \

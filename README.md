@@ -196,7 +196,7 @@ From the root directory, run `swift test`. Make sure you have `Xcode` downloaded
 I had to run this command for my changes to show up: 
 `rm -rf node_modules build`
 
-Additionally, for this one, make sure you have a compatible npm version. I had to lower my version to 20: `nvm install 20` and then `nvm use 20`
+Before anything, you need to make sure you are using a compatible version. Run `nvm use`, which will pick up `22` from the `.nvmrc` file.
 
 Once you have those prereqs complete, run `npm install` and then `npm test`
 ### Go

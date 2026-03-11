@@ -7,6 +7,10 @@
     "lint": "eslint common/grammar.js",
     "test": "node --test bindings/node/*_test.js"
   },
+  "engines": {
+    "node": ">=20 <24",
+    "npm": ">=10"
+  },
   "author": "Dave McCaldon <davem@intersystems.com>",
   "maintainers": [
     "Hannah Kimura <hkimura@intersystems.com>"
