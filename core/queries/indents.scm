@@ -1,5 +1,3 @@
-("{" @indents.begin)
-("}" @indents.end)
+"{" @indents.begin
 
-
-
+"}" @indents.end

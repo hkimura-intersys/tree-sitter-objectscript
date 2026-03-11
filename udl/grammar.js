@@ -14,7 +14,7 @@
 // @ts-check
 const keyword_rules = require('../common/keywords');
 const objectscript_core = require('../core/grammar');
-const define_grammar = require('../common/grammar');
+const define_grammar = require('../common/define_grammar');
 /**
  * @param {RuleOrLiteral} rule
  * @return {RuleOrLiteral}

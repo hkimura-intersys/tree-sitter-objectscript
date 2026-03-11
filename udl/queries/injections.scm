@@ -1,4 +1,4 @@
-;; Keywords, one of type language = "python", none of type codemode
+; Keywords, one of type language = "python", none of type codemode
 ; External method body injection based on [ Language = ... ]
 (method_definition
   (external_method_keywords
@@ -27,33 +27,27 @@
   (#match? @lang "^[Ii][Ss][Pp][Ll]$")
   (#set! injection.language "ispl"))
 
-
-
-;; External trigger with python body
-(
-  (trigger
-    (external_trigger
-      (trigger_keywords
-        (method_keyword_language
-          (rhs) @lang))
-      (external_method_body_content) @injection.content))
+; External trigger with python body
+((trigger
+  (external_trigger
+    (trigger_keywords
+      (method_keyword_language
+        (rhs) @lang))
+    (external_method_body_content) @injection.content))
   (#set! injection.include-children "true")
   (#match? @lang "^[Pp][Yy][Tt][Hh][Oo][Nn]$")
-  (#set! injection.language "python")
-)
+  (#set! injection.language "python"))
 
-;; External trigger with TSQL body
-(
-  (trigger
-    (external_trigger
-      (trigger_keywords
-        (method_keyword_language
-          (rhs) @lang))
-      (external_method_body_content) @injection.content))
+; External trigger with TSQL body
+((trigger
+  (external_trigger
+    (trigger_keywords
+      (method_keyword_language
+        (rhs) @lang))
+    (external_method_body_content) @injection.content))
   (#set! injection.include-children "true")
   (#match? @lang "^[Tt][Ss][Qq][Ll]$")
-  (#set! injection.language "tsql")
-)
+  (#set! injection.language "tsql"))
 
 ; A query must be of type %SQLQuery to have an SQL body, otherwise the body
 ; is empty
@@ -65,22 +59,20 @@
   (query_body
     (query_body_content) @injection.content)
   (#set! injection.language "sql")
-  (#set! injection.include-children "true")
-)
+  (#set! injection.include-children "true"))
 
 ; XDATA blocks:
 ; - xdata_any requires a keyword list that includes MimeType
 ; - xdata_xml allows an optional keyword list and defaults to XML
-
 ; ----------------------------
 ; XDATA injections (MimeType)
 ; ----------------------------
-
 ; text/markdown
 (xdata
   (xdata_any
     (xdata_keywords
-      (xdata_keyword_mimetype (rhs) @mt))
+      (xdata_keyword_mimetype
+        (rhs) @mt))
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
   (#match? @mt "^\"?text/markdown\"?$")
@@ -90,17 +82,20 @@
 (xdata
   (xdata_any
     (xdata_keywords
-      (xdata_keyword_mimetype (rhs) @mt))
+      (xdata_keyword_mimetype
+        (rhs) @mt))
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
-  (#match? @mt "^\"?([Tt][Ee][Xx][Tt]|[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn])/[Xx][Mm][Ll]\"?$")
+  (#match? @mt
+    "^\"?([Tt][Ee][Xx][Tt]|[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn])/[Xx][Mm][Ll]\"?$")
   (#set! injection.language "xml"))
 
 ; text/html
 (xdata
   (xdata_any
     (xdata_keywords
-      (xdata_keyword_mimetype (rhs) @mt))
+      (xdata_keyword_mimetype
+        (rhs) @mt))
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
   (#match? @mt "^\"?text/html\"?$")
@@ -110,7 +105,8 @@
 (xdata
   (xdata_any
     (xdata_keywords
-      (xdata_keyword_mimetype (rhs) @mt))
+      (xdata_keyword_mimetype
+        (rhs) @mt))
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
   (#match? @mt "^\"?application/json\"?$")
@@ -120,17 +116,20 @@
 (xdata
   (xdata_any
     (xdata_keywords
-      (xdata_keyword_mimetype (rhs) @mt))
+      (xdata_keyword_mimetype
+        (rhs) @mt))
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
-  (#match? @mt "^\"?([Tt][Ee][Xx][Tt]|[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn])/[Yy][Aa][Mm][Ll]\"?$")
+  (#match? @mt
+    "^\"?([Tt][Ee][Xx][Tt]|[Aa][Pp][Pp][Ll][Ii][Cc][Aa][Tt][Ii][Oo][Nn])/[Yy][Aa][Mm][Ll]\"?$")
   (#set! injection.language "yaml"))
 
 ; text/css
 (xdata
   (xdata_any
     (xdata_keywords
-      (xdata_keyword_mimetype (rhs) @mt))
+      (xdata_keyword_mimetype
+        (rhs) @mt))
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
   (#match? @mt "^\"?text/css\"?$")
@@ -145,7 +144,6 @@
     (external_method_body_content) @injection.content)
   (#set! injection.include-children "true")
   (#set! injection.language "xml"))
-
 
 ; Storage definition is XML
 (storage
