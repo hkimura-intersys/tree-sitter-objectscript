@@ -587,10 +587,10 @@ module.exports = grammar(objectscript_expr, {
             field('keyword', $.keyword_print),
             field('keyword', $.keyword_zprint),
           ),
-          $._print_argument,
+          $.print_argument,
         ),
       ),
-    _print_argument: ($) =>
+    print_argument: ($) =>
       choice(
         $.line_ref,
         seq(

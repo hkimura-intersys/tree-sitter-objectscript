@@ -94,7 +94,10 @@ jobs:
         run: |-
           set -euo pipefail
           while IFS= read -r grammar_dir; do
-            tree-sitter build "$grammar_dir"
+            (
+              cd "$grammar_dir"
+              tree-sitter build
+            )
           done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
       - name: Set up ts_query_ls
         run: curl -fL https://github.com/ribru17/ts_query_ls/releases/latest/download/ts_query_ls-x86_64-unknown-linux-gnu.tar.gz | tar -xz

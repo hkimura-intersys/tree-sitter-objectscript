@@ -3698,6 +3698,21 @@
     }
   },
   {
+    "type": "print_argument",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line_ref",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "print_statement",
     "named": true,
     "fields": {
@@ -3721,11 +3736,11 @@
       "required": false,
       "types": [
         {
-          "type": "line_ref",
+          "type": "post_conditional",
           "named": true
         },
         {
-          "type": "post_conditional",
+          "type": "print_argument",
           "named": true
         }
       ]

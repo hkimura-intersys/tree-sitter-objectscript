@@ -6611,13 +6611,13 @@
             },
             {
               "type": "SYMBOL",
-              "name": "_print_argument"
+              "name": "print_argument"
             }
           ]
         }
       ]
     },
-    "_print_argument": {
+    "print_argument": {
       "type": "CHOICE",
       "members": [
         {
