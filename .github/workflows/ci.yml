@@ -93,12 +93,27 @@ jobs:
         shell: bash
         run: |-
           set -euo pipefail
-          while IFS= read -r grammar_dir; do
+          while IFS=$'\t' read -r grammar_dir grammar_name; do
             (
               cd "$grammar_dir"
               tree-sitter build
+
+              built_parser=""
+              for ext in so dylib dll wasm; do
+                if [[ -f "parser.$ext" ]]; then
+                  built_parser="parser.$ext"
+                  break
+                fi
+              done
+
+              if [[ -z "$built_parser" ]]; then
+                echo "No parser artifact produced for $grammar_name in $grammar_dir" >&2
+                exit 1
+              fi
+
+              cp "$built_parser" "$grammar_name.${built_parser##*.}"
             )
-          done < <(jq -r '.grammars[].path // "."' tree-sitter.json)
+          done < <(jq -r '.grammars[] | [.path // ".", .name] | @tsv' tree-sitter.json)
       - name: Set up ts_query_ls
         run: curl -fL https://github.com/ribru17/ts_query_ls/releases/latest/download/ts_query_ls-x86_64-unknown-linux-gnu.tar.gz | tar -xz
       - name: Check queries
