@@ -20,7 +20,6 @@ jobs:
     uses: tree-sitter/workflows/.github/workflows/package-npm.yml@31a611b89757509757378e3d94f28a41a782d9df
     with:
       generate: true
-      attestations: true
     secrets:
       NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
@@ -28,7 +27,6 @@ jobs:
     uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@4496d01d44b1c60efe484a98756b5544f07f1db2
     with:
       generate: true
-      attestations: true
     secrets:
       PYPI_API_TOKEN: ${{secrets.PYPI_API_TOKEN}}
 
