@@ -24,7 +24,7 @@ jobs:
       NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   pypi:
-    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@4496d01d44b1c60efe484a98756b5544f07f1db2
+    uses: tree-sitter/workflows/.github/workflows/package-pypi.yml@56557c4133653a3537051dbdc31f4af09dffaef4
     with:
       generate: true
     secrets:
