@@ -178,7 +178,7 @@ To keep generated query files synchronized before commit, install the repository
 make installhooks
 ```
 
-The hook runs `python3 scripts/sync_queries.py` and stages updated query files automatically.
+The hook runs `python3 scripts/sync_queries.py` when staged query-related files change, and stages updated query files automatically.
 
 ## License
 

@@ -5,16 +5,6 @@ repo_root=$(git rev-parse --show-toplevel)
 cd "$repo_root"
 
 should_sync=0
-git diff --cached --name-only --diff-filter=ACMR | while IFS= read -r path; do
-  case "$path" in
-    expr/queries/*.scm|core/queries/*.scm|udl/queries/*.scm|bindings/python/*/queries/*.scm|scripts/sync_queries.py)
-      should_sync=1
-      break
-      ;;
-  esac
-done
-
-# Subshell from the pipe prevents updating should_sync directly.
 if git diff --cached --name-only --diff-filter=ACMR | grep -Eq '^(expr|core|udl)/queries/.*\.scm$|^bindings/python/.*/queries/.*\.scm$|^scripts/sync_queries\.py$'; then
   should_sync=1
 fi
