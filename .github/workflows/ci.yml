@@ -25,8 +25,7 @@ on:
       - binding.gyp
       - Makefile
       - .tsqueryrc.json
-      - .github/workflows/ci.yml
-      - .github/workflows/sync-queries.yml
+      - .github/workflows/**
       - "common/*"
       - udl/package.json
   pull_request:
