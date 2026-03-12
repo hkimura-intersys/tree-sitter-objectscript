@@ -15,8 +15,10 @@ Python bindings are copied from the composed trees:
 
 from __future__ import annotations
 
+import argparse
 import re
 import shutil
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -27,6 +29,13 @@ UDL_DIR = ROOT / "udl" / "queries"
 
 LOCAL_BEGIN = "; === BEGIN LOCAL ==="
 LOCAL_END = "; === END LOCAL ==="
+
+PYTHON_QUERY_DIRS: tuple[tuple[Path, Path], ...] = (
+    (UDL_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript" / "queries"),
+    (CORE_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript_core" / "queries"),
+    (UDL_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript_udl" / "queries"),
+    (EXPR_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript_expr" / "queries"),
+)
 
 
 def read_text(path: Path) -> str:
@@ -102,7 +111,59 @@ def sync_python_query_dir(src_dir: Path, dst_dir: Path) -> None:
         shutil.copyfile(src_path, dst_dir / name)
 
 
+def read_query_files(path: Path) -> dict[str, str]:
+    return {p.name: read_text(p) for p in sorted(path.glob("*.scm"))}
+
+
+def check_python_query_dirs() -> list[str]:
+    mismatches: list[str] = []
+    for src_dir, dst_dir in PYTHON_QUERY_DIRS:
+        src_files = read_query_files(src_dir)
+        dst_files = read_query_files(dst_dir)
+        src_names = set(src_files)
+        dst_names = set(dst_files)
+
+        missing = sorted(src_names - dst_names)
+        extra = sorted(dst_names - src_names)
+        different = sorted(
+            name for name in (src_names & dst_names) if src_files[name] != dst_files[name]
+        )
+
+        if not missing and not extra and not different:
+            continue
+
+        mismatches.append(f"{dst_dir.relative_to(ROOT)} != {src_dir.relative_to(ROOT)}")
+        for name in missing:
+            mismatches.append(f"  missing in destination: {name}")
+        for name in extra:
+            mismatches.append(f"  extra in destination: {name}")
+        for name in different:
+            mismatches.append(f"  content differs: {name}")
+
+    return mismatches
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--check-python",
+        action="store_true",
+        help="Verify Python query directories match their source query directories.",
+    )
+    return parser.parse_args()
+
+
 def main() -> None:
+    args = parse_args()
+    if args.check_python:
+        mismatches = check_python_query_dirs()
+        if mismatches:
+            print("Python query copies are out of sync:", file=sys.stderr)
+            print("\n".join(mismatches), file=sys.stderr)
+            print("\nRun: python3 scripts/sync_queries.py", file=sys.stderr)
+            raise SystemExit(1)
+        return
+
     filenames = list_query_files()
 
     expr_raw = {name: strip_inherits_header(read_text(EXPR_DIR / name)) for name in filenames}
@@ -134,10 +195,8 @@ def main() -> None:
         write_text(CORE_DIR / name, core_text)
         write_text(UDL_DIR / name, udl_text)
 
-    sync_python_query_dir(UDL_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript" / "queries")
-    sync_python_query_dir(CORE_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript_core" / "queries")
-    sync_python_query_dir(UDL_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript_udl" / "queries")
-    sync_python_query_dir(EXPR_DIR, ROOT / "bindings" / "python" / "tree_sitter_objectscript_expr" / "queries")
+    for src_dir, dst_dir in PYTHON_QUERY_DIRS:
+        sync_python_query_dir(src_dir, dst_dir)
 
 
 if __name__ == "__main__":

@@ -170,6 +170,16 @@ This will start up a web browser running the playground with the .wasm built fro
 
 **NOTE**: Since `objectscript` extends `objectscript_udl`, which extends `objectscript_core`, which extends `objectscript_expr`, if you make changes to an upstream grammar, regenerate/rebuild the downstream one(s).
 
+#### Query Sync Hook
+
+To keep generated query files synchronized before commit, install the repository-managed git hook:
+
+```bash
+make installhooks
+```
+
+The hook runs `python3 scripts/sync_queries.py` and stages updated query files automatically.
+
 ## License
 
 This project provided as-is and is licensed under the MIT License.

@@ -65,6 +65,10 @@ $(TSQUERYLS):
 syncqueries:
 	python3 scripts/sync_queries.py
 
+installhooks:
+	git config core.hooksPath .githooks
+	chmod +x .githooks/pre-commit
+
 formatquery: syncqueries $(TSQUERYLS)
 	$(TSQUERYLS)/ts_query_ls format $(QUERY_DIRS)
 
@@ -76,4 +80,4 @@ checkquery: syncqueries $(TSQUERYLS) buildqueryparsers
 
 query: formatquery lintquery checkquery
 
-.PHONY: all install uninstall clean test update buildqueryparsers syncqueries formatquery lintquery checkquery query
+.PHONY: all install uninstall clean test update buildqueryparsers syncqueries installhooks formatquery lintquery checkquery query
