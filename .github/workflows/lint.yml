@@ -5,16 +5,49 @@ on:
     branches: [workflow_and_bindings]
     paths:
       - objectscript/grammar.js
+      - objectscript/queries/**
       - common/keywords.js
+      - common/define_grammar.js
       - udl/grammar.js
+      - udl/queries/**
       - core/grammar.js
-      - common/grammar.js
+      - core/queries/**
+      - expr/grammar.js
+      - expr/queries/**
+      - bindings/python/tree_sitter_objectscript/queries/**
+      - bindings/python/tree_sitter_objectscript_core/queries/**
+      - bindings/python/tree_sitter_objectscript_udl/queries/**
+      - bindings/python/tree_sitter_objectscript_expr/queries/**
+      - scripts/sync_queries.py
+      - .tsqueryrc.json
+      - Makefile
+      - .github/workflows/lint.yml
+      - .github/workflows/sync-queries.yml
   pull_request:
     paths:
-      - common/grammar.js
+      - objectscript/grammar.js
+      - objectscript/queries/**
+      - common/keywords.js
+      - common/define_grammar.js
+      - udl/grammar.js
+      - udl/queries/**
+      - core/grammar.js
+      - core/queries/**
+      - expr/grammar.js
+      - expr/queries/**
+      - bindings/python/tree_sitter_objectscript/queries/**
+      - bindings/python/tree_sitter_objectscript_core/queries/**
+      - bindings/python/tree_sitter_objectscript_udl/queries/**
+      - bindings/python/tree_sitter_objectscript_expr/queries/**
+      - scripts/sync_queries.py
+      - .tsqueryrc.json
+      - Makefile
+      - .github/workflows/lint.yml
+      - .github/workflows/sync-queries.yml
 
 jobs:
-  lint:
+  lint_js:
+    name: Lint JS
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -28,3 +61,25 @@ jobs:
         run: npm ci --legacy-peer-deps
       - name: Run ESLint
         run: npm run lint
+
+  lint_queries:
+    name: Lint Query Files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Set up ts_query_ls
+        run: curl -fL https://github.com/ribru17/ts_query_ls/releases/latest/download/ts_query_ls-x86_64-unknown-linux-gnu.tar.gz | tar -xz
+      - name: Format
+        run: |
+          make formatquery
+          git diff --exit-code -- \
+            expr/queries \
+            core/queries \
+            udl/queries \
+            bindings/python/tree_sitter_objectscript/queries \
+            bindings/python/tree_sitter_objectscript_core/queries \
+            bindings/python/tree_sitter_objectscript_udl/queries \
+            bindings/python/tree_sitter_objectscript_expr/queries
+      - name: Lint
+        run: make lintquery

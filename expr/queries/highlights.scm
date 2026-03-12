@@ -1,4 +1,4 @@
-(pattern_expression) @string.regex
+(pattern_expression) @string.regexp
 
 (numeric_literal) @number
 
@@ -8,11 +8,11 @@
 
 (keyword_pound_pound_super) @keyword
 
-(system_defined_variable) @variable.special
+(system_defined_variable) @variable.builtin
 
-(system_defined_function) @variable.special
+(system_defined_function) @function.builtin
 
-(sql_field_modifier) @variable.special
+(sql_field_modifier) @keyword.modifier
 
 (property_name) @property
 
@@ -65,7 +65,7 @@
   "|"
   "||"
   "$$"
-] @punctuation
+] @punctuation.delimiter
 
 [
   "'&"
