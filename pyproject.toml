@@ -29,5 +29,5 @@ Homepage = "https://github.com/intersystems/tree-sitter-objectscript"
 core = ["tree-sitter~=0.23"]
 
 [tool.cibuildwheel]
-build = "cp38-*"
+build = "cp39-*"
 build-frontend = "build"

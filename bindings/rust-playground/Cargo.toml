@@ -1,8 +1,8 @@
 [package]
-name = "tree-sitter-objectscript"
-description = "ObjectScript UDL grammar for tree-sitter"
+name = "tree-sitter-objectscript-playground"
+description = "ObjectScript playground grammar for tree-sitter"
 version = "1.5.0"
-keywords = ["incremental", "parsing", "objectscript", "udl"]
+keywords = ["incremental", "parsing", "objectscript"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/intersystems/tree-sitter-objectscript"
 edition = "2021"
@@ -11,17 +11,17 @@ authors = [
   "Dave McCaldon <davem@intersystems.com>",
   "Hannah Kimura <hkimura@intersystems.com>",
 ]
-build = "bindings/rust/build.rs"
+build = "build.rs"
 include = [
   "/LICENSE",
   "/cargo_readme.md",
-  "/bindings/rust/build.rs",
-  "/bindings/rust/lib.rs",
+  "/build.rs",
+  "/lib.rs",
   "/common/scanner.h",
-  "/udl/src/parser.c",
-  "/udl/src/scanner.c",
-  "/udl/src/node-types.json",
-  "/udl/src/tree_sitter/parser.h",
+  "/objectscript/src/parser.c",
+  "/objectscript/src/scanner.c",
+  "/objectscript/src/node-types.json",
+  "/objectscript/src/tree_sitter/parser.h",
   "/udl/queries/highlights.scm",
   "/udl/queries/indents.scm",
   "/udl/queries/injections.scm",
@@ -29,7 +29,7 @@ include = [
 readme = "cargo_readme.md"
 
 [lib]
-path = "bindings/rust/lib.rs"
+path = "lib.rs"
 
 [dependencies]
 tree-sitter = ">=0.26.6"
