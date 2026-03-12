@@ -42,8 +42,7 @@ on:
       - scripts/sync_queries.py
       - .tsqueryrc.json
       - Makefile
-      - .github/workflows/lint.yml
-      - .github/workflows/sync-queries.yml
+      - .github/workflows/**
 
 jobs:
   lint_js:

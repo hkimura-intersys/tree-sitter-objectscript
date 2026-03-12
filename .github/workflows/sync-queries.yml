@@ -13,7 +13,7 @@ on:
       - bindings/python/tree_sitter_objectscript_expr/queries/**
       - scripts/sync_queries.py
       - Makefile
-      - .github/workflows/sync-queries.yml
+      - .github/workflows/**
   workflow_dispatch:
 
 permissions:

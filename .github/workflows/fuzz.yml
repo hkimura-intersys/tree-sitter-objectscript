@@ -8,6 +8,7 @@ on:
       - workflow_and_bindings
     paths:
       - common/scanner.h
+      - github/workflows/**
   pull_request:
     paths:
       - common/scanner.h
