@@ -1,20 +1,14 @@
 name: Verify Python Query Sync
 
 on:
+  push:
   pull_request:
-    types: [opened, synchronize, reopened]
-    paths:
-      - expr/queries/**
-      - core/queries/**
-      - udl/queries/**
-      - bindings/python/tree_sitter_objectscript/queries/**
-      - bindings/python/tree_sitter_objectscript_core/queries/**
-      - bindings/python/tree_sitter_objectscript_udl/queries/**
-      - bindings/python/tree_sitter_objectscript_expr/queries/**
-      - scripts/sync_queries.py
-      - Makefile
-      - .github/workflows/**
+    branches:
+      - main
+      - master
+      - workflow_and_bindings
   workflow_dispatch:
+  
 
 permissions:
   contents: read

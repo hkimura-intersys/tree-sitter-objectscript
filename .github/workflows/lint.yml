@@ -2,51 +2,12 @@ name: Lint
 
 on:
   push:
-    branches: [workflow_and_bindings]
-    paths:
-      - objectscript/grammar.js
-      - objectscript/queries/**
-      - common/keywords.js
-      - common/define_grammar.js
-      - udl/grammar.js
-      - udl/queries/**
-      - core/grammar.js
-      - core/queries/**
-      - expr/grammar.js
-      - expr/queries/**
-      - bindings/python/tree_sitter_objectscript/queries/**
-      - bindings/python/tree_sitter_objectscript_core/queries/**
-      - bindings/python/tree_sitter_objectscript_udl/queries/**
-      - bindings/python/tree_sitter_objectscript_expr/queries/**
-      - scripts/sync_queries.py
-      - .tsqueryrc.json
-      - Makefile
-      - package.json
-      - package-lock.json
-      - .github/workflows/lint.yml
-      - .github/workflows/sync-queries.yml
   pull_request:
-    paths:
-      - objectscript/grammar.js
-      - objectscript/queries/**
-      - common/keywords.js
-      - common/define_grammar.js
-      - udl/grammar.js
-      - udl/queries/**
-      - core/grammar.js
-      - core/queries/**
-      - expr/grammar.js
-      - expr/queries/**
-      - bindings/python/tree_sitter_objectscript/queries/**
-      - bindings/python/tree_sitter_objectscript_core/queries/**
-      - bindings/python/tree_sitter_objectscript_udl/queries/**
-      - bindings/python/tree_sitter_objectscript_expr/queries/**
-      - scripts/sync_queries.py
-      - .tsqueryrc.json
-      - Makefile
-      - package.json
-      - package-lock.json
-      - .github/workflows/**
+    branches:
+      - main
+      - master
+      - workflow_and_bindings
+  workflow_dispatch:
 
 permissions:
   contents: read

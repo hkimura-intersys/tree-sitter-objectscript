@@ -25,7 +25,7 @@ stage_playground_crate() {
   cp -f "$TEMPLATE_DIR/lib.rs" "$dest/lib.rs"
 
   cp -f "$ROOT_DIR/LICENSE" "$dest/LICENSE"
-  cp -f "$ROOT_DIR/cargo_readme.md" "$dest/cargo_readme.md"
+  cp -f "$ROOT_DIR/cargo_readme_playground.md" "$dest/cargo_readme_playground.md"
 
   cp -f "$ROOT_DIR/common/scanner.h" "$dest/common/scanner.h"
   cp -f "$ROOT_DIR/objectscript/src/parser.c" "$dest/objectscript/src/parser.c"

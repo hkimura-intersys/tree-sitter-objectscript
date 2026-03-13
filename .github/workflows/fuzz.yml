@@ -1,17 +1,13 @@
-name: Fuzz Parser
+name: Fuzz
 
 on:
   push:
-    branches:
-      - master
-      - main
-      - workflow_and_bindings
-    paths:
-      - common/scanner.h
-      - github/workflows/**
   pull_request:
-    paths:
-      - common/scanner.h
+    branches:
+      - main
+      - master
+      - workflow_and_bindings
+  workflow_dispatch:
 
 permissions:
   contents: read

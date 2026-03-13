@@ -2,58 +2,11 @@ name: CI
 
 on:
   push:
-    branches: [workflow_and_bindings]
-    paths:
-      - udl/grammar.js
-      - udl/src/**
-      - udl/test/**
-      - udl/queries/**
-      - objectscript/grammar.js
-      - objectscript/src/**
-      - objectscript/test/**
-      - core/grammar.js
-      - core/src/**
-      - core/test/**
-      - core/queries/**
-      - expr/grammar.js
-      - expr/src/**
-      - expr/test/**
-      - expr/queries/**
-      - scripts/sync_queries.py
-      - bindings/**
-      - examples/**
-      - binding.gyp
-      - Makefile
-      - .tsqueryrc.json
-      - .github/workflows/**
-      - "common/*"
-      - udl/package.json
   pull_request:
-    paths:
-      - udl/grammar.js
-      - udl/src/**
-      - udl/test/**
-      - udl/queries/**
-      - objectscript/grammar.js
-      - objectscript/src/**
-      - objectscript/test/**
-      - core/grammar.js
-      - core/src/**
-      - core/test/**
-      - core/queries/**
-      - expr/grammar.js
-      - expr/src/**
-      - expr/test/**
-      - expr/queries/**
-      - scripts/sync_queries.py
-      - bindings/**
-      - examples/**
-      - binding.gyp
-      - Makefile
-      - .tsqueryrc.json
-      - .github/workflows/ci.yml
-      - .github/workflows/sync-queries.yml
-      - "common/*"
+    branches:
+      - main
+      - master
+      - workflow_and_bindings
 
 concurrency:
   group: ${{github.workflow}}-${{github.ref}}

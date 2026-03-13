@@ -63,8 +63,21 @@
     "udl/src/scanner.c",
     "udl/src/node-types.json",
     "udl/src/tree_sitter/*.h",
+    "core/grammar.js",
+    "core/queries/*",
+    "core/src/parser.c",
+    "core/src/scanner.c",
+    "core/src/node-types.json",
+    "core/src/tree_sitter/*.h",
+    "expr/grammar.js",
+    "expr/queries/*",
+    "expr/src/parser.c",
+    "expr/src/node-types.json",
+    "expr/src/tree_sitter/*.h",
     "tree-sitter.json",
     "objectscript/package.json",
-    "udl/package.json"
+    "udl/package.json",
+    "core/package.json",
+    "expr/package.json"
   ]
 }

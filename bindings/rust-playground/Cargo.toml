@@ -14,7 +14,7 @@ authors = [
 build = "build.rs"
 include = [
   "/LICENSE",
-  "/cargo_readme.md",
+  "/cargo_readme_playground.md",
   "/build.rs",
   "/lib.rs",
   "/common/scanner.h",
@@ -26,7 +26,7 @@ include = [
   "/udl/queries/indents.scm",
   "/udl/queries/injections.scm",
 ]
-readme = "cargo_readme.md"
+readme = "cargo_readme_playground.md"
 
 [lib]
 path = "lib.rs"
