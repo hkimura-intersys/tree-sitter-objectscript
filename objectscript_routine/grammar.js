@@ -27,8 +27,8 @@ module.exports = define_grammar(objectscript_core, {
         alias($.identifier, $.routine_name),
         optional($.routine_type),
         repeat(
-          $.statement
-        )
+          $.statement,
+        ),
       ),
 
     routine_type: (_) =>
@@ -39,9 +39,9 @@ module.exports = define_grammar(objectscript_core, {
         choice(
           /mac/i,
           /inc/i,
-          /int/i
+          /int/i,
         ),
-        ']'
+        ']',
       ),
 
     documatic_line: ($) => seq(
@@ -51,8 +51,8 @@ module.exports = define_grammar(objectscript_core, {
         token.immediate(prec(1, /.*/)),
       ),
     ),
-    
+
     identifier: (_) => /[%A-Za-z][A-Za-z0-9]*(?:\.[%A-Za-z][A-Za-z0-9]*)*/,
-        
+
   },
 });
