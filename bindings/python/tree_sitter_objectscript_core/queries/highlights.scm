@@ -42,8 +42,8 @@
   (sql_field_identifier)
   (lvn)
   (gvn)
-  (ssvn) 
-  (objectscript_identifier) 
+  (ssvn)
+  (objectscript_identifier)
 ] @variable
 
 (instance_variable) @variable.member
@@ -149,8 +149,8 @@
   (sql_field_identifier)
   (lvn)
   (gvn)
-  (ssvn) 
-  (objectscript_identifier) 
+  (ssvn)
+  (objectscript_identifier)
 ] @variable
 
 (instance_variable) @variable.member

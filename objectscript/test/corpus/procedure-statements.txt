@@ -135,9 +135,9 @@ MyProc(x,y) PUBLIC { }
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket)))
       (keyword_public))))
 
@@ -157,9 +157,9 @@ MyProc2(x,y) { }
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket)))
       (keyword_private)))
   (statement
@@ -169,9 +169,9 @@ MyProc2(x,y) { }
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket))))))
 
 ================
@@ -190,9 +190,9 @@ MyProc(x,y)[x] {
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket)))
       (procedure_pub_vars
         (attribute))
@@ -232,9 +232,9 @@ Label1 // Label1 that is part of Rou1 and neither procedure
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket)))
       (statement
         (tag))
@@ -246,11 +246,11 @@ Label1 // Label1 that is part of Rou1 and neither procedure
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket)))
       (statement
         (tag))
@@ -281,9 +281,9 @@ Label1 ; The DO calls this label
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket)))
       (statement
         (command_do

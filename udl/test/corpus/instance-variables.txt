@@ -26,7 +26,7 @@ ClassMethod Bar() {
             (arguments)
             (statement
               (command_set
-                keyword: (keyword_set)
+                command: (keyword_set)
                 (set_argument
                   (oref_set_target
                     (relative_dot_property

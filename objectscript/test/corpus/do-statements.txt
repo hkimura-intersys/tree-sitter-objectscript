@@ -477,7 +477,7 @@ Do Statement Object Method
       (do_parameter
         (instance_method_call
           (instance_variable
-            (property_name
+            (member_name
               (identifier_segment_immediate))
             (subscripts
               (bracket)

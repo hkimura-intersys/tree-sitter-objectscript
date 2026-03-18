@@ -42,8 +42,8 @@
   (sql_field_identifier)
   (lvn)
   (gvn)
-  (ssvn) 
-  (objectscript_identifier) 
+  (ssvn)
+  (objectscript_identifier)
 ] @variable
 
 (instance_variable) @variable.member
@@ -149,8 +149,8 @@
   (sql_field_identifier)
   (lvn)
   (gvn)
-  (ssvn) 
-  (objectscript_identifier) 
+  (ssvn)
+  (objectscript_identifier)
 ] @variable
 
 (instance_variable) @variable.member
@@ -308,8 +308,11 @@ embedded: (_) @keyword.operator
 ; === END CORE ===
 ; === BEGIN LOCAL ===
 (routine_type) @keyword.modifier
+
 (documatic_line) @comment @spell
+
 (routine_name) @type
+
 (routine) @keyword.type
 
 ; === END LOCAL ===

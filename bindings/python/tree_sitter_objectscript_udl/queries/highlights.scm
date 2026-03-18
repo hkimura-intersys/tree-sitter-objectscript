@@ -42,8 +42,8 @@
   (sql_field_identifier)
   (lvn)
   (gvn)
-  (ssvn) 
-  (objectscript_identifier) 
+  (ssvn)
+  (objectscript_identifier)
 ] @variable
 
 (instance_variable) @variable.member
@@ -149,8 +149,8 @@
   (sql_field_identifier)
   (lvn)
   (gvn)
-  (ssvn) 
-  (objectscript_identifier) 
+  (ssvn)
+  (objectscript_identifier)
 ] @variable
 
 (instance_variable) @variable.member
@@ -308,8 +308,8 @@ embedded: (_) @keyword.operator
 ; === END CORE ===
 ; === BEGIN LOCAL ===
 ; ------------------ UDL -------------------
-
 (argument) @variable.parameter
+
 [
   (keyword_import)
   (keyword_include)
@@ -363,7 +363,7 @@ embedded: (_) @keyword.operator
 (documatic_line) @comment.documentation
 
 [
-  (query_name) 
+  (query_name)
   (relationship_name)
   (foreignkey_name)
   (parameter_name)
@@ -376,11 +376,11 @@ embedded: (_) @keyword.operator
 [
   (return_type)
   (parameter_type)
-  (index_type) 
+  (index_type)
   (projection_type)
   (property_type)
-  (index_property_type) 
-]@type.builtin
+  (index_property_type)
+] @type.builtin
 
 (typename) @type
 

@@ -31,11 +31,11 @@ label(name1,name2,name3)
         (parameter_list
           (bracket)
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (tag_parameter
-            (objectscript_identifier))
+            (method_arg))
           (bracket))))))
 
 ===

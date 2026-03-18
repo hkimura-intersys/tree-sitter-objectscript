@@ -17,7 +17,16 @@ git add -- \
   bindings/python/tree_sitter_objectscript_expr/queries \
   bindings/python/tree_sitter_objectscript_routine/queries
 
+npm run lint -- --fix
 npm run lint
+git add -- \
+  common/define_grammar.js \
+  common/keywords.js \
+  objectscript/grammar.js \
+  udl/grammar.js \
+  core/grammar.js \
+  expr/grammar.js \
+  objectscript_routine/grammar.js
 
 for grammar in objectscript udl core expr objectscript_routine; do
   (
@@ -25,6 +34,18 @@ for grammar in objectscript udl core expr objectscript_routine; do
     tree-sitter test
   )
 done
+
+make formatquery
+git add -- \
+  expr/queries \
+  core/queries \
+  udl/queries \
+  objectscript_routine/queries \
+  bindings/python/tree_sitter_objectscript/queries \
+  bindings/python/tree_sitter_objectscript_core/queries \
+  bindings/python/tree_sitter_objectscript_udl/queries \
+  bindings/python/tree_sitter_objectscript_expr/queries \
+  bindings/python/tree_sitter_objectscript_routine/queries
 
 make lintquery
 make checkquery

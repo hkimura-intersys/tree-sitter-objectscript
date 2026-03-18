@@ -12,7 +12,7 @@ test
 
 (source_file
   (routine)
-  (identifier)
+  (routine_name)
   (routine_type)
   (statement
     (tag))
@@ -48,7 +48,7 @@ Routine %test.x [Type = int]
 
 (source_file
   (routine)
-  (identifier)
+  (routine_name)
   (routine_type))
 
 ====
@@ -59,7 +59,7 @@ Routine test [Type = inc]
 
 (source_file
   (routine)
-  (identifier)
+  (routine_name)
   (routine_type))
 
 ====
@@ -70,7 +70,7 @@ Routine    test [Type=mac]
 
 (source_file
   (routine)
-  (identifier)
+  (routine_name)
   (routine_type))
 
 ====
@@ -80,9 +80,13 @@ Invalid Routine header
  Routine test [type=mac]
 ---
 
+
+
 ====
 Invalid Routine, no header
 :error
 ====
  set x = 2
 ---
+
+

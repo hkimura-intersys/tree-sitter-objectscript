@@ -54,7 +54,7 @@ ClassMethod GetSDA(Output pXml, p as %String) {
                     (identifier)))))
             (statement
               (command_set
-                keyword: (keyword_set)
+                command: (keyword_set)
                 (set_argument
                   (glvn
                     (lvn
