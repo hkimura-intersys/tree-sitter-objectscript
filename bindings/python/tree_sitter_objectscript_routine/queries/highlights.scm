@@ -1,0 +1,203 @@
+(pattern_expression) @string.regexp
+
+[
+  (json_number_literal)
+  (numeric_literal)
+] @number
+
+[
+  (json_null_literal)
+  (json_string_literal)
+  (string_literal)
+] @string
+
+[
+  (keyword_pound_pound_super)
+  (keyword_pound_pound_class)
+] @keyword.directive
+
+(system_defined_variable) @variable.builtin
+
+(system_defined_function) @function.builtin
+
+(sql_field_modifier) @keyword.modifier
+
+[
+  (property_name)
+  (parameter_name)
+] @variable.member
+
+(method_name) @function.method
+
+(class_name) @type
+
+(macro) @constant
+
+[
+  (routine_ref)
+  (sql_field_identifier)
+  (lvn)
+  (gvn)
+  (ssvn) 
+  (objectscript_identifier) 
+] @variable
+
+(instance_variable) @variable.member
+
+(method_arg) @variable.parameter
+
+; I didn't include ( or ) in this, because they are often grouped
+; as part of a sequence that gets turned into a single token, so they
+; don't get matched, and one ends up getting colored differently than the other.
+[
+  "_"
+  ","
+  ":"
+  ".."
+  "..."
+  "'["
+  "']"
+  "']]"
+  "\""
+  "\"\""
+  "["
+  "]"
+  "]]"
+  "{"
+  "}"
+  "/"
+  "\\"
+  "#"
+  "|"
+  "||"
+  "$$"
+] @punctuation.delimiter
+
+[
+  "'&"
+  "&"
+  "&&"
+  "'<"
+  "'="
+  "'>"
+  "^"
+  "-"
+  "^$"
+  "+"
+  "<"
+  "<="
+  "="
+  ">"
+  ">="
+  "@"
+  "*"
+  "**"
+  "'"
+  "'!"
+  "'?"
+  "!"
+  "?"
+] @operator
+
+(json_boolean_literal) @boolean
+
+(bracket) @punctuation.bracket
+
+; === END EXPR ===
+; === BEGIN CORE ===
+(locktype) @variable
+
+(macro_arg) @variable
+
+(macro_value) @constant.builtin
+
+[
+  (keyword_for)
+  (keyword_while)
+  (keyword_continue)
+] @keyword.repeat
+
+[
+  (keyword_if)
+  (keyword_elseif)
+  (keyword_else)
+  (keyword_oldelse)
+] @keyword.conditional
+
+[
+  (keyword_throw)
+  (keyword_try)
+  (keyword_catch)
+] @keyword.exception
+
+[
+  (keyword_return)
+  (keyword_quit)
+] @keyword.return
+
+[
+  (keyword_break)
+  (keyword_debug)
+  (keyword_trace)
+  (keyword_step)
+  (keyword_nostep)
+  (keyword_stepmethod)
+] @keyword.debug
+
+[
+  (keyword_pound_define)
+  (keyword_pound_def1arg)
+  (keyword_pound_if)
+  (keyword_pound_elseif)
+  (keyword_pound_else)
+  (keyword_pound_endif)
+  (keyword_pound_ifdef)
+  (keyword_pound_ifndef)
+  (keyword_dim)
+  (keyword_pound_import)
+  (keyword_pound_include)
+] @keyword.directive
+
+[
+  (keyword_as)
+  (keyword_of)
+  (keyword_public)
+  (keyword_private)
+  (keyword_methodimpl)
+  (open_keywords)
+  (use_keywords)
+  (close_parameter_option_value)
+  (attribute)
+] @keyword.modifier
+
+keyword: (_) @keyword
+
+command: (_) @function.builtin
+
+embedded: (_) @keyword.operator
+
+[
+  (embedded_js_special_case_complete)
+  (embedded_sql_marker)
+  (embedded_sql_reverse_marker)
+  (html_marker)
+  (html_marker_reversed)
+] @punctuation.special
+
+[
+  (line_comment_1)
+  (line_comment_2)
+  (line_comment_3)
+  (line_comment_4)
+  (block_comment)
+] @comment @spell
+
+(tag) @tag
+
+
+; === END CORE ===
+
+(routine_type) @keyword.modifier
+(documatic_line) @comment @spell
+(routine_name) @type
+(routine) @keyword.type

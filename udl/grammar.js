@@ -503,7 +503,7 @@ module.exports = define_grammar(objectscript_core, {
           seq(optional(field('operator', '-')), $.numeric_literal),
         ),
       ),
-    identifier: ($) => /[%A-Za-z][A-Za-z0-9]*(?:\.[%A-Za-z][A-Za-z0-9]*)*/,
+    identifier: (_) => /[%A-Za-z][A-Za-z0-9]*(?:\.[%A-Za-z][A-Za-z0-9]*)*/,
     quote_permitting_identifier: ($) =>
       choice(/"((?:""|[^"])*)"/, $.identifier),
     _word: ($) => /[%A-Za-z0-9][A-Za-z0-9]+/,

@@ -378,6 +378,10 @@
           "named": true
         },
         {
+          "type": "do_statement_after",
+          "named": true
+        },
+        {
           "type": "dotted_statement",
           "named": true
         },
@@ -1542,6 +1546,233 @@
         },
         {
           "type": "superclass_method_call",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "do_statement_after",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "command_break",
+          "named": true
+        },
+        {
+          "type": "command_close",
+          "named": true
+        },
+        {
+          "type": "command_continue",
+          "named": true
+        },
+        {
+          "type": "command_do",
+          "named": true
+        },
+        {
+          "type": "command_dowhile",
+          "named": true
+        },
+        {
+          "type": "command_else",
+          "named": true
+        },
+        {
+          "type": "command_for",
+          "named": true
+        },
+        {
+          "type": "command_goto",
+          "named": true
+        },
+        {
+          "type": "command_halt_or_hang",
+          "named": true
+        },
+        {
+          "type": "command_if",
+          "named": true
+        },
+        {
+          "type": "command_job",
+          "named": true
+        },
+        {
+          "type": "command_kill",
+          "named": true
+        },
+        {
+          "type": "command_lock",
+          "named": true
+        },
+        {
+          "type": "command_merge",
+          "named": true
+        },
+        {
+          "type": "command_new",
+          "named": true
+        },
+        {
+          "type": "command_open",
+          "named": true
+        },
+        {
+          "type": "command_quit",
+          "named": true
+        },
+        {
+          "type": "command_read",
+          "named": true
+        },
+        {
+          "type": "command_return",
+          "named": true
+        },
+        {
+          "type": "command_set",
+          "named": true
+        },
+        {
+          "type": "command_tcommit",
+          "named": true
+        },
+        {
+          "type": "command_throw",
+          "named": true
+        },
+        {
+          "type": "command_trollback",
+          "named": true
+        },
+        {
+          "type": "command_trycatch",
+          "named": true
+        },
+        {
+          "type": "command_tstart",
+          "named": true
+        },
+        {
+          "type": "command_use",
+          "named": true
+        },
+        {
+          "type": "command_view",
+          "named": true
+        },
+        {
+          "type": "command_while",
+          "named": true
+        },
+        {
+          "type": "command_write",
+          "named": true
+        },
+        {
+          "type": "command_xecute",
+          "named": true
+        },
+        {
+          "type": "command_zbreak",
+          "named": true
+        },
+        {
+          "type": "command_zkill",
+          "named": true
+        },
+        {
+          "type": "command_zn",
+          "named": true
+        },
+        {
+          "type": "command_zsu",
+          "named": true
+        },
+        {
+          "type": "command_ztrap",
+          "named": true
+        },
+        {
+          "type": "command_zwrite",
+          "named": true
+        },
+        {
+          "type": "command_zz",
+          "named": true
+        },
+        {
+          "type": "embedded_html",
+          "named": true
+        },
+        {
+          "type": "embedded_js",
+          "named": true
+        },
+        {
+          "type": "embedded_sql",
+          "named": true
+        },
+        {
+          "type": "embedded_xml",
+          "named": true
+        },
+        {
+          "type": "macro",
+          "named": true
+        },
+        {
+          "type": "pound_def1arg",
+          "named": true
+        },
+        {
+          "type": "pound_define",
+          "named": true
+        },
+        {
+          "type": "pound_dim",
+          "named": true
+        },
+        {
+          "type": "pound_if",
+          "named": true
+        },
+        {
+          "type": "pound_ifdef",
+          "named": true
+        },
+        {
+          "type": "pound_ifndef",
+          "named": true
+        },
+        {
+          "type": "pound_import",
+          "named": true
+        },
+        {
+          "type": "pound_include",
+          "named": true
+        },
+        {
+          "type": "print_statement",
+          "named": true
+        },
+        {
+          "type": "procedure",
+          "named": true
+        },
+        {
+          "type": "tag",
+          "named": true
+        },
+        {
+          "type": "tag_with_params",
           "named": true
         }
       ]

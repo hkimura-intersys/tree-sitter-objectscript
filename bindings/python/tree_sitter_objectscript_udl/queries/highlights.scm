@@ -4,13 +4,21 @@
 ; === BEGIN EXPR ===
 (pattern_expression) @string.regexp
 
-(numeric_literal) @number
+[
+  (json_number_literal)
+  (numeric_literal)
+] @number
 
-(string_literal) @string
+[
+  (json_null_literal)
+  (json_string_literal)
+  (string_literal)
+] @string
 
-(keyword_pound_pound_class) @keyword
-
-(keyword_pound_pound_super) @keyword
+[
+  (keyword_pound_pound_super)
+  (keyword_pound_pound_class)
+] @keyword.directive
 
 (system_defined_variable) @variable.builtin
 
@@ -18,29 +26,27 @@
 
 (sql_field_modifier) @keyword.modifier
 
-(property_name) @property
+[
+  (property_name)
+  (parameter_name)
+] @variable.member
 
-(method_name) @function
-
-(parameter_name) @property
+(method_name) @function.method
 
 (class_name) @type
 
 (macro) @constant
 
-(routine_ref) @variable
+[
+  (routine_ref)
+  (sql_field_identifier)
+  (lvn)
+  (gvn)
+  (ssvn) 
+  (objectscript_identifier) 
+] @variable
 
-(sql_field_identifier) @variable
-
-(lvn) @variable
-
-(gvn) @variable
-
-(ssvn) @variable
-
-(instance_variable) @variable
-
-(objectscript_identifier) @variable
+(instance_variable) @variable.member
 
 (method_arg) @variable.parameter
 
@@ -97,13 +103,114 @@
   "?"
 ] @operator
 
-(json_string_literal) @string
-
 (json_boolean_literal) @boolean
 
-(json_number_literal) @number
+(bracket) @punctuation.bracket
 
-(json_null_literal) @string
+; === END EXPR ===
+; === BEGIN CORE ===
+(pattern_expression) @string.regexp
+
+[
+  (json_number_literal)
+  (numeric_literal)
+] @number
+
+[
+  (json_null_literal)
+  (json_string_literal)
+  (string_literal)
+] @string
+
+[
+  (keyword_pound_pound_super)
+  (keyword_pound_pound_class)
+] @keyword.directive
+
+(system_defined_variable) @variable.builtin
+
+(system_defined_function) @function.builtin
+
+(sql_field_modifier) @keyword.modifier
+
+[
+  (property_name)
+  (parameter_name)
+] @variable.member
+
+(method_name) @function.method
+
+(class_name) @type
+
+(macro) @constant
+
+[
+  (routine_ref)
+  (sql_field_identifier)
+  (lvn)
+  (gvn)
+  (ssvn) 
+  (objectscript_identifier) 
+] @variable
+
+(instance_variable) @variable.member
+
+(method_arg) @variable.parameter
+
+; I didn't include ( or ) in this, because they are often grouped
+; as part of a sequence that gets turned into a single token, so they
+; don't get matched, and one ends up getting colored differently than the other.
+[
+  "_"
+  ","
+  ":"
+  ".."
+  "..."
+  "'["
+  "']"
+  "']]"
+  "\""
+  "\"\""
+  "["
+  "]"
+  "]]"
+  "{"
+  "}"
+  "/"
+  "\\"
+  "#"
+  "|"
+  "||"
+  "$$"
+] @punctuation.delimiter
+
+[
+  "'&"
+  "&"
+  "&&"
+  "'<"
+  "'="
+  "'>"
+  "^"
+  "-"
+  "^$"
+  "+"
+  "<"
+  "<="
+  "="
+  ">"
+  ">="
+  "@"
+  "*"
+  "**"
+  "'"
+  "'!"
+  "'?"
+  "!"
+  "?"
+] @operator
+
+(json_boolean_literal) @boolean
 
 (bracket) @punctuation.bracket
 
@@ -158,12 +265,9 @@
   (keyword_pound_ifdef)
   (keyword_pound_ifndef)
   (keyword_dim)
-] @keyword.directive
-
-[
   (keyword_pound_import)
   (keyword_pound_include)
-] @keyword.import
+] @keyword.directive
 
 [
   (keyword_as)
@@ -171,27 +275,25 @@
   (keyword_public)
   (keyword_private)
   (keyword_methodimpl)
+  (open_keywords)
+  (use_keywords)
+  (close_parameter_option_value)
+  (attribute)
 ] @keyword.modifier
 
 keyword: (_) @keyword
 
-(embedded_js_special_case_complete) @punctuation.special
+command: (_) @function.builtin
 
-(embedded_sql_marker) @punctuation.special
+embedded: (_) @keyword.operator
 
-(embedded_sql_reverse_marker) @punctuation.special
-
-(html_marker) @punctuation.special
-
-(html_marker_reversed) @punctuation.special
-
-(attribute) @attribute
-
-(open_keywords) @keyword.modifier
-
-(use_keywords) @keyword.modifier
-
-(close_parameter_option_value) @keyword.modifier
+[
+  (embedded_js_special_case_complete)
+  (embedded_sql_marker)
+  (embedded_sql_reverse_marker)
+  (html_marker)
+  (html_marker_reversed)
+] @punctuation.special
 
 [
   (line_comment_1)
@@ -206,6 +308,8 @@ keyword: (_) @keyword
 ; === END CORE ===
 ; === BEGIN LOCAL ===
 ; ------------------ UDL -------------------
+
+(argument) @variable.parameter
 [
   (keyword_import)
   (keyword_include)
@@ -233,14 +337,6 @@ keyword: (_) @keyword
 ] @keyword.type
 
 [
-  (keyword_as)
-  (keyword_of)
-  (keyword_on)
-  (keyword_not)
-  (keyword_references)
-] @keyword.modifier
-
-[
   (method_keyword_codemode_expression)
   (call_method_keyword)
   (method_keyword)
@@ -257,42 +353,35 @@ keyword: (_) @keyword
   (xdata_keyword)
   (xdata_keyword_mimetype)
   (property_keyword)
+  (keyword_as)
+  (keyword_of)
+  (keyword_on)
+  (keyword_not)
+  (keyword_references)
 ] @keyword.modifier
 
 (documatic_line) @comment.documentation
 
-(query_name) @property
+[
+  (query_name) 
+  (relationship_name)
+  (foreignkey_name)
+  (parameter_name)
+  (projection_name)
+  (index_name)
+  (xdata_name)
+  (storage_name)
+] @variable.member
 
-(property_name) @property
-
-(relationship_name) @property
-
-(foreignkey_name) @property
-
-(parameter_name) @property
-
-(projection_name) @property
-
-(index_name) @property
-
-(xdata_name) @property
-
-(storage_name) @property
-
-(return_type) @type.builtin
+[
+  (return_type)
+  (parameter_type)
+  (index_type) 
+  (projection_type)
+  (property_type)
+  (index_property_type) 
+]@type.builtin
 
 (typename) @type
-
-(parameter_type) @type.builtin
-
-(index_type) @type.builtin
-
-(projection_type) @type.builtin
-
-(property_type) @type.builtin
-
-(index_property_type) @type.builtin
-
-(identifier) @variable
 
 ; === END LOCAL ===

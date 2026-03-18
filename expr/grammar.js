@@ -483,7 +483,7 @@ module.exports = grammar({
       prec.right(
         seq(
           token.immediate(/[irm]\%/),
-          alias($.member_name, $.property_name),
+          $.member_name,
           optional($.subscripts),
         ),
       ),

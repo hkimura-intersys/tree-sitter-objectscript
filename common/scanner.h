@@ -163,6 +163,7 @@ static bool is_statement_or_class_keyword(const int32_t *text, uint32_t len) {
 
   // Statement keywords (including short forms accepted by the grammar)
   if (ascii_upper_eq(text, len, "P") || ascii_upper_eq(text, len, "PRINT")) return true;
+  if (ascii_upper_eq(text, len, "ROUTINE")) return true;
   if (ascii_upper_eq(text, len, "ZP") || ascii_upper_eq(text, len, "ZPRINT")) return true;
   if (ascii_upper_eq(text, len, "S") || ascii_upper_eq(text, len, "SET")) return true;
   if (ascii_upper_eq(text, len, "W") || ascii_upper_eq(text, len, "WRITE")) return true;
