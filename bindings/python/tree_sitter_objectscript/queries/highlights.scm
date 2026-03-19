@@ -37,9 +37,8 @@
 (class_name) @type
 
 (macro_function) @function.macro
+
 (macro_constant) @constant.macro
-
-
 
 [
   (routine_ref)
@@ -113,6 +112,7 @@
 ; === END EXPR ===
 ; === BEGIN CORE ===
 (macro_arg) @variable.member
+
 (macro_value) @constant.builtin
 
 [
@@ -250,7 +250,9 @@
 ; === END CORE ===
 ; === BEGIN UDL ===
 (iris_username) @keyword.directive
+
 (argument) @variable.parameter
+
 (xml_identifier) @variable.member
 
 [

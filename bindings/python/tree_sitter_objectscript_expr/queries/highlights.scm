@@ -34,9 +34,8 @@
 (class_name) @type
 
 (macro_function) @function.macro
+
 (macro_constant) @constant.macro
-
-
 
 [
   (routine_ref)
@@ -106,4 +105,5 @@
 (json_boolean_literal) @boolean
 
 (bracket) @punctuation.bracket
+
 ; === END LOCAL ===
