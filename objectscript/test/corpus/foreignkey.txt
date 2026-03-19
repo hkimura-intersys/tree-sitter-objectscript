@@ -91,7 +91,7 @@ Class test {
           (foreignkey_keywords
             (foreignkey_keyword
               (relationship_keyword_on_delete
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 foreign key keyword - OnUpdate = noaction (default)
@@ -137,7 +137,7 @@ ForeignKey FK1(ParentKey) References Test.ParentNoAction(KeyIndex) [ OnUpdate = 
           (foreignkey_keywords
             (foreignkey_keyword
               (foreignkey_keyword_on_update
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 foreign key keyword - OnUpdate = cascade
@@ -183,7 +183,7 @@ ForeignKey FK1(ParentKey) References Test.ParentCascade(KeyIndex) [ OnUpdate = c
           (foreignkey_keywords
             (foreignkey_keyword
               (foreignkey_keyword_on_update
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 foreign key keyword - OnUpdate = setdefault
@@ -229,7 +229,7 @@ ForeignKey FK1(ParentKey) References Test.ParentSetDefault(KeyIndex) [ OnUpdate 
           (foreignkey_keywords
             (foreignkey_keyword
               (foreignkey_keyword_on_update
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 foreign key keyword - OnUpdate = setnull
@@ -275,7 +275,7 @@ ForeignKey FK1(ParentKey) References Test.ParentSetNull(KeyIndex) [ OnUpdate = s
           (foreignkey_keywords
             (foreignkey_keyword
               (foreignkey_keyword_on_update
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 foreign key keyword - OnUpdate keyword/value case-insensitive
@@ -321,7 +321,7 @@ ForeignKey FK1(ParentKey) References Test.ParentCase(KeyIndex) [ oNuPdAtE = CaSc
           (foreignkey_keywords
             (foreignkey_keyword
               (foreignkey_keyword_on_update
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 invalid - OnUpdate unknown rhs
@@ -805,7 +805,7 @@ ForeignKey FK1(ParentKey) References Test.FK.ParentSqlName(KeyIndex) [ SqlName =
           (foreignkey_keywords
             (foreignkey_keyword
               (method_keyword_sql_name
-                (rhs)))))))))
+                (query_name)))))))))
 
 ===
 foreign key keyword - OnDelete = cascade
@@ -851,7 +851,7 @@ ForeignKey FK1(ParentKey) References Test.FK.ParentOnDelete(KeyIndex) [ OnDelete
           (foreignkey_keywords
             (foreignkey_keyword
               (relationship_keyword_on_delete
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 foreign key keywords - multiple keywords in list
@@ -898,17 +898,17 @@ ForeignKey FK1(ParentKey) References Test.FK.ParentMany(KeyIndex)
           (foreignkey_keywords
             (foreignkey_keyword
               (method_keyword_sql_name
-                (rhs)))
+                (query_name)))
             (foreignkey_keyword
               (foreignkey_keyword_no_check))
             (foreignkey_keyword
               (parameter_keyword_internal))
             (foreignkey_keyword
               (foreignkey_keyword_on_update
-                (rhs)))
+                (typename)))
             (foreignkey_keyword
               (relationship_keyword_on_delete
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 invalid - missing ForeignKey name

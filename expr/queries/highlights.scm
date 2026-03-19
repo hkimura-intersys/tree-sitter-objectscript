@@ -1,3 +1,4 @@
+; === BEGIN LOCAL ===
 (pattern_expression) @string.regexp
 
 [
@@ -14,7 +15,7 @@
 [
   (keyword_pound_pound_super)
   (keyword_pound_pound_class)
-] @keyword.directive
+] @keyword.operator
 
 (system_defined_variable) @variable.builtin
 
@@ -25,17 +26,19 @@
 [
   (property_name)
   (parameter_name)
+  (sql_field_identifier)
 ] @variable.member
 
 (method_name) @function.method
 
 (class_name) @type
 
-(macro) @constant
+(macro_function) @function.macro
+
+(macro_constant) @constant.macro
 
 [
   (routine_ref)
-  (sql_field_identifier)
   (lvn)
   (gvn)
   (ssvn)
@@ -102,3 +105,5 @@
 (json_boolean_literal) @boolean
 
 (bracket) @punctuation.bracket
+
+; === END LOCAL ===

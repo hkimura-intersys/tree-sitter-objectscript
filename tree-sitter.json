@@ -33,13 +33,13 @@
         "common/scanner.h"
       ],
       "highlights": [
-        "udl/queries/highlights.scm"
+        "objectscript/queries/highlights.scm"
       ],
       "injections": [
-        "udl/queries/injections.scm"
+        "objectscript/queries/injections.scm"
       ],
       "indents": [
-        "core/queries/indents.scm"
+        "objectscript/queries/indents.scm"
       ],
       "injection-regex": "^(cos|objectscript)$"
     },
@@ -61,7 +61,7 @@
         "udl/queries/injections.scm"
       ],
       "indents": [
-        "core/queries/indents.scm"
+        "udl/queries/indents.scm"
       ],
       "injection-regex": "^(cos|objectscript)$"
     },
@@ -96,7 +96,7 @@
     }
   ],
   "metadata": {
-    "version": "1.5.1",
+    "version": "1.6.0",
     "license": "MIT",
     "description": "ObjectScript grammars for tree-sitter", 
     "namespace": "io.github.treesitter.objectscript",

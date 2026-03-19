@@ -437,7 +437,7 @@ module.exports = grammar(objectscript_expr, {
     command_set: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_set),
+        $.keyword_set,
         repeat_with_commas($.set_argument),
       ),
     set_argument: ($) =>
@@ -481,9 +481,9 @@ module.exports = grammar(objectscript_expr, {
     command_write: ($) =>
       prec.right(
         choice(
-          build_command_rule_argumentless($, field('command', $.keyword_write)),
+          build_command_rule_argumentless($, $.keyword_write),
           seq(
-           field('command', $.keyword_write),
+          $.keyword_write,
           optional($.post_conditional),
           choice($._immediate_single_whitespace_followed_by_non_whitespace, $._zw_block),
           repeat_with_commas($.write_argument),
@@ -517,12 +517,12 @@ module.exports = grammar(objectscript_expr, {
     // Reference: https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=RCOS_cdo
     command_do: ($) =>
       choice(
-          prec.right(seq(field('command', $.keyword_do), repeat1($.dotted_statement))),
-          prec.right(seq(field('command', $.keyword_do), $._argumentless_command_end, repeat1(alias($.statement, $.do_statement_after)), repeat1($.dotted_statement))),
+          prec.right(seq($.keyword_do, repeat1($.dotted_statement))),
+          prec.right(seq($.keyword_do, $._argumentless_command_end, repeat1(alias($.statement, $.do_statement_after)), repeat1($.dotted_statement))),
         // DO with parameters
         build_command_rule_argumentful(
           $,
-          field('command', $.keyword_do),
+          $.keyword_do,
           repeat_with_commas($.do_parameter),
         ),
       ),
@@ -570,15 +570,15 @@ module.exports = grammar(objectscript_expr, {
         build_command_rule_argumentless(
           $,
           choice(
-            field('command', $.keyword_print),
-            field('command', $.keyword_zprint),
+            $.keyword_print,
+            $.keyword_zprint,
           ),
         ),
         build_command_rule_argumentful(
           $,
           choice(
-            field('command', $.keyword_print),
-            field('command', $.keyword_zprint),
+            $.keyword_print,
+            $.keyword_zprint,
           ),
           $.print_argument,
         ),
@@ -624,7 +624,7 @@ module.exports = grammar(objectscript_expr, {
       choice(
         // Block style FOR with parameters
         seq(
-            field('command', $.keyword_for),
+            $.keyword_for,
           $._immediate_single_whitespace_followed_by_non_whitespace,
           repeat_with_commas($.for_parameter),
           optional($._termination),
@@ -634,7 +634,7 @@ module.exports = grammar(objectscript_expr, {
         ),
         // Block style FOR without parameters (argumentless)
         seq(
-            field('command', $.keyword_for),
+            $.keyword_for,
           $._argumentless_loop,
           '{',
           repeat($.statement),
@@ -642,7 +642,7 @@ module.exports = grammar(objectscript_expr, {
         ),
         // Old style FOR with parameters
         seq(
-            field('command', $.keyword_for),
+            $.keyword_for,
           $._immediate_single_whitespace_followed_by_non_whitespace,
           repeat_with_commas($.for_parameter),
           repeat($.statement),
@@ -650,13 +650,13 @@ module.exports = grammar(objectscript_expr, {
         ),
         // Old style argumentless FOR
         seq(
-            field('command', $.keyword_for),
+            $.keyword_for,
           $._argumentless_command_end,
           repeat($.statement),
           $._termination,
         ),
         seq(
-            field('command', $.keyword_for),
+            $.keyword_for,
             $._termination,
         ),
       ),
@@ -691,7 +691,7 @@ module.exports = grammar(objectscript_expr, {
 
     command_while: ($) =>
       seq(
-          field('command', $.keyword_while),
+          $.keyword_while,
         $._immediate_single_whitespace_followed_by_non_whitespace,
         repeat_with_commas($.expression),
         '{',
@@ -700,10 +700,10 @@ module.exports = grammar(objectscript_expr, {
       ),
     command_kill: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_kill)),
+        build_command_rule_argumentless($, $.keyword_kill),
         build_command_rule_argumentful(
           $,
-          field('command', $.keyword_kill),
+          $.keyword_kill,
           repeat_with_commas($.kill_argument),
         ),
       ),
@@ -728,7 +728,7 @@ module.exports = grammar(objectscript_expr, {
 
     command_lock: ($) =>
       choice(
-        seq(field('command', $.keyword_lock),
+        seq($.keyword_lock,
             choice($._argumentless_command_end,
                 $._termination,
             ),
@@ -737,7 +737,7 @@ module.exports = grammar(objectscript_expr, {
 
         build_command_rule_argumentful(
           $,
-          field('command', $.keyword_lock),
+          $.keyword_lock,
           repeat_with_commas($.command_lock_argument),
         ),
       ),
@@ -789,7 +789,7 @@ module.exports = grammar(objectscript_expr, {
     command_read: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_read),
+        $.keyword_read,
         repeat_with_commas($.read_argument),
       ),
     read_argument: ($) =>
@@ -816,7 +816,7 @@ module.exports = grammar(objectscript_expr, {
     command_open: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_open),
+        $.keyword_open,
         repeat_with_commas($.open_argument),
       ),
     open_argument: ($) =>
@@ -872,7 +872,7 @@ module.exports = grammar(objectscript_expr, {
     command_close: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_close),
+        $.keyword_close,
         repeat_with_commas($.close_argument),
       ),
     close_parameters: ($) =>
@@ -1033,26 +1033,26 @@ module.exports = grammar(objectscript_expr, {
     command_use: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_use),
+        $.keyword_use,
         repeat_with_commas($.use_argument),
       ),
     command_dowhile: ($) =>
       seq(
-        field('command', $.keyword_do),
+        $.keyword_do,
         $._argumentless_loop,
         '{',
         repeat($.statement),
         '}',
-        field('command', $.keyword_while),
+        $.keyword_while,
         $.expression,
       ),
 
     command_new: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_new)),
+        build_command_rule_argumentless($, $.keyword_new),
         build_command_rule_argumentful(
           $,
-          field('command', $.keyword_new),
+          $.keyword_new,
           repeat_with_commas($.command_new_argument),
         ),
       ),
@@ -1077,7 +1077,7 @@ module.exports = grammar(objectscript_expr, {
         // Block style IF
 
           seq(
-              field('command', $.keyword_if),
+              $.keyword_if,
               $._immediate_single_whitespace_followed_by_non_whitespace,
               repeat_with_commas($.expression),
               optional($._termination),
@@ -1088,7 +1088,7 @@ module.exports = grammar(objectscript_expr, {
               optional($.else_block),
           ),
           seq(
-              field('command', $.keyword_if),
+              $.keyword_if,
               $._argumentless_loop,
               '{',
               repeat($.statement),
@@ -1097,17 +1097,17 @@ module.exports = grammar(objectscript_expr, {
               optional($.else_block),
           ),
           seq(
-              field('command', $.keyword_if),
+              $.keyword_if,
               $._argumentless_command_end,
               repeat1($.statement),
               $._termination,
           ),
           seq(
-              field('command', $.keyword_if),
+              $.keyword_if,
               $._termination,
           ),
           seq(
-              field('command', $.keyword_if),
+              $.keyword_if,
               $._immediate_single_whitespace_followed_by_non_whitespace,
               repeat_with_commas($.expression),
               repeat($.statement),
@@ -1117,20 +1117,20 @@ module.exports = grammar(objectscript_expr, {
     command_else: ($) =>
         choice(
             seq(
-                field('command', $.keyword_oldelse),
+                $.keyword_oldelse,
                 $._argumentless_command_end,
                 repeat($.statement),
                 $._termination,
             ),
             seq(
-                field('command', $.keyword_oldelse),
+                $.keyword_oldelse,
                 $._termination,
             ),
         ),
 
     elseif_block: ($) =>
       seq(
-          field('command', $.keyword_elseif),
+          $.keyword_elseif,
         $._immediate_single_whitespace_followed_by_non_whitespace,
         repeat_with_commas($.expression),
         '{',
@@ -1139,7 +1139,7 @@ module.exports = grammar(objectscript_expr, {
       ),
     else_block: ($) =>
       seq(
-          field('command', $.keyword_else),
+          $.keyword_else,
         '{',
         repeat($.statement),
         '}',
@@ -1148,17 +1148,17 @@ module.exports = grammar(objectscript_expr, {
     command_throw: ($) =>
       prec.right(
         choice(
-          build_command_rule_argumentless($, field('command', $.keyword_throw)),
+          build_command_rule_argumentless($, $.keyword_throw),
           build_command_rule_argumentful(
             $,
-            field('command', $.keyword_throw),
+            $.keyword_throw,
             $.expression,
           ),
         ),
       ),
     command_trycatch: ($) =>
       seq(
-          field('command', $.keyword_try),
+          $.keyword_try,
             '{',
             repeat($.statement),
             '}',
@@ -1167,7 +1167,7 @@ module.exports = grammar(objectscript_expr, {
 
     catch_block: ($) =>
       seq(
-        field('command', $.keyword_catch),
+        $.keyword_catch,
         optional(choice(seq( alias('(', $.bracket), optional($._xecute_arg_invalid), $.glvn, alias(')', $.bracket)), seq(optional($._xecute_arg_invalid), $.glvn))),
         '{',
         repeat($.statement),
@@ -1177,7 +1177,7 @@ module.exports = grammar(objectscript_expr, {
     command_job: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_job),
+        $.keyword_job,
         repeat_with_commas($.job_argument),
       ),
     job_argument: ($) =>
@@ -1225,7 +1225,7 @@ module.exports = grammar(objectscript_expr, {
     command_break: ($) =>
       choice(
           seq(
-              field('command', $.keyword_break),
+              $.keyword_break,
               optional($.post_conditional),
               choice(
                   $._argumentless_command_end,
@@ -1233,7 +1233,7 @@ module.exports = grammar(objectscript_expr, {
               ),
           ),
           seq(
-              field('command', $.keyword_break),
+              $.keyword_break,
               optional($.post_conditional),
               $._immediate_single_whitespace_followed_by_non_whitespace,
               repeat_with_commas($.break_argument),
@@ -1244,7 +1244,7 @@ module.exports = grammar(objectscript_expr, {
     command_merge: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_merge),
+        $.keyword_merge,
         repeat_with_commas($.merge_argument),
       ),
     merge_argument: ($) => seq(
@@ -1259,7 +1259,7 @@ module.exports = grammar(objectscript_expr, {
         prec.right(
             choice(
                 seq(
-                    field('command', $.keyword_return),
+                    $.keyword_return,
                     optional($.post_conditional),
                     choice(
                         $._argumentless_command_end,
@@ -1267,7 +1267,7 @@ module.exports = grammar(objectscript_expr, {
                     ),
                 ),
                 seq(
-                    field('command', $.keyword_return),
+                    $.keyword_return,
                     optional($.post_conditional),
                     $._immediate_single_whitespace_followed_by_non_whitespace,
                     repeat_with_commas(seq(optional($._xecute_arg_invalid), $.expression)),
@@ -1276,11 +1276,11 @@ module.exports = grammar(objectscript_expr, {
         ),
 
     command_quit: ($) =>choice(
-        build_command_rule_special_argumentless($, field('command', $.keyword_quit)),
+        build_command_rule_special_argumentless($, $.keyword_quit),
 
         build_command_rule_argumentful(
             $,
-            field('command', $.keyword_quit),
+            $.keyword_quit,
             repeat_with_commas(seq(optional($._xecute_arg_invalid), $.expression)),
         ),
     ),
@@ -1288,10 +1288,10 @@ module.exports = grammar(objectscript_expr, {
     command_goto: ($) =>
       prec.right(
         choice(
-          build_command_rule_argumentless($, field('command', $.keyword_goto)),
+          build_command_rule_argumentless($, $.keyword_goto),
           build_command_rule_argumentful(
             $,
-            field('command', $.keyword_goto),
+            $.keyword_goto,
             repeat_with_commas($.goto_argument),
           ),
         ),
@@ -1304,24 +1304,24 @@ module.exports = grammar(objectscript_expr, {
     command_halt_or_hang: ($) =>
       choice(
         seq(
-            field('command', $.keyword_halt_or_hang),
+          $.keyword_halt_or_hang,
           optional($.post_conditional),
           choice($._argumentless_command_end, $._termination),
         ),
         seq(
-            field('command', $.keyword_halt_or_hang),
+          $.keyword_halt_or_hang,
           optional($.post_conditional),
           $._immediate_single_whitespace_followed_by_non_whitespace,
           repeat_with_commas($.expression),
         ),
         seq(
-            field('command', $.keyword_halt),
+          $.keyword_halt,
           optional($.post_conditional),
           choice($._argumentless_command_end, $._termination),
 
         ),
         seq(
-            field('command', $.keyword_hang),
+            $.keyword_hang,
           optional($.post_conditional),
           $._immediate_single_whitespace_followed_by_non_whitespace,
           repeat_with_commas($.expression),
@@ -1330,15 +1330,15 @@ module.exports = grammar(objectscript_expr, {
 
     command_continue: ($) =>
         // Commands on the same line after CONTINUE are unreachable; parse them under CONTINUE.
-      build_command_rule_special_argumentless($, field('command', $.keyword_continue)),
+      build_command_rule_special_argumentless($, $.keyword_continue),
     command_tcommit: ($) =>
-      build_command_rule_argumentless($, field('command', $.keyword_tcommit)),
+      build_command_rule_argumentless($, $.keyword_tcommit),
     command_trollback: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_trollback)),
-        build_command_rule_argumentful($, field('command', $.keyword_trollback), alias('1', $.numeric_literal)),
+        build_command_rule_argumentless($, $.keyword_trollback),
+        build_command_rule_argumentful($, $.keyword_trollback, alias('1', $.numeric_literal)),
       ),
-    command_tstart: ($) => build_command_rule_argumentless($, field('command', $.keyword_tstart)),
+    command_tstart: ($) => build_command_rule_argumentless($, $.keyword_tstart),
     byref_arg: ($) =>
       seq(
         '.',
@@ -1371,13 +1371,13 @@ module.exports = grammar(objectscript_expr, {
     command_xecute: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_xecute),
+        $.keyword_xecute,
         repeat_with_commas($.xecute_argument),
       ),
     command_view: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_view),
+        $.keyword_view,
         alias($.view_parameter, $.view_parameters),
       ),
     view_parameter: ($) =>
@@ -1396,9 +1396,9 @@ module.exports = grammar(objectscript_expr, {
 
     command_zbreak: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_zbreak)),
+        build_command_rule_argumentless($, $.keyword_zbreak),
         seq(
-          field('command', $.keyword_zbreak),
+          $.keyword_zbreak,
           optional($.post_conditional),
           $.zbreak_arguments,
         ),
@@ -1461,7 +1461,7 @@ module.exports = grammar(objectscript_expr, {
           // single step breakpoint
           '$',
         ),
-        optional(field('keyword', '#delay')),
+        optional(alias('#delay', $.keyword_pound_delay)),
       ),
 
 
@@ -1483,9 +1483,9 @@ module.exports = grammar(objectscript_expr, {
           $.zbreak_command,
           token.immediate('/'),
           choice(
-            field('keyword', $.keyword_clear),
+            $.keyword_clear,
             seq(
-              field('keyword', $.keyword_debug),
+              $.keyword_debug,
               optional(
                 seq(
                   token.immediate(':'),
@@ -1494,22 +1494,22 @@ module.exports = grammar(objectscript_expr, {
               ),
             ),
             seq(
-              field('keyword', $.keyword_errortrap),
+              $.keyword_errortrap,
               token.immediate(':'),
               choice(
-              field('keyword', $.keyword_on),
-              field('keyword', $.keyword_off),
+              $.keyword_on,
+              $.keyword_off,
               ),
             ),
             seq(
-              field('keyword', $.keyword_trace),
+              $.keyword_trace,
               optional(
                 seq(
                   token.immediate(':'),
                   choice(
-                  field('keyword', $.keyword_on),
-                  field('keyword', $.keyword_off),
-                  field('keyword', $.keyword_all),
+                  $.keyword_on,
+                  $.keyword_off,
+                  $.keyword_all,
                   ),
                   optional(
                     seq(
@@ -1522,28 +1522,28 @@ module.exports = grammar(objectscript_expr, {
             ),
             seq(
               choice(
-                field('keyword', $.keyword_step),
-                field('keyword', $.keyword_nostep),
+                $.keyword_step,
+                $.keyword_nostep,
               ),
               repeat1(
                 seq(
                   token.immediate(':'),
                   choice(
-                    field('keyword', $.keyword_ext),
-                    field('keyword', $.keyword_destruct),
-                    field('keyword', $.keyword_stepmethod),
+                    $.keyword_ext,
+                    $.keyword_destruct,
+                    $.keyword_stepmethod,
                   ),
                 ),
               ),
             ),
             seq(
-              field('keyword', $.keyword_interrupt),
+              $.keyword_interrupt,
               optional(
                 seq(
                   token.immediate(':'),
                   choice(
-                    field('keyword', $.keyword_break),
-                    field('keyword', $.keyword_normal),
+                    $.keyword_break,
+                    $.keyword_normal,
                   ),
                 ),
               ),
@@ -1566,38 +1566,38 @@ module.exports = grammar(objectscript_expr, {
     command_zkill: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_zkill),
+        $.keyword_zkill,
         repeat_with_commas($.glvn),
       ),
     command_zn: ($) =>
       build_command_rule_argumentful(
         $,
-        field('command', $.keyword_zn),
+        $.keyword_zn,
         repeat_with_commas($.expression),
       ),
     command_zsu: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_zsu)),
+        build_command_rule_argumentless($, $.keyword_zsu),
         build_command_rule_argumentful(
           $,
-          field('command', $.keyword_zsu),
+          $.keyword_zsu,
           repeat_with_commas($.expression),
         ),
       ),
     command_ztrap: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_ztrap)),
+        build_command_rule_argumentless($, $.keyword_ztrap),
         build_command_rule_argumentful(
           $,
-          field('command', $.keyword_ztrap),
+          $.keyword_ztrap,
           repeat_with_commas($.expression),
         ),
       ),
     command_zwrite: ($) =>
       choice(
-        build_command_rule_argumentless($, field('command', $.keyword_zwrite)),
+        build_command_rule_argumentless($, $.keyword_zwrite),
         seq(
-            field('command', $.keyword_zwrite),
+            $.keyword_zwrite,
           optional($.post_conditional),
           choice($._immediate_single_whitespace_followed_by_non_whitespace, $._zw_block),
           repeat_with_commas($.expression),
@@ -1605,7 +1605,7 @@ module.exports = grammar(objectscript_expr, {
       ),
     command_zz: ($) =>
       seq(
-          field('command', $.keyword_zz),
+          $.keyword_zz,
           optional($.post_conditional),
           choice($._immediate_single_whitespace_followed_by_non_whitespace, $._zw_block),
           repeat_with_commas($.expression),
@@ -1613,13 +1613,13 @@ module.exports = grammar(objectscript_expr, {
     embedded_html: ($) =>
       choice(
         seq(
-        field('embedded', $.keyword_embedded_html),
+        $.keyword_embedded_html,
         token.immediate('<'),
         $.angled_bracket_fenced_text,
         '>',
       ),
         seq(
-            field('embedded', $.keyword_embedded_html),
+          $.keyword_embedded_html,
         $.html_marker,
         token.immediate('<'),
         $.angled_bracket_fenced_text,
@@ -1630,7 +1630,7 @@ module.exports = grammar(objectscript_expr, {
 
     embedded_xml: ($) =>
       seq(
-          field('embedded', $.keyword_embedded_xml),
+          $.keyword_embedded_xml,
         token.immediate('<'),
         $.angled_bracket_fenced_text,
         '>',
@@ -1639,7 +1639,7 @@ module.exports = grammar(objectscript_expr, {
     embedded_sql_amp: ($) =>
       choice(
         seq(
-            field('embedded', $.keyword_embedded_sql_amp),
+            $.keyword_embedded_sql_amp,
         $.embedded_sql_marker,
         alias(token.immediate('('), $.bracket),
 
@@ -1649,7 +1649,7 @@ module.exports = grammar(objectscript_expr, {
         $.embedded_sql_reverse_marker,
       ),
       seq(
-          field('embedded', $.keyword_embedded_sql_amp),
+          $.keyword_embedded_sql_amp,
         alias(token.immediate('('), $.bracket),
         $.paren_fenced_text,
         alias(token.immediate(')'), $.bracket),
@@ -1660,7 +1660,7 @@ module.exports = grammar(objectscript_expr, {
     // NOTE: We put the marker within the &sql keyword def to make it easier to query for highlighting
     embedded_sql_hash: ($) =>
       seq(
-          field('embedded', $.keyword_embedded_sql_hash),
+          $.keyword_embedded_sql_hash,
           alias(token.immediate('('), $.bracket),
 
         $.paren_fenced_text,
@@ -1669,7 +1669,7 @@ module.exports = grammar(objectscript_expr, {
     embedded_js: ($) =>
       choice(
         seq(
-        field('embedded', $.keyword_js),
+        $.keyword_js,
         $.html_marker,
         token.immediate('<'),
         $.embedded_js_special_case,
@@ -1677,7 +1677,7 @@ module.exports = grammar(objectscript_expr, {
         $.embedded_js_special_case_complete,
         ),
         seq(
-            field('embedded', $.keyword_js),
+           $.keyword_js,
         token.immediate('<'),
         $.angled_bracket_fenced_text,
         '>',

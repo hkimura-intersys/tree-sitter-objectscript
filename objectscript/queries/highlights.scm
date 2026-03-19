@@ -37,9 +37,8 @@
 (class_name) @type
 
 (macro_function) @function.macro
+
 (macro_constant) @constant.macro
-
-
 
 [
   (routine_ref)
@@ -111,8 +110,9 @@
 (bracket) @punctuation.bracket
 
 ; === END EXPR ===
-; === BEGIN LOCAL ===
+; === BEGIN CORE ===
 (macro_arg) @variable.member
+
 (macro_value) @constant.builtin
 
 [
@@ -246,5 +246,95 @@
 ] @comment @spell
 
 (tag) @tag
+
+; === END CORE ===
+; === BEGIN UDL ===
+(iris_username) @keyword.directive
+
+(argument) @variable.parameter
+
+(xml_identifier) @variable.member
+
+[
+  (keyword_import)
+  (keyword_include)
+  (keyword_includegenerator)
+] @keyword.import
+
+[
+  (keyword_method)
+  (keyword_classmethod)
+] @keyword.function
+
+[
+  (keyword_class)
+  (keyword_extends)
+  (keyword_property)
+  (keyword_relationship)
+  (keyword_foreignkey)
+  (keyword_parameter)
+  (keyword_projection)
+  (keyword_index)
+  (keyword_query)
+  (keyword_trigger)
+  (keyword_xdata)
+  (keyword_storage)
+] @keyword.type
+
+[
+  (method_keyword_codemode_expression)
+  (call_method_keyword)
+  (method_keyword)
+  (class_keywords)
+  (query_keywords)
+  (trigger_keyword)
+  (method_keyword_language)
+  (relationship_keyword)
+  (foreignkey_keyword)
+  (parameter_keyword)
+  (projection_keyword)
+  (index_keyword)
+  (index_keyword_extent)
+  (xdata_keyword)
+  (xdata_keyword_mimetype)
+  (property_keyword)
+  (keyword_not)
+  (keyword_references)
+  (keyword_byref)
+  (keyword_output)
+] @keyword.modifier
+
+(documatic_line) @comment.documentation @spell
+
+[
+  (query_name)
+  (relationship_name)
+  (foreignkey_name)
+  (parameter_name)
+  (projection_name)
+  (index_name)
+  (xdata_name)
+  (storage_name)
+] @variable.member
+
+[
+  (return_type)
+  (keyword_list)
+  (keyword_array)
+  (parameter_type)
+  (index_type)
+  (projection_type)
+  (property_type)
+  (index_property_type)
+  (typename)
+] @type.builtin
+
+; === END UDL ===
+; === BEGIN LOCAL ===
+(routine_type) @type.builtin
+
+(routine_name) @type
+
+(routine) @keyword.type
 
 ; === END LOCAL ===

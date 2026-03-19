@@ -95,5 +95,5 @@ Class package.shortclassname Extends superclasslist [ DependsOn = MyApp.Class1 ]
     (class_keywords
       (class_keyword
         (class_keyword_depends_on
-          (rhs))))
+          (class_name))))
     (class_body)))

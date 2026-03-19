@@ -31,10 +31,11 @@ Trigger LogEvent [ Event = INSERT, Time = AFTER ]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (statement
               (command_new
                 (keyword_new)
@@ -92,10 +93,11 @@ Trigger TBefore [ Event = UPDATE, Time = BEFORE ]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (statement
               (command_set
                 (keyword_set)
@@ -138,10 +140,11 @@ Trigger TAllEvents [ Event = INSERT/UPDATE/DELETE, Time = AFTER ]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (line_comment_1)))))))
 
 ===
@@ -175,13 +178,14 @@ Trigger TStatement [ Event = DELETE, Foreach = statement, Time = AFTER ]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_foreach
-                  (rhs)))
+                  (typename)))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (line_comment_1)))))))
 
 ===
@@ -215,13 +219,14 @@ Trigger TUnified [ Event = UPDATE, Foreach = row/object, Time = AFTER ]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_foreach
-                  (rhs)))
+                  (typename)))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (line_comment_1)))))))
 
 ===
@@ -255,16 +260,17 @@ Trigger TTransitionTables [ Event = UPDATE, OldTable = old_vals_tbl, NewTable = 
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_oldtable
-                  (rhs)))
+                  (query_name)))
               (trigger_keyword
                 (trigger_keyword_newtable
-                  (rhs)))
+                  (query_name)))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (line_comment_1)))))))
 
 ===
@@ -298,10 +304,11 @@ Trigger TGen [ Event = INSERT, CodeMode = objectgenerator ]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (method_keyword_codemode
-                  (rhs))))
+                  (typename))))
             (line_comment_1)))))))
 
 ===

@@ -682,7 +682,7 @@
       "required": true,
       "types": [
         {
-          "type": "property_name",
+          "type": "member_name",
           "named": true
         },
         {

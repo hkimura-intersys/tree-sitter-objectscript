@@ -1,5 +1,5 @@
 TS ?= tree-sitter
-QUERY_DIRS ?= core/queries udl/queries expr/queries objectscript_routine/queries
+QUERY_DIRS ?= core/queries udl/queries expr/queries objectscript/queries objectscript_routine/queries
 DEPDIR ?= .test-deps
 CURL ?= curl -sL --create-dirs
 

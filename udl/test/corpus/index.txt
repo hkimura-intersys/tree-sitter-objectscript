@@ -139,7 +139,7 @@ Class test {
           (index_keywords
             (index_keyword
               (index_keyword_data
-                (rhs
+                (property_name
                   (identifier))))))))))
 
 ===
@@ -169,7 +169,7 @@ Class test {
           (index_keywords
             (index_keyword
               (index_keyword_type
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 Valid Index: composite + IdKey + Unique
@@ -232,7 +232,7 @@ Class test {
           (index_keywords
             (index_keyword
               (index_keyword_type
-                (rhs)))
+                (typename)))
             (index_keyword
               (index_keyword_unique)))))
       (block_comment))))
@@ -296,7 +296,7 @@ Class test {
             (index_keyword_extent)
             (index_keyword
               (index_keyword_type
-                (rhs)))))))))
+                (typename)))))))))
 
 ===
 Valid Index: collection properties (KEYS/ELEMENTS)
@@ -466,12 +466,12 @@ Class User.Employee
               (parameter_keyword_abstract))
             (index_keyword
               (index_coshardwith
-                (rhs)))
+                (class_name)))
             (index_keyword
               (index_keyword_shardkey))
             (index_keyword
               (method_keyword_sql_name
-                (rhs)))))))))
+                (query_name)))))))))
 
 ===
 Index: CoshardWith + Unique on multiple properties
@@ -507,7 +507,7 @@ Class Pkg.Test
               (index_keyword_unique))
             (index_keyword
               (index_coshardwith
-                (rhs)))))))))
+                (class_name)))))))))
 
 ===
 Index: CoshardWith with % class name and mixed keyword order
@@ -537,10 +537,10 @@ Class Pkg.Test
           (index_keywords
             (index_keyword
               (method_keyword_sql_name
-                (rhs)))
+                (query_name)))
             (index_keyword
               (index_coshardwith
-                (rhs)))
+                (class_name)))
             (index_keyword
               (index_keyword_shardkey))))))))
 
@@ -571,7 +571,7 @@ Class Pkg.Test
           (index_keywords
             (index_keyword
               (index_coshardwith
-                (rhs)))))))))
+                (class_name)))))))))
 
 ===
 Index: case-insensitive CoshardWith spelling
@@ -601,7 +601,7 @@ Class Pkg.Test
           (index_keywords
             (index_keyword
               (index_coshardwith
-                (rhs)))))))))
+                (class_name)))))))))
 
 ===
 INVALID: CoshardWith missing '='

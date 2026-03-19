@@ -158,7 +158,7 @@ Class MyApp.Test {
             (method_keywords
               (method_keyword
                 (method_keyword_codemode
-                  (rhs)))
+                  (typename)))
               (method_keyword
                 (parameter_keyword_final)))
             (statement
@@ -767,7 +767,7 @@ ClassMethod TSQLTest() [ Language = tsql ]
             (arguments)
             (external_method_keywords
               (method_keyword_language
-                (rhs)))
+                (typename)))
             (external_method_body_content)))))))
 
 ====
@@ -813,7 +813,7 @@ Class test {
                   (numeric_literal))))
             (external_method_keywords
               (method_keyword_language
-                (rhs)))
+                (typename)))
             (external_method_body_content)))))))
 
 ===
@@ -853,7 +853,7 @@ Method Double(val As %Integer) As %Integer [ CodeMode = expression ]
                 (identifier)))
             (expression_method_keywords
               (method_keyword_codemode_expression
-                (rhs)))
+                (typename)))
             (expression_method_body_content
               (expr_atom
                 (lvn
@@ -896,10 +896,10 @@ Method MyMethod() [ CodeMode = objectgenerator , ProcedureBlock=0]
             (method_keywords
               (method_keyword
                 (method_keyword_codemode
-                  (rhs)))
+                  (typename)))
               (method_keyword
                 (method_keyword_procedure_block
-                  (rhs))))
+                  (numeric_literal))))
             (statement
               (command_do
                 (keyword_do)
@@ -983,7 +983,7 @@ Class test {
             (arguments)
             (call_method_keywords
               (call_method_keyword
-                (rhs)))
+                (typename)))
             (routine_tag_call
               (line_ref
                 (objectscript_identifier)
@@ -1025,10 +1025,11 @@ Class MyApp.Person Extends %Persistent [DdlAllowed]
             (trigger_keywords
               (trigger_keyword
                 (trigger_keyword_event
-                  (rhs)))
+                  (trigger_event_value
+                    (typename))))
               (trigger_keyword
                 (trigger_keyword_time
-                  (rhs))))
+                  (typename))))
             (line_comment_1)))))))
 
 ===

@@ -67,21 +67,10 @@
   {
     "type": "catch_block",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_catch",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "bracket",
@@ -89,6 +78,10 @@
         },
         {
           "type": "glvn",
+          "named": true
+        },
+        {
+          "type": "keyword_catch",
           "named": true
         },
         {
@@ -267,24 +260,17 @@
   {
     "type": "command_break",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_break",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "break_argument",
+          "named": true
+        },
+        {
+          "type": "keyword_break",
           "named": true
         },
         {
@@ -297,24 +283,17 @@
   {
     "type": "command_close",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_close",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "close_argument",
+          "named": true
+        },
+        {
+          "type": "keyword_close",
           "named": true
         },
         {
@@ -327,22 +306,15 @@
   {
     "type": "command_continue",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_continue",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_continue",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -357,18 +329,7 @@
   {
     "type": "command_do",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_do",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
@@ -386,6 +347,10 @@
           "named": true
         },
         {
+          "type": "keyword_do",
+          "named": true
+        },
+        {
           "type": "post_conditional",
           "named": true
         }
@@ -395,28 +360,21 @@
   {
     "type": "command_dowhile",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": true,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_do",
-            "named": true
-          },
-          {
-            "type": "keyword_while",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_do",
+          "named": true
+        },
+        {
+          "type": "keyword_while",
           "named": true
         },
         {
@@ -429,22 +387,15 @@
   {
     "type": "command_else",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_oldelse",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_oldelse",
+          "named": true
+        },
         {
           "type": "statement",
           "named": true
@@ -455,24 +406,17 @@
   {
     "type": "command_for",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_for",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "for_parameter",
+          "named": true
+        },
+        {
+          "type": "keyword_for",
           "named": true
         },
         {
@@ -485,24 +429,17 @@
   {
     "type": "command_goto",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_goto",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "goto_argument",
+          "named": true
+        },
+        {
+          "type": "keyword_goto",
           "named": true
         },
         {
@@ -515,32 +452,25 @@
   {
     "type": "command_halt_or_hang",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_halt",
-            "named": true
-          },
-          {
-            "type": "keyword_halt_or_hang",
-            "named": true
-          },
-          {
-            "type": "keyword_hang",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_halt",
+          "named": true
+        },
+        {
+          "type": "keyword_halt_or_hang",
+          "named": true
+        },
+        {
+          "type": "keyword_hang",
           "named": true
         },
         {
@@ -553,21 +483,10 @@
   {
     "type": "command_if",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_if",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "else_block",
@@ -582,6 +501,10 @@
           "named": true
         },
         {
+          "type": "keyword_if",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         }
@@ -591,24 +514,17 @@
   {
     "type": "command_job",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_job",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "job_argument",
+          "named": true
+        },
+        {
+          "type": "keyword_job",
           "named": true
         },
         {
@@ -621,22 +537,15 @@
   {
     "type": "command_kill",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_kill",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_kill",
+          "named": true
+        },
         {
           "type": "kill_argument",
           "named": true
@@ -651,24 +560,17 @@
   {
     "type": "command_lock",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_lock",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "command_lock_argument",
+          "named": true
+        },
+        {
+          "type": "keyword_lock",
           "named": true
         },
         {
@@ -750,22 +652,15 @@
   {
     "type": "command_merge",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_merge",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_merge",
+          "named": true
+        },
         {
           "type": "merge_argument",
           "named": true
@@ -780,24 +675,17 @@
   {
     "type": "command_new",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_new",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "command_new_argument",
+          "named": true
+        },
+        {
+          "type": "keyword_new",
           "named": true
         },
         {
@@ -848,22 +736,15 @@
   {
     "type": "command_open",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_open",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_open",
+          "named": true
+        },
         {
           "type": "open_argument",
           "named": true
@@ -878,24 +759,17 @@
   {
     "type": "command_quit",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_quit",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_quit",
           "named": true
         },
         {
@@ -912,22 +786,15 @@
   {
     "type": "command_read",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_read",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_read",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -942,24 +809,17 @@
   {
     "type": "command_return",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_return",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_return",
           "named": true
         },
         {
@@ -972,22 +832,15 @@
   {
     "type": "command_set",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_set",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_set",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1002,22 +855,15 @@
   {
     "type": "command_tcommit",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_tcommit",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_tcommit",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1028,24 +874,17 @@
   {
     "type": "command_throw",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_throw",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_throw",
           "named": true
         },
         {
@@ -1058,22 +897,15 @@
   {
     "type": "command_trollback",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_trollback",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_trollback",
+          "named": true
+        },
         {
           "type": "numeric_literal",
           "named": true
@@ -1088,24 +920,17 @@
   {
     "type": "command_trycatch",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_try",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "catch_block",
+          "named": true
+        },
+        {
+          "type": "keyword_try",
           "named": true
         },
         {
@@ -1118,22 +943,15 @@
   {
     "type": "command_tstart",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_tstart",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
-      "multiple": false,
-      "required": false,
+      "multiple": true,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_tstart",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1144,22 +962,15 @@
   {
     "type": "command_use",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_use",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_use",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1174,22 +985,15 @@
   {
     "type": "command_view",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_view",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_view",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1204,24 +1008,17 @@
   {
     "type": "command_while",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_while",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_while",
           "named": true
         },
         {
@@ -1234,22 +1031,15 @@
   {
     "type": "command_write",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_write",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_write",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1264,22 +1054,15 @@
   {
     "type": "command_xecute",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_xecute",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "keyword_xecute",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1294,22 +1077,15 @@
   {
     "type": "command_zbreak",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_zbreak",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_zbreak",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -1324,24 +1100,17 @@
   {
     "type": "command_zkill",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_zkill",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "glvn",
+          "named": true
+        },
+        {
+          "type": "keyword_zkill",
           "named": true
         },
         {
@@ -1354,24 +1123,17 @@
   {
     "type": "command_zn",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_zn",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_zn",
           "named": true
         },
         {
@@ -1384,24 +1146,17 @@
   {
     "type": "command_zsu",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_zsu",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_zsu",
           "named": true
         },
         {
@@ -1414,24 +1169,17 @@
   {
     "type": "command_ztrap",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_ztrap",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_ztrap",
           "named": true
         },
         {
@@ -1444,24 +1192,17 @@
   {
     "type": "command_zwrite",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_zwrite",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_zwrite",
           "named": true
         },
         {
@@ -1474,24 +1215,17 @@
   {
     "type": "command_zz",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_zz",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_zz",
           "named": true
         },
         {
@@ -2064,22 +1798,15 @@
   {
     "type": "else_block",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_else",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_else",
+          "named": true
+        },
         {
           "type": "statement",
           "named": true
@@ -2090,24 +1817,17 @@
   {
     "type": "elseif_block",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_elseif",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "keyword_elseif",
           "named": true
         },
         {
@@ -2120,18 +1840,7 @@
   {
     "type": "embedded_html",
     "named": true,
-    "fields": {
-      "embedded": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_embedded_html",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
@@ -2147,6 +1856,10 @@
         {
           "type": "html_marker_reversed",
           "named": true
+        },
+        {
+          "type": "keyword_embedded_html",
+          "named": true
         }
       ]
     }
@@ -2154,18 +1867,7 @@
   {
     "type": "embedded_js",
     "named": true,
-    "fields": {
-      "embedded": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_js",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
@@ -2184,6 +1886,10 @@
         },
         {
           "type": "html_marker",
+          "named": true
+        },
+        {
+          "type": "keyword_js",
           "named": true
         }
       ]
@@ -2211,18 +1917,7 @@
   {
     "type": "embedded_sql_amp",
     "named": true,
-    "fields": {
-      "embedded": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_embedded_sql_amp",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
@@ -2240,6 +1935,10 @@
           "named": true
         },
         {
+          "type": "keyword_embedded_sql_amp",
+          "named": true
+        },
+        {
           "type": "paren_fenced_text",
           "named": true
         }
@@ -2249,24 +1948,17 @@
   {
     "type": "embedded_sql_hash",
     "named": true,
-    "fields": {
-      "embedded": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_embedded_sql_hash",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": true,
       "types": [
         {
           "type": "bracket",
+          "named": true
+        },
+        {
+          "type": "keyword_embedded_sql_hash",
           "named": true
         },
         {
@@ -2279,24 +1971,17 @@
   {
     "type": "embedded_xml",
     "named": true,
-    "fields": {
-      "embedded": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_embedded_xml",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
           "type": "angled_bracket_fenced_text",
+          "named": true
+        },
+        {
+          "type": "keyword_embedded_xml",
           "named": true
         }
       ]
@@ -3882,26 +3567,19 @@
   {
     "type": "print_statement",
     "named": true,
-    "fields": {
-      "command": {
-        "multiple": false,
-        "required": true,
-        "types": [
-          {
-            "type": "keyword_print",
-            "named": true
-          },
-          {
-            "type": "keyword_zprint",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
+        {
+          "type": "keyword_print",
+          "named": true
+        },
+        {
+          "type": "keyword_zprint",
+          "named": true
+        },
         {
           "type": "post_conditional",
           "named": true
@@ -5026,80 +4704,73 @@
   {
     "type": "zbreak_arguments",
     "named": true,
-    "fields": {
-      "keyword": {
-        "multiple": true,
-        "required": false,
-        "types": [
-          {
-            "type": "keyword_all",
-            "named": true
-          },
-          {
-            "type": "keyword_break",
-            "named": true
-          },
-          {
-            "type": "keyword_clear",
-            "named": true
-          },
-          {
-            "type": "keyword_debug",
-            "named": true
-          },
-          {
-            "type": "keyword_destruct",
-            "named": true
-          },
-          {
-            "type": "keyword_errortrap",
-            "named": true
-          },
-          {
-            "type": "keyword_ext",
-            "named": true
-          },
-          {
-            "type": "keyword_interrupt",
-            "named": true
-          },
-          {
-            "type": "keyword_normal",
-            "named": true
-          },
-          {
-            "type": "keyword_nostep",
-            "named": true
-          },
-          {
-            "type": "keyword_off",
-            "named": true
-          },
-          {
-            "type": "keyword_on",
-            "named": true
-          },
-          {
-            "type": "keyword_step",
-            "named": true
-          },
-          {
-            "type": "keyword_stepmethod",
-            "named": true
-          },
-          {
-            "type": "keyword_trace",
-            "named": true
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
       "multiple": true,
       "required": false,
       "types": [
         {
           "type": "device",
+          "named": true
+        },
+        {
+          "type": "keyword_all",
+          "named": true
+        },
+        {
+          "type": "keyword_break",
+          "named": true
+        },
+        {
+          "type": "keyword_clear",
+          "named": true
+        },
+        {
+          "type": "keyword_debug",
+          "named": true
+        },
+        {
+          "type": "keyword_destruct",
+          "named": true
+        },
+        {
+          "type": "keyword_errortrap",
+          "named": true
+        },
+        {
+          "type": "keyword_ext",
+          "named": true
+        },
+        {
+          "type": "keyword_interrupt",
+          "named": true
+        },
+        {
+          "type": "keyword_normal",
+          "named": true
+        },
+        {
+          "type": "keyword_nostep",
+          "named": true
+        },
+        {
+          "type": "keyword_off",
+          "named": true
+        },
+        {
+          "type": "keyword_on",
+          "named": true
+        },
+        {
+          "type": "keyword_step",
+          "named": true
+        },
+        {
+          "type": "keyword_stepmethod",
+          "named": true
+        },
+        {
+          "type": "keyword_trace",
           "named": true
         },
         {
@@ -5131,22 +4802,15 @@
   {
     "type": "zbreak_location",
     "named": true,
-    "fields": {
-      "keyword": {
-        "multiple": false,
-        "required": false,
-        "types": [
-          {
-            "type": "#delay",
-            "named": false
-          }
-        ]
-      }
-    },
+    "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": false,
       "types": [
+        {
+          "type": "keyword_pound_delay",
+          "named": true
+        },
         {
           "type": "line_ref",
           "named": true
@@ -5192,10 +4856,6 @@
   },
   {
     "type": "#;",
-    "named": false
-  },
-  {
-    "type": "#delay",
     "named": false
   },
   {
@@ -5688,6 +5348,10 @@
   },
   {
     "type": "keyword_pound_define",
+    "named": true
+  },
+  {
+    "type": "keyword_pound_delay",
     "named": true
   },
   {

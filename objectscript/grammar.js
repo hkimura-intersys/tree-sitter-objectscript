@@ -52,8 +52,8 @@ module.exports = define_grammar(objectscript_udl, {
 
     routine_definition: ($) =>
       prec.right(seq(
-        field('keyword', /routine/i),
-        $.identifier,
+        alias(/routine/i, $.routine),
+        alias($.identifier, $.routine_name),
         optional($.routine_type),
         repeat(
           $.statement,
@@ -63,13 +63,13 @@ module.exports = define_grammar(objectscript_udl, {
     routine_type: (_) =>
       seq(
         '[',
-        field('keyword', /type/i),
+        /type/i,
         '=',
-        field('keyword', choice(
+        choice(
           /mac/i,
           /inc/i,
           /int/i,
-        )),
+        ),
         ']',
       ),
   },
