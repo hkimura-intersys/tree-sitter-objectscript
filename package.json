@@ -23,8 +23,8 @@
     "objectscript"
   ],
   "dependencies": {
-    "node-gyp-build": "^4.8.2",
-    "node-addon-api": "^8.5.0"
+    "node-addon-api": "^8.5.0",
+    "node-gyp-build": "^4.8.2"
   },
   "peerDependencies": {
     "tree-sitter": "^0.25.0"
@@ -38,8 +38,8 @@
     "eslint": "^9.35.0",
     "eslint-config-treesitter": "^1.0.2",
     "prebuildify": "^6.0.1",
-    "tree-sitter-cli": "^0.26.6",
-    "tree-sitter": "^0.25.0"
+    "tree-sitter": "^0.25.0",
+    "tree-sitter-cli": "0.26.7"
   },
   "main": "bindings/node",
   "types": "bindings/node",
