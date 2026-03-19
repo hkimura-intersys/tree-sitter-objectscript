@@ -119,7 +119,9 @@
 ; === END EXPR ===
 ; === BEGIN LOCAL ===
 (macro_arg) @variable.member
+
 (macro_value) @constant.builtin
+
 (macro_def) @keyword.directive.define
 
 [

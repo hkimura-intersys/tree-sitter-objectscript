@@ -112,4 +112,5 @@
 (json_boolean_literal) @boolean
 
 (bracket) @punctuation.bracket
+
 ; === END LOCAL ===
