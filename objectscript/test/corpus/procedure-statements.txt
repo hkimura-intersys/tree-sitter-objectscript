@@ -20,8 +20,8 @@ proc1() [a, b]
           (bracket)
           (bracket)))
       (procedure_pub_vars
-        (attribute)
-        (attribute))
+        (objectscript_identifier)
+        (objectscript_identifier))
       (statement
         (command_write
           (keyword_write)
@@ -195,7 +195,7 @@ MyProc(x,y)[x] {
             (method_arg))
           (bracket)))
       (procedure_pub_vars
-        (attribute))
+        (objectscript_identifier))
       (statement
         (command_do
           (keyword_do)
@@ -204,7 +204,7 @@ MyProc(x,y)[x] {
               (line_ref
                 (objectscript_identifier)
                 (routine_ref
-                  (dotted_identifier_relaxed_token))))))))))
+                  (routine_name))))))))))
 
 ==============
 Procedure Code
@@ -293,7 +293,7 @@ Label1 ; The DO calls this label
               (line_ref
                 (objectscript_identifier)
                 (routine_ref
-                  (dotted_identifier_relaxed_token)))))))
+                  (routine_name)))))))
       (statement
         (tag))
       (line_comment_3)))

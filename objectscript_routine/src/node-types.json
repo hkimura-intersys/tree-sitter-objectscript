@@ -1,10 +1,5 @@
 [
   {
-    "type": "attribute",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "binary_operator",
     "named": true,
     "fields": {}
@@ -43,7 +38,7 @@
       "required": false,
       "types": [
         {
-          "type": "function_argument",
+          "type": "expression",
           "named": true
         }
       ]
@@ -117,25 +112,7 @@
   {
     "type": "class_name",
     "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "dotted_identifier_strict_token_immediate",
-          "named": true
-        },
-        {
-          "type": "expr_atom",
-          "named": true
-        },
-        {
-          "type": "expr_tail",
-          "named": true
-        }
-      ]
-    }
+    "fields": {}
   },
   {
     "type": "class_parameter_ref",
@@ -1584,15 +1561,11 @@
           "named": true
         },
         {
-          "type": "class_name",
+          "type": "expression",
           "named": true
         },
         {
           "type": "method_arg",
-          "named": true
-        },
-        {
-          "type": "method_name",
           "named": true
         }
       ]
@@ -1702,7 +1675,7 @@
           "named": true
         },
         {
-          "type": "class_name",
+          "type": "expression",
           "named": true
         },
         {
@@ -1770,11 +1743,15 @@
       "required": true,
       "types": [
         {
-          "type": "function_argument",
+          "type": "method_args",
           "named": true
         },
         {
-          "type": "method_args",
+          "type": "objectscript_identifier",
+          "named": true
+        },
+        {
+          "type": "objectscript_identifier_special",
           "named": true
         }
       ]
@@ -2153,6 +2130,10 @@
           "named": true
         },
         {
+          "type": "objectscript_identifier_special",
+          "named": true
+        },
+        {
           "type": "routine_ref",
           "named": true
         }
@@ -2196,25 +2177,6 @@
       "types": [
         {
           "type": "expression",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "function_argument",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": false,
-      "types": [
-        {
-          "type": "expr_atom",
-          "named": true
-        },
-        {
-          "type": "expr_tail",
           "named": true
         }
       ]
@@ -2283,6 +2245,10 @@
           "named": true
         },
         {
+          "type": "objectscript_identifier_special",
+          "named": true
+        },
+        {
           "type": "string_literal",
           "named": true
         },
@@ -2295,6 +2261,11 @@
   },
   {
     "type": "identifier_segment_immediate",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "identifier_segment_immediate_special",
     "named": true,
     "fields": {}
   },
@@ -2665,6 +2636,10 @@
           "named": true
         },
         {
+          "type": "objectscript_identifier_special",
+          "named": true
+        },
+        {
           "type": "routine_ref",
           "named": true
         }
@@ -2677,10 +2652,14 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": false,
+      "required": true,
       "types": [
         {
           "type": "objectscript_identifier",
+          "named": true
+        },
+        {
+          "type": "objectscript_identifier_special",
           "named": true
         },
         {
@@ -2764,6 +2743,10 @@
         {
           "type": "identifier_segment_immediate",
           "named": true
+        },
+        {
+          "type": "identifier_segment_immediate_special",
+          "named": true
         }
       ]
     }
@@ -2830,19 +2813,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "expr_atom",
-          "named": true
-        },
-        {
-          "type": "expr_tail",
-          "named": true
-        },
-        {
           "type": "identifier_segment_immediate",
+          "named": true
+        },
+        {
+          "type": "identifier_segment_immediate_special",
           "named": true
         }
       ]
@@ -2855,6 +2834,11 @@
   },
   {
     "type": "objectscript_identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "objectscript_identifier_special",
     "named": true,
     "fields": {}
   },
@@ -2895,6 +2879,10 @@
         },
         {
           "type": "objectscript_identifier",
+          "named": true
+        },
+        {
+          "type": "objectscript_identifier_special",
           "named": true
         },
         {
@@ -3246,11 +3234,11 @@
           "named": true
         },
         {
-          "type": "macro_value",
+          "type": "macro_def",
           "named": true
         },
         {
-          "type": "objectscript_identifier",
+          "type": "macro_value",
           "named": true
         },
         {
@@ -3292,11 +3280,11 @@
           "named": true
         },
         {
-          "type": "macro_value",
+          "type": "macro_def",
           "named": true
         },
         {
-          "type": "objectscript_identifier",
+          "type": "macro_value",
           "named": true
         },
         {
@@ -3350,11 +3338,11 @@
           "named": true
         },
         {
-          "type": "lvn",
+          "type": "objectscript_identifier",
           "named": true
         },
         {
-          "type": "objectscript_identifier",
+          "type": "objectscript_identifier_special",
           "named": true
         },
         {
@@ -3635,7 +3623,11 @@
       "required": false,
       "types": [
         {
-          "type": "attribute",
+          "type": "objectscript_identifier",
+          "named": true
+        },
+        {
+          "type": "objectscript_identifier_special",
           "named": true
         }
       ]
@@ -3651,6 +3643,10 @@
       "types": [
         {
           "type": "identifier_segment_immediate",
+          "named": true
+        },
+        {
+          "type": "identifier_segment_immediate_special",
           "named": true
         }
       ]
@@ -3761,11 +3757,23 @@
       "required": true,
       "types": [
         {
-          "type": "dotted_identifier_relaxed_token",
+          "type": "namespace",
           "named": true
         },
         {
-          "type": "expression",
+          "type": "objectscript_identifier",
+          "named": true
+        },
+        {
+          "type": "objectscript_identifier_special",
+          "named": true
+        },
+        {
+          "type": "routine_name",
+          "named": true
+        },
+        {
+          "type": "string_literal",
           "named": true
         }
       ]
@@ -3952,6 +3960,10 @@
       "types": [
         {
           "type": "identifier_segment_immediate",
+          "named": true
+        },
+        {
+          "type": "identifier_segment_immediate_special",
           "named": true
         },
         {
@@ -4258,10 +4270,6 @@
           "named": true
         },
         {
-          "type": "class_name",
-          "named": true
-        },
-        {
           "type": "dollar_case",
           "named": true
         },
@@ -4318,10 +4326,6 @@
           "named": true
         },
         {
-          "type": "function_argument",
-          "named": true
-        },
-        {
           "type": "method_arg",
           "named": true
         },
@@ -4330,7 +4334,11 @@
           "named": true
         },
         {
-          "type": "method_name",
+          "type": "objectscript_identifier",
+          "named": true
+        },
+        {
+          "type": "objectscript_identifier_special",
           "named": true
         }
       ]
@@ -4377,6 +4385,10 @@
         },
         {
           "type": "method_arg",
+          "named": true
+        },
+        {
+          "type": "method_arg_special",
           "named": true
         }
       ]
@@ -5131,14 +5143,6 @@
     "named": true
   },
   {
-    "type": "dotted_identifier_relaxed_token",
-    "named": true
-  },
-  {
-    "type": "dotted_identifier_strict_token_immediate",
-    "named": true
-  },
-  {
     "type": "embedded_js_special_case",
     "named": true
   },
@@ -5511,7 +5515,19 @@
     "named": true
   },
   {
+    "type": "macro_def",
+    "named": true
+  },
+  {
     "type": "macro_value_line_with_continue",
+    "named": true
+  },
+  {
+    "type": "method_arg_special",
+    "named": true
+  },
+  {
+    "type": "namespace",
     "named": true
   },
   {

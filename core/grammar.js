@@ -299,12 +299,13 @@ module.exports = grammar(objectscript_expr, {
       pound_dim: ($) =>
       seq(
         $.keyword_dim,
-        repeat_with_commas(alias($.objectscript_identifier, $.lvn)),
+        repeat_with_commas(choice($.objectscript_identifier, $.objectscript_identifier_special)),
         optional(
           seq(
               $.keyword_as,
             choice(
               $.objectscript_identifier,
+              $.objectscript_identifier_special,
               $.oref_set_target,
             ),
             optional(
@@ -312,6 +313,7 @@ module.exports = grammar(objectscript_expr, {
                   $.keyword_of,
                 choice(
                   $.objectscript_identifier,
+                  $.objectscript_identifier_special,
                   $.oref_set_target,
                 ),
               ),
@@ -325,7 +327,7 @@ module.exports = grammar(objectscript_expr, {
       seq(
           $.keyword_pound_define,
         prec(10, seq(
-          alias($.pound_define_variable_name, $.objectscript_identifier),
+          alias($.pound_define_variable_name, $.macro_def),
           optional($.pound_define_variable_args),
         )),
         choice($.macro_value, $._termination),
@@ -349,7 +351,7 @@ module.exports = grammar(objectscript_expr, {
       seq(
           $.keyword_pound_def1arg,
         prec(10, seq(
-          alias($.pound_define_variable_name, $.objectscript_identifier),
+          alias($.pound_define_variable_name, $.macro_def),
           optional($.pound_def1arg_variable_arg),
         )),
         optional($.macro_value),
@@ -952,11 +954,11 @@ module.exports = grammar(objectscript_expr, {
         $.open_keyword_translate,
         $.open_keyword_xytable,
         seq($.open_keyword_translate_equals, optional($._xecute_arg_invalid), $.expression),
-        seq($.open_keyword_iotable_equals, choice($.string_literal, $.objectscript_identifier)),
-        seq($.open_keyword_xytable_equals, choice($.string_literal, $.objectscript_identifier)),
-        seq($.open_keyword_terminator, choice($.string_literal, $.objectscript_identifier)),
-        seq($.open_keyword_record_size, choice($.string_literal, $.objectscript_identifier)),
-        seq($.open_keyword_params, choice($.string_literal, $.objectscript_identifier)),
+        seq($.open_keyword_iotable_equals, choice($.string_literal, $.objectscript_identifier, $.objectscript_identifier_special)),
+        seq($.open_keyword_xytable_equals, choice($.string_literal, $.objectscript_identifier, $.objectscript_identifier_special)),
+        seq($.open_keyword_terminator, choice($.string_literal, $.objectscript_identifier, $.objectscript_identifier_special)),
+        seq($.open_keyword_record_size, choice($.string_literal, $.objectscript_identifier, $.objectscript_identifier_special)),
+        seq($.open_keyword_params, choice($.string_literal, $.objectscript_identifier, $.objectscript_identifier_special)),
       ),
 
 
@@ -1697,7 +1699,7 @@ module.exports = grammar(objectscript_expr, {
       seq(
         '[',
         optional(
-          repeat_with_commas(alias($.objectscript_identifier, $.attribute)),
+          repeat_with_commas(choice($.objectscript_identifier, $.objectscript_identifier_special)),
         ),
         ']',
       ),
@@ -1737,7 +1739,10 @@ module.exports = grammar(objectscript_expr, {
     // A tag parameter can be just a name or a name with a default value
     tag_parameter: ($) =>
       seq(
-        alias($.objectscript_identifier, $.method_arg),
+        choice(
+          alias($.objectscript_identifier, $.method_arg),
+          alias($.objectscript_identifier_special, $.method_arg_special),
+        ),
         optional(seq('=', $.expression)),
       ),
 

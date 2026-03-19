@@ -34,21 +34,28 @@
 
 (method_name) @function.method
 
-(class_name) @type
+[
+  (routine_name)
+  (class_name)
+] @type
 
 (macro_function) @function.macro
 
 (macro_constant) @constant.macro
 
 [
-  (routine_ref)
   (lvn)
   (gvn)
   (ssvn)
   (objectscript_identifier)
 ] @variable
 
-(instance_variable) @variable.member
+(namespace) @module
+
+[
+  (objectscript_identifier_special)
+  (instance_variable)
+] @variable.member
 
 (method_arg) @variable.parameter
 
@@ -114,6 +121,8 @@
 (macro_arg) @variable.member
 
 (macro_value) @constant.builtin
+
+(macro_def) @keyword.directive.define
 
 [
   (keyword_for)
@@ -183,7 +192,6 @@
   (open_keywords)
   (use_keywords)
   (close_parameter_option_value)
-  (attribute)
   (keyword_clear)
   (keyword_on)
   (keyword_off)
@@ -245,6 +253,8 @@
   (block_comment)
 ] @comment @spell
 
-(tag) @tag
+(namespace) @module
+
+(tag) @label
 
 ; === END LOCAL ===

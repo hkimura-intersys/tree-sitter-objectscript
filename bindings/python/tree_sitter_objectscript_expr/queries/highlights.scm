@@ -31,21 +31,28 @@
 
 (method_name) @function.method
 
-(class_name) @type
+[
+  (routine_name)
+  (class_name)
+] @type
 
 (macro_function) @function.macro
 
 (macro_constant) @constant.macro
 
 [
-  (routine_ref)
   (lvn)
   (gvn)
   (ssvn)
   (objectscript_identifier)
 ] @variable
 
-(instance_variable) @variable.member
+(namespace) @module
+
+[
+  (objectscript_identifier_special)
+  (instance_variable)
+] @variable.member
 
 (method_arg) @variable.parameter
 
@@ -105,5 +112,4 @@
 (json_boolean_literal) @boolean
 
 (bracket) @punctuation.bracket
-
 ; === END LOCAL ===
