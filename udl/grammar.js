@@ -101,7 +101,7 @@ module.exports = define_grammar(objectscript_core, {
     include_clause: ($) =>
       choice(
         alias($.identifier, $.class_name),
-        seq('(', alias($.identifier, $.class_name), repeat(seq(',', alias($.identifier, $.class_name))), ')'),
+        seq(alias('(', $.bracket), alias($.identifier, $.class_name), repeat(seq(',', alias($.identifier, $.class_name))), alias(')', $.bracket)),
       ),
 
 
@@ -187,7 +187,7 @@ module.exports = define_grammar(objectscript_core, {
     trigger: ($) =>
       seq(
         $.keyword_trigger,
-        alias($.quote_permitting_identifier, $.identifier),
+        alias($.quote_permitting_identifier, $.trigger_name),
         choice($.core_trigger, $.external_trigger),
       ),
 
@@ -235,16 +235,16 @@ module.exports = define_grammar(objectscript_core, {
         $.keyword_foreignkey,
         alias($.quote_permitting_identifier, $.foreignkey_name),
         alias(token.immediate('('), $.bracket),
-        alias($.quote_permitting_identifier, $.identifier),
-        repeat(seq(',', alias($.quote_permitting_identifier, $.identifier))),
+        alias($.quote_permitting_identifier, $.property_name),
+        repeat(seq(',', alias($.quote_permitting_identifier, $.property_name))),
         alias(token.immediate(')'), $.bracket),
         $.keyword_references,
-        alias($.quote_permitting_identifier, $.identifier),
+        alias($.quote_permitting_identifier, $.class_name),
         optional(
           seq(
-            '(',
-            alias($.quote_permitting_identifier, $.identifier),
-            ')',
+            alias('(', $.bracket),
+            alias($.quote_permitting_identifier, $.index_name),
+            alias(')', $.bracket),
           ),
         ),
         optional($.foreignkey_keywords),
@@ -326,7 +326,7 @@ module.exports = define_grammar(objectscript_core, {
       ),
     index_property: ($) =>
       seq(
-        alias($.quote_permitting_identifier, $.identifier),
+        $.quote_permitting_identifier,
         optional(
           seq(
             alias('(', $.bracket),
@@ -451,12 +451,12 @@ module.exports = define_grammar(objectscript_core, {
     ),
 
     arguments: ($) =>
-      seq(token.immediate('('), optional(seq($.argument, repeat(seq(',', $.argument)))), ')'),
+      seq(alias(token.immediate('('), $.bracket), optional(seq($.argument, repeat(seq(',', $.argument)))), alias(')', $.bracket)),
 
     argument: ($) =>
       seq(
         optional( choice($.keyword_byref, $.keyword_output)),
-        $.identifier,
+        $.method_arg,
         optional($.return_type),
         optional(seq('=', $.default_argument_value)),
       ),

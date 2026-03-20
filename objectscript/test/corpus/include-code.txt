@@ -33,8 +33,10 @@ Class barricade {
   (include_code
     (keyword_include)
     (include_clause
+      (bracket)
       (class_name)
-      (class_name)))
+      (class_name)
+      (bracket)))
   (class_definition
     (keyword_class)
     (class_name)

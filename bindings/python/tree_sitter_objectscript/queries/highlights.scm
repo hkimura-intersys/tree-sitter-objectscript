@@ -261,8 +261,6 @@
 ; === BEGIN UDL ===
 (iris_username) @keyword.directive
 
-(argument) @variable.parameter
-
 [
   (keyword_import)
   (keyword_include)
@@ -316,6 +314,7 @@
 
 [
   (query_name)
+  (trigger_name)
   (relationship_name)
   (foreignkey_name)
   (parameter_name)
@@ -324,6 +323,7 @@
   (xdata_name)
   (storage_name)
   (xml_identifier)
+  (index_property)
 ] @variable.member
 
 [

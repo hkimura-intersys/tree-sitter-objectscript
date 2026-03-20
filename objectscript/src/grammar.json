@@ -16419,8 +16419,13 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "STRING",
-              "value": "("
+              "type": "ALIAS",
+              "content": {
+                "type": "STRING",
+                "value": "("
+              },
+              "named": true,
+              "value": "bracket"
             },
             {
               "type": "ALIAS",
@@ -16453,8 +16458,13 @@
               }
             },
             {
-              "type": "STRING",
-              "value": ")"
+              "type": "ALIAS",
+              "content": {
+                "type": "STRING",
+                "value": ")"
+              },
+              "named": true,
+              "value": "bracket"
             }
           ]
         }
@@ -16793,7 +16803,7 @@
             "name": "quote_permitting_identifier"
           },
           "named": true,
-          "value": "identifier"
+          "value": "trigger_name"
         },
         {
           "type": "CHOICE",
@@ -16994,7 +17004,7 @@
             "name": "quote_permitting_identifier"
           },
           "named": true,
-          "value": "identifier"
+          "value": "property_name"
         },
         {
           "type": "REPEAT",
@@ -17012,7 +17022,7 @@
                   "name": "quote_permitting_identifier"
                 },
                 "named": true,
-                "value": "identifier"
+                "value": "property_name"
               }
             ]
           }
@@ -17040,7 +17050,7 @@
             "name": "quote_permitting_identifier"
           },
           "named": true,
-          "value": "identifier"
+          "value": "class_name"
         },
         {
           "type": "CHOICE",
@@ -17049,8 +17059,13 @@
               "type": "SEQ",
               "members": [
                 {
-                  "type": "STRING",
-                  "value": "("
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": "("
+                  },
+                  "named": true,
+                  "value": "bracket"
                 },
                 {
                   "type": "ALIAS",
@@ -17059,11 +17074,16 @@
                     "name": "quote_permitting_identifier"
                   },
                   "named": true,
-                  "value": "identifier"
+                  "value": "index_name"
                 },
                 {
-                  "type": "STRING",
-                  "value": ")"
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "STRING",
+                    "value": ")"
+                  },
+                  "named": true,
+                  "value": "bracket"
                 }
               ]
             },
@@ -17423,13 +17443,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "SYMBOL",
-            "name": "quote_permitting_identifier"
-          },
-          "named": true,
-          "value": "identifier"
+          "type": "SYMBOL",
+          "name": "quote_permitting_identifier"
         },
         {
           "type": "CHOICE",
@@ -17900,11 +17915,16 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "IMMEDIATE_TOKEN",
+          "type": "ALIAS",
           "content": {
-            "type": "STRING",
-            "value": "("
-          }
+            "type": "IMMEDIATE_TOKEN",
+            "content": {
+              "type": "STRING",
+              "value": "("
+            }
+          },
+          "named": true,
+          "value": "bracket"
         },
         {
           "type": "CHOICE",
@@ -17940,8 +17960,13 @@
           ]
         },
         {
-          "type": "STRING",
-          "value": ")"
+          "type": "ALIAS",
+          "content": {
+            "type": "STRING",
+            "value": ")"
+          },
+          "named": true,
+          "value": "bracket"
         }
       ]
     },
@@ -17971,7 +17996,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "identifier"
+          "name": "method_arg"
         },
         {
           "type": "CHOICE",

@@ -25,14 +25,20 @@ Query ByName(name As %String = "")
           (query_name
             (identifier))
           (arguments
+            (bracket)
             (argument
-              (identifier)
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier)))))
               (return_type
                 (keyword_as)
                 (typename
                   (identifier)))
               (default_argument_value
-                (string_literal))))
+                (string_literal)))
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -80,14 +86,20 @@ SELECT ID,Name,Title FROM Employee
           (query_name
             (identifier))
           (arguments
+            (bracket)
             (argument
-              (identifier)
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier)))))
               (return_type
                 (keyword_as)
                 (typename
                   (identifier)))
               (default_argument_value
-                (string_literal))))
+                (string_literal)))
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -130,15 +142,21 @@ Query MyQuery(MyParam As %String(MAXLEN = 200)) As %SQLQuery [SqlProc]
           (query_name
             (identifier))
           (arguments
+            (bracket)
             (argument
-              (identifier)
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier)))))
               (return_type
                 (keyword_as)
                 (typename
                   (identifier)
                   (typename_param
                     (identifier)
-                    (numeric_literal))))))
+                    (numeric_literal)))))
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -169,7 +187,9 @@ Class Test {
           (keyword_query)
           (query_name
             (identifier))
-          (arguments)
+          (arguments
+            (bracket)
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -200,8 +220,14 @@ Class Test {
           (query_name
             (identifier))
           (arguments
+            (bracket)
             (argument
-              (identifier)))
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))))
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -231,12 +257,26 @@ Class Test {
           (query_name
             (identifier))
           (arguments
+            (bracket)
             (argument
-              (identifier))
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))))
             (argument
-              (identifier))
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))))
             (argument
-              (identifier)))
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))))
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -264,7 +304,9 @@ Class Test {
         (query
           (keyword_query)
           (query_name)
-          (arguments)
+          (arguments
+            (bracket)
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -293,7 +335,9 @@ Class Test {
           (keyword_query)
           (query_name
             (identifier))
-          (arguments)
+          (arguments
+            (bracket)
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -327,10 +371,20 @@ Class Test {
           (query_name
             (identifier))
           (arguments
+            (bracket)
             (argument
-              (identifier))
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))))
             (argument
-              (identifier)))
+              (method_arg
+                (expression
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))))
+            (bracket))
           (return_type
             (keyword_as)
             (typename
@@ -365,7 +419,9 @@ Class Test {
           (keyword_query)
           (query_name
             (identifier))
-          (arguments)
+          (arguments
+            (bracket)
+            (bracket))
           (return_type
             (keyword_as)
             (typename
