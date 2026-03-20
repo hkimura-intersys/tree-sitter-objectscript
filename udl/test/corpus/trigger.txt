@@ -25,7 +25,7 @@ Trigger LogEvent [ Event = INSERT, Time = AFTER ]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -87,7 +87,7 @@ Trigger TBefore [ Event = UPDATE, Time = BEFORE ]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -134,7 +134,7 @@ Trigger TAllEvents [ Event = INSERT/UPDATE/DELETE, Time = AFTER ]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -172,7 +172,7 @@ Trigger TStatement [ Event = DELETE, Foreach = statement, Time = AFTER ]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -213,7 +213,7 @@ Trigger TUnified [ Event = UPDATE, Foreach = row/object, Time = AFTER ]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -254,7 +254,7 @@ Trigger TTransitionTables [ Event = UPDATE, OldTable = old_vals_tbl, NewTable = 
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -298,7 +298,7 @@ Trigger TGen [ Event = INSERT, CodeMode = objectgenerator ]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords

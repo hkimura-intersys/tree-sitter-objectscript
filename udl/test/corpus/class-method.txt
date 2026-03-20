@@ -20,7 +20,9 @@ Class MyApp.Test {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_quit
                 (keyword_quit)))))))))
@@ -48,18 +50,28 @@ Class MyApp.Test {
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -101,12 +113,18 @@ Class MyApp.Test {
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (statement
               (command_write
                 (keyword_write)
@@ -143,14 +161,20 @@ Class MyApp.Test {
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier)))
                 (default_argument_value
-                  (string_literal))))
+                  (string_literal)))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -197,7 +221,9 @@ Class MyApp.Test {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_do
                 (keyword_do)
@@ -219,7 +245,9 @@ Class MyApp.Test {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_write
                 (keyword_write)
@@ -254,7 +282,9 @@ Class MyApp.Test {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -301,20 +331,30 @@ Class MyApp.Test {
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
                 (keyword_byref)
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (keyword_output)
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -459,14 +499,20 @@ ClassMethod Test(flag As %Integer = 0)
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier)))
                 (default_argument_value
-                  (numeric_literal))))
+                  (numeric_literal)))
+              (bracket))
             (line_comment_1)))))))
 
 =====
@@ -492,8 +538,13 @@ ClassMethod Test(time As %Integer = {$horolog} )
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -501,7 +552,8 @@ ClassMethod Test(time As %Integer = {$horolog} )
                 (default_argument_value
                   (expression
                     (expr_atom
-                      (system_defined_variable))))))
+                      (system_defined_variable)))))
+              (bracket))
             (line_comment_1)))))))
 
 =====
@@ -527,22 +579,36 @@ ClassMethod Calculate(count As %Integer, name, state As %String = "CA")
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
-                (identifier))
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier))))))
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier)))
                 (default_argument_value
-                  (string_literal))))
+                  (string_literal)))
+              (bracket))
             (line_comment_1)))))))
 
 ====
@@ -572,20 +638,30 @@ Method Swap(ByRef x As %Integer, ByRef y As %Integer)
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
                 (keyword_byref)
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (keyword_byref)
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (statement
               (command_set
                 (keyword_set)
@@ -644,13 +720,19 @@ Method CreateObject(Output newobj As MyApp.MyClass) As %Status
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
                 (keyword_output)
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -706,13 +788,19 @@ Method CreateObject(Output newobj As MyApp.MyClass) As %Status
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
                 (keyword_output)
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -764,7 +852,9 @@ ClassMethod TSQLTest() [ Language = tsql ]
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (external_method_keywords
               (method_keyword_language
                 (typename)))
@@ -793,10 +883,19 @@ Class test {
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier))
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier))))))
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -804,13 +903,18 @@ Class test {
                 (default_argument_value
                   (numeric_literal)))
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier)))
                 (default_argument_value
-                  (numeric_literal))))
+                  (numeric_literal)))
+              (bracket))
             (external_method_keywords
               (method_keyword_language
                 (typename)))
@@ -841,12 +945,18 @@ Method Double(val As %Integer) As %Integer [ CodeMode = expression ]
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -892,7 +1002,9 @@ Method MyMethod() [ CodeMode = objectgenerator , ProcedureBlock=0]
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (method_keywords
               (method_keyword
                 (method_keyword_codemode
@@ -980,7 +1092,9 @@ Class test {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (call_method_keywords
               (call_method_keyword
                 (typename)))
@@ -1019,7 +1133,7 @@ Class MyApp.Person Extends %Persistent [DdlAllowed]
       (class_statement
         (trigger
           (keyword_trigger)
-          (identifier
+          (trigger_name
             (identifier))
           (core_trigger
             (trigger_keywords
@@ -1056,12 +1170,18 @@ Method Add(p1 As %String) As %String [ WebMethod ]
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -1100,7 +1220,9 @@ Method Ping() [ WebMethod ]
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (method_keywords
               (method_keyword
                 (method_keyword_web_method)))
@@ -1132,12 +1254,18 @@ Method Add(p1 As %String) As %String [ Not WebMethod ]
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -1178,12 +1306,18 @@ Method Add(p1 As %String) As %String [ Private, WebMethod ]
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -1225,12 +1359,18 @@ ClassMethod Add(p1 As %String) As %String [ WebMethod ]
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -1270,12 +1410,18 @@ Method Add(p1 As %String) As %String [ wEbMeThOd ]
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -1382,7 +1528,9 @@ Method test() {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_zbreak
                 (keyword_zbreak)

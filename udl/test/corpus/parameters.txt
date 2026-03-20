@@ -95,7 +95,9 @@ ClassMethod Addition(x As %Library.Integer, y As %Library.Integer) As %Library.I
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -108,18 +110,28 @@ ClassMethod Addition(x As %Library.Integer, y As %Library.Integer) As %Library.I
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (return_type
               (keyword_as)
               (typename
@@ -250,7 +262,9 @@ Class hi {
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_write
                 (keyword_write)

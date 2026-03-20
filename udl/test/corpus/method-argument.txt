@@ -43,15 +43,25 @@ ClassMethod GetSDA(Output pXml, p as %String) {
             (method_name
               (identifier))
             (arguments
+              (bracket)
               (argument
                 (keyword_output)
-                (identifier))
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier))))))
               (argument
-                (identifier)
+                (method_arg
+                  (expression
+                    (expr_atom
+                      (lvn
+                        (objectscript_identifier)))))
                 (return_type
                   (keyword_as)
                   (typename
-                    (identifier)))))
+                    (identifier))))
+              (bracket))
             (statement
               (command_set
                 (keyword_set)

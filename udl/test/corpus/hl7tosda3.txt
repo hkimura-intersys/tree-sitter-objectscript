@@ -39,7 +39,9 @@ ClassMethod adta01()
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_set
                 (keyword_set)
@@ -662,7 +664,9 @@ ClassMethod GetData()
           (method_definition
             (method_name
               (identifier))
-            (arguments)
+            (arguments
+              (bracket)
+              (bracket))
             (statement
               (command_new
                 (keyword_new)

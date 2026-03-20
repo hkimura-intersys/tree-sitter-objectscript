@@ -20,7 +20,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -48,7 +48,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -76,7 +76,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -104,7 +104,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -134,7 +134,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -164,7 +164,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -193,11 +193,11 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier))))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -227,7 +227,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -259,15 +259,15 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier))))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier))))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -320,14 +320,14 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier))
                 (bracket)
                 (index_property_type)
                 (bracket)))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier))
                 (bracket)
                 (index_property_type)
@@ -355,7 +355,7 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))
               (keyword_as)
               (index_type
@@ -363,7 +363,7 @@ Class test {
                   (numeric_literal))))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))
               (keyword_as)
               (index_type))))))))
@@ -390,13 +390,13 @@ Class test {
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))
               (keyword_as)
               (index_type))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))
               (keyword_as)
               (index_type))))))))
@@ -459,7 +459,7 @@ Class User.Employee
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -496,11 +496,11 @@ Class Pkg.Test
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier))))
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -532,7 +532,7 @@ Class Pkg.Test
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -566,7 +566,7 @@ Class Pkg.Test
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
@@ -596,7 +596,7 @@ Class Pkg.Test
           (index_properties
             (index_item
               (index_property
-                (identifier
+                (quote_permitting_identifier
                   (identifier)))))
           (index_keywords
             (index_keyword
