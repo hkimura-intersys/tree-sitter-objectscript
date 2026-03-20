@@ -135,9 +135,17 @@ MyProc(x,y) PUBLIC { }
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket)))
       (keyword_public))))
 
@@ -157,9 +165,17 @@ MyProc2(x,y) { }
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket)))
       (keyword_private)))
   (statement
@@ -169,9 +185,17 @@ MyProc2(x,y) { }
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket))))))
 
 ================
@@ -190,9 +214,17 @@ MyProc(x,y)[x] {
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket)))
       (procedure_pub_vars
         (objectscript_identifier))
@@ -232,9 +264,17 @@ Label1 // Label1 that is part of Rou1 and neither procedure
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket)))
       (statement
         (tag))
@@ -246,11 +286,23 @@ Label1 // Label1 that is part of Rou1 and neither procedure
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket)))
       (statement
         (tag))
@@ -281,9 +333,17 @@ Label1 ; The DO calls this label
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket)))
       (statement
         (command_do

@@ -31,11 +31,23 @@ label(name1,name2,name3)
         (parameter_list
           (bracket)
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (tag_parameter
-            (method_arg))
+            (method_arg
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))))
           (bracket))))))
 
 ===
