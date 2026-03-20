@@ -22,9 +22,9 @@ include = [
   "/objectscript/src/scanner.c",
   "/objectscript/src/node-types.json",
   "/objectscript/src/tree_sitter/parser.h",
-  "/udl/queries/highlights.scm",
-  "/udl/queries/indents.scm",
-  "/udl/queries/injections.scm",
+  "/objectscript/queries/highlights.scm",
+  "/objectscript/queries/indents.scm",
+  "/objectscript/queries/injections.scm",
 ]
 readme = "cargo_readme_playground.md"
 
