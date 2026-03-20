@@ -6840,8 +6840,17 @@
               "name": "keyword_for"
             },
             {
-              "type": "SYMBOL",
-              "name": "_argumentless_loop"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_argumentless_loop"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_termination"
+                }
+              ]
             },
             {
               "type": "STRING",

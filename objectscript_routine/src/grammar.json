@@ -6623,8 +6623,17 @@
               "name": "keyword_for"
             },
             {
-              "type": "SYMBOL",
-              "name": "_argumentless_loop"
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "SYMBOL",
+                  "name": "_argumentless_loop"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "_termination"
+                }
+              ]
             },
             {
               "type": "STRING",
@@ -12853,27 +12862,8 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "SYMBOL",
-                "name": "objectscript_identifier"
-              },
-              "named": true,
-              "value": "method_arg"
-            },
-            {
-              "type": "ALIAS",
-              "content": {
-                "type": "SYMBOL",
-                "name": "objectscript_identifier_special"
-              },
-              "named": true,
-              "value": "method_arg_special"
-            }
-          ]
+          "type": "SYMBOL",
+          "name": "method_arg"
         },
         {
           "type": "CHOICE",

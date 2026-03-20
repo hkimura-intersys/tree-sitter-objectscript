@@ -257,6 +257,19 @@
 
 (tag) @label
 
+[
+(command_quit)
+(command_else)
+(command_continue)
+(command_if)
+(command_do)
+(command_for)
+(command_lock)
+(command_return)
+(command_halt_or_hang)
+(command_break)
+] @comment
+
 ; === END CORE ===
 ; === BEGIN LOCAL ===
 (routine_type) @type.builtin

@@ -637,7 +637,10 @@ module.exports = grammar(objectscript_expr, {
         // Block style FOR without parameters (argumentless)
         seq(
             $.keyword_for,
-          $._argumentless_loop,
+          choice(
+            $._argumentless_loop,
+            $._termination,
+          ),
           '{',
           repeat($.statement),
           '}',

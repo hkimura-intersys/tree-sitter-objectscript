@@ -605,6 +605,24 @@ if (valid_symbols[_POST_CONDITIONAL_ID] && lexer->lookahead==':') {
                 while (!lexer->eof(lexer) && !(lexer->lookahead=='\n')) {
                     lexer->advance(lexer, true);
                 }
+                // For argumentless FOR blocks, allow:
+                //   FOR //comment
+                //   {
+                // by treating the comment+newline gap as loop whitespace.
+                if (valid_symbols[_ARGUMENTLESS_LOOP]) {
+                    bool new_line = false;
+                    while (!lexer->eof(lexer) && iswspace(lexer->lookahead)) {
+                        if (lexer->lookahead == '\n') {
+                          new_line = true;
+                        }
+                        lexer->advance(lexer, false);
+                    }
+                    if (lexer->lookahead == '{' && new_line) {
+                        lexer->result_symbol = _ARGUMENTLESS_LOOP;
+                        scanner->terminated_newline = false;
+                        return true;
+                    }
+                }
                 // means the rest of the line is a comment
                 if(valid_symbols[_TERMINATION]) {
                     lexer->result_symbol = _TERMINATION;
