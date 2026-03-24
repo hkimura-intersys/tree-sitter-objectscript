@@ -2765,7 +2765,7 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
@@ -2773,7 +2773,19 @@
           "named": true
         },
         {
+          "type": "expr_atom",
+          "named": true
+        },
+        {
+          "type": "expr_tail",
+          "named": true
+        },
+        {
           "type": "expression",
+          "named": true
+        },
+        {
+          "type": "lvn",
           "named": true
         },
         {

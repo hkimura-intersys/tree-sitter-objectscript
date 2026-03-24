@@ -1707,7 +1707,7 @@ module.exports = grammar(objectscript_expr, {
     // A tag parameter can be just a name or a name with a default value
     tag_parameter: ($) =>
       seq(
-        $.method_arg,
+        choice(alias($.variadic_arg, $.method_arg), alias($.expression, $.method_arg), seq('&', alias($.expression, $.method_arg))),
         optional(seq('=', $.expression)),
       ),
 

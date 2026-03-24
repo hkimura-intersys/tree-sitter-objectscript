@@ -113,20 +113,18 @@ ClassMethod Addition(x As %Library.Integer, y As %Library.Integer) As %Library.I
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename

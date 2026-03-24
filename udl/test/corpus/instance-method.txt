@@ -53,20 +53,18 @@ Class MyApp.Test {
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -116,10 +114,9 @@ Class MyApp.Test {
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -164,10 +161,9 @@ Class MyApp.Test {
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -335,10 +331,9 @@ Class MyApp.Test {
               (argument
                 (keyword_byref)
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -346,10 +341,9 @@ Class MyApp.Test {
               (argument
                 (keyword_output)
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -507,20 +501,18 @@ Method Add(a As %Numeric, b As %Numeric) As %Numeric
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -675,20 +667,18 @@ Method Add(a As %Numeric, b As %Numeric) As %Numeric
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -977,20 +967,18 @@ Method Add(a As %Numeric, b As %Numeric) As %Numeric
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1051,20 +1039,18 @@ Method Add(a As %Numeric, b As %Numeric) As %Numeric
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1442,20 +1428,18 @@ Method Add(a As %Integer, b As %Integer) As %Integer [ WebMethod, SoapAction="My
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1520,20 +1504,18 @@ Method Add(a As %Integer, b As %Integer) As %Integer [ SoapRequestMessage=_MyReq
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1593,20 +1575,18 @@ Method Add(a As %Integer, b As %Integer) As %Integer [ SoapRequestMessage=Req123
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1666,20 +1646,18 @@ Method Add(a As %Integer, b As %Integer) As %Integer [ SoapRequestMessage=My.Req
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1739,20 +1717,18 @@ Method Add(a As %Integer, b As %Integer) As %Integer [ soaprequestmessage=MyReq 
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
@@ -1812,20 +1788,18 @@ Method Add(a As %Integer, b As %Integer) As %Integer [ SoapRequestMessage = MyRe
               (bracket)
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
                     (identifier))))
               (argument
                 (method_arg
-                  (expression
-                    (expr_atom
-                      (lvn
-                        (objectscript_identifier)))))
+                  (expr_atom
+                    (lvn
+                      (objectscript_identifier))))
                 (return_type
                   (keyword_as)
                   (typename
