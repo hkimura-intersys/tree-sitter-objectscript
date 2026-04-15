@@ -5857,8 +5857,13 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "STRING",
-            "value": "."
+            "type": "ALIAS",
+            "content": {
+              "type": "STRING",
+              "value": "."
+            },
+            "named": true,
+            "value": "dot"
           }
         },
         {
@@ -7152,8 +7157,13 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "keyword_do"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "keyword_do"
+                },
+                "named": true,
+                "value": "keyword_do_old"
               },
               {
                 "type": "CHOICE",
@@ -7184,8 +7194,13 @@
             "type": "SEQ",
             "members": [
               {
-                "type": "SYMBOL",
-                "name": "keyword_do"
+                "type": "ALIAS",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "keyword_do"
+                },
+                "named": true,
+                "value": "keyword_do_old"
               },
               {
                 "type": "CHOICE",

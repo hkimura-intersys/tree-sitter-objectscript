@@ -350,6 +350,10 @@
           "named": true
         },
         {
+          "type": "keyword_do_old",
+          "named": true
+        },
+        {
           "type": "post_conditional",
           "named": true
         }
@@ -1855,6 +1859,10 @@
       "types": [
         {
           "type": "bol",
+          "named": true
+        },
+        {
+          "type": "dot",
           "named": true
         },
         {
@@ -5095,6 +5103,10 @@
     "named": true
   },
   {
+    "type": "dot",
+    "named": true
+  },
+  {
     "type": "embedded_js_special_case",
     "named": true
   },
@@ -5176,6 +5188,10 @@
   },
   {
     "type": "keyword_do",
+    "named": true
+  },
+  {
+    "type": "keyword_do_old",
     "named": true
   },
   {

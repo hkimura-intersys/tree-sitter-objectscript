@@ -207,6 +207,10 @@
   (keyword_write)
   (keyword_zwrite)
   (keyword_do)
+  (keyword_do_old)
+  (keyword_old_if)
+  (old_if_remove)
+  (keyword_old_if_refactor)
   (keyword_for)
   (keyword_while)
   (keyword_kill)
@@ -280,7 +284,7 @@
 "--" @operator
 
 (dotted_statement
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 ; === END CORE ===
 ; === BEGIN UDL ===

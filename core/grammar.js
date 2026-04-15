@@ -295,7 +295,7 @@ module.exports = grammar(objectscript_expr, {
          // this is from the external scanner, and it means that it was
          // at the start of a line and there were dots matching the dotted statement
         $.bol,
-        repeat1('.'),
+        repeat1(alias('.', $.dot)),
         repeat1($.statement),
         $._termination,
       ),
@@ -547,9 +547,9 @@ module.exports = grammar(objectscript_expr, {
     // Reference: https://docs.intersystems.com/irislatest/csp/docbook/DocBook.UI.Page.cls?KEY=RCOS_cdo
     command_do: ($) =>
       choice(
-        prec.right(seq($.keyword_do, optional($.post_conditional), repeat1($.dotted_statement))),
+        prec.right(seq(alias($.keyword_do, $.keyword_do_old), optional($.post_conditional), repeat1($.dotted_statement))),
         prec.right(
-          seq($.keyword_do,
+          seq(alias($.keyword_do, $.keyword_do_old),
           optional($.post_conditional),
           $._argumentless_command_end,
           repeat1(alias($.statement, $.do_statement_after)),

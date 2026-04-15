@@ -1,5 +1,9 @@
 Routine testing
-testcall
- do subroutine^test
- do check^test
+ new y
+ set x = 2 
  w "hello"
+
+subroutine
+ w !, x 
+ w !, y
+ 

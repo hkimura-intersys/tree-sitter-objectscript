@@ -198,6 +198,10 @@
   (keyword_zremove)
   (command_keyword)
   (keyword_zload)
+  (keyword_do_old)
+  (keyword_old_if)
+  (old_if_remove)
+  (keyword_old_if_refactor)
 ] @keyword
 
 ; end (red fg, default bg)
@@ -264,7 +268,7 @@
 
 ; start Dots in dotted statements, (black fg,silver bg)
 (dotted_statement
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 ; end Dots in dotted statements (black fg,silver bg)
 ; start #dim command
