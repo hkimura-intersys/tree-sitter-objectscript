@@ -508,6 +508,18 @@
           "named": true
         },
         {
+          "type": "keyword_old_if",
+          "named": true
+        },
+        {
+          "type": "keyword_old_if_refactor",
+          "named": true
+        },
+        {
+          "type": "old_if_remove",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         }
@@ -1633,11 +1645,11 @@
           "named": true
         },
         {
-          "type": "tag",
+          "type": "tag_end_if",
           "named": true
         },
         {
-          "type": "tag_end_if",
+          "type": "tag_statement",
           "named": true
         },
         {
@@ -4290,11 +4302,11 @@
           "named": true
         },
         {
-          "type": "tag",
+          "type": "tag_end_if",
           "named": true
         },
         {
-          "type": "tag_end_if",
+          "type": "tag_statement",
           "named": true
         },
         {
@@ -4431,6 +4443,33 @@
         },
         {
           "type": "method_arg",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tag_statement",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "keyword_methodimpl",
+          "named": true
+        },
+        {
+          "type": "keyword_private",
+          "named": true
+        },
+        {
+          "type": "keyword_public",
+          "named": true
+        },
+        {
+          "type": "tag",
           "named": true
         }
       ]
@@ -5286,6 +5325,14 @@
     "named": true
   },
   {
+    "type": "keyword_old_if",
+    "named": true
+  },
+  {
+    "type": "keyword_old_if_refactor",
+    "named": true
+  },
+  {
     "type": "keyword_oldelse",
     "named": true
   },
@@ -5479,6 +5526,10 @@
   },
   {
     "type": "numeric_literal",
+    "named": true
+  },
+  {
+    "type": "old_if_remove",
     "named": true
   },
   {

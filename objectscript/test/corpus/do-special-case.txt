@@ -9,7 +9,7 @@ Do Statements Nested
 (source_file
   (statement
     (command_if
-      (keyword_if)
+      (keyword_old_if_refactor)
       (expression
         (expr_atom
           (lvn

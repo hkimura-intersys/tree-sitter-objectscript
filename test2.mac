@@ -1,0 +1,5 @@
+Routine testing
+testcall
+ do subroutine^test
+ do check^test
+ w "hello"

@@ -557,15 +557,12 @@ module.exports = grammar(objectscript_expr, {
           ),
         ),
         // DO with parameters
-        prec.right(
           seq(
             $.keyword_do,
             optional($.post_conditional),
             $._immediate_single_whitespace_followed_by_non_whitespace,
             repeat_with_commas($.do_parameter),
-            repeat($.dotted_statement),
           ),
-        ),
       ),
 
     do_parameter: ($) =>
@@ -1061,17 +1058,17 @@ module.exports = grammar(objectscript_expr, {
               optional($.else_block),
           ),
           seq(
-              $.keyword_if,
+              alias($.keyword_if, $.keyword_old_if),
               $._argumentless_command_end,
               repeat1($.statement),
               $._termination,
           ),
           seq(
-              $.keyword_if,
+              alias($.keyword_if, $.old_if_remove),
               $._termination,
           ),
           seq(
-              $.keyword_if,
+              alias($.keyword_if, $.keyword_old_if_refactor),
               $._immediate_single_whitespace_followed_by_non_whitespace,
               repeat_with_commas($.expression),
               repeat($.statement),
@@ -1583,6 +1580,11 @@ module.exports = grammar(objectscript_expr, {
         ),
       ),
 
+    tag_statement: ($) =>
+      prec.right(seq(
+        $.tag,
+        optional(choice($.keyword_methodimpl, $.keyword_public, $.keyword_private)),
+      )),
 
     // Simple parameterized tag/label: tagname(params) - no modifiers, no body
     // Example: bar(a,b=2)

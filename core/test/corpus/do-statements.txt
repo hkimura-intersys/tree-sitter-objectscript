@@ -1390,7 +1390,7 @@ Do Statement Dot Syntax
                   (string_literal))))))))
     (statement
       (command_if
-        (keyword_if)
+        (keyword_old_if_refactor)
         (expression
           (expr_atom
             (parenthetical_expression

@@ -10,7 +10,7 @@ Do Statements Nested
   (statements
     (statement
       (command_if
-        (keyword_if)
+        (keyword_old_if_refactor)
         (expression
           (expr_atom
             (lvn

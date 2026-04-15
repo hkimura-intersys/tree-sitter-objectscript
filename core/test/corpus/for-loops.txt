@@ -769,7 +769,8 @@ test
 (source_file
   (statements
     (statement
-      (tag))
+      (tag_statement
+        (tag)))
     (statement
       (command_for
         (keyword_for)
@@ -796,7 +797,8 @@ test
 (source_file
   (statements
     (statement
-      (tag))
+      (tag_statement
+        (tag)))
     (statement
       (command_for
         (keyword_for)
@@ -819,7 +821,8 @@ test
 (source_file
   (statements
     (statement
-      (tag))
+      (tag_statement
+        (tag)))
     (statement
       (command_for
         (keyword_for)
