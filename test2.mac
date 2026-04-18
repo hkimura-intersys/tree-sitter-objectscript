@@ -1,9 +1,0 @@
-Routine testing
- new y
- set x = 2 
- w "hello"
-
-subroutine
- w !, x 
- w !, y
- 
