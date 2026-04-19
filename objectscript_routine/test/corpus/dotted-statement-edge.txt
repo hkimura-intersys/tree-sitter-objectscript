@@ -1,6 +1,6 @@
-=====
-dotted statements 
-=====
+====
+Nested quits in nested dotted statements
+====
 ROUTINE test
 
 subroutine
@@ -18,6 +18,7 @@ subroutine2
 proc() [z] public  {
     set z = 10
 }
+
 check2()
  set x = 2
  set y = 5
@@ -36,6 +37,7 @@ check() private
  . . new x
  . . set x = 250
  . . w !, x 
+ . . quit
  . quit
   w !,"again x=",x
   w !,"y=",y
@@ -257,14 +259,14 @@ okay
                 (write_argument
                   (expression
                     (expr_atom
-                      (string_literal))))))
-            (statement
-              (tag_with_params
-                (tag)
-                (parameter_list
-                  (bracket)
-                  (bracket))
-                (keyword_private))))))))
+                      (string_literal)))))))))))
+  (statement
+    (tag_with_params
+      (tag)
+      (parameter_list
+        (bracket)
+        (bracket))
+      (keyword_private)))
   (statement
     (command_set
       (keyword_set)
@@ -403,13 +405,21 @@ okay
                       (write_argument
                         (expression
                           (expr_atom
-                            (oref_chain_expr
-                              (lvn
-                                (objectscript_identifier))
-                              (oref_chain_segment
-                                (oref_property
-                                  (property_name
-                                    (identifier_segment_immediate))))))))))))))))))
+                            (lvn
+                              (objectscript_identifier))))))))
+                (dotted_statement
+                  (bol)
+                  (dot)
+                  (dot)
+                  (statement
+                    (command_quit
+                      (keyword_quit))))
+                (dotted_statement
+                  (bol)
+                  (dot)
+                  (statement
+                    (command_quit
+                      (keyword_quit)))))))))))
   (statement
     (command_write
       (keyword_write)
