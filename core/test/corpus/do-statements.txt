@@ -1541,7 +1541,7 @@ Do Statement Dot Syntax
             (objectscript_identifier)))))
     (statement
       (command_for
-        (keyword_for)
+        (keyword_old_for_params)
         (for_parameter
           (glvn
             (lvn

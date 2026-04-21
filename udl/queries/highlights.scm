@@ -130,6 +130,9 @@
 [
   (keyword_for)
   (keyword_while)
+  (keyword_for_infinite)
+  (keyword_old_for_no_params)
+  (keyword_old_for_params)
   (keyword_continue)
   (keyword_quit)
 ] @keyword.repeat
@@ -211,7 +214,6 @@
   (keyword_old_if)
   (old_if_remove)
   (keyword_old_if_refactor)
-  (keyword_for)
   (keyword_while)
   (keyword_kill)
   (keyword_lock)
@@ -265,20 +267,42 @@
 (pound_if_special_case) @comment.inactive
 
 [
-  (command_quit)
-  (command_else)
-  (command_continue)
-  (command_if)
-  (command_do)
-  (command_for)
-  (command_lock)
-  (command_return)
-  (command_halt_or_hang)
-  (command_break)
-  (command_tcommit)
-  (command_trollback)
-  (command_tstart)
-  (command_zbreak)
+  (command_quit
+    (keyword_quit) @keyword)
+  (command_else
+    (keyword_oldelse) @keyword)
+  (command_continue
+    (keyword_continue) @keyword)
+  (command_if
+    (keyword_old_if) @keyword)
+  (command_if
+    (keyword_old_if_refactor) @keyword)
+  (command_do
+    (keyword_do_old) @keyword)
+  (command_for
+    (keyword_for_infinite) @keyword.repeat)
+  (command_for
+    (keyword_old_for_no_params) @keyword.repeat)
+  (command_for
+    (keyword_old_for_params) @keyword.repeat)
+  (command_for
+    (keyword_for) @keyword.repeat)
+  (command_lock
+    (keyword_lock) @keyword)
+  (command_return
+    (keyword_return) @keyword)
+  (command_halt_or_hang
+    (keyword_halt_or_hang) @keyword)
+  (command_break
+    (keyword_break) @keyword)
+  (command_tcommit
+    (keyword_tcommit) @keyword)
+  (command_trollback
+    (keyword_trollback) @keyword)
+  (command_tstart
+    (keyword_tstart) @keyword)
+  (command_zbreak
+    (keyword_zbreak) @keyword)
 ] @comment
 
 "--" @operator

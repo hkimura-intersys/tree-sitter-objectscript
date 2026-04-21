@@ -7698,8 +7698,13 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "keyword_for"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "keyword_for"
+              },
+              "named": true,
+              "value": "keyword_old_for_params"
             },
             {
               "type": "SYMBOL",
@@ -7747,8 +7752,13 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "keyword_for"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "keyword_for"
+              },
+              "named": true,
+              "value": "keyword_old_for_no_params"
             },
             {
               "type": "SYMBOL",
@@ -7771,8 +7781,13 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "keyword_for"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "keyword_for"
+              },
+              "named": true,
+              "value": "keyword_for_infinite"
             },
             {
               "type": "SYMBOL",

@@ -201,6 +201,9 @@
   (keyword_do_old)
   (keyword_old_if)
   (old_if_remove)
+  (keyword_for_infinite)
+  (keyword_old_for_no_params)
+  (keyword_old_for_params)
   (keyword_old_if_refactor)
 ] @keyword
 

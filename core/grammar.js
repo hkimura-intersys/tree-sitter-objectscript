@@ -661,7 +661,7 @@ module.exports = grammar(objectscript_expr, {
         ),
         // Old style FOR with parameters
         seq(
-            $.keyword_for,
+            alias($.keyword_for, $.keyword_old_for_params),
           $._immediate_single_whitespace_followed_by_non_whitespace,
           repeat_with_commas($.for_parameter),
           repeat($.statement),
@@ -669,13 +669,13 @@ module.exports = grammar(objectscript_expr, {
         ),
         // Old style argumentless FOR
         seq(
-            $.keyword_for,
+            alias($.keyword_for, $.keyword_old_for_no_params),
           $._argumentless_command_end,
           repeat($.statement),
           $._termination,
         ),
         seq(
-            $.keyword_for,
+            alias($.keyword_for, $.keyword_for_infinite),
             $._termination,
         ),
       ),

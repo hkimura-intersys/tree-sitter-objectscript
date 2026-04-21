@@ -1307,6 +1307,18 @@
           "named": true
         },
         {
+          "type": "keyword_for_infinite",
+          "named": true
+        },
+        {
+          "type": "keyword_old_for_no_params",
+          "named": true
+        },
+        {
+          "type": "keyword_old_for_params",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         }
@@ -9168,6 +9180,10 @@
     "named": true
   },
   {
+    "type": "keyword_for_infinite",
+    "named": true
+  },
+  {
     "type": "keyword_foreignkey",
     "named": true
   },
@@ -9249,6 +9265,14 @@
   },
   {
     "type": "keyword_off",
+    "named": true
+  },
+  {
+    "type": "keyword_old_for_no_params",
+    "named": true
+  },
+  {
+    "type": "keyword_old_for_params",
     "named": true
   },
   {
