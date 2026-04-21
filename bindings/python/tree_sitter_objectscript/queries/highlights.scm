@@ -135,6 +135,7 @@
   (keyword_old_for_params)
   (keyword_continue)
   (keyword_quit)
+  (keyword_break)
 ] @keyword.repeat
 
 [
@@ -142,6 +143,7 @@
   (keyword_elseif)
   (keyword_else)
   (keyword_oldelse)
+  (old_else_remove)
 ] @keyword.conditional
 
 [
@@ -268,41 +270,45 @@
 
 [
   (command_quit
-    (keyword_quit) @keyword)
+    (keyword_quit) @keyword.repeat)
   (command_else
-    (keyword_oldelse) @keyword)
+    [
+      (keyword_oldelse)
+      (old_else_remove)
+    ] @keyword.conditional)
   (command_continue
-    (keyword_continue) @keyword)
+    (keyword_continue) @keyword.repeat)
   (command_if
-    (keyword_old_if) @keyword)
-  (command_if
-    (keyword_old_if_refactor) @keyword)
+    [
+      (keyword_old_if)
+      (keyword_old_if_refactor)
+      (old_if_remove)
+    ] @keyword.conditional)
   (command_do
-    (keyword_do_old) @keyword)
+    (keyword_do_old) @function.builtin)
   (command_for
-    (keyword_for_infinite) @keyword.repeat)
-  (command_for
-    (keyword_old_for_no_params) @keyword.repeat)
-  (command_for
-    (keyword_old_for_params) @keyword.repeat)
-  (command_for
-    (keyword_for) @keyword.repeat)
+    [
+      (keyword_for_infinite)
+      (keyword_old_for_params)
+      (keyword_old_for_no_params)
+      (keyword_for)
+    ] @keyword.repeat)
   (command_lock
-    (keyword_lock) @keyword)
+    (keyword_lock) @function.builtin)
   (command_return
-    (keyword_return) @keyword)
+    (keyword_return) @keyword.return)
   (command_halt_or_hang
-    (keyword_halt_or_hang) @keyword)
+    (keyword_halt_or_hang) @function.builtin)
   (command_break
-    (keyword_break) @keyword)
+    (keyword_break) @keyword.repeat)
   (command_tcommit
-    (keyword_tcommit) @keyword)
+    (keyword_tcommit) @function.builtin)
   (command_trollback
-    (keyword_trollback) @keyword)
+    (keyword_trollback) @function.builtin)
   (command_tstart
-    (keyword_tstart) @keyword)
+    (keyword_tstart) @function.builtin)
   (command_zbreak
-    (keyword_zbreak) @keyword)
+    (keyword_zbreak) @keyword.debug)
 ] @comment
 
 "--" @operator

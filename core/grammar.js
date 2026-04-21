@@ -1080,11 +1080,11 @@ module.exports = grammar(objectscript_expr, {
             seq(
                 $.keyword_oldelse,
                 $._argumentless_command_end,
-                repeat($.statement),
+                repeat1($.statement),
                 $._termination,
             ),
             seq(
-                $.keyword_oldelse,
+                alias($.keyword_oldelse, $.old_else_remove),
                 $._termination,
             ),
         ),

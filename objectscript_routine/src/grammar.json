@@ -10100,7 +10100,7 @@
               "name": "_argumentless_command_end"
             },
             {
-              "type": "REPEAT",
+              "type": "REPEAT1",
               "content": {
                 "type": "SYMBOL",
                 "name": "statement"
@@ -10116,8 +10116,13 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "SYMBOL",
-              "name": "keyword_oldelse"
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "keyword_oldelse"
+              },
+              "named": true,
+              "value": "old_else_remove"
             },
             {
               "type": "SYMBOL",

@@ -495,20 +495,20 @@ Else statements old version
                 (numeric_literal))))))))
   (statement
     (command_else
-      (keyword_oldelse)))
+      (old_else_remove)))
   (line_comment_3)
   (statement
     (command_else
-      (keyword_oldelse)))
+      (old_else_remove)))
   (statement
     (command_else
-      (keyword_oldelse)))
+      (old_else_remove)))
   (statement
     (command_else
-      (keyword_oldelse)))
+      (old_else_remove)))
   (statement
     (command_else
-      (keyword_oldelse)))
+      (old_else_remove)))
   (statement
     (command_write
       (keyword_write)
@@ -640,10 +640,10 @@ Else alone
 (source_file
   (statement
     (command_else
-      (keyword_oldelse)))
+      (old_else_remove)))
   (statement
     (command_else
-      (keyword_oldelse))))
+      (old_else_remove))))
 
 =========================
 If Expression Indirection

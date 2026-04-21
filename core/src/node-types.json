@@ -400,6 +400,10 @@
           "named": true
         },
         {
+          "type": "old_else_remove",
+          "named": true
+        },
+        {
           "type": "statement",
           "named": true
         }
@@ -5516,6 +5520,10 @@
   },
   {
     "type": "numeric_literal",
+    "named": true
+  },
+  {
+    "type": "old_else_remove",
     "named": true
   },
   {
