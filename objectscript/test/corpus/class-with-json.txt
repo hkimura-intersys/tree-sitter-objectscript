@@ -58,8 +58,7 @@ Class test {
               (typename
                 (identifier)))
             (method_keywords
-              (method_keyword
-                (parameter_keyword_internal)))
+              (method_keyword))
             (statement
               (command_if
                 (keyword_if)

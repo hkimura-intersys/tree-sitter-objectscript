@@ -346,7 +346,6 @@
   (parameter_keyword)
   (projection_keyword)
   (index_keyword)
-  (index_keyword_extent)
   (xdata_keyword)
   (xdata_keyword_mimetype)
   (property_keyword)

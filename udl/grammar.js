@@ -12,7 +12,8 @@
 
 /// <reference types="tree-sitter-cli/dsl" />
 // @ts-check
-const keyword_rules = require('../common/keywords');
+const keyword_rules =
+require('../common/keywords');
 const objectscript_core = require('../core/grammar');
 const {
   define_grammar,

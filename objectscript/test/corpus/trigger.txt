@@ -30,12 +30,10 @@ Trigger LogEvent [ Event = INSERT, Time = AFTER ]
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
+                (trigger_event_value
+                  (typename)))
               (trigger_keyword
-                (trigger_keyword_time
-                  (typename))))
+                (typename)))
             (statement
               (command_new
                 (keyword_new)
@@ -91,12 +89,10 @@ Trigger TBefore [ Event = UPDATE, Time = BEFORE ]
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
+                (trigger_event_value
+                  (typename)))
               (trigger_keyword
-                (trigger_keyword_time
-                  (typename))))
+                (typename)))
             (statement
               (command_set
                 (keyword_set)
@@ -139,12 +135,10 @@ Trigger TAllEvents [ Event = INSERT/UPDATE/DELETE, Time = AFTER ]
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
+                (trigger_event_value
+                  (typename)))
               (trigger_keyword
-                (trigger_keyword_time
-                  (typename))))
+                (typename)))
             (line_comment_1)))))))
 
 ===
@@ -177,15 +171,12 @@ Trigger TStatement [ Event = DELETE, Foreach = statement, Time = AFTER ]
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
-              (trigger_keyword
-                (trigger_keyword_foreach
+                (trigger_event_value
                   (typename)))
               (trigger_keyword
-                (trigger_keyword_time
-                  (typename))))
+                (typename))
+              (trigger_keyword
+                (typename)))
             (line_comment_1)))))))
 
 ===
@@ -218,15 +209,12 @@ Trigger TUnified [ Event = UPDATE, Foreach = row/object, Time = AFTER ]
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
-              (trigger_keyword
-                (trigger_keyword_foreach
+                (trigger_event_value
                   (typename)))
               (trigger_keyword
-                (trigger_keyword_time
-                  (typename))))
+                (typename))
+              (trigger_keyword
+                (typename)))
             (line_comment_1)))))))
 
 ===
@@ -259,18 +247,14 @@ Trigger TTransitionTables [ Event = UPDATE, OldTable = old_vals_tbl, NewTable = 
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
+                (trigger_event_value
+                  (typename)))
               (trigger_keyword
-                (trigger_keyword_oldtable
-                  (query_name)))
+                (query_name))
               (trigger_keyword
-                (trigger_keyword_newtable
-                  (query_name)))
+                (query_name))
               (trigger_keyword
-                (trigger_keyword_time
-                  (typename))))
+                (typename)))
             (line_comment_1)))))))
 
 ===
@@ -303,12 +287,10 @@ Trigger TGen [ Event = INSERT, CodeMode = objectgenerator ]
           (core_trigger
             (trigger_keywords
               (trigger_keyword
-                (trigger_keyword_event
-                  (trigger_event_value
-                    (typename))))
+                (trigger_event_value
+                  (typename)))
               (trigger_keyword
-                (method_keyword_codemode
-                  (typename))))
+                (typename)))
             (line_comment_1)))))))
 
 ===

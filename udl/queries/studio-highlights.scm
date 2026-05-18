@@ -618,12 +618,6 @@
       "}"
     ] @punctuation.special))
 
-(class_keyword_owner
-  [
-    "{"
-    "}"
-  ] @punctuation.special)
-
 (documatic_line) @comment.documentation @spell
 
 ; start keywords
@@ -638,7 +632,6 @@
   (external_method_keywords)
   (foreignkey_keyword)
   (index_keyword)
-  (index_keyword_extent)
   (keyword_byref)
   (keyword_output)
   (parameter_keyword)
@@ -703,9 +696,6 @@
       (xml_identifier)
     ] @type.definition))
 
-(method_keyword_external_proc_name
-  (objectscript_identifier) @type.definition)
-
 (parameter_keyword
   (_
     [
@@ -724,7 +714,7 @@
   (_
     (typename) @type.definition))
 
-(property_keyword_aliases
+(property_keyword
   (property_name) @variable.member)
 
 (foreignkey_keyword
