@@ -707,3 +707,37 @@ dotted statements within #if
                             (objectscript_identifier))))))))))))
       (statement
         (tag_end_if)))))
+
+====
+dotted statement block with comment
+====
+ do 
+ . // w hi
+ . if x  {
+ . w "bye"
+ . }
+---
+
+(source_file
+  (statement
+    (command_do
+      (keyword_do_old)
+      (dotted_statement
+        (dotted_line_comment_1))
+      (dotted_statement
+        (dotted_block_statements
+          (command_if_dotted_block
+            (keyword_if)
+            (expression
+              (expr_atom
+                (lvn
+                  (objectscript_identifier))))
+            (dotted_statement_block)
+            (dotted_statement
+              (statement
+                (command_write
+                  (keyword_write)
+                  (write_argument
+                    (expression
+                      (expr_atom
+                        (string_literal)))))))))))))

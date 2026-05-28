@@ -5595,6 +5595,100 @@
         }
       ]
     },
+    "_dotted_line_comment": {
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "SYMBOL",
+          "name": "dotted_line_comment_1"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dotted_line_comment_2"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dotted_line_comment_3"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dotted_line_comment_4"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "dotted_block_comment"
+        }
+      ]
+    },
+    "dotted_line_comment_1": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "//"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_line_comment_inner"
+        }
+      ]
+    },
+    "dotted_line_comment_2": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#;"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_line_comment_inner"
+        }
+      ]
+    },
+    "dotted_line_comment_3": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": ";"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_line_comment_inner"
+        }
+      ]
+    },
+    "dotted_line_comment_4": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "##;"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_line_comment_inner"
+        }
+      ]
+    },
+    "dotted_block_comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/*"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_block_comment_inner"
+        },
+        {
+          "type": "STRING",
+          "value": "*/"
+        }
+      ]
+    },
     "dotted_statement": {
       "type": "SEQ",
       "members": [
@@ -5614,6 +5708,10 @@
               {
                 "type": "SYMBOL",
                 "name": "dotted_block_statements"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_dotted_line_comment"
               }
             ]
           }

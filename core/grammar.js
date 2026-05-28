@@ -593,14 +593,28 @@ module.exports = grammar(objectscript_expr, {
     _dotted_block_continuation: ($) =>
       seq($._bol, optional($.tag), repeat1('.')),
 
-    dotted_statement: ($) =>
-       seq(
-         // this is from the external scanner, and it means that it was
-         // at the start of a line and there were dots matching the dotted statement
-        $._dotted_block_continuation,
-        repeat1(choice($.statement, $.dotted_block_statements)),
-        $._termination,
+    _dotted_line_comment: ($) =>
+      choice(
+        $.dotted_line_comment_1,
+        $.dotted_line_comment_2,
+        $.dotted_line_comment_3,
+        $.dotted_line_comment_4,
+        $.dotted_block_comment,
       ),
+    dotted_line_comment_1: ($) => seq('//', $._line_comment_inner),
+    dotted_line_comment_2: ($) => seq('#;', $._line_comment_inner),
+    dotted_line_comment_3: ($) => seq(';', $._line_comment_inner),
+    dotted_line_comment_4: ($) => seq('##;', $._line_comment_inner),
+    dotted_block_comment: ($) => seq('/*', $._block_comment_inner, '*/'),
+
+    dotted_statement: ($) =>
+        seq(
+          // this is from the external scanner, and it means that it was
+          // at the start of a line and there were dots matching the dotted statement
+          $._dotted_block_continuation,
+          repeat1(choice($.statement, $.dotted_block_statements, $._dotted_line_comment)),
+          $._termination,
+        ),
       variable_datatype: ($) =>
         seq(
           choice(
