@@ -591,16 +591,16 @@ module.exports = grammar(objectscript_expr, {
     keyword_public: (_) => /public/i,
     keyword_methodimpl: (_) => /methodimpl/i,
     _dotted_block_continuation: ($) =>
-      seq($._bol, optional($.tag), repeat1('.')),
+      seq($._bol, optional($.tag), repeat1(alias('.', $.dot))),
 
     dotted_statement: ($) =>
-       seq(
-         // this is from the external scanner, and it means that it was
-         // at the start of a line and there were dots matching the dotted statement
-        $._dotted_block_continuation,
-        repeat1(choice($.statement, $.dotted_block_statements)),
-        $._termination,
-      ),
+        seq(
+          // this is from the external scanner, and it means that it was
+          // at the start of a line and there were dots matching the dotted statement
+          $._dotted_block_continuation,
+          repeat(choice($.statement, $.dotted_block_statements)),
+          $._termination,
+        ),
       variable_datatype: ($) =>
         seq(
           choice(

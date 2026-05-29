@@ -339,6 +339,10 @@
       "required": true,
       "types": [
         {
+          "type": "dot",
+          "named": true
+        },
+        {
           "type": "dotted_statement",
           "named": true
         },
@@ -871,6 +875,10 @@
       "required": true,
       "types": [
         {
+          "type": "dot",
+          "named": true
+        },
+        {
           "type": "dotted_statement",
           "named": true
         },
@@ -959,6 +967,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dot",
+          "named": true
+        },
         {
           "type": "dotted_statement",
           "named": true
@@ -1091,6 +1103,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dot",
+          "named": true
+        },
         {
           "type": "dotted_statement",
           "named": true
@@ -1549,6 +1565,10 @@
           "named": true
         },
         {
+          "type": "dot",
+          "named": true
+        },
+        {
           "type": "dotted_statement",
           "named": true
         },
@@ -1667,6 +1687,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dot",
+          "named": true
+        },
         {
           "type": "dotted_statement",
           "named": true
@@ -2552,6 +2576,10 @@
       "required": true,
       "types": [
         {
+          "type": "dot",
+          "named": true
+        },
+        {
           "type": "dotted_block_statements",
           "named": true
         },
@@ -2593,6 +2621,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dot",
+          "named": true
+        },
         {
           "type": "dotted_statement",
           "named": true
@@ -2647,6 +2679,10 @@
       "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "dot",
+          "named": true
+        },
         {
           "type": "dotted_statement",
           "named": true
@@ -7403,6 +7439,10 @@
   },
   {
     "type": "command_keyword",
+    "named": true
+  },
+  {
+    "type": "dot",
     "named": true
   },
   {

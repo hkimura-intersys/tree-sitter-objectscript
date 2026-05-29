@@ -1248,6 +1248,7 @@ Do Statement Dot Syntax
     (command_do
       (keyword_do_old)
       (dotted_statement
+        (dot)
         (statement
           (command_write
             (keyword_write)
@@ -1259,10 +1260,13 @@ Do Statement Dot Syntax
               (write_device_control
                 (write_device_fflf))))))
       (dotted_statement
+        (dot)
         (statement
           (command_do
             (keyword_do_old)
             (dotted_statement
+              (dot)
+              (dot)
               (statement
                 (command_write
                   (keyword_write)
@@ -1274,10 +1278,14 @@ Do Statement Dot Syntax
                     (write_device_control
                       (write_device_fflf))))))
             (dotted_statement
+              (dot)
+              (dot)
               (statement
                 (command_quit
                   (keyword_quit))))
             (dotted_statement
+              (dot)
+              (dot)
               (statement
                 (command_write
                   (keyword_write)
@@ -1289,6 +1297,7 @@ Do Statement Dot Syntax
                     (write_device_control
                       (write_device_fflf))))))
             (dotted_statement
+              (dot)
               (statement
                 (command_write
                   (keyword_write)
@@ -1300,10 +1309,12 @@ Do Statement Dot Syntax
                     (write_device_control
                       (write_device_fflf))))))
             (dotted_statement
+              (dot)
               (statement
                 (command_quit
                   (keyword_quit))))
             (dotted_statement
+              (dot)
               (statement
                 (command_write
                   (keyword_write)
@@ -1408,6 +1419,7 @@ Do Statement Dot Syntax
         (command_do
           (keyword_do_old)
           (dotted_statement
+            (dot)
             (statement
               (command_set
                 (keyword_set)
@@ -1428,6 +1440,7 @@ Do Statement Dot Syntax
                             (objectscript_identifier)))))))))
             (inline_comment))
           (dotted_statement
+            (dot)
             (statement
               (command_write
                 (keyword_write)
@@ -1450,6 +1463,7 @@ Do Statement Dot Syntax
         (command_do
           (keyword_do_old)
           (dotted_statement
+            (dot)
             (statement
               (command_set
                 (keyword_set)
@@ -1476,6 +1490,7 @@ Do Statement Dot Syntax
                             (objectscript_identifier)))))))))
             (inline_comment))
           (dotted_statement
+            (dot)
             (statement
               (command_write
                 (keyword_write)
@@ -1492,6 +1507,7 @@ Do Statement Dot Syntax
                       (lvn
                         (objectscript_identifier))))))))
           (dotted_statement
+            (dot)
             (statement
               (command_quit
                 (keyword_quit))))))))
@@ -1523,6 +1539,7 @@ Do Statement Dot Syntax
         (command_do
           (keyword_do_old)
           (dotted_statement
+            (dot)
             (statement
               (command_set
                 (keyword_set)
@@ -1542,6 +1559,7 @@ Do Statement Dot Syntax
                           (lvn
                             (objectscript_identifier))))))))))
           (dotted_statement
+            (dot)
             (statement
               (command_write
                 (keyword_write)
@@ -1554,6 +1572,7 @@ Do Statement Dot Syntax
                       (lvn
                         (objectscript_identifier))))))))
           (dotted_statement
+            (dot)
             (statement
               (command_quit
                 (keyword_quit))))))))
@@ -1572,28 +1591,48 @@ Do Statement Dot Syntax
     (command_do
       (keyword_do_old)
       (dotted_statement
-        (line_comment_3)
-        (bol_extra)
-        (bol_extra)
+        (dot)
+        (inline_comment))
+      (dotted_statement
+        (dot))
+      (dotted_statement
+        (dot)
         (statement
           (command_do
             (keyword_do_old)
             (dotted_statement
-              (line_comment_3)
-              (bol_extra)
-              (bol_extra)
+              (dot)
+              (dot)
+              (inline_comment))
+            (dotted_statement
+              (dot)
+              (dot))
+            (dotted_statement
+              (dot)
+              (dot)
               (statement
                 (command_do
                   (keyword_do_old)
                   (dotted_statement
-                    (line_comment_3)
-                    (bol_extra)
-                    (bol_extra)
-                    (line_comment_3)
-                    (bol_extra)
-                    (line_comment_3)
-                    (bol_extra)
-                    (bol_extra)
+                    (dot)
+                    (dot)
+                    (dot)
+                    (inline_comment))
+                  (dotted_statement
+                    (dot)
+                    (dot)
+                    (dot))
+                  (dotted_statement
+                    (dot)
+                    (dot)
+                    (inline_comment))
+                  (dotted_statement
+                    (dot)
+                    (inline_comment))
+                  (dotted_statement
+                    (dot))
+                  (dotted_statement
+                    (dot)
                     (statement
                       (command_quit
                         (keyword_quit)

@@ -5589,8 +5589,13 @@
         {
           "type": "REPEAT1",
           "content": {
-            "type": "STRING",
-            "value": "."
+            "type": "ALIAS",
+            "content": {
+              "type": "STRING",
+              "value": "."
+            },
+            "named": true,
+            "value": "dot"
           }
         }
       ]
@@ -5603,7 +5608,7 @@
           "name": "_dotted_block_continuation"
         },
         {
-          "type": "REPEAT1",
+          "type": "REPEAT",
           "content": {
             "type": "CHOICE",
             "members": [

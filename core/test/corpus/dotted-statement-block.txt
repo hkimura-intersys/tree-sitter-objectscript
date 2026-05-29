@@ -19,6 +19,7 @@ valid dotted statement block
           (command_do
             (keyword_do_old)
             (dotted_statement
+              (dot)
               (dotted_block_statements
                 (command_if_dotted_block
                   (keyword_if)
@@ -27,13 +28,16 @@ valid dotted statement block
                       (numeric_literal)))
                   (dotted_statement_block)
                   (dotted_statement
+                    (dot)
                     (statement
                       (command_write
                         (keyword_write)
                         (write_argument
                           (expression
                             (expr_atom
-                              (string_literal))))))))))))))))
+                              (string_literal)))))))
+                  (dotted_statement
+                    (dot)))))))))))
 
 ===
 valid dotted statement block with else
@@ -52,6 +56,9 @@ valid dotted statement block with else
       (command_do
         (keyword_do_old)
         (dotted_statement
+          (dot)
+          (dot)
+          (dot)
           (dotted_block_statements
             (command_if_dotted_block
               (keyword_if)
@@ -72,6 +79,13 @@ valid dotted statement block with else
                       (expr_atom
                         (numeric_literal))))))
               (line_comment_3)
+              (dotted_statement
+                (dot)
+                (dot)
+                (dot))
+              (dot)
+              (dot)
+              (dot)
               (else_block_dotted
                 (keyword_else)
                 (dotted_statement_block)
@@ -87,6 +101,9 @@ valid dotted statement block with else
                         (expr_atom
                           (numeric_literal))))))
                 (dotted_statement
+                  (dot)
+                  (dot)
+                  (dot)
                   (statement
                     (command_quit
                       (keyword_quit)
@@ -94,7 +111,11 @@ valid dotted statement block with else
                         (expression
                           (expr_atom
                             (lvn
-                              (objectscript_identifier))))))))))))))))
+                              (objectscript_identifier))))))))
+                (dotted_statement
+                  (dot)
+                  (dot)
+                  (dot))))))))))
 
 ====
 Valid Dotted statements, quit after write
@@ -130,6 +151,7 @@ Valid Dotted statements, quit after write
                 (expr_atom
                   (numeric_literal))))))
         (dotted_statement
+          (dot)
           (statement
             (command_write
               (keyword_write)
@@ -144,6 +166,8 @@ Valid Dotted statements, quit after write
             (command_do
               (keyword_do_old)
               (dotted_statement
+                (dot)
+                (dot)
                 (statement
                   (command_write
                     (keyword_write)
@@ -156,6 +180,7 @@ Valid Dotted statements, quit after write
                           (lvn
                             (objectscript_identifier))))))))
               (dotted_statement
+                (dot)
                 (statement
                   (command_quit
                     (keyword_quit)))))))))
@@ -208,6 +233,7 @@ Do Statements Nested
                   (line_ref
                     (objectscript_identifier)))))
             (dotted_statement
+              (dot)
               (statement
                 (command_set
                   (keyword_set)
@@ -220,6 +246,7 @@ Do Statements Nested
                       (expr_atom
                         (numeric_literal)))))))
             (dotted_statement
+              (dot)
               (statement
                 (command_write
                   (keyword_write)
@@ -280,6 +307,7 @@ keepit . . set y = 3
           (command_do
             (keyword_do_old)
             (dotted_statement
+              (dot)
               (statement
                 (command_set
                   (keyword_set)
@@ -292,6 +320,7 @@ keepit . . set y = 3
                       (expr_atom
                         (numeric_literal)))))))
             (dotted_statement
+              (dot)
               (statement
                 (command_if
                   (keyword_old_if)
@@ -302,6 +331,8 @@ keepit . . set y = 3
                     (command_do
                       (keyword_do_old)
                       (dotted_statement
+                        (dot)
+                        (dot)
                         (statement
                           (command_write
                             (keyword_write)
@@ -314,6 +345,8 @@ keepit . . set y = 3
                                   (string_literal)))))))
                       (dotted_statement
                         (tag)
+                        (dot)
+                        (dot)
                         (statement
                           (command_set
                             (keyword_set)
@@ -326,6 +359,8 @@ keepit . . set y = 3
                                 (expr_atom
                                   (numeric_literal)))))))
                       (dotted_statement
+                        (dot)
+                        (dot)
                         (statement
                           (command_write
                             (keyword_write)
@@ -367,6 +402,7 @@ j2	; comment
           (command_do
             (keyword_do_old)
             (dotted_statement
+              (dot)
               (statement
                 (command_if
                   (keyword_old_if)
@@ -377,6 +413,8 @@ j2	; comment
                     (command_do
                       (keyword_do_old)
                       (dotted_statement
+                        (dot)
+                        (dot)
                         (statement
                           (command_write
                             (keyword_write)
@@ -389,6 +427,8 @@ j2	; comment
                                   (string_literal)))))))
                       (dotted_statement
                         (tag)
+                        (dot)
+                        (dot)
                         (statement
                           (command_set
                             (keyword_set)
@@ -401,6 +441,8 @@ j2	; comment
                                 (expr_atom
                                   (numeric_literal)))))))
                       (dotted_statement
+                        (dot)
+                        (dot)
                         (statement
                           (command_write
                             (keyword_write)
@@ -470,6 +512,9 @@ test	n x,y
           (command_quit
             (keyword_quit)))
         (dotted_statement
+          (dot)
+          (dot)
+          (dot)
           (statement
             (command_if
               (keyword_old_if)
@@ -491,6 +536,9 @@ test	n x,y
                     (expr_atom
                       (numeric_literal))))))))
         (dotted_statement
+          (dot)
+          (dot)
+          (dot)
           (statement
             (command_else
               (keyword_oldelse)
@@ -536,6 +584,7 @@ second ; comment
               (line_ref
                 (objectscript_identifier)))))
         (dotted_statement
+          (dot)
           (statement
             (command_write
               (keyword_write)
@@ -560,6 +609,7 @@ second ; comment
               (line_ref
                 (objectscript_identifier)))))
         (dotted_statement
+          (dot)
           (statement
             (command_write
               (keyword_write)
@@ -621,6 +671,7 @@ dotted statements within #if
                   (lvn
                     (objectscript_identifier)))))
             (dotted_statement
+              (dot)
               (statement
                 (command_set
                   (keyword_set)
@@ -633,6 +684,7 @@ dotted statements within #if
                       (expr_atom
                         (numeric_literal)))))))
             (dotted_statement
+              (dot)
               (statement
                 (command_for
                   (keyword_old_for)
@@ -666,6 +718,8 @@ dotted statements within #if
                     (command_do
                       (keyword_do_old)
                       (dotted_statement
+                        (dot)
+                        (dot)
                         (statement
                           (command_set
                             (keyword_set)
@@ -685,6 +739,8 @@ dotted statements within #if
                       (keyword_pound_else)))
                   (inline_comment))))
             (dotted_statement
+              (dot)
+              (dot)
               (statement
                 (command_if
                   (keyword_old_if)
@@ -716,3 +772,43 @@ dotted statements within #if
                               (objectscript_identifier))))))))))))
         (statement
           (tag_end_if))))))
+
+====
+dotted statement block with comment
+====
+ do 
+ . // w hi
+ . if x  {
+ . w "bye"
+ . }
+---
+
+(source_file
+  (statements
+    (statement
+      (command_do
+        (keyword_do_old)
+        (dotted_statement
+          (dot)
+          (inline_comment))
+        (dotted_statement
+          (dot)
+          (dotted_block_statements
+            (command_if_dotted_block
+              (keyword_if)
+              (expression
+                (expr_atom
+                  (lvn
+                    (objectscript_identifier))))
+              (dotted_statement_block)
+              (dotted_statement
+                (dot)
+                (statement
+                  (command_write
+                    (keyword_write)
+                    (write_argument
+                      (expression
+                        (expr_atom
+                          (string_literal)))))))
+              (dotted_statement
+                (dot)))))))))

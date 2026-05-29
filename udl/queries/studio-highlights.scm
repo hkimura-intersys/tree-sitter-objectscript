@@ -249,28 +249,28 @@
 
 ; start Dots in dotted statements, (black fg,silver bg)
 (command_if_dotted_block
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (command_for_dotted_block
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (command_while_dotted_block
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (command_dowhile_dotted
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (command_trycatch_dotted
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (dotted_statement
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (else_block_dotted
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 (elseif_block_dotted
-  "." @punctuation.special.dots)
+  (dot) @punctuation.special.dots)
 
 ; end Dots in dotted statements (black fg,silver bg)
 ; start #dim command
