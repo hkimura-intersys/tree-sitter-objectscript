@@ -141,11 +141,12 @@
   (#any-of? @_mt "text/css" "\"text/css\"")
   (#set! injection.language "css"))
 
-; -----------------------------------------
-; XDATA default (no MimeType): XML fallback
-; -----------------------------------------
-(xdata
-  (external_method_body_content) @injection.content
+; --------------------------------------------
+; XDATA default (no MimeType header): XML fallback
+; --------------------------------------------
+((xdata
+  (external_method_body_content) @injection.content) @_xdata
+  (#not-match? @_xdata "^[^{}]*[Mm][Ii][Mm][Ee][Tt][Yy][Pp][Ee][ \t\r\n]*=")
   (#set! injection.include-children "true")
   (#set! injection.language "xml"))
 
@@ -169,147 +170,4 @@
 
 ; === END UDL ===
 ; === BEGIN LOCAL ===
-; Keywords, one of type language = "python", none of type codemode
-; External method body injection based on [ Language = ... ]
-(method_definition
-  (method_keyword_external_language
-    (typename) @_lang)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_lang "python" "Python" "PYTHON")
-  (#set! injection.language "python"))
-
-(method_definition
-  (method_keyword_external_language
-    (typename) @_lang)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_lang "tsql" "TSQL" "tSQL" "tSql" "TSql")
-  (#set! injection.language "tsql"))
-
-(method_definition
-  (method_keyword_external_language
-    (typename) @_lang)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_lang "ispl" "ISPL" "ISpl" "iSpl")
-  (#set! injection.language "ispl"))
-
-(trigger
-  (method_keyword_external_language
-    (typename) @_lang)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_lang "python" "Python" "PYTHON")
-  (#set! injection.language "python"))
-
-(trigger
-  (method_keyword_external_language
-    (typename) @_lang)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_lang "tsql" "TSQL" "tSQL" "tSql" "TSql")
-  (#set! injection.language "tsql"))
-
-; A query must be of type %SQLQuery to have an SQL body, otherwise the body
-; is empty
-(query
-  (return_type
-    (typename
-      (identifier) @_querytype
-      (#any-of? @_querytype "%SqlQuery" "%sqlquery" "%SQLQUERY" "%Sqlquery" "%SQLQuery")))
-  (external_method_body_content) @injection.content
-  (#set! injection.language "sql")
-  (#set! injection.include-children "true"))
-
-; XDATA blocks:
-; - xdata_any requires a keyword list that includes MimeType
-; - xdata_xml allows an optional keyword list and defaults to XML
-; ----------------------------
-; XDATA injections (MimeType)
-; ----------------------------
-; text/markdown
-;
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "text/markdown" "\"text/markdown\"")
-  (#set! injection.language "markdown"))
-
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "text/x-python" "\"text/x-python\"" "application/python" "\"application/python\"")
-  (#set! injection.language "python"))
-
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "text/xml" "\"text/xml\"" "application/xml" "\"application/xml\"")
-  (#set! injection.language "xml"))
-
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "text/html" "\"text/html\"")
-  (#set! injection.language "html"))
-
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "application/json" "\"application/json\"")
-  (#set! injection.language "json"))
-
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "text/yaml" "\"text/yaml\"" "application/yaml" "\"application/yaml\"")
-  (#set! injection.language "yaml"))
-
-(xdata
-  (xdata_keyword_mimetype
-    (typename) @_mt)
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#any-of? @_mt "text/css" "\"text/css\"")
-  (#set! injection.language "css"))
-
-; -----------------------------------------
-; XDATA default (no MimeType): XML fallback
-; -----------------------------------------
-(xdata
-  (external_method_body_content) @injection.content
-  (#set! injection.include-children "true")
-  (#set! injection.language "xml"))
-
-; Storage definition is XML
-(storage
-  (external_method_body_content) @injection.content
-  (#set! injection.language "xml")
-  (#set! injection.include-children "true"))
-
-([
-  (line_comment_1)
-  (line_comment_2)
-  (line_comment_3)
-  (line_comment_4)
-  (block_comment)
-  (inline_comment)
-  (argumentless_inline_comment)
-  (documatic_line)
-] @injection.content
-  (#set! injection.language "comment"))
-
 ; === END LOCAL ===
